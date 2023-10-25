@@ -50,3 +50,33 @@ Short summary of current project status.
 ### TODOs
 1. Member 1: Write an action.
 2. ...
+
+
+# Meeting 25.10.2023 10:00
+
+**Participants**: 
+1. Linnea
+2. Matilda
+3. Casper
+4. Julius
+
+## Summary of works
+-
+
+## Challenges
+- Come up with relevant classes
+- Figure out how to implement the graphics
+- Familiarize ourself with the external libraries
+
+## Actions
+- Member 1 is going to work on the UML model of the project
+- Member 2 is going to work on figuring out relevant classes and their members and methods
+- Member 3 and 4 are going to work on the project plan in general and figure out the scope and the schedule aswell
+
+## Project status
+Currently, we have created the repository and started on the project plan.
+
+### TODOs
+- Member 1 is going to finish the UML model
+- Member 2 is going to work on the structure of the project and explain it in the project plan
+- Member 3 and 4 is going to finish the other parts of the project plan
