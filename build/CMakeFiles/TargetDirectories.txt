@@ -1,0 +1,2 @@
+/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles/rebuild_cache.dir
+/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles/edit_cache.dir
