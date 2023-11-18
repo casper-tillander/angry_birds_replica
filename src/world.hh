@@ -2,7 +2,7 @@
 #ifndef WORLD_HH
 #define WORLD_HH
 
-#include <Box2D/Box2D.h>
+#include <box2d/box2d.h>
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <string>

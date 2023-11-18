@@ -4,7 +4,8 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/libs/SFML-2.6.1-macOS-clang-64-bit/include"
+                "${workspaceFolder}/libs/SFML-2.6.1-macOS-clang-64-bit/include",
+                "${workspaceFolder}/libs/box2d/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
