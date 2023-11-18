@@ -3,7 +3,7 @@
 #define WORLD_HH
 
 #include <Box2D/Box2D.h>
-#include <SFML/Graphics.hpp>
+#include <libs/SFML-2.6.1-macOS-clang-64-bit/include/Graphics>
 #include <vector>
 #include <string>
 
