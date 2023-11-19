@@ -1,12 +1,13 @@
 #include "GUI.hpp"
 
-GUI::GUI() : window(sf::VideoMode(800, 600), "Angry Birds"), currentScreen(Home) {
+GUI::GUI() : window(sf::VideoMode(800, 600), "Angry Birds"), currentScreen(Home), currentLevel(nullptr) {
     initialize();
 }
 
 void GUI::initialize() {
-    // Load a font
+    // Load a font, texture for bird
     font.loadFromFile("../Fonts/Roboto/Roboto-Black.ttf");
+    birdTexture.loadFromFile("../Pictures/bird.png");
 
     // Setup title text
     titleText.setFont(font);
@@ -92,10 +93,23 @@ void GUI::initialize() {
 void GUI::run() {
     while (window.isOpen()) {
         processEvents();
-        update();
+
+        if (currentScreen == PlayingLevel) {
+            currentLevel->run();  // Run the level logic
+        }
+
         render();
     }
 }
+
+void GUI::launchLevel(int levelNumber) {
+    if (currentLevel != nullptr) {
+        delete currentLevel;
+    }
+    currentLevel = new Level(window, levelNumber, birdTexture, backgroundTexture);
+    currentScreen = PlayingLevel;
+}
+
 
 void GUI::processEvents() {
     sf::Event event;
@@ -108,7 +122,16 @@ void GUI::processEvents() {
                 if (currentScreen == Home && playText.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) {
                     currentScreen = Levels; // Change the screen state to Levels
                 }
-                // TODO: Handling for level buttons
+                // Handling for level buttons
+                if (currentScreen == Levels && level1Text.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) {
+                    launchLevel(1); // Launch Level 1
+                }
+                if (currentScreen == Levels && level2Text.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) {
+                launchLevel(2); // Launch Level 2
+                }
+                if (currentScreen == Levels && level3Text.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) {
+                    launchLevel(3); // Launch Level 3
+                }
             }
         }
     }
@@ -153,3 +176,5 @@ void GUI::drawLevelsScreen() {
     window.draw(level3Text); // Draw the text over the button
 
 }
+
+

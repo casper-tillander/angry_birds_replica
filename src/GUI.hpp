@@ -2,6 +2,8 @@
 #define GUI_HPP
 
 #include <SFML/Graphics.hpp>
+#include "level.hpp"
+#include "bird.hpp"
 
 class GUI {
 public:
@@ -21,8 +23,10 @@ private:
     sf::Texture backgroundTexture;
     sf::Sprite backgroundSprite;
     sf::FloatRect buttonBounds = ButtonShape.getGlobalBounds();
+    sf::Texture birdTexture;
 
-    enum Screen { Home, Levels }; // Enum for screen state
+    Level* currentLevel;  // Pointer to the current level
+    enum Screen { Home, Levels, PlayingLevel }; // Different game screens
     Screen currentScreen; // Variable to hold the current screen state
 
     void initialize();
@@ -32,6 +36,7 @@ private:
     void startGame();
     void drawHomeScreen();
     void drawLevelsScreen();
+    void launchLevel(int levelNumber); // Method to launch a level
 };
 
 #endif // GUI_HPP
