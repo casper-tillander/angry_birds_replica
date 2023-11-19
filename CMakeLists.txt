@@ -22,6 +22,8 @@ include_directories(${CMAKE_SOURCE_DIR}/libs/box2d/include)
 target_link_libraries(${EXECUTABLE_NAME} PRIVATE box2d)
 
 # Detect and add SFML
+#add_subdirectory(libs/SFML)
+#target_link_libraries(${EXECUTABLE_NAME} PRIVATE sfml-network sfml-audio sfml-graphics sfml-window sfml-system)
 find_package(SFML 2 COMPONENTS network audio graphics window system REQUIRED)
 if(SFML_FOUND)
   target_link_libraries(${EXECUTABLE_NAME} PRIVATE sfml-network sfml-audio sfml-graphics sfml-window sfml-system)
