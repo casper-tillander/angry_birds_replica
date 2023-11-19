@@ -2,6 +2,6 @@
 
 Game::Game() {}
 
-void Game::Run() {
+void Game::run() {
     gui.run();
 }

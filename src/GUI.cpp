@@ -63,12 +63,31 @@ void GUI::initialize() {
     level3Text.setFillColor(sf::Color::White);
     level3Text.setPosition(500, 300);
 
-    ButtonShape.setRadius(30); // Set the radius
-    ButtonShape.setScale(3, 1); // Scale to make it oval (2 times wider than its height)
-    ButtonShape.setFillColor(sf::Color(173, 216, 230)); // Fill color
-    ButtonShape.setOutlineThickness(1); //  Outline thickness
-    ButtonShape.setOutlineColor(sf::Color::White); // Outline color
-}
+    // Setup button shape (oval)
+    ButtonShape.setRadius(30); // This will be the height of the oval
+    ButtonShape.setScale(3, 1); // This will make the width 3 times the height
+    ButtonShape.setFillColor(sf::Color(173, 216, 230)); // Light blue color
+    ButtonShape.setOutlineThickness(1);
+    ButtonShape.setOutlineColor(sf::Color::White);
+
+    // Center the playText on the ButtonShape
+    sf::FloatRect playButtonBounds = ButtonShape.getLocalBounds();
+    ButtonShape.setOrigin(playButtonBounds.width / 2, playButtonBounds.height / 2);
+    playText.setOrigin(playText.getLocalBounds().width / 2, playText.getLocalBounds().height / 2);
+    playText.setPosition(window.getSize().x / 2, 300);
+
+    // Center the level1Text on the ButtonShape
+    level1Text.setOrigin(level1Text.getLocalBounds().width / 2, level1Text.getLocalBounds().height / 2);
+    level1Text.setPosition(window.getSize().x / 2 - 150, 400);
+
+    // Center the level2Text on the ButtonShape
+    level2Text.setOrigin(level2Text.getLocalBounds().width / 2, level2Text.getLocalBounds().height / 2);
+    level2Text.setPosition(window.getSize().x / 2, 400);
+
+    // Center the level3Text on the ButtonShape
+    level3Text.setOrigin(level3Text.getLocalBounds().width / 2, level3Text.getLocalBounds().height / 2);
+    level3Text.setPosition(window.getSize().x / 2 + 150, 400);
+    }
 
 void GUI::run() {
     while (window.isOpen()) {
@@ -112,30 +131,25 @@ void GUI::render() {
 
 void GUI::drawHomeScreen() {
     window.draw(titleText);
-    ButtonShape.setPosition(playText.getPosition() - sf::Vector2f(10, 10)); // Set the button's position
-    window.draw(ButtonShape); // Draw the button shape
+    ButtonShape.setPosition(playText.getPosition()); // No need for offset, origins are centered
+    window.draw(ButtonShape); // Draw the button shape first
     window.draw(playText); // Draw the text over the button
 }
-
 
 void GUI::drawLevelsScreen() {
     window.draw(levelsText);
 
-    // Draw button for Level 1
-    ButtonShape.setPosition(level1Text.getPosition() - sf::Vector2f(10, 10)); // Adjust position for Level 1
-    window.draw(ButtonShape);
-    window.draw(level1Text);
+    // Position and draw the button for Level 1
+    ButtonShape.setPosition(level1Text.getPosition()); // Origins are centered
+    window.draw(ButtonShape); // Draw the button shape first
+    window.draw(level1Text); // Draw the text over the button
 
-    // Draw button for Level 2
-    ButtonShape.setPosition(level2Text.getPosition() - sf::Vector2f(10, 10)); // Adjust position for Level 2
-    window.draw(ButtonShape);
-    window.draw(level2Text);
+    ButtonShape.setPosition(level2Text.getPosition()); // Origins are centered
+    window.draw(ButtonShape); // Draw the button shape first
+    window.draw(level2Text); // Draw the text over the button
 
-    // Draw button for Level 3
-    ButtonShape.setPosition(level3Text.getPosition() - sf::Vector2f(10, 10)); // Adjust position for Level 3
-    window.draw(ButtonShape);
-    window.draw(level3Text);
+    ButtonShape.setPosition(level3Text.getPosition()); // Origins are centered
+    window.draw(ButtonShape); // Draw the button shape first
+    window.draw(level3Text); // Draw the text over the button
+
 }
-
-
-

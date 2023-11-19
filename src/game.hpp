@@ -7,7 +7,7 @@ class Game {
 
 public:
     Game();
-    void Run();
+    void run();
 
 private:
     GUI gui;

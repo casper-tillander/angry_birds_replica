@@ -20,6 +20,7 @@ private:
     sf::Font font;
     sf::Texture backgroundTexture;
     sf::Sprite backgroundSprite;
+    sf::FloatRect buttonBounds = ButtonShape.getGlobalBounds();
 
     enum Screen { Home, Levels }; // Enum for screen state
     Screen currentScreen; // Variable to hold the current screen state
