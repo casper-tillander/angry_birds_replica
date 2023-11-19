@@ -5,7 +5,7 @@ if(CMAKE_HOST_WIN32)
     cmake_minimum_required(VERSION 3.24)
 else()
     # For all other systems, 3.22 will suffice (Casper changed this to 3.16... And he hopes it still works)
-    cmake_minimum_required(VERSION 3.16)
+    cmake_minimum_required(VERSION 3.22)
 endif()
 
 # define a macro that helps defining an option
@@ -482,7 +482,8 @@ set(CPACK_NSIS_INSTALLER_MUI_ICON_CODE "!define MUI_WELCOMEFINISHPAGE_BITMAP \\\
 include(CPack)
 
 # configure extras by default when building SFML directly, otherwise hide them
-sfml_set_option(SFML_CONFIGURE_EXTRAS ${PROJECT_IS_TOP_LEVEL} BOOL "TRUE to configure extras, FALSE to ignore them")
+ sfml_set_option(SFML_CONFIGURE_EXTRAS ${PROJECT_IS_TOP_LEVEL} BOOL "TRUE to configure extras, FALSE to ignore them")
+# sfml_set_option(SFML_CONFIGURE_EXTRAS FALSE BOOL "TRUE to configure extras, FALSE to ignore them")
 
 if(NOT SFML_CONFIGURE_EXTRAS)
     return()
