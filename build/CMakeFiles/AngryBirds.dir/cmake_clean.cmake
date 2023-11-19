@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "AngryBirds"
   "AngryBirds.pdb"
   "CMakeFiles/AngryBirds.dir/src/main.cpp.o"
+  "CMakeFiles/AngryBirds.dir/src/main.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

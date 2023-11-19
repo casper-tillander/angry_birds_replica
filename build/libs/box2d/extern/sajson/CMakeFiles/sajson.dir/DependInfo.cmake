@@ -1,21 +1,18 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/sajson.cpp" "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/sajson/CMakeFiles/sajson.dir/sajson.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../src"
-  "../libs/box2d/extern/sajson/.."
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/linsku/c++fall2023/Project/libs/box2d/extern/sajson/sajson.cpp" "libs/box2d/extern/sajson/CMakeFiles/sajson.dir/sajson.cpp.o" "gcc" "libs/box2d/extern/sajson/CMakeFiles/sajson.dir/sajson.cpp.o.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.
