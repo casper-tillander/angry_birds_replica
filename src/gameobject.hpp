@@ -8,8 +8,10 @@
 enum ObjectType {
    Ground = 0,
    Wall = 10
-   RegularBird = 2
-}
+   RegularBird = 20
+   ExplosionBird = 21
+   Pig = 30
+};
 
 class GameObject {
 

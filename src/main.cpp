@@ -2,5 +2,5 @@
 
 int main() {
   Game g;
-  g.Run();
+  g.run();
 }
