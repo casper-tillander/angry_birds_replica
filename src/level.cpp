@@ -14,11 +14,16 @@ Level::Level(sf::RenderWindow& win, int number, const sf::Texture& birdTex, cons
     backgroundSprite.setScale(scaleX, scaleY);
 
     // Set up bird
-    bird = new Bird(world, birdTex, b2Vec2(100.0f, 100.0f));
+    bird = new Bird(world, birdTex, b2Vec2(100.0f, 400.0f));
+
+    // Set up pig
+    pigTexture.loadFromFile("../Pictures/pig.png"); // Replace with your texture path
+    pig = new Pig(world, pigTexture, b2Vec2(300.0f, 400.0f));
 }
 
 Level::~Level() {
     delete bird;
+    delete pig;
     delete world;
 }
 
@@ -29,19 +34,26 @@ void Level::run() {
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
+
+            // Call handleInput for the bird
+            bird->handleInput(event, window);
         }
 
         // Update
         world->Step(1.0f/60.0f, 6, 2);
         bird->update();
+        pig->update();
+
 
         // Render
         window.clear();
         window.draw(backgroundSprite); // Draw the background first
         bird->render(window);
+        pig->render(window);
         window.display();
     }
 }
+
 
 void Level::setupWorld() {
     createFloor();

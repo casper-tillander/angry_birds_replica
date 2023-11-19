@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <box2d/box2d.h>
 #include "bird.hpp"
+#include "pig.hpp"
 
 class Level {
 private:
@@ -13,6 +14,9 @@ private:
     sf::Sprite backgroundSprite;
     b2World* world;
     Bird* bird;
+    Pig* pig;
+    sf::Texture pigTexture;
+    sf::Event event;
 
 public:
     Level(sf::RenderWindow& win, int number, const sf::Texture& birdTex, const sf::Texture& backTex);

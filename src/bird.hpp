@@ -9,14 +9,15 @@ private:
     sf::Sprite sprite;
     b2Body* body;
     bool isLaunched;
-    sf::Vector2f initialClickPosition; // Store the initial click position
-    bool isBeingDragged; // Track if the bird is being dragged
+    bool isDragging;
+    sf::Vector2f initialClickPosition;
+    const float FORCE_MULTIPLIER = 10000.0f;  // Adjust this value as needed
 
 public:
     Bird(b2World* world, const sf::Texture& texture, const b2Vec2& position);
     void update();
     void render(sf::RenderWindow& window);
-    void handleInput(const sf::Vector2f& mousePosition, const sf::Event& event);
+    void handleInput(const sf::Event& event, const sf::RenderWindow& window);
     void launch(const b2Vec2& force);
 };
 
