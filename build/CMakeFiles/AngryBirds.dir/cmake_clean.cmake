@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "AngryBirds"
   "AngryBirds.pdb"
+  "CMakeFiles/AngryBirds.dir/src/GUI.cpp.o"
   "CMakeFiles/AngryBirds.dir/src/main.cpp.o"
 )
 

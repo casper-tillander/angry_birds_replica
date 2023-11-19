@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/caspertillander/cpp-course-autumn-2023/Project/src/GUI.cpp" "/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles/AngryBirds.dir/src/GUI.cpp.o"
   "/home/caspertillander/cpp-course-autumn-2023/Project/src/main.cpp" "/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles/AngryBirds.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

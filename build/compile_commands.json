@@ -1,0 +1,697 @@
+[
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include  -g   -std=gnu++11 -o CMakeFiles/AngryBirds.dir/src/bird.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/src/bird.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/src/bird.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include  -g   -std=gnu++11 -o CMakeFiles/AngryBirds.dir/src/main.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/src/main.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/src/main.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/collision/b2_broad_phase.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_broad_phase.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_broad_phase.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/collision/b2_chain_shape.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_chain_shape.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_chain_shape.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/collision/b2_circle_shape.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_circle_shape.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_circle_shape.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/collision/b2_collide_circle.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_collide_circle.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_collide_circle.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/collision/b2_collide_edge.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_collide_edge.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_collide_edge.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/collision/b2_collide_polygon.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_collide_polygon.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_collide_polygon.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/collision/b2_collision.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_collision.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_collision.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/collision/b2_distance.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_distance.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_distance.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/collision/b2_dynamic_tree.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_dynamic_tree.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_dynamic_tree.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/collision/b2_edge_shape.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_edge_shape.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_edge_shape.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/collision/b2_polygon_shape.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_polygon_shape.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_polygon_shape.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/collision/b2_time_of_impact.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_time_of_impact.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/collision/b2_time_of_impact.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/common/b2_block_allocator.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/common/b2_block_allocator.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/common/b2_block_allocator.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/common/b2_draw.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/common/b2_draw.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/common/b2_draw.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/common/b2_math.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/common/b2_math.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/common/b2_math.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/common/b2_settings.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/common/b2_settings.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/common/b2_settings.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/common/b2_stack_allocator.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/common/b2_stack_allocator.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/common/b2_stack_allocator.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/common/b2_timer.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/common/b2_timer.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/common/b2_timer.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_body.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_body.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_body.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_chain_circle_contact.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_chain_circle_contact.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_chain_circle_contact.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_chain_polygon_contact.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_chain_polygon_contact.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_chain_polygon_contact.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_circle_contact.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_circle_contact.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_circle_contact.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_contact.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_contact.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_contact.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_contact_manager.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_contact_manager.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_contact_manager.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_contact_solver.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_contact_solver.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_contact_solver.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_distance_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_distance_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_distance_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_edge_circle_contact.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_edge_circle_contact.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_edge_circle_contact.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_edge_polygon_contact.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_edge_polygon_contact.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_edge_polygon_contact.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_fixture.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_fixture.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_fixture.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_friction_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_friction_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_friction_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_gear_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_gear_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_gear_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_island.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_island.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_island.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_motor_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_motor_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_motor_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_mouse_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_mouse_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_mouse_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_polygon_circle_contact.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_polygon_circle_contact.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_polygon_circle_contact.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_polygon_contact.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_polygon_contact.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_polygon_contact.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_prismatic_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_prismatic_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_prismatic_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_pulley_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_pulley_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_pulley_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_revolute_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_revolute_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_revolute_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_weld_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_weld_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_weld_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_wheel_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_wheel_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_wheel_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_world.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_world.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_world.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/dynamics/b2_world_callbacks.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_world_callbacks.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/dynamics/b2_world_callbacks.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/src",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/box2d.dir/rope/b2_rope.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/rope/b2_rope.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/rope/b2_rope.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/unit-test",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/unit_test.dir/hello_world.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/unit-test/hello_world.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/unit-test/hello_world.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/unit-test",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/unit_test.dir/collision_test.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/unit-test/collision_test.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/unit-test/collision_test.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/unit-test",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/unit_test.dir/joint_test.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/unit-test/joint_test.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/unit-test/joint_test.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/unit-test",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/unit_test.dir/math_test.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/unit-test/math_test.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/unit-test/math_test.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/unit-test",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/unit_test.dir/world_test.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/unit-test/world_test.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/unit-test/world_test.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glad",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g   -o CMakeFiles/glad.dir/src/gl.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/src/gl.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/src/gl.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glfw",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include  -g   -o CMakeFiles/glfw.dir/src/context.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/context.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/context.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glfw",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include  -g   -o CMakeFiles/glfw.dir/src/init.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/init.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/init.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glfw",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include  -g   -o CMakeFiles/glfw.dir/src/input.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/input.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/input.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glfw",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include  -g   -o CMakeFiles/glfw.dir/src/monitor.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/monitor.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/monitor.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glfw",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include  -g   -o CMakeFiles/glfw.dir/src/vulkan.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/vulkan.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/vulkan.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glfw",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include  -g   -o CMakeFiles/glfw.dir/src/window.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/window.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/window.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glfw",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include  -g   -o CMakeFiles/glfw.dir/src/x11_init.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/x11_init.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/x11_init.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glfw",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include  -g   -o CMakeFiles/glfw.dir/src/x11_monitor.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/x11_monitor.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/x11_monitor.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glfw",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include  -g   -o CMakeFiles/glfw.dir/src/x11_window.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/x11_window.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/x11_window.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glfw",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include  -g   -o CMakeFiles/glfw.dir/src/xkb_unicode.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/xkb_unicode.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/xkb_unicode.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glfw",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include  -g   -o CMakeFiles/glfw.dir/src/posix_time.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/posix_time.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/posix_time.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glfw",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include  -g   -o CMakeFiles/glfw.dir/src/posix_thread.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/posix_thread.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/posix_thread.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glfw",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include  -g   -o CMakeFiles/glfw.dir/src/glx_context.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/glx_context.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/glx_context.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glfw",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include  -g   -o CMakeFiles/glfw.dir/src/egl_context.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/egl_context.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/egl_context.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glfw",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include  -g   -o CMakeFiles/glfw.dir/src/osmesa_context.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/osmesa_context.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/osmesa_context.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/glfw",
+  "command": "/usr/bin/gcc  -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include  -g   -o CMakeFiles/glfw.dir/src/linux_joystick.c.o   -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/linux_joystick.c",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/src/linux_joystick.c"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/imgui",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/..  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=gnu++11 -o CMakeFiles/imgui.dir/imgui.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/imgui.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/imgui.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/imgui",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/..  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=gnu++11 -o CMakeFiles/imgui.dir/imgui_demo.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/imgui_demo.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/imgui_demo.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/imgui",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/..  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=gnu++11 -o CMakeFiles/imgui.dir/imgui_draw.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/imgui_draw.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/imgui_draw.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/imgui",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/..  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=gnu++11 -o CMakeFiles/imgui.dir/imgui_widgets.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/imgui_widgets.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/imgui_widgets.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/extern/sajson",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/..  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/sajson.dir/sajson.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/sajson.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/sajson.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/draw.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/draw.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/draw.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/imgui_impl_glfw.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/imgui_impl_glfw.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/imgui_impl_glfw.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/imgui_impl_opengl3.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/imgui_impl_opengl3.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/imgui_impl_opengl3.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/main.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/main.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/main.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/settings.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/settings.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/settings.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/test.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/test.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/test.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/benchmark_boxes.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/benchmark_boxes.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/benchmark_boxes.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/add_pair.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/add_pair.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/add_pair.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/apply_force.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/apply_force.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/apply_force.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/body_types.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/body_types.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/body_types.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/box_stack.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/box_stack.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/box_stack.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/breakable.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/breakable.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/breakable.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/bridge.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/bridge.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/bridge.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/bullet_test.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/bullet_test.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/bullet_test.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/cantilever.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/cantilever.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/cantilever.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/car.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/car.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/car.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/chain.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/chain.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/chain.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/chain_problem.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/chain_problem.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/chain_problem.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/character_collision.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/character_collision.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/character_collision.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/circle_stack.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/circle_stack.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/circle_stack.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/collision_filtering.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/collision_filtering.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/collision_filtering.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/collision_processing.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/collision_processing.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/collision_processing.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/compound_shapes.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/compound_shapes.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/compound_shapes.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/confined.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/confined.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/confined.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/continuous_test.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/continuous_test.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/continuous_test.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/convex_hull.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/convex_hull.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/convex_hull.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/conveyor_belt.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/conveyor_belt.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/conveyor_belt.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/distance_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/distance_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/distance_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/distance_test.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/distance_test.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/distance_test.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/dominos.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/dominos.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/dominos.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/dump_loader.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/dump_loader.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/dump_loader.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/dynamic_tree.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/dynamic_tree.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/dynamic_tree.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/edge_shapes.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/edge_shapes.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/edge_shapes.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/edge_test.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/edge_test.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/edge_test.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/friction.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/friction.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/friction.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/gear_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/gear_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/gear_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/heavy1.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/heavy1.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/heavy1.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/heavy2.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/heavy2.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/heavy2.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/mobile_balanced.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/mobile_balanced.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/mobile_balanced.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/mobile_unbalanced.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/mobile_unbalanced.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/mobile_unbalanced.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/motor_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/motor_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/motor_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/pinball.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/pinball.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/pinball.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/platformer.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/platformer.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/platformer.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/polygon_collision.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/polygon_collision.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/polygon_collision.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/polygon_shapes.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/polygon_shapes.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/polygon_shapes.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/prismatic_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/prismatic_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/prismatic_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/pulley_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/pulley_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/pulley_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/pyramid.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/pyramid.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/pyramid.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/ray_cast.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/ray_cast.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/ray_cast.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/restitution.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/restitution.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/restitution.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/revolute_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/revolute_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/revolute_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/rope.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/rope.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/rope.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/sensor.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/sensor.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/sensor.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/shape_cast.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/shape_cast.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/shape_cast.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/shape_editing.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/shape_editing.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/shape_editing.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/skier.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/skier.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/skier.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/slider_crank_1.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/slider_crank_1.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/slider_crank_1.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/slider_crank_2.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/slider_crank_2.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/slider_crank_2.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/theo_jansen.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/theo_jansen.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/theo_jansen.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/tiles.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/tiles.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/tiles.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/time_of_impact.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/time_of_impact.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/time_of_impact.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/tumbler.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/tumbler.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/tumbler.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/web.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/web.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/web.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/wheel_joint.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/wheel_joint.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/wheel_joint.cpp"
+},
+{
+  "directory": "/home/caspertillander/cpp-course-autumn-2023/Project/build/libs/box2d/testbed",
+  "command": "/usr/bin/g++   -I/home/caspertillander/cpp-course-autumn-2023/Project/src -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/src/../include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glfw/include -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/imgui/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/sajson/.. -I/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/extern/glad/include  -g -fvisibility=hidden -fvisibility-inlines-hidden   -std=c++11 -o CMakeFiles/testbed.dir/tests/wrecking_ball.cpp.o -c /home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/wrecking_ball.cpp",
+  "file": "/home/caspertillander/cpp-course-autumn-2023/Project/libs/box2d/testbed/tests/wrecking_ball.cpp"
+}
+]

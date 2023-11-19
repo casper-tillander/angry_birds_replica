@@ -238,12 +238,12 @@ libs/box2d/unit-test/clean: libs/box2d/unit-test/CMakeFiles/unit_test.dir/clean
 CMakeFiles/AngryBirds.dir/all: libs/box2d/src/CMakeFiles/box2d.dir/all
 	$(MAKE) -f CMakeFiles/AngryBirds.dir/build.make CMakeFiles/AngryBirds.dir/depend
 	$(MAKE) -f CMakeFiles/AngryBirds.dir/build.make CMakeFiles/AngryBirds.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles --progress-num=1 "Built target AngryBirds"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles --progress-num=1,2 "Built target AngryBirds"
 .PHONY : CMakeFiles/AngryBirds.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/AngryBirds.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 32
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 33
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/AngryBirds.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 0
 .PHONY : CMakeFiles/AngryBirds.dir/rule
@@ -265,7 +265,7 @@ CMakeFiles/AngryBirds.dir/clean:
 libs/box2d/src/CMakeFiles/box2d.dir/all:
 	$(MAKE) -f libs/box2d/src/CMakeFiles/box2d.dir/build.make libs/box2d/src/CMakeFiles/box2d.dir/depend
 	$(MAKE) -f libs/box2d/src/CMakeFiles/box2d.dir/build.make libs/box2d/src/CMakeFiles/box2d.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles --progress-num=2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32 "Built target box2d"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33 "Built target box2d"
 .PHONY : libs/box2d/src/CMakeFiles/box2d.dir/all
 
 # Build rule for subdir invocation for target.
@@ -319,12 +319,12 @@ libs/box2d/unit-test/CMakeFiles/unit_test.dir/clean:
 libs/box2d/extern/glad/CMakeFiles/glad.dir/all:
 	$(MAKE) -f libs/box2d/extern/glad/CMakeFiles/glad.dir/build.make libs/box2d/extern/glad/CMakeFiles/glad.dir/depend
 	$(MAKE) -f libs/box2d/extern/glad/CMakeFiles/glad.dir/build.make libs/box2d/extern/glad/CMakeFiles/glad.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles --progress-num=33,34 "Built target glad"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles --progress-num=34 "Built target glad"
 .PHONY : libs/box2d/extern/glad/CMakeFiles/glad.dir/all
 
 # Build rule for subdir invocation for target.
 libs/box2d/extern/glad/CMakeFiles/glad.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 libs/box2d/extern/glad/CMakeFiles/glad.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 0
 .PHONY : libs/box2d/extern/glad/CMakeFiles/glad.dir/rule
@@ -346,12 +346,12 @@ libs/box2d/extern/glad/CMakeFiles/glad.dir/clean:
 libs/box2d/extern/glfw/CMakeFiles/glfw.dir/all:
 	$(MAKE) -f libs/box2d/extern/glfw/CMakeFiles/glfw.dir/build.make libs/box2d/extern/glfw/CMakeFiles/glfw.dir/depend
 	$(MAKE) -f libs/box2d/extern/glfw/CMakeFiles/glfw.dir/build.make libs/box2d/extern/glfw/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles --progress-num=35,36,37,38,39,40,41,42,43,44,45 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles --progress-num=35,36,37,38,39,40,41,42,43,44,45,46 "Built target glfw"
 .PHONY : libs/box2d/extern/glfw/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
 libs/box2d/extern/glfw/CMakeFiles/glfw.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 libs/box2d/extern/glfw/CMakeFiles/glfw.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 0
 .PHONY : libs/box2d/extern/glfw/CMakeFiles/glfw.dir/rule
@@ -373,12 +373,12 @@ libs/box2d/extern/glfw/CMakeFiles/glfw.dir/clean:
 libs/box2d/extern/imgui/CMakeFiles/imgui.dir/all:
 	$(MAKE) -f libs/box2d/extern/imgui/CMakeFiles/imgui.dir/build.make libs/box2d/extern/imgui/CMakeFiles/imgui.dir/depend
 	$(MAKE) -f libs/box2d/extern/imgui/CMakeFiles/imgui.dir/build.make libs/box2d/extern/imgui/CMakeFiles/imgui.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles --progress-num=46,47,48,49 "Built target imgui"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles --progress-num=47,48,49 "Built target imgui"
 .PHONY : libs/box2d/extern/imgui/CMakeFiles/imgui.dir/all
 
 # Build rule for subdir invocation for target.
 libs/box2d/extern/imgui/CMakeFiles/imgui.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 libs/box2d/extern/imgui/CMakeFiles/imgui.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 0
 .PHONY : libs/box2d/extern/imgui/CMakeFiles/imgui.dir/rule
@@ -400,12 +400,12 @@ libs/box2d/extern/imgui/CMakeFiles/imgui.dir/clean:
 libs/box2d/extern/sajson/CMakeFiles/sajson.dir/all:
 	$(MAKE) -f libs/box2d/extern/sajson/CMakeFiles/sajson.dir/build.make libs/box2d/extern/sajson/CMakeFiles/sajson.dir/depend
 	$(MAKE) -f libs/box2d/extern/sajson/CMakeFiles/sajson.dir/build.make libs/box2d/extern/sajson/CMakeFiles/sajson.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles --progress-num=50 "Built target sajson"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles --progress-num=50,51 "Built target sajson"
 .PHONY : libs/box2d/extern/sajson/CMakeFiles/sajson.dir/all
 
 # Build rule for subdir invocation for target.
 libs/box2d/extern/sajson/CMakeFiles/sajson.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 libs/box2d/extern/sajson/CMakeFiles/sajson.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 0
 .PHONY : libs/box2d/extern/sajson/CMakeFiles/sajson.dir/rule
@@ -431,12 +431,12 @@ libs/box2d/testbed/CMakeFiles/testbed.dir/all: libs/box2d/extern/imgui/CMakeFile
 libs/box2d/testbed/CMakeFiles/testbed.dir/all: libs/box2d/extern/sajson/CMakeFiles/sajson.dir/all
 	$(MAKE) -f libs/box2d/testbed/CMakeFiles/testbed.dir/build.make libs/box2d/testbed/CMakeFiles/testbed.dir/depend
 	$(MAKE) -f libs/box2d/testbed/CMakeFiles/testbed.dir/build.make libs/box2d/testbed/CMakeFiles/testbed.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles --progress-num=51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95 "Built target testbed"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles --progress-num=52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95 "Built target testbed"
 .PHONY : libs/box2d/testbed/CMakeFiles/testbed.dir/all
 
 # Build rule for subdir invocation for target.
 libs/box2d/testbed/CMakeFiles/testbed.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 94
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 93
 	$(MAKE) -f CMakeFiles/Makefile2 libs/box2d/testbed/CMakeFiles/testbed.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/caspertillander/cpp-course-autumn-2023/Project/build/CMakeFiles 0
 .PHONY : libs/box2d/testbed/CMakeFiles/testbed.dir/rule
