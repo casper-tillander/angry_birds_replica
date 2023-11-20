@@ -1,6 +1,6 @@
-#include "pig.hpp"
+#include "box.hpp"
 
-Pig::Pig(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
+Box::Box(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
     // Initialize the sprite
     sprite.setTexture(texture);
 
@@ -16,24 +16,24 @@ Pig::Pig(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
     bodyDef.position = position;
     body = world->CreateBody(&bodyDef);
 
-    // Define and attach a circular fixture
-    b2CircleShape circleShape;
-    circleShape.m_radius = 20.0f; // Radius
+    // Define and attach a box-shaped fixture
+    b2PolygonShape boxShape;
+    boxShape.SetAsBox(20.0f, 20.0f); // Half-width and half-height in meters
 
     b2FixtureDef fixtureDef;
-    fixtureDef.shape = &circleShape;
+    fixtureDef.shape = &boxShape;
     fixtureDef.density = 1.0f;
     fixtureDef.restitution = 0.3f; // Adjust this value as needed
 
     body->CreateFixture(&fixtureDef);
 }
 
-void Pig::update() {
+void Box::update() {
     b2Vec2 pos = body->GetPosition();
     sprite.setPosition(pos.x, pos.y);
     sprite.setRotation(body->GetAngle() * 180 / b2_pi);
 }
 
-void Pig::render(sf::RenderWindow& window) {
+void Box::render(sf::RenderWindow& window) {
     window.draw(sprite);
 }

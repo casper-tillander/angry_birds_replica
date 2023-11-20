@@ -5,6 +5,9 @@
 #include <box2d/box2d.h>
 #include "bird.hpp"
 #include "pig.hpp"
+#include "box.hpp"
+#include "wall.hpp"
+
 
 class Level {
 private:
@@ -15,7 +18,11 @@ private:
     b2World* world;
     Bird* bird;
     Pig* pig;
+    Box* box;
+    Wall* wall;
     sf::Texture pigTexture;
+    sf::Texture boxTexture;
+    sf::Texture wallTexture;
     sf::Event event;
 
 public:

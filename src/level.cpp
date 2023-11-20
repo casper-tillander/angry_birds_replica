@@ -14,16 +14,27 @@ Level::Level(sf::RenderWindow& win, int number, const sf::Texture& birdTex, cons
     backgroundSprite.setScale(scaleX, scaleY);
 
     // Set up bird
-    bird = new Bird(world, birdTex, b2Vec2(100.0f, 400.0f));
+    bird = new Bird(world, birdTex, b2Vec2(100.0f, 500.0f));
 
     // Set up pig
-    pigTexture.loadFromFile("../Pictures/pig.png"); // Replace with your texture path
+    pigTexture.loadFromFile("../Pictures/pig.png");
     pig = new Pig(world, pigTexture, b2Vec2(300.0f, 400.0f));
+
+    // Set up box
+    boxTexture.loadFromFile("../Pictures/box.jpg");
+    box = new Box(world, boxTexture, b2Vec2(400.0f, 400.0f));
+
+    // Set up wall
+    wallTexture.loadFromFile("../Pictures/wall.jpg");
+    wall = new Wall(world, wallTexture, b2Vec2(600.0f, 400.0f));
+
 }
 
 Level::~Level() {
     delete bird;
     delete pig;
+    delete box;
+    delete wall;
     delete world;
 }
 
@@ -43,13 +54,16 @@ void Level::run() {
         world->Step(1.0f/60.0f, 6, 2);
         bird->update();
         pig->update();
-
+        box->update();
+        wall->update();
 
         // Render
         window.clear();
         window.draw(backgroundSprite); // Draw the background first
         bird->render(window);
         pig->render(window);
+        box->render(window);
+        wall->render(window);
         window.display();
     }
 }
@@ -85,10 +99,10 @@ void Level::createBoundary(float x, float y, float width, float height) {
 void Level::createFloor() {
     // Create a static ground body
     b2BodyDef groundBodyDef;
-    groundBodyDef.position.Set(400.0f, 500.0f);
+    groundBodyDef.position.Set(400.0f, 600.0f);
     b2Body* groundBody = world->CreateBody(&groundBodyDef);
 
     b2PolygonShape groundBox;
-    groundBox.SetAsBox(500.0f, 10.0f); // Width and height of the ground
+    groundBox.SetAsBox(1200, 10.0f); // Width and height of the ground
     groundBody->CreateFixture(&groundBox, 0.0f);
 }

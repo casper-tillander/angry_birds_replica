@@ -22,7 +22,7 @@ Bird::Bird(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
 
     // Define and attach a fixture
     b2CircleShape circleShape;
-    circleShape.m_radius = 50.0f; // Adjust as needed
+    circleShape.m_radius = 20.0f; // Adjust as needed
 
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &circleShape;

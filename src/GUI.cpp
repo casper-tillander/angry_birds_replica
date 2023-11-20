@@ -1,20 +1,20 @@
 #include "GUI.hpp"
 
-GUI::GUI() : window(sf::VideoMode(800, 600), "Angry Birds"), currentScreen(Home), currentLevel(nullptr) {
+GUI::GUI() : window(sf::VideoMode(1200, 700), "Angry Birds"), currentScreen(Home), currentLevel(nullptr) {
     initialize();
 }
 
 void GUI::initialize() {
     // Load a font, texture for bird
-    font.loadFromFile("../Fonts/Roboto/Roboto-Black.ttf");
+    font.loadFromFile("../Fonts/Roboto/Roboto-BlackItalic.ttf");
     birdTexture.loadFromFile("../Pictures/bird.png");
 
     // Setup title text
     titleText.setFont(font);
     titleText.setString("Angry Birds");
-    titleText.setCharacterSize(70);
+    titleText.setCharacterSize(90);
     titleText.setFillColor(sf::Color::White);
-    titleText.setPosition(250, 100);
+    titleText.setPosition(400, 100);
 
     // Setup play text
     playText.setFont(font);
@@ -41,16 +41,16 @@ void GUI::initialize() {
     // Setup levels screen text objects
     levelsText.setFont(font);
     levelsText.setString("Levels");
-    levelsText.setCharacterSize(70);
+    levelsText.setCharacterSize(90);
     levelsText.setFillColor(sf::Color::White);
-    levelsText.setPosition(300, 100);
+    levelsText.setPosition(450, 100);
 
     // Setup level buttons
     level1Text.setFont(font);
     level1Text.setString("Level 1");
     level1Text.setCharacterSize(30);
     level1Text.setFillColor(sf::Color::White);
-    level1Text.setPosition(200, 300);
+    level1Text.setPosition(100, 300);
 
     level2Text.setFont(font);
     level2Text.setString("Level 2");
@@ -62,7 +62,7 @@ void GUI::initialize() {
     level3Text.setString("Level 3");
     level3Text.setCharacterSize(30);
     level3Text.setFillColor(sf::Color::White);
-    level3Text.setPosition(500, 300);
+    level3Text.setPosition(600, 300);
 
     // Setup button shape (oval)
     ButtonShape.setRadius(30); // This will be the height of the oval
