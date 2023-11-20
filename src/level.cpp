@@ -1,10 +1,9 @@
 #include "level.hpp"
 
-Level::Level(sf::RenderWindow& win, int number, const sf::Texture& birdTex, const sf::Texture& backTex) 
+Level::Level(sf::RenderWindow& win, int number, const sf::Texture& birdTex, const sf::Texture& backTex, const std::string& levelFile) 
     : levelNumber(number), window(win), world(new b2World(b2Vec2(0.0f, 9.8f))) {
     setupWorld();
 
-    // Set up and scale background
     backgroundTexture = backTex;
     backgroundSprite.setTexture(backgroundTexture);
     sf::Vector2u textureSize = backgroundTexture.getSize();
@@ -13,73 +12,61 @@ Level::Level(sf::RenderWindow& win, int number, const sf::Texture& birdTex, cons
     float scaleY = static_cast<float>(windowSize.y) / textureSize.y;
     backgroundSprite.setScale(scaleX, scaleY);
 
-    // Set up bird
     bird = new Bird(world, birdTex, b2Vec2(100.0f, 500.0f));
 
-    // Set up pig
+    // Load textures for pigs, boxes, and walls
     pigTexture.loadFromFile("../Pictures/pig.png");
-    pig = new Pig(world, pigTexture, b2Vec2(300.0f, 400.0f));
-
-    // Set up box
     boxTexture.loadFromFile("../Pictures/box.jpg");
-    box = new Box(world, boxTexture, b2Vec2(400.0f, 400.0f));
-
-    // Set up wall
     wallTexture.loadFromFile("../Pictures/wall.jpg");
-    wall = new Wall(world, wallTexture, b2Vec2(600.0f, 400.0f));
 
+    loadObjects(levelFile);
 }
 
 Level::~Level() {
     delete bird;
-    delete pig;
-    delete box;
-    delete wall;
+    for (auto pig : pigs) delete pig;
+    for (auto box : boxes) delete box;
+    for (auto wall : walls) delete wall;
     delete world;
 }
 
 void Level::run() {
     while (window.isOpen()) {
-        // Handle events
         sf::Event event;
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
 
-            // Call handleInput for the bird
             bird->handleInput(event, window);
         }
 
-        // Update
         world->Step(1.0f/60.0f, 6, 2);
         bird->update();
-        pig->update();
-        box->update();
-        wall->update();
 
-        // Render
+        for (auto pig : pigs) pig->update();
+        for (auto box : boxes) box->update();
+        for (auto wall : walls) wall->update();
+
         window.clear();
-        window.draw(backgroundSprite); // Draw the background first
+        window.draw(backgroundSprite);
         bird->render(window);
-        pig->render(window);
-        box->render(window);
-        wall->render(window);
+
+        for (auto pig : pigs) pig->render(window);
+        for (auto box : boxes) box->render(window);
+        for (auto wall : walls) wall->render(window);
         window.display();
     }
 }
 
-
 void Level::setupWorld() {
     createFloor();
     createBoundaries();
-    // Additional world setup can be added here
 }
 
 void Level::createBoundaries() {
     float windowWidth = window.getSize().x;
     float windowHeight = window.getSize().y;
 
-    // Create boundaries (left, right, top)
     createBoundary(0, windowHeight / 2, 1, windowHeight); // Left wall
     createBoundary(windowWidth, windowHeight / 2, 1, windowHeight); // Right wall
     createBoundary(windowWidth / 2, 0, windowWidth, 1); // Top wall
@@ -95,14 +82,26 @@ void Level::createBoundary(float x, float y, float width, float height) {
     boundaryBody->CreateFixture(&boundaryBox, 0.0f);
 }
 
-
 void Level::createFloor() {
-    // Create a static ground body
     b2BodyDef groundBodyDef;
     groundBodyDef.position.Set(400.0f, 600.0f);
     b2Body* groundBody = world->CreateBody(&groundBodyDef);
 
     b2PolygonShape groundBox;
-    groundBox.SetAsBox(1200, 10.0f); // Width and height of the ground
+    groundBox.SetAsBox(1200, 10.0f);
     groundBody->CreateFixture(&groundBox, 0.0f);
+}
+
+void Level::loadObjects(const std::string& levelFile) {
+    auto objects = readLevelData(levelFile);
+
+    for (const auto& obj : objects) {
+        if (obj.type == "pig") {
+            pigs.push_back(new Pig(world, pigTexture, b2Vec2(obj.x, obj.y)));
+        } else if (obj.type == "box") {
+            boxes.push_back(new Box(world, boxTexture, b2Vec2(obj.x, obj.y)));
+        } else if (obj.type == "wall") {
+            walls.push_back(new Wall(world, wallTexture, b2Vec2(obj.x, obj.y)));
+        }
+    }
 }

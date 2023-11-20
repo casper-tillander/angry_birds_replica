@@ -103,12 +103,14 @@ void GUI::run() {
 }
 
 void GUI::launchLevel(int levelNumber) {
+    std::string levelFile = "../Levels/level" + std::to_string(levelNumber) + ".csv";
     if (currentLevel != nullptr) {
         delete currentLevel;
     }
-    currentLevel = new Level(window, levelNumber, birdTexture, backgroundTexture);
+    currentLevel = new Level(window, levelNumber, birdTexture, backgroundTexture, levelFile);
     currentScreen = PlayingLevel;
 }
+
 
 
 void GUI::processEvents() {
