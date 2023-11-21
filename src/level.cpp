@@ -1,5 +1,14 @@
 #include "level.hpp"
 
+/**
+ * @brief Constructs a Level object.
+ *
+ * @param win Reference to the game's window.
+ * @param number The level number.
+ * @param birdTex The texture for the bird.
+ * @param backTex The texture for the background.
+ * @param levelFile The path to the level file.
+ */
 Level::Level(sf::RenderWindow& win, int number, const sf::Texture& birdTex, const sf::Texture& backTex, const std::string& levelFile) 
     : levelNumber(number), window(win), world(new b2World(b2Vec2(0.0f, 9.8f))) {
     setupWorld();
@@ -14,14 +23,19 @@ Level::Level(sf::RenderWindow& win, int number, const sf::Texture& birdTex, cons
 
     bird = new Bird(world, birdTex, b2Vec2(100.0f, 500.0f));
 
-    // Load textures for pigs, boxes, and walls
     pigTexture.loadFromFile("../Pictures/pig.png");
     boxTexture.loadFromFile("../Pictures/box.jpg");
     wallTexture.loadFromFile("../Pictures/wall.jpg");
 
     loadObjects(levelFile);
+
+    auto collisionDetection = new CollisionDetection();
+    world->SetContactListener(collisionDetection);
 }
 
+/**
+ * @brief Destroys the Level object.
+ */
 Level::~Level() {
     delete bird;
     for (auto pig : pigs) delete pig;
@@ -30,6 +44,9 @@ Level::~Level() {
     delete world;
 }
 
+/**
+ * @brief Runs the game level.
+ */
 void Level::run() {
     while (window.isOpen()) {
         sf::Event event;
@@ -55,23 +72,47 @@ void Level::run() {
         for (auto box : boxes) box->render(window);
         for (auto wall : walls) wall->render(window);
         window.display();
+
+        for (auto it = pigs.begin(); it != pigs.end();) {
+            if ((*it)->isMarkedForDeletion()) {
+                (*it)->destroyBody();
+                delete *it;
+                it = pigs.erase(it);
+            } else {
+                ++it;
+            }
+        }
     }
 }
 
+/**
+ * @brief Sets up the Box2D world and initializes objects.
+ */
 void Level::setupWorld() {
     createFloor();
     createBoundaries();
 }
 
+/**
+ * @brief Creates boundaries around the level.
+ */
 void Level::createBoundaries() {
     float windowWidth = window.getSize().x;
     float windowHeight = window.getSize().y;
 
-    createBoundary(0, windowHeight / 2, 1, windowHeight); // Left wall
-    createBoundary(windowWidth, windowHeight / 2, 1, windowHeight); // Right wall
-    createBoundary(windowWidth / 2, 0, windowWidth, 1); // Top wall
+    createBoundary(0, windowHeight / 2, 1, windowHeight);
+    createBoundary(windowWidth, windowHeight / 2, 1, windowHeight);
+    createBoundary(windowWidth / 2, 0, windowWidth, 1);
 }
 
+/**
+ * @brief Creates a boundary in the world.
+ *
+ * @param x The x-coordinate of the boundary.
+ * @param y The y-coordinate of the boundary.
+ * @param width The width of the boundary.
+ * @param height The height of the boundary.
+ */
 void Level::createBoundary(float x, float y, float width, float height) {
     b2BodyDef boundaryDef;
     boundaryDef.position.Set(x, y);
@@ -82,6 +123,9 @@ void Level::createBoundary(float x, float y, float width, float height) {
     boundaryBody->CreateFixture(&boundaryBox, 0.0f);
 }
 
+/**
+ * @brief Creates the floor of the level.
+ */
 void Level::createFloor() {
     b2BodyDef groundBodyDef;
     groundBodyDef.position.Set(400.0f, 600.0f);
@@ -92,6 +136,11 @@ void Level::createFloor() {
     groundBody->CreateFixture(&groundBox, 0.0f);
 }
 
+/**
+ * @brief Loads game objects from a level file.
+ *
+ * @param levelFile The path to the level file.
+ */
 void Level::loadObjects(const std::string& levelFile) {
     auto objects = readLevelData(levelFile);
 
@@ -105,3 +154,4 @@ void Level::loadObjects(const std::string& levelFile) {
         }
     }
 }
+

@@ -1,0 +1,129 @@
+\doxysection{Bird Class Reference}
+\hypertarget{class_bird}{}\label{class_bird}\index{Bird@{Bird}}
+
+
+Represents a bird object in the game.  
+
+
+
+
+{\ttfamily \#include $<$bird.\+hpp$>$}
+
+
+
+Collaboration diagram for Bird\+:
+% FIG 0
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bird_a87ec57ddd9952ed0467bd70e86e52067}{Bird}} (b2\+World \texorpdfstring{$\ast$}{*}world, const sf\+::\+Texture \&texture, const b2\+Vec2 \&position)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_bird}{Bird} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bird_ae2718aad2ef1de73e399482ab6068324}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the bird\textquotesingle{}s state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bird_ada5a2f0b945cf85bea7798db4725a3aa}{render}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders the bird on the provided SFML window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bird_ad378b78b7803914962c49cf7d0208fe4}{handle\+Input}} (const sf\+::\+Event \&event, const sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Handles input events for the bird. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bird_a73496d28dde48f328c2cfc275ebcad6f}{launch}} (const b2\+Vec2 \&force)
+\begin{DoxyCompactList}\small\item\em Launches the bird with a specified force. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a bird object in the game. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_bird_a87ec57ddd9952ed0467bd70e86e52067}\label{class_bird_a87ec57ddd9952ed0467bd70e86e52067} 
+\index{Bird@{Bird}!Bird@{Bird}}
+\index{Bird@{Bird}!Bird@{Bird}}
+\doxysubsubsection{\texorpdfstring{Bird()}{Bird()}}
+{\footnotesize\ttfamily Bird\+::\+Bird (\begin{DoxyParamCaption}\item[{b2\+World \texorpdfstring{$\ast$}{*}}]{world,  }\item[{const sf\+::\+Texture \&}]{texture,  }\item[{const b2\+Vec2 \&}]{position }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_bird}{Bird} class. 
+
+Constructs a \doxylink{class_bird}{Bird} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & Pointer to the Box2D world. \\
+\hline
+{\em texture} & The texture for the bird. \\
+\hline
+{\em position} & The initial position of the bird. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Desired width in pixels
+
+\texorpdfstring{$<$}{<} Adjust the size of the bird
+
+\texorpdfstring{$<$}{<} Adjust density of bird
+
+\texorpdfstring{$<$}{<} Adjust this value for bounciness
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_bird_ad378b78b7803914962c49cf7d0208fe4}\label{class_bird_ad378b78b7803914962c49cf7d0208fe4} 
+\index{Bird@{Bird}!handleInput@{handleInput}}
+\index{handleInput@{handleInput}!Bird@{Bird}}
+\doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
+{\footnotesize\ttfamily void Bird\+::handle\+Input (\begin{DoxyParamCaption}\item[{const sf\+::\+Event \&}]{event,  }\item[{const sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Handles input events for the bird. 
+
+Handles input events for the bird, including dragging and launching.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The SFML event to handle. \\
+\hline
+{\em window} & The SFML window associated with the event. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_bird_a73496d28dde48f328c2cfc275ebcad6f}\label{class_bird_a73496d28dde48f328c2cfc275ebcad6f} 
+\index{Bird@{Bird}!launch@{launch}}
+\index{launch@{launch}!Bird@{Bird}}
+\doxysubsubsection{\texorpdfstring{launch()}{launch()}}
+{\footnotesize\ttfamily void Bird\+::launch (\begin{DoxyParamCaption}\item[{const b2\+Vec2 \&}]{force }\end{DoxyParamCaption})}
+
+
+
+Launches the bird with a specified force. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force} & The force vector to apply for the launch. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_bird_ada5a2f0b945cf85bea7798db4725a3aa}\label{class_bird_ada5a2f0b945cf85bea7798db4725a3aa} 
+\index{Bird@{Bird}!render@{render}}
+\index{render@{render}!Bird@{Bird}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Bird\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Renders the bird on the provided SFML window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML window to render on. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_bird_ae2718aad2ef1de73e399482ab6068324}\label{class_bird_ae2718aad2ef1de73e399482ab6068324} 
+\index{Bird@{Bird}!update@{update}}
+\index{update@{update}!Bird@{Bird}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Bird\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the bird\textquotesingle{}s state. 
+
+Updates the bird\textquotesingle{}s position and rotation based on its Box2D body. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/bird.\+hpp\item 
+src/bird.\+cpp\end{DoxyCompactItemize}

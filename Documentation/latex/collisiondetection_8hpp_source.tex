@@ -1,0 +1,23 @@
+\doxysection{collisiondetection.\+hpp}
+\hypertarget{collisiondetection_8hpp_source}{}\label{collisiondetection_8hpp_source}\index{src/collisiondetection.hpp@{src/collisiondetection.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ COLLISIONDETECTION\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ COLLISIONDETECTION\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <box2d/box2d.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}pig.hpp"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_collision_detection}{CollisionDetection}}\ :\ \textcolor{keyword}{public}\ b2ContactListener\ \{}
+\DoxyCodeLine{00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_collision_detection_af49a49d278ff3fbe3b2e6285ae879d8d}{BeginContact}}(b2Contact*\ contact)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{float}\ CalculateImpactDamage(b2Contact*\ contact);\ \textcolor{comment}{//\ Declare\ this\ method}}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COLLISIONDETECTION\_HPP}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+
+\end{DoxyCode}
