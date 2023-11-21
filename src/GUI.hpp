@@ -32,6 +32,7 @@ private:
     sf::Text level3Text; ///< The button for Level 3.
     sf::Font font; ///< The font used for text.
     sf::Texture backgroundTexture; ///< The background texture.
+    sf::Texture levelBackgroundTexture; ///< The background texture for the levels-screen.
     sf::Sprite backgroundSprite; ///< The background sprite.
     sf::FloatRect buttonBounds; ///< The bounding rectangle for the button.
     sf::Texture birdTexture; ///< The texture for the bird.
@@ -81,6 +82,14 @@ private:
      * @param levelNumber The number of the level to launch.
      */
     void launchLevel(int levelNumber);
+
+
+    /**
+     * @brief Centers the given text within a button.
+     *
+     * @param text A reference to the sf::Text object that needs to be centered.
+     */
+    void centerTextInButton(sf::Text &text);
 };
 
 #endif // GUI_HPP
