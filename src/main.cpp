@@ -23,6 +23,8 @@ KODNING:
 
 TODO: Fixa fysiken! Birdie goes brrrrrr när den krockar
 
+TODO: Fixa tiden
+
 TODO: Implementera ett poängsystem, kanske med stjärnor? Gör så att nivån slutar då alla grisar är döda eller då antalet fåglar tagit slut.
 
 TODO: Ge användaren mer än en fågel per nivå. Skapa en ny när den föregående har stannat?

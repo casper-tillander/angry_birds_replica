@@ -66,6 +66,8 @@ void Level::run() {
 
         window.clear();
         window.draw(backgroundSprite);
+        window.setFramerateLimit(130); // Sets the framerate limit 
+        // window.setVerticalSyncEnabled(true); // Not supported??
         bird->render(window);
 
         for (auto pig : pigs) pig->render(window);
