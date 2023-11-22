@@ -1,26 +1,31 @@
 #include "pig.hpp"
 
+/**
+ * @brief Constructs a Pig object.
+ *
+ * @param world Pointer to the Box2D world.
+ * @param texture The texture for the pig.
+ * @param position The initial position of the pig.
+ */
+
 Pig::Pig(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
     
-    sprite.setTexture(texture);
-
-    sf::Vector2u textureSize = texture.getSize();
-    float desiredWidth = 40.0f; ///< Desired width in pixels
-    float scale = desiredWidth / textureSize.x;
-    sprite.setScale(scale, scale);
+    pigShape.setRadius(20.0f); ///< Adjust the size of the pig
+    pigShape.setTexture(&texture);
+    pigShape.setOrigin(pigShape.getRadius(), pigShape.getRadius());
 
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
     bodyDef.position = position;
+    bodyDef.angularDamping = 1.0f; ///< Makes the pig stop spinning after some time
+    bodyDef.fixedRotation = false; ///< Set to 'true' if the pig shouldn't spin
     body = world->CreateBody(&bodyDef);
 
     b2CircleShape circleShape;
-    circleShape.m_radius = 20.0f; ///< Adjust the size of the pig
+    circleShape.m_radius = 10.0f; ///< About 5 times smaller than the radius of pigShape
 
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &circleShape;
-    // bodyDef.angularDamping = 3.0f; ///< Makes the pig stop spinning after some time
-    bodyDef.fixedRotation = true; ///< Set to 'true' if the pig shouldn't spin
     fixtureDef.density = 1.0f; ///< Adjust density of pig
     fixtureDef.restitution = 0.3f; ///< Adjust this value for bounciness
     body->CreateFixture(&fixtureDef);
@@ -39,8 +44,8 @@ void Pig::update() {
     if (!isAlive) return;
 
     b2Vec2 pos = body->GetPosition();
-    sprite.setPosition(pos.x, pos.y);
-    sprite.setRotation(body->GetAngle() * 180 / b2_pi);
+    pigShape.setPosition(pos.x, pos.y);
+    pigShape.setRotation(body->GetAngle() * 180 / b2_pi);
 }
 
 /**
@@ -50,7 +55,7 @@ void Pig::update() {
  */
 void Pig::render(sf::RenderWindow& window) {
     if (!isAlive) return;
-    window.draw(sprite);
+    window.draw(pigShape);
 }
 
 /**

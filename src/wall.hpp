@@ -12,7 +12,7 @@
  */
 class Wall {
 private:
-    sf::Sprite sprite; ///< The sprite representing the wall.
+    sf::RectangleShape wallShape; ///< The wall's shape for rendering.
     b2Body* body; ///< The Box2D body associated with the wall.
 
 public:

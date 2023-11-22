@@ -10,7 +10,7 @@
  */
 class Bird {
 private:
-    sf::Sprite sprite; ///< The bird's sprite.
+    sf::CircleShape birdShape; ///< The bird's shape for both rendering and physics.
     b2Body* body; ///< The bird's Box2D body.
     bool isLaunched; ///< Indicates whether the bird has been launched.
     bool isDragging; ///< Indicates whether the bird is being dragged.

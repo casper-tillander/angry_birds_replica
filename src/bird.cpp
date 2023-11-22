@@ -7,26 +7,25 @@
  * @param texture The texture for the bird.
  * @param position The initial position of the bird.
  */
+
 Bird::Bird(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
     isLaunched = false;
 
-    sprite.setTexture(texture);
+    birdShape.setRadius(25.0f); ///< Adjust the size of the bird
+    birdShape.setTexture(&texture);
+    birdShape.setOrigin(birdShape.getRadius(), birdShape.getRadius());
 
-    sf::Vector2u textureSize = texture.getSize();
-    float desiredWidth = 50.0f; ///< Desired width in pixels
-    float scale = desiredWidth / textureSize.x;
-    sprite.setScale(scale, scale);
 
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
     bodyDef.position = position;
     bodyDef.gravityScale = 0.0f;
-    // bodyDef.angularDamping = 3.0f; ///< Makes the bird stop spinning after some time
-    bodyDef.fixedRotation = true; ///< Set to 'true' if the bird shouldn't spin
+    bodyDef.angularDamping = 1.0f; ///< Makes the bird stop spinning after some time
+    bodyDef.fixedRotation = false; ///< Set to 'true' if the bird shouldn't spin
     body = world->CreateBody(&bodyDef);
 
     b2CircleShape circleShape;
-    circleShape.m_radius = 20.0f; ///< Adjust the size of the bird
+    circleShape.m_radius = 10.0f; ///< About 2 times smaller than the radius of birdShape
 
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &circleShape;
@@ -43,11 +42,10 @@ Bird::Bird(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
  */
 void Bird::update() {
     b2Vec2 pos = body->GetPosition();
-    b2Vec2 vel = body->GetLinearVelocity();
-
-    sprite.setPosition(pos.x, pos.y);
-    sprite.setRotation(body->GetAngle() * 180 / b2_pi);
+    birdShape.setPosition(pos.x, pos.y);
+    birdShape.setRotation(body->GetAngle() * 180 / b2_pi);
 }
+
 
 /**
  * @brief Renders the bird on the provided SFML window.
@@ -55,7 +53,7 @@ void Bird::update() {
  * @param window The SFML window to render on.
  */
 void Bird::render(sf::RenderWindow& window) {
-    window.draw(sprite);
+    window.draw(birdShape);
 }
 
 /**
@@ -67,7 +65,7 @@ void Bird::render(sf::RenderWindow& window) {
 void Bird::handleInput(const sf::Event& event, const sf::RenderWindow& window) {
     if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
         sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
-        if (sprite.getGlobalBounds().contains(mousePos) && !isLaunched) {
+        if (birdShape.getGlobalBounds().contains(mousePos) && !isLaunched) {
             isDragging = true;
             initialClickPosition = mousePos;
         }

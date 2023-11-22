@@ -23,7 +23,7 @@ KODNING:
 
 TODO: Fixa fysiken! Birdie goes brrrrrr när den krockar
 
-TODO: Fixa tiden
+TODO: Fixa tiden (Casper - kanske fixat?)
 
 TODO: Implementera ett poängsystem, kanske med stjärnor? Gör så att nivån slutar då alla grisar är döda eller då antalet fåglar tagit slut.
 

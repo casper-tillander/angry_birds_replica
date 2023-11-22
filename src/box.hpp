@@ -10,7 +10,7 @@
  */
 class Box {
 private:
-    sf::Sprite sprite; ///< The box's sprite.
+    sf::RectangleShape boxShape; ///< The box's shape for rendering.
     b2Body* body; ///< The box's Box2D body.
 
 public:
