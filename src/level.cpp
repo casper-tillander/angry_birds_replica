@@ -1,5 +1,4 @@
 #include "level.hpp"
-#include <iostream>
 
 /**
  * @brief Constructs a Level object.
@@ -51,18 +50,19 @@ Level::~Level() {
  * @brief Runs the game level.
  */
 void Level::run() {
-    while (window.isOpen()) {
+    bool shouldExit = false;
+    while (window.isOpen() && !shouldExit) {
         sf::Event event;
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
 
-                    if (currentBirdIndex < birds.size()) {
-            Bird* currentBird = birds[currentBirdIndex];
-            currentBird->handleInput(event, window);
+                if (currentBirdIndex < birds.size()) {
+                    Bird* currentBird = birds[currentBirdIndex];
+                    currentBird->handleInput(event, window);
 
-            if (hasBirdStopped()) {
-                nextBird(birdTexture);
+                if (hasBirdStopped()) {
+                    nextBird(birdTexture);
             }
         }
         }
@@ -98,7 +98,12 @@ void Level::run() {
             }
 
         if (isLevelComplete()) {
-            // End the level
+            shouldExit = true;
+            break;
+        }
+
+        if (isGameOver()) {
+            shouldExit = true;
             break;
         }
         }
@@ -194,7 +199,7 @@ void Level::nextBird(const sf::Texture& birdTex) {
 }
 
 
-bool Level::hasBirdStopped() {
+bool Level::hasBirdStopped() const {
     if (birds.empty() || currentBirdIndex >= birds.size()) {
         return false;
     }
@@ -209,9 +214,24 @@ bool Level::hasBirdStopped() {
     return std::abs(velocity.x) < velocityThreshold && std::abs(velocity.y) < velocityThreshold;
 }
 
-bool Level::isLevelComplete() {
+bool Level::isLevelComplete() const {
     if (pigs.empty() || (currentBirdIndex == totalBirds - 1 && hasBirdStopped())) {
         return true;
+
     }
     return false;
+}
+
+bool Level::isGameOver() const {
+    return areAllBirdsUsed() && !areAllPigsDestroyed();
+}
+
+bool Level::areAllPigsDestroyed() const {
+    return std::all_of(pigs.begin(), pigs.end(), [](const Pig* pig) {
+        return !pig->alive();
+    });
+}
+
+bool Level::areAllBirdsUsed() const {
+    return currentBirdIndex >= totalBirds - 1 && hasBirdStopped();
 }

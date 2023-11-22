@@ -91,8 +91,11 @@ public:
 
     void initializeBirds(const sf::Texture& birdTex);
     void nextBird(const sf::Texture& birdTex);
-    bool hasBirdStopped();
-    bool isLevelComplete();
+    bool hasBirdStopped() const;
+    bool isLevelComplete() const;
+    bool isGameOver() const;
+    bool areAllPigsDestroyed() const;
+    bool areAllBirdsUsed() const;
 };
 
 #endif // LEVEL_HPP

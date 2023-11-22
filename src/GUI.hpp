@@ -30,16 +30,23 @@ private:
     sf::Text level1Text; ///< The button for Level 1.
     sf::Text level2Text; ///< The button for Level 2.
     sf::Text level3Text; ///< The button for Level 3.
+    sf::Text tryAgainText; ///< The button for trying again.
+    sf::Text returnToLevelsText; ///< The button for returning to levels.
     sf::Font font; ///< The font used for text.
     sf::Texture backgroundTexture; ///< The background texture.
     sf::Texture levelBackgroundTexture; ///< The background texture for the levels-screen.
+
+    sf::Texture gameOverBackgroundTexture; ///< The background texture for the game over screen.
+    sf::Texture levelCompleteBackgroundTexture; ///< The background texture for the level complete screen.
+
     sf::Sprite backgroundSprite; ///< The background sprite.
     sf::FloatRect buttonBounds; ///< The bounding rectangle for the button.
     sf::Texture birdTexture; ///< The texture for the bird.
 
     Level* currentLevel;  ///< Pointer to the current level.
-    enum Screen { Home, Levels, PlayingLevel }; ///< Different game screens.
+    enum Screen { Home, Levels, PlayingLevel, GameOver, LevelCompleted }; ///< Different game screens.
     Screen currentScreen; ///< Variable to hold the current screen state.
+    int levelNumber; ///< Variable to hold the current level number.
 
     /**
      * @brief Initializes the GUI components.
@@ -89,7 +96,11 @@ private:
      *
      * @param text A reference to the sf::Text object that needs to be centered.
      */
-    void centerTextInButton(sf::Text &text);
+
+    void drawGameOverScreen();
+    void drawLevelCompletedScreen();
+    void updateButtonHoverEffect(sf::Text& buttonText, sf::Vector2f mousePos);
+    void checkAndUpdateGameState();
 };
 
 #endif // GUI_HPP

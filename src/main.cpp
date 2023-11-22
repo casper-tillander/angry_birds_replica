@@ -14,14 +14,14 @@ int main(){
 /*
 INTE KODNING:
 
-TODO: Photoshoppa en slangbella till alla level-bilder, sök samtidigt fram bättre bakgrundsbilder.
+TODO: Photoshoppa en slangbella till alla level-bilder, sök samtidigt fram bättre bakgrundsbilder. (Matilda)
 
-TODO: Gör CSV filerna, alltså designa nivåerna.
+TODO: Gör CSV filerna, alltså designa nivåerna. (Matilda?)
 
 
 KODNING:
 
-Most Important TODO: Fixa buggen med att fåglarna rör på sig när dom är rendered in!
+DONE: Fixa buggen med att fåglarna rör på sig när dom är rendered in (Casper)
 
 DONE: Fixa fysiken! Birdie goes brrrrrr när den krockar (Casper)
 
@@ -29,7 +29,11 @@ DONE: Fixa tiden (Casper - fixat, fungerade inte eftersom "Setting vertical sync
 
 DONE: Ge användaren mer än en fågel per nivå. Skapa en ny när den föregående har stannat? (Casper)
 
-TODO: Implementera ett poängsystem, kanske med stjärnor? Gör så att nivån slutar då alla grisar är döda eller då antalet fåglar tagit slut.
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TODO:  Gör så att nivån slutar då alla grisar är döda eller då antalet fåglar tagit slut. Gör en GUI för detta. (Casper)
+
+TODO: Implementera ett poängsystem, kanske med stjärnor?
 
 TODO: Implementera bättre damage-logik för grisarna (nu tar dom alltid 10/100 damage för varje kollision).
 

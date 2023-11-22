@@ -16,15 +16,8 @@ void GUI::initialize() {
     birdTexture.loadFromFile("../Pictures/bird.png");
     backgroundTexture.loadFromFile("../Backgrounds/homescreen.png");
     levelBackgroundTexture.loadFromFile("../Backgrounds/levels.png");
-
-    // Configure title text
-    /*
-    titleText.setFont(font);
-    titleText.setString("Angry Birds");
-    titleText.setCharacterSize(130);
-    titleText.setFillColor(sf::Color::White);
-    titleText.setPosition(270, 100);
-    */
+    gameOverBackgroundTexture.loadFromFile("../Backgrounds/gameover.png");
+    levelCompleteBackgroundTexture.loadFromFile("../Backgrounds/levelcomplete.png");
 
     // Configure play button text
     playText.setFont(font);
@@ -42,15 +35,7 @@ void GUI::initialize() {
     float scaleY = static_cast<float>(windowSize.y) / textureSize.y;
     backgroundSprite.setScale(scaleX, scaleY);
 
-    // Configure levels screen UI elements
-    /*
-    levelsText.setFont(font);
-    levelsText.setString("Levels");
-    levelsText.setCharacterSize(130);
-    levelsText.setFillColor(sf::Color::White);
-    levelsText.setPosition(450, 100);
-    */
-
+    // Styling and placement for buttons
     level1Text.setFont(font);
     level1Text.setString("Level 1");
     level1Text.setCharacterSize(30);
@@ -69,6 +54,19 @@ void GUI::initialize() {
     level3Text.setFillColor(sf::Color::White);
     level3Text.setOrigin(level3Text.getLocalBounds().width / 2, level3Text.getLocalBounds().height / 1.3);
 
+    tryAgainText.setFont(font);
+    tryAgainText.setString("Try again");
+    tryAgainText.setCharacterSize(30);
+    tryAgainText.setFillColor(sf::Color::White);
+    tryAgainText.setOrigin(level3Text.getLocalBounds().width / 1.4, level3Text.getLocalBounds().height / 1.3);
+    
+    
+    returnToLevelsText.setFont(font);
+    returnToLevelsText.setString("To levels");
+    returnToLevelsText.setCharacterSize(30);
+    returnToLevelsText.setFillColor(sf::Color::White);
+    returnToLevelsText.setOrigin(level3Text.getLocalBounds().width / 1.4, level3Text.getLocalBounds().height / 1.3);
+
     // Configure circular button shape
     ButtonShape.setRadius(30);
     ButtonShape.setScale(3, 1);
@@ -85,12 +83,22 @@ void GUI::initialize() {
 void GUI::run() {
     while (window.isOpen()) {
         processEvents();
-
-        if (currentScreen == PlayingLevel) {
-            currentLevel->run();
-        }
-
+        update();
         render();
+    }
+}
+
+/**
+ * @brief Updates the game state.
+ */
+void GUI::update() {
+    if (currentScreen == PlayingLevel) {
+        currentLevel->run();
+    if (currentLevel->isGameOver()) {
+        currentScreen = GameOver;
+    } else if (currentLevel->isLevelComplete()) {
+        currentScreen = LevelCompleted;
+    }
     }
 }
 
@@ -100,6 +108,7 @@ void GUI::run() {
  * @param levelNumber The number of the level to launch.
  */
 void GUI::launchLevel(int levelNumber) {
+    this->levelNumber = levelNumber;
     std::string backgroundFile = "../Backgrounds/background" + std::to_string(levelNumber) + ".jpg";
 
     backgroundTexture.loadFromFile(backgroundFile);
@@ -112,6 +121,7 @@ void GUI::launchLevel(int levelNumber) {
     }
     currentLevel = new Level(window, levelNumber, backgroundTexture, levelFile);
     currentScreen = PlayingLevel;
+
 }
 
 
@@ -124,99 +134,101 @@ void GUI::processEvents() {
         if (event.type == sf::Event::Closed) {
             window.close();
         }
-        if (event.type == sf::Event::MouseButtonPressed) {
-            if (event.mouseButton.button == sf::Mouse::Left) {
-                if (currentScreen == Home) {
-                    // Check if the mouse is over the "Play" button
-                    if (playText.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) {
+
+        if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
+            sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+            switch (currentScreen) {
+                case Home:
+                    if (playText.getGlobalBounds().contains(mousePos)) {
                         currentScreen = Levels;
                     }
-                }
-                if (currentScreen == Levels) {
-                    // Check if the mouse is over a level button
-                    if (level1Text.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) {
+                    break;
+                case Levels:
+                    if (level1Text.getGlobalBounds().contains(mousePos)) {
                         launchLevel(1);
-                    }
-                    if (level2Text.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) {
+                    } else if (level2Text.getGlobalBounds().contains(mousePos)) {
                         launchLevel(2);
-                    }
-                    if (level3Text.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) {
+                    } else if (level3Text.getGlobalBounds().contains(mousePos)) {
                         launchLevel(3);
                     }
-                }
+                    break;
+                case GameOver:
+                case LevelCompleted:
+                    if (tryAgainText.getGlobalBounds().contains(mousePos)) {
+                        if (currentLevel != nullptr) {
+                            launchLevel(levelNumber);
+                        }
+                    } else if (returnToLevelsText.getGlobalBounds().contains(mousePos)) {
+                        currentScreen = Levels;
+                    }
+                    break;
             }
         }
+
         if (event.type == sf::Event::MouseMoved) {
-            if (currentScreen == Home) {
-                // Checks if the mouse is over the "Play" button and applys a hover effect
-                if (playText.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) {
-                    playText.setCharacterSize(35);
-                    ButtonShape.setFillColor(sf::Color(143, 188, 219));
-                } else {
-                    playText.setCharacterSize(30);
-                    ButtonShape.setFillColor(sf::Color(173, 216, 230));
-                }
-            }
-            if (currentScreen == Levels) {
-                // Checks if the mouse is over a level button and applys a hover effect
-                if (level1Text.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) {
-                    level1Text.setCharacterSize(35);
-                    ButtonShape.setFillColor(sf::Color(143, 188, 219));
-                } else {
-                    level1Text.setCharacterSize(30);
-                }
-                if (level2Text.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) {
-                    level2Text.setCharacterSize(35);
-                    ButtonShape.setFillColor(sf::Color(143, 188, 219));
-                } else {
-                    level2Text.setCharacterSize(30);
-                }
-                if (level3Text.getGlobalBounds().contains(window.mapPixelToCoords(sf::Mouse::getPosition(window)))) {
-                    level3Text.setCharacterSize(35);
-                    ButtonShape.setFillColor(sf::Color(143, 188, 219));
-                } else {
-                    level3Text.setCharacterSize(30);
-                }
+            sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+            switch (currentScreen) {
+                case Home:
+                    updateButtonHoverEffect(playText, mousePos);
+                    break;
+                case Levels:
+                    updateButtonHoverEffect(level1Text, mousePos);
+                    updateButtonHoverEffect(level2Text, mousePos);
+                    updateButtonHoverEffect(level3Text, mousePos);
+                    break;
+                case GameOver:
+                case LevelCompleted:
+                    updateButtonHoverEffect(tryAgainText, mousePos);
+                    updateButtonHoverEffect(returnToLevelsText, mousePos);
+                    break;
             }
         }
     }
 }
 
-
-
-/**
- * @brief Updates the game state.
- */
-void GUI::update() {
-    // Nothing implemented that needs to be updated.
+void GUI::updateButtonHoverEffect(sf::Text& buttonText, sf::Vector2f mousePos) {
+    if (buttonText.getGlobalBounds().contains(mousePos)) {
+        buttonText.setCharacterSize(35);
+        ButtonShape.setFillColor(sf::Color(143, 188, 219));
+    } else {
+        buttonText.setCharacterSize(30);
+        ButtonShape.setFillColor(sf::Color(173, 216, 230));
+    }
 }
+
 
 /**
  * @brief Renders the game's GUI components.
  */
 void GUI::render() {
-
     window.clear();
     window.draw(backgroundSprite);
-    window.draw(backgroundSprite);
-    if (currentScreen == Home) {
-        drawHomeScreen();
-    } else if (currentScreen == Levels) {
-        drawLevelsScreen();
-    }
-    window.display();
-}
 
-void GUI::centerTextInButton(sf::Text &text) {
-    text.setOrigin(text.getLocalBounds().width / 2, text.getLocalBounds().height / 2);
+    switch (currentScreen) {
+        case Home:
+            drawHomeScreen();
+            break;
+        case Levels:
+            drawLevelsScreen();
+            break;
+        case PlayingLevel:
+            // Render level gameplay
+            break;
+        case GameOver:
+            drawGameOverScreen();
+            break;
+        case LevelCompleted:
+            drawLevelCompletedScreen();
+            break;
+    }
+
+    window.display();
 }
 
 /**
  * @brief Draws the home screen UI components.
  */
 void GUI::drawHomeScreen() {
-    // window.draw(titleText);
-
     ButtonShape.setPosition(580, 400);
     window.draw(ButtonShape);
     playText.setPosition(ButtonShape.getPosition());
@@ -227,8 +239,6 @@ void GUI::drawHomeScreen() {
  * @brief Draws the levels screen UI components.
  */
 void GUI::drawLevelsScreen() {
-    // window.draw(levelsText);
-
     backgroundSprite.setTexture(levelBackgroundTexture);
     sf::Vector2u textureSize = levelBackgroundTexture.getSize();
     sf::Vector2u windowSize = window.getSize();
@@ -252,5 +262,28 @@ void GUI::drawLevelsScreen() {
     window.draw(level3Text);
 }
 
+
+void GUI::drawGameOverScreen() {
+    backgroundSprite.setTexture(gameOverBackgroundTexture);
+
+    ButtonShape.setPosition(580, 500);
+    window.draw(ButtonShape);
+    tryAgainText.setPosition(ButtonShape.getPosition());
+    window.draw(tryAgainText);
+
+    ButtonShape.setPosition(580, 400);
+    window.draw(ButtonShape);
+    returnToLevelsText.setPosition(ButtonShape.getPosition());
+    window.draw(returnToLevelsText);
+}
+
+void GUI::drawLevelCompletedScreen() {
+    backgroundSprite.setTexture(levelCompleteBackgroundTexture);
+
+    ButtonShape.setPosition(560, 400);
+    window.draw(ButtonShape);
+    returnToLevelsText.setPosition(ButtonShape.getPosition());
+    window.draw(returnToLevelsText);
+}
 
 
