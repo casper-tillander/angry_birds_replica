@@ -105,5 +105,8 @@ bool Bird::isBirdLaunched() const {
     return isLaunched;
 }
 
+b2Body* Bird::getBody() const {
+    return body;
+}
 
 

@@ -1,4 +1,5 @@
 #include "level.hpp"
+#include <iostream>
 
 /**
  * @brief Constructs a Level object.
@@ -9,7 +10,7 @@
  * @param backTex The texture for the background.
  * @param levelFile The path to the level file.
  */
-Level::Level(sf::RenderWindow& win, int number, const sf::Texture& birdTex, const sf::Texture& backTex, const std::string& levelFile) 
+Level::Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, const std::string& levelFile) 
     : levelNumber(number), window(win), world(new b2World(b2Vec2(0.0f, 9.8f))) {
     setupWorld();
 
@@ -21,7 +22,9 @@ Level::Level(sf::RenderWindow& win, int number, const sf::Texture& birdTex, cons
     float scaleY = static_cast<float>(windowSize.y) / textureSize.y;
     backgroundSprite.setScale(scaleX, scaleY);
 
-    initializeBirds(birdTex);
+
+    birdTexture.loadFromFile("../Pictures/bird.png");
+    initializeBirds(birdTexture);
 
     pigTexture.loadFromFile("../Pictures/pig.png");
     boxTexture.loadFromFile("../Pictures/box.jpg");
@@ -59,7 +62,7 @@ void Level::run() {
             currentBird->handleInput(event, window);
 
             if (hasBirdStopped()) {
-                nextBird();
+                nextBird(birdTexture);
             }
         }
         }
@@ -74,7 +77,7 @@ void Level::run() {
 
         window.clear();
         window.draw(backgroundSprite);
-        window.setFramerateLimit(130); // Sets the framerate limit 
+        window.setFramerateLimit(250); // Sets the framerate limit 
         // window.setVerticalSyncEnabled(true); // Not supported??
 
         for (int i = 0; i <= currentBirdIndex; ++i) {
@@ -174,16 +177,22 @@ void Level::loadObjects(const std::string& levelFile) {
 
 
 void Level::initializeBirds(const sf::Texture& birdTex) {
-    for (int i = 0; i < totalBirds; ++i) {
-        birds.push_back(new Bird(world, birdTex, b2Vec2(100.0f, 500.0f)));
+    if (totalBirds > 0) {
+        Bird* newBird = new Bird(world, birdTex, b2Vec2(100.0f, 500.0f));
+        birds.push_back(newBird);
     }
 }
 
-void Level::nextBird() {
-    if (currentBirdIndex < birds.size() - 1) {
+
+void Level::nextBird(const sf::Texture& birdTex) {
+    if (currentBirdIndex < totalBirds - 1) {
         currentBirdIndex++;
+
+        Bird* newBird = new Bird(world, birdTexture, b2Vec2(100.0f, 500.0f));
+        birds.push_back(newBird);
     }
 }
+
 
 bool Level::hasBirdStopped() {
     if (birds.empty() || currentBirdIndex >= birds.size()) {
@@ -195,7 +204,7 @@ bool Level::hasBirdStopped() {
         return false;
     }
 
-    const float velocityThreshold = 1.0f;
+    const float velocityThreshold = 10.0f;
     b2Vec2 velocity = currentBird->getVelocity();
     return std::abs(velocity.x) < velocityThreshold && std::abs(velocity.y) < velocityThreshold;
 }

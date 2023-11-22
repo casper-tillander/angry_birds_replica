@@ -55,6 +55,8 @@ public:
 
     b2Vec2 getVelocity() const;
     bool isBirdLaunched() const;
+    b2Body* getBody() const;
+
 };
 
 #endif // BIRD_HPP

@@ -110,7 +110,7 @@ void GUI::launchLevel(int levelNumber) {
     if (currentLevel != nullptr) {
         delete currentLevel;
     }
-    currentLevel = new Level(window, levelNumber, birdTexture, backgroundTexture, levelFile);
+    currentLevel = new Level(window, levelNumber, backgroundTexture, levelFile);
     currentScreen = PlayingLevel;
 }
 

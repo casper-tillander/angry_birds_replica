@@ -31,6 +31,7 @@ private:
     sf::Texture boxTexture; ///< The texture for boxes.
     sf::Texture wallTexture; ///< The texture for walls.
     std::vector<Bird*> birds; // Vector of bird objects.
+    sf::Texture birdTexture; ///< The texture for the bird.
 
 
 
@@ -44,7 +45,7 @@ public:
      * @param backTex The texture for the background.
      * @param levelFile The path to the level file.
      */
-    Level(sf::RenderWindow& win, int number, const sf::Texture& birdTex, const sf::Texture& backTex, const std::string& levelFile);
+    Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, const std::string& levelFile);
 
     /**
      * @brief Destroys the Level object.
@@ -89,7 +90,7 @@ public:
     void loadObjects(const std::string& levelFile);
 
     void initializeBirds(const sf::Texture& birdTex);
-    void nextBird();
+    void nextBird(const sf::Texture& birdTex);
     bool hasBirdStopped();
     bool isLevelComplete();
 };

@@ -21,6 +21,8 @@ TODO: Gör CSV filerna, alltså designa nivåerna.
 
 KODNING:
 
+Most Important TODO: Fixa buggen med att fåglarna rör på sig när dom är rendered in!
+
 DONE: Fixa fysiken! Birdie goes brrrrrr när den krockar (Casper)
 
 DONE: Fixa tiden (Casper - fixat, fungerade inte eftersom "Setting vertical sync not supported". Fixade genom att setta en maximal framerate.)
