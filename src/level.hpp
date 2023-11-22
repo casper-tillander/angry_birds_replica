@@ -18,17 +18,21 @@
 class Level {
 private:
     int levelNumber; ///< The level number.
+    int currentBirdIndex = 0; // Index of the current bird.
+    int totalBirds = 3; // Total birds per level.
     sf::RenderWindow& window; ///< Reference to the game's window.
     sf::Texture backgroundTexture; ///< The background texture.
     sf::Sprite backgroundSprite; ///< The background sprite.
     b2World* world; ///< Pointer to the Box2D world.
-    Bird* bird; ///< Pointer to the bird object.
     std::vector<Pig*> pigs; ///< Vector of pig objects.
     std::vector<Box*> boxes; ///< Vector of box objects.
     std::vector<Wall*> walls; ///< Vector of wall objects.
     sf::Texture pigTexture; ///< The texture for pigs.
     sf::Texture boxTexture; ///< The texture for boxes.
     sf::Texture wallTexture; ///< The texture for walls.
+    std::vector<Bird*> birds; // Vector of bird objects.
+
+
 
 public:
     /**
@@ -83,6 +87,11 @@ public:
      * @param levelFile The path to the level file.
      */
     void loadObjects(const std::string& levelFile);
+
+    void initializeBirds(const sf::Texture& birdTex);
+    void nextBird();
+    bool hasBirdStopped();
+    bool isLevelComplete();
 };
 
 #endif // LEVEL_HPP

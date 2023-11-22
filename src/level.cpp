@@ -21,7 +21,7 @@ Level::Level(sf::RenderWindow& win, int number, const sf::Texture& birdTex, cons
     float scaleY = static_cast<float>(windowSize.y) / textureSize.y;
     backgroundSprite.setScale(scaleX, scaleY);
 
-    bird = new Bird(world, birdTex, b2Vec2(100.0f, 500.0f));
+    initializeBirds(birdTex);
 
     pigTexture.loadFromFile("../Pictures/pig.png");
     boxTexture.loadFromFile("../Pictures/box.jpg");
@@ -37,7 +37,7 @@ Level::Level(sf::RenderWindow& win, int number, const sf::Texture& birdTex, cons
  * @brief Destroys the Level object.
  */
 Level::~Level() {
-    delete bird;
+    for (auto bird : birds) delete bird;
     for (auto pig : pigs) delete pig;
     for (auto box : boxes) delete box;
     for (auto wall : walls) delete wall;
@@ -54,12 +54,20 @@ void Level::run() {
             if (event.type == sf::Event::Closed)
                 window.close();
 
-            bird->handleInput(event, window);
+                    if (currentBirdIndex < birds.size()) {
+            Bird* currentBird = birds[currentBirdIndex];
+            currentBird->handleInput(event, window);
+
+            if (hasBirdStopped()) {
+                nextBird();
+            }
+        }
         }
 
         world->Step(1.0f/60.0f, 6, 2);
-        bird->update();
 
+
+        birds[currentBirdIndex]->update();
         for (auto pig : pigs) pig->update();
         for (auto box : boxes) box->update();
         for (auto wall : walls) wall->update();
@@ -68,8 +76,10 @@ void Level::run() {
         window.draw(backgroundSprite);
         window.setFramerateLimit(130); // Sets the framerate limit 
         // window.setVerticalSyncEnabled(true); // Not supported??
-        bird->render(window);
 
+        for (int i = 0; i <= currentBirdIndex; ++i) {
+            birds[i]->render(window);
+        }
         for (auto pig : pigs) pig->render(window);
         for (auto box : boxes) box->render(window);
         for (auto wall : walls) wall->render(window);
@@ -83,6 +93,11 @@ void Level::run() {
             } else {
                 ++it;
             }
+
+        if (isLevelComplete()) {
+            // End the level
+            break;
+        }
         }
     }
 }
@@ -157,3 +172,37 @@ void Level::loadObjects(const std::string& levelFile) {
     }
 }
 
+
+void Level::initializeBirds(const sf::Texture& birdTex) {
+    for (int i = 0; i < totalBirds; ++i) {
+        birds.push_back(new Bird(world, birdTex, b2Vec2(100.0f, 500.0f)));
+    }
+}
+
+void Level::nextBird() {
+    if (currentBirdIndex < birds.size() - 1) {
+        currentBirdIndex++;
+    }
+}
+
+bool Level::hasBirdStopped() {
+    if (birds.empty() || currentBirdIndex >= birds.size()) {
+        return false;
+    }
+
+    Bird* currentBird = birds[currentBirdIndex];
+    if (!currentBird->isBirdLaunched()) {
+        return false;
+    }
+
+    const float velocityThreshold = 1.0f;
+    b2Vec2 velocity = currentBird->getVelocity();
+    return std::abs(velocity.x) < velocityThreshold && std::abs(velocity.y) < velocityThreshold;
+}
+
+bool Level::isLevelComplete() {
+    if (pigs.empty() || (currentBirdIndex == totalBirds - 1 && hasBirdStopped())) {
+        return true;
+    }
+    return false;
+}

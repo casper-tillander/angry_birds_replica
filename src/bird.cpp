@@ -97,6 +97,13 @@ void Bird::launch(const b2Vec2& force) {
     }
 }
 
+b2Vec2 Bird::getVelocity() const {
+    return body->GetLinearVelocity();
+}
+
+bool Bird::isBirdLaunched() const {
+    return isLaunched;
+}
 
 
 

@@ -17,6 +17,9 @@ private:
     sf::Vector2f initialClickPosition; ///< The initial click position when dragging.
     const float FORCE_MULTIPLIER = 10000.0f; ///< Multiplier for launch force. Adjust as needed.
 
+    int currentBirdIndex = 0; // Index of the current bird.
+    int totalBirds = 3; // Total birds per level.
+
 public:
     /**
      * @brief Constructor for the Bird class.
@@ -49,6 +52,9 @@ public:
      * @param force The force vector to apply for the launch.
      */
     void launch(const b2Vec2& force);
+
+    b2Vec2 getVelocity() const;
+    bool isBirdLaunched() const;
 };
 
 #endif // BIRD_HPP
