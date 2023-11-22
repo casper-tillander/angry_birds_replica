@@ -1,0 +1,57 @@
+\doxysection{GUI.\+hpp}
+\hypertarget{_g_u_i_8hpp_source}{}\label{_g_u_i_8hpp_source}\index{src/GUI.hpp@{src/GUI.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GUI\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GUI\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}level.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}bird.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_g_u_i}{GUI}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_g_u_i_a8cbb3140b7d3c9d8e942d6ce6b60a0e8}{GUI}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_g_u_i_a6601e239a6cabd47d667d727729540de}{run}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \ \ sf::RenderWindow\ window;\ }
+\DoxyCodeLine{00026\ \ \ \ \ sf::Text\ titleText;\ }
+\DoxyCodeLine{00027\ \ \ \ \ sf::Text\ playText;\ }
+\DoxyCodeLine{00028\ \ \ \ \ sf::CircleShape\ ButtonShape;\ }
+\DoxyCodeLine{00029\ \ \ \ \ sf::Text\ levelsText;\ }
+\DoxyCodeLine{00030\ \ \ \ \ sf::Text\ level1Text;\ }
+\DoxyCodeLine{00031\ \ \ \ \ sf::Text\ level2Text;\ }
+\DoxyCodeLine{00032\ \ \ \ \ sf::Text\ level3Text;\ }
+\DoxyCodeLine{00033\ \ \ \ \ sf::Font\ font;\ }
+\DoxyCodeLine{00034\ \ \ \ \ sf::Texture\ backgroundTexture;\ }
+\DoxyCodeLine{00035\ \ \ \ \ sf::Sprite\ backgroundSprite;\ }
+\DoxyCodeLine{00036\ \ \ \ \ sf::FloatRect\ buttonBounds;\ }
+\DoxyCodeLine{00037\ \ \ \ \ sf::Texture\ birdTexture;\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_level}{Level}}*\ currentLevel;\ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{enum}\ Screen\ \{\ Home,\ Levels,\ PlayingLevel\ \};\ }
+\DoxyCodeLine{00041\ \ \ \ \ Screen\ currentScreen;\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ initialize();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ processEvents();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ update();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ render();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ startGame();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ drawHomeScreen();}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ drawLevelsScreen();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ launchLevel(\textcolor{keywordtype}{int}\ levelNumber);}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GUI\_HPP}}
+\DoxyCodeLine{00087\ }
+
+\end{DoxyCode}
