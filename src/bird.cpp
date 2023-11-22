@@ -7,14 +7,12 @@
  * @param texture The texture for the bird.
  * @param position The initial position of the bird.
  */
-
 Bird::Bird(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
     isLaunched = false;
 
     birdShape.setRadius(25.0f); ///< Adjust the size of the bird
     birdShape.setTexture(&texture);
     birdShape.setOrigin(birdShape.getRadius(), birdShape.getRadius());
-
 
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
@@ -45,7 +43,6 @@ void Bird::update() {
     birdShape.setPosition(pos.x, pos.y);
     birdShape.setRotation(body->GetAngle() * 180 / b2_pi);
 }
-
 
 /**
  * @brief Renders the bird on the provided SFML window.
@@ -97,16 +94,26 @@ void Bird::launch(const b2Vec2& force) {
     }
 }
 
+/**
+ * @brief Get the current velocity of the bird.
+ * @return The velocity vector of the bird.
+ */
 b2Vec2 Bird::getVelocity() const {
     return body->GetLinearVelocity();
 }
 
+/**
+ * @brief Check if the bird has been launched.
+ * @return True if the bird has been launched, otherwise false.
+ */
 bool Bird::isBirdLaunched() const {
     return isLaunched;
 }
 
+/**
+ * @brief Get the Box2D body of the bird.
+ * @return A pointer to the Box2D body of the bird.
+ */
 b2Body* Bird::getBody() const {
     return body;
 }
-
-

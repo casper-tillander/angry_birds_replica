@@ -186,6 +186,12 @@ void GUI::processEvents() {
     }
 }
 
+/**
+ * @brief Updates the button hover effect.
+ *
+ * @param buttonText The text of the button.
+ * @param mousePos The current mouse position.
+ */
 void GUI::updateButtonHoverEffect(sf::Text& buttonText, sf::Vector2f mousePos) {
     if (buttonText.getGlobalBounds().contains(mousePos)) {
         buttonText.setCharacterSize(35);
@@ -262,7 +268,9 @@ void GUI::drawLevelsScreen() {
     window.draw(level3Text);
 }
 
-
+/**
+ * @brief Draws the game over screen UI components.
+ */
 void GUI::drawGameOverScreen() {
     backgroundSprite.setTexture(gameOverBackgroundTexture);
 
@@ -277,6 +285,9 @@ void GUI::drawGameOverScreen() {
     window.draw(returnToLevelsText);
 }
 
+/**
+ * @brief Draws the level completed screen UI components.
+ */
 void GUI::drawLevelCompletedScreen() {
     backgroundSprite.setTexture(levelCompleteBackgroundTexture);
 

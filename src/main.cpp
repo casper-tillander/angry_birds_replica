@@ -29,9 +29,9 @@ DONE: Fixa tiden (Casper - fixat, fungerade inte eftersom "Setting vertical sync
 
 DONE: Ge användaren mer än en fågel per nivå. Skapa en ny när den föregående har stannat? (Casper)
 
-------------------------------------------------------------------------------------------------------------------------------------------------
+DONE:  Gör så att nivån slutar då alla grisar är döda eller då antalet fåglar tagit slut. Gör en GUI för detta. (Casper)
 
-TODO:  Gör så att nivån slutar då alla grisar är döda eller då antalet fåglar tagit slut. Gör en GUI för detta. (Casper)
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 TODO: Implementera ett poängsystem, kanske med stjärnor?
 

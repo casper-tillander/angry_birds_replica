@@ -33,8 +33,6 @@ private:
     std::vector<Bird*> birds; // Vector of bird objects.
     sf::Texture birdTexture; ///< The texture for the bird.
 
-
-
 public:
     /**
      * @brief Constructs a Level object.
@@ -89,16 +87,58 @@ public:
      */
     void loadObjects(const std::string& levelFile);
 
+    /**
+     * @brief Initializes bird objects.
+     *
+     * @param birdTex The texture for birds.
+     */
     void initializeBirds(const sf::Texture& birdTex);
+
+    /**
+     * @brief Moves to the next bird in the sequence.
+     *
+     * @param birdTex The texture for birds.
+     */
     void nextBird(const sf::Texture& birdTex);
+
+    /**
+     * @brief Checks if the current bird has stopped moving.
+     *
+     * @return True if the bird has stopped, otherwise false.
+     */
     bool hasBirdStopped() const;
+
+    /**
+     * @brief Checks if the level is complete.
+     *
+     * @return True if the level is complete, otherwise false.
+     */
     bool isLevelComplete() const;
+
+    /**
+     * @brief Checks if the game is over.
+     *
+     * @return True if the game is over, otherwise false.
+     */
     bool isGameOver() const;
+
+    /**
+     * @brief Checks if all pigs have been destroyed.
+     *
+     * @return True if all pigs are destroyed, otherwise false.
+     */
     bool areAllPigsDestroyed() const;
+
+    /**
+     * @brief Checks if all birds have been used.
+     *
+     * @return True if all birds are used, otherwise false.
+     */
     bool areAllBirdsUsed() const;
 };
 
 #endif // LEVEL_HPP
+
 
 
 

@@ -181,6 +181,11 @@ void Level::loadObjects(const std::string& levelFile) {
 }
 
 
+/**
+ * @brief Initializes the bird objects for the level.
+ *
+ * @param birdTex The texture for the birds.
+ */
 void Level::initializeBirds(const sf::Texture& birdTex) {
     if (totalBirds > 0) {
         Bird* newBird = new Bird(world, birdTex, b2Vec2(100.0f, 500.0f));
@@ -188,7 +193,11 @@ void Level::initializeBirds(const sf::Texture& birdTex) {
     }
 }
 
-
+/**
+ * @brief Moves to the next bird in the level.
+ *
+ * @param birdTex The texture for the birds.
+ */
 void Level::nextBird(const sf::Texture& birdTex) {
     if (currentBirdIndex < totalBirds - 1) {
         currentBirdIndex++;
@@ -198,7 +207,11 @@ void Level::nextBird(const sf::Texture& birdTex) {
     }
 }
 
-
+/**
+ * @brief Checks if the current bird has stopped moving.
+ *
+ * @return True if the bird has stopped, false otherwise.
+ */
 bool Level::hasBirdStopped() const {
     if (birds.empty() || currentBirdIndex >= birds.size()) {
         return false;
@@ -214,24 +227,43 @@ bool Level::hasBirdStopped() const {
     return std::abs(velocity.x) < velocityThreshold && std::abs(velocity.y) < velocityThreshold;
 }
 
+/**
+ * @brief Checks if the level is complete.
+ *
+ * @return True if the level is complete, false otherwise.
+ */
 bool Level::isLevelComplete() const {
     if (pigs.empty() || (currentBirdIndex == totalBirds - 1 && hasBirdStopped())) {
         return true;
-
     }
     return false;
 }
 
+/**
+ * @brief Checks if the game is over.
+ *
+ * @return True if the game is over, false otherwise.
+ */
 bool Level::isGameOver() const {
     return areAllBirdsUsed() && !areAllPigsDestroyed();
 }
 
+/**
+ * @brief Checks if all pigs in the level have been destroyed.
+ *
+ * @return True if all pigs are destroyed, false otherwise.
+ */
 bool Level::areAllPigsDestroyed() const {
     return std::all_of(pigs.begin(), pigs.end(), [](const Pig* pig) {
         return !pig->alive();
     });
 }
 
+/**
+ * @brief Checks if all birds in the level have been used and stopped.
+ *
+ * @return True if all birds are used and stopped, false otherwise.
+ */
 bool Level::areAllBirdsUsed() const {
     return currentBirdIndex >= totalBirds - 1 && hasBirdStopped();
 }

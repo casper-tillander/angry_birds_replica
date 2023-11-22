@@ -90,18 +90,28 @@ private:
      */
     void launchLevel(int levelNumber);
 
+    /**
+     * @brief Draws the game over screen.
+     */
+    void drawGameOverScreen();
 
     /**
-     * @brief Centers the given text within a button.
-     *
-     * @param text A reference to the sf::Text object that needs to be centered.
+     * @brief Draws the level completed screen.
      */
-
-    void drawGameOverScreen();
     void drawLevelCompletedScreen();
+
+    /**
+     * @brief Updates the button hover effect.
+     *
+     * @param buttonText The text of the button.
+     * @param mousePos The current mouse position.
+     */
     void updateButtonHoverEffect(sf::Text& buttonText, sf::Vector2f mousePos);
+
+    /**
+     * @brief Checks and updates the game state.
+     */
     void checkAndUpdateGameState();
 };
 
 #endif // GUI_HPP
-

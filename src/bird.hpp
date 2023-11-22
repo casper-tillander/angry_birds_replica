@@ -53,10 +53,23 @@ public:
      */
     void launch(const b2Vec2& force);
 
+    /**
+     * @brief Get the current velocity of the bird.
+     * @return The velocity vector of the bird.
+     */
     b2Vec2 getVelocity() const;
-    bool isBirdLaunched() const;
-    b2Body* getBody() const;
 
+    /**
+     * @brief Check if the bird has been launched.
+     * @return True if the bird has been launched, otherwise false.
+     */
+    bool isBirdLaunched() const;
+
+    /**
+     * @brief Get the Box2D body of the bird.
+     * @return A pointer to the Box2D body of the bird.
+     */
+    b2Body* getBody() const;
 };
 
 #endif // BIRD_HPP
