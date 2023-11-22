@@ -21,6 +21,8 @@ TODO: Gör CSV filerna, alltså designa nivåerna.
 
 KODNING:
 
+TODO: Fixa fysiken! Birdie goes brrrrrr när den krockar
+
 TODO: Implementera ett poängsystem, kanske med stjärnor? Gör så att nivån slutar då alla grisar är döda eller då antalet fåglar tagit slut.
 
 TODO: Ge användaren mer än en fågel per nivå. Skapa en ny när den föregående har stannat?
@@ -35,6 +37,8 @@ TODO: Implementera en ny fågel med en specialattack. Idéer: Klicka en gång p�
 TODO: "The view follows the bird as it moves sideways"? Gör världen större och gör så att användarens view följer.
 
 TODO: GUI visar antalet fåglar kvar, mängden poäng, grisar kvar...?
+
+TODO: Lägg till punkter som visar flygbanan för fågeln
 
 
 

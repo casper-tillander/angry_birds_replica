@@ -21,6 +21,8 @@ Bird::Bird(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
     bodyDef.type = b2_dynamicBody;
     bodyDef.position = position;
     bodyDef.gravityScale = 0.0f;
+    // bodyDef.angularDamping = 3.0f; ///< Makes the bird stop spinning after some time
+    bodyDef.fixedRotation = true; ///< Set to 'true' if the bird shouldn't spin
     body = world->CreateBody(&bodyDef);
 
     b2CircleShape circleShape;
