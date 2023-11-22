@@ -19,9 +19,10 @@ Pig::Pig(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
 
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &circleShape;
+    // bodyDef.angularDamping = 3.0f; ///< Makes the pig stop spinning after some time
+    bodyDef.fixedRotation = true; ///< Set to 'true' if the pig shouldn't spin
     fixtureDef.density = 1.0f; ///< Adjust density of pig
     fixtureDef.restitution = 0.3f; ///< Adjust this value for bounciness
-
     body->CreateFixture(&fixtureDef);
 
     body->GetUserData().pointer = reinterpret_cast<uintptr_t>(this);
