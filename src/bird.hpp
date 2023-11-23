@@ -10,12 +10,15 @@
  */
 class Bird {
 private:
-    sf::Sprite sprite; ///< The bird's sprite.
+    sf::CircleShape birdShape; ///< The bird's shape for both rendering and physics.
     b2Body* body; ///< The bird's Box2D body.
     bool isLaunched; ///< Indicates whether the bird has been launched.
     bool isDragging; ///< Indicates whether the bird is being dragged.
     sf::Vector2f initialClickPosition; ///< The initial click position when dragging.
     const float FORCE_MULTIPLIER = 10000.0f; ///< Multiplier for launch force. Adjust as needed.
+
+    int currentBirdIndex = 0; // Index of the current bird.
+    int totalBirds = 3; // Total birds per level.
 
 public:
     /**
@@ -49,6 +52,24 @@ public:
      * @param force The force vector to apply for the launch.
      */
     void launch(const b2Vec2& force);
+
+    /**
+     * @brief Get the current velocity of the bird.
+     * @return The velocity vector of the bird.
+     */
+    b2Vec2 getVelocity() const;
+
+    /**
+     * @brief Check if the bird has been launched.
+     * @return True if the bird has been launched, otherwise false.
+     */
+    bool isBirdLaunched() const;
+
+    /**
+     * @brief Get the Box2D body of the bird.
+     * @return A pointer to the Box2D body of the bird.
+     */
+    b2Body* getBody() const;
 };
 
 #endif // BIRD_HPP

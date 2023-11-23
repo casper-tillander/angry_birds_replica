@@ -11,7 +11,7 @@
 
 class Pig {
 private:
-    sf::Sprite sprite;
+    sf::CircleShape pigShape; ///< The pig's shape for rendering.
     b2Body* body;
 
     float health;

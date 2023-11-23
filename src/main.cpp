@@ -14,31 +14,41 @@ int main(){
 /*
 INTE KODNING:
 
-TODO: Photoshoppa en slangbella till alla level-bilder, sök samtidigt fram bättre bakgrundsbilder.
+TODO: Photoshoppa en slangbella till alla level-bilder, sök samtidigt fram bättre bakgrundsbilder. (Matilda)
 
-TODO: Gör CSV filerna, alltså designa nivåerna.
+TODO: Gör CSV filerna, alltså designa nivåerna. (Matilda?)
 
 
 KODNING:
 
-TODO: Fixa fysiken! Birdie goes brrrrrr när den krockar
+DONE: Fixa buggen med att fåglarna rör på sig när dom är rendered in (Casper)
 
-TODO: Fixa tiden
+DONE: Fixa fysiken! Birdie goes brrrrrr när den krockar (Casper)
 
-TODO: Implementera ett poängsystem, kanske med stjärnor? Gör så att nivån slutar då alla grisar är döda eller då antalet fåglar tagit slut.
+DONE: Fixa tiden (Casper - fixat, fungerade inte eftersom "Setting vertical sync not supported". Fixade genom att sätta en maximal framerate.)
 
-TODO: Ge användaren mer än en fågel per nivå. Skapa en ny när den föregående har stannat?
+DONE: Ge användaren mer än en fågel per nivå. Skapa en ny när den föregående har stannat? (Casper)
+
+DONE:  Gör så att nivån slutar då alla grisar är döda eller då antalet fåglar tagit slut. Gör en GUI för detta. (Casper)
+
+DONE: Lägg till en settings - screen (Casper)
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+TODO: Fix bug: Om man spelar en nivå -> To levels -> Home så ser bakgrunden konstig ut.
+
+TODO: Implementera ett poängsystem, kanske med stjärnor?
 
 TODO: Implementera bättre damage-logik för grisarna (nu tar dom alltid 10/100 damage för varje kollision).
 
-TODO: Implementera inställningar (settings-bakgrund finns redan). Ge användaren möjligheten att stäga av och lägga på ljud + annat?
+TODO: Ge användaren möjligheten att stäga av och lägga på ljud + annat?
 
 TODO: Implementera en ny fågel med en specialattack. Idéer: Klicka en gång på screenen och skjut fågeln mot det stället, gör så att fågeln exploderar, gör så att man kan skjuta iväg fågeln två gånger.
       Implementera i GUI:en en möjlighet att välja fågel före leveln börjar.
 
-TODO: "The view follows the bird as it moves sideways"? Gör världen större och gör så att användarens view följer.
+TODO: "The view follows the bird as it moves sideways"? Gör världen större och gör så att användarens view följer. (Julius)
 
-TODO: GUI visar antalet fåglar kvar, mängden poäng, grisar kvar...?
+TODO: GUI visar antalet fåglar kvar, mängden poäng, grisar kvar...? Antagligen implementrat i level.cpp/.hpp
 
 TODO: Lägg till punkter som visar flygbanan för fågeln
 

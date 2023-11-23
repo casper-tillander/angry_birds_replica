@@ -9,12 +9,9 @@
  */
 Wall::Wall(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
     
-    sprite.setTexture(texture);
-
-    sf::Vector2u textureSize = texture.getSize();
-    float desiredWidth = 40.0f; ///< Desired width in pixels
-    float scale = desiredWidth / textureSize.x;
-    sprite.setScale(scale, scale);
+    wallShape.setSize(sf::Vector2f(40.0f, 40.0f)); ///< Adjust the size of the wall
+    wallShape.setTexture(&texture);
+    wallShape.setOrigin(wallShape.getSize().x / 2, wallShape.getSize().y / 2);
 
     b2BodyDef bodyDef;
     bodyDef.type = b2_staticBody;
@@ -22,7 +19,7 @@ Wall::Wall(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
     body = world->CreateBody(&bodyDef);
 
     b2PolygonShape boxShape;
-    boxShape.SetAsBox(20.0f, 20.0f); ///< Adjust the size of the wall
+    boxShape.SetAsBox(20.0f, 20.0f); ///< About 2 times smaller than wallShape
 
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &boxShape;
@@ -35,8 +32,8 @@ Wall::Wall(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
  */
 void Wall::update() {
     b2Vec2 pos = body->GetPosition();
-    sprite.setPosition(pos.x, pos.y);
-    sprite.setRotation(body->GetAngle() * 180 / b2_pi);
+    wallShape.setPosition(pos.x, pos.y);
+    wallShape.setRotation(body->GetAngle() * 180 / b2_pi);
 }
 
 /**
@@ -45,6 +42,6 @@ void Wall::update() {
  * @param window The rendering window to draw the wall on.
  */
 void Wall::render(sf::RenderWindow& window) {
-    window.draw(sprite);
+    window.draw(wallShape);
 }
 

@@ -18,17 +18,20 @@
 class Level {
 private:
     int levelNumber; ///< The level number.
+    int currentBirdIndex = 0; // Index of the current bird.
+    int totalBirds = 3; // Total birds per level.
     sf::RenderWindow& window; ///< Reference to the game's window.
     sf::Texture backgroundTexture; ///< The background texture.
     sf::Sprite backgroundSprite; ///< The background sprite.
     b2World* world; ///< Pointer to the Box2D world.
-    Bird* bird; ///< Pointer to the bird object.
     std::vector<Pig*> pigs; ///< Vector of pig objects.
     std::vector<Box*> boxes; ///< Vector of box objects.
     std::vector<Wall*> walls; ///< Vector of wall objects.
     sf::Texture pigTexture; ///< The texture for pigs.
     sf::Texture boxTexture; ///< The texture for boxes.
     sf::Texture wallTexture; ///< The texture for walls.
+    std::vector<Bird*> birds; // Vector of bird objects.
+    sf::Texture birdTexture; ///< The texture for the bird.
 
 public:
     /**
@@ -40,7 +43,7 @@ public:
      * @param backTex The texture for the background.
      * @param levelFile The path to the level file.
      */
-    Level(sf::RenderWindow& win, int number, const sf::Texture& birdTex, const sf::Texture& backTex, const std::string& levelFile);
+    Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, const std::string& levelFile);
 
     /**
      * @brief Destroys the Level object.
@@ -83,9 +86,59 @@ public:
      * @param levelFile The path to the level file.
      */
     void loadObjects(const std::string& levelFile);
+
+    /**
+     * @brief Initializes bird objects.
+     *
+     * @param birdTex The texture for birds.
+     */
+    void initializeBirds(const sf::Texture& birdTex);
+
+    /**
+     * @brief Moves to the next bird in the sequence.
+     *
+     * @param birdTex The texture for birds.
+     */
+    void nextBird(const sf::Texture& birdTex);
+
+    /**
+     * @brief Checks if the current bird has stopped moving.
+     *
+     * @return True if the bird has stopped, otherwise false.
+     */
+    bool hasBirdStopped() const;
+
+    /**
+     * @brief Checks if the level is complete.
+     *
+     * @return True if the level is complete, otherwise false.
+     */
+    bool isLevelComplete() const;
+
+    /**
+     * @brief Checks if the game is over.
+     *
+     * @return True if the game is over, otherwise false.
+     */
+    bool isGameOver() const;
+
+    /**
+     * @brief Checks if all pigs have been destroyed.
+     *
+     * @return True if all pigs are destroyed, otherwise false.
+     */
+    bool areAllPigsDestroyed() const;
+
+    /**
+     * @brief Checks if all birds have been used.
+     *
+     * @return True if all birds are used, otherwise false.
+     */
+    bool areAllBirdsUsed() const;
 };
 
 #endif // LEVEL_HPP
+
 
 
 
