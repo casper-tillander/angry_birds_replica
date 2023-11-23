@@ -21,6 +21,10 @@ private:
     int currentBirdIndex = 0; // Index of the current bird.
     int totalBirds = 3; // Total birds per level.
     sf::RenderWindow& window; ///< Reference to the game's window.
+    /* Lagar views
+    sf::View gameView; ///< The view used during levels.
+    sf::View defaultView; ///< The view used otherwise.
+    */
     sf::Texture backgroundTexture; ///< The background texture.
     sf::Sprite backgroundSprite; ///< The background sprite.
     b2World* world; ///< Pointer to the Box2D world.

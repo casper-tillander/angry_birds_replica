@@ -17,7 +17,7 @@ void GUI::initialize() {
     // Load necessary resources
     font.loadFromFile("../Fonts/angrybirds-regular.ttf");
     birdTexture.loadFromFile("../Pictures/bird.png");
-    backgroundTexture.loadFromFile("../Backgrounds/homescreen.png");
+    mainScreenTexture.loadFromFile("../Backgrounds/homescreen.png");
     levelBackgroundTexture.loadFromFile("../Backgrounds/levels.png");
     gameOverBackgroundTexture.loadFromFile("../Backgrounds/gameover.png");
     levelCompleteBackgroundTexture.loadFromFile("../Backgrounds/levelcomplete.png");
@@ -56,7 +56,7 @@ void GUI::updateBackground() {
     sf::Texture* currentTexture = nullptr;
     switch (currentScreen) {
         case Home:
-            currentTexture = &backgroundTexture;
+            currentTexture = &mainScreenTexture;
             break;
         case Levels:
             currentTexture = &levelBackgroundTexture;

@@ -35,7 +35,8 @@ private:
     sf::Text tryAgainText; ///< The button for trying again.
     sf::Text returnToLevelsText; ///< The button for returning to levels.
     sf::Font font; ///< The font used for text.
-    sf::Texture backgroundTexture; ///< The background texture.
+    sf::Texture mainScreenTexture; ///< The background texture.
+    sf::Texture backgroundTexture;
     sf::Texture levelBackgroundTexture; ///< The background texture for the levels-screen.
     sf::Texture settingsBackgroundTexture; ///< The background texture for the settings-screen.
 
