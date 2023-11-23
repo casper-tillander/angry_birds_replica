@@ -33,9 +33,9 @@ DONE:  Gör så att nivån slutar då alla grisar är döda eller då antalet f�
 
 DONE: Lägg till en settings - screen (Casper)
 
-------------------------------------------------------------------------------------------------------------------------------------------------
+Done: Fix bug: Om man spelar en nivå -> To levels -> Home så ser bakgrunden konstig ut. (Julius)
 
-TODO: Fix bug: Om man spelar en nivå -> To levels -> Home så ser bakgrunden konstig ut.
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 TODO: Implementera ett poängsystem, kanske med stjärnor?
 
