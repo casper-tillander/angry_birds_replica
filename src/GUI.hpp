@@ -2,6 +2,7 @@
 #define GUI_HPP
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "level.hpp"
 #include "bird.hpp"
 
@@ -23,6 +24,7 @@ public:
 
 private:
     sf::RenderWindow window; ///< The game's window.
+    sf::Music music;
     sf::Text titleText; ///< The title text on the screen.
     sf::Text playText; ///< The play button text.
     sf::Text settingsText; ///< The settings button text.

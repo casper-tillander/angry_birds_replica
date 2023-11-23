@@ -14,6 +14,12 @@ GUI::GUI() : window(sf::VideoMode(1200, 700), "Angry Birds"), currentScreen(Home
  */
 void GUI::initialize() {
 
+    music.openFromFile("../Sound/Fluffing-a-Duck_chosic.com_.ogg");
+    music.setLoop(true);
+    music.play();
+    music.setVolume(20);
+
+
     // Load necessary resources
     font.loadFromFile("../Fonts/angrybirds-regular.ttf");
     birdTexture.loadFromFile("../Pictures/bird.png");
@@ -345,7 +351,7 @@ void GUI::drawSettingsScreen() {
     window.draw(ButtonShape);
     returnToHomeText.setPosition(ButtonShape.getPosition());
     window.draw(returnToHomeText);
-    // TODO: Add settings and a homebutton.
+    // TODO: Add settings.
 }
 
 
