@@ -199,6 +199,11 @@ void GUI::processEvents() {
                         currentScreen = Levels;
                     }
                     break;
+                case Settings:
+                    if (returnToHomeText.getGlobalBounds().contains(mousePos)) {
+                        currentScreen = Home;
+                    }
+                    break;
             }
         }
 
@@ -220,6 +225,9 @@ void GUI::processEvents() {
                     updateButtonHoverEffect(returnToLevelsText, mousePos);
                 case LevelCompleted:
                     updateButtonHoverEffect(returnToLevelsText, mousePos);
+                    break;
+                case Settings:
+                    updateButtonHoverEffect(returnToHomeText, mousePos);
                     break;
             }
         }
@@ -332,6 +340,11 @@ void GUI::drawLevelCompletedScreen() {
  */
 void GUI::drawSettingsScreen() {
     updateBackground();
+    
+    ButtonShape.setPosition(100, 50);
+    window.draw(ButtonShape);
+    returnToHomeText.setPosition(ButtonShape.getPosition());
+    window.draw(returnToHomeText);
     // TODO: Add settings and a homebutton.
 }
 
