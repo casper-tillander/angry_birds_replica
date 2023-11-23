@@ -17,8 +17,17 @@ void GUI::initialize() {
     music.openFromFile("../Sound/Fluffing-a-Duck_chosic.com_.ogg");
     music.setLoop(true);
     music.play();
-    music.setVolume(20);
+    music.setVolume(10);
+    music.pause();
+    soundOn = false;
 
+    soundTexture.loadFromFile("../Pictures/sound.png");
+    soundButton.setTexture(soundTexture);
+    soundButton.setScale(0.5f, 0.5f);
+
+    redLine.setSize(sf::Vector2f(100, 10));
+    redLine.setFillColor(sf::Color::Red);
+    redLine.setRotation(45);
 
     // Load necessary resources
     font.loadFromFile("../Fonts/angrybirds-regular.ttf");
@@ -208,6 +217,14 @@ void GUI::processEvents() {
                 case Settings:
                     if (returnToHomeText.getGlobalBounds().contains(mousePos)) {
                         currentScreen = Home;
+                    } else if (soundButton.getGlobalBounds().contains(mousePos)) {
+                        if (soundOn) {
+                            music.pause();
+                            soundOn = false;
+                        } else {
+                            music.play();
+                            soundOn = true;
+                        }
                     }
                     break;
             }
@@ -352,6 +369,15 @@ void GUI::drawSettingsScreen() {
     returnToHomeText.setPosition(ButtonShape.getPosition());
     window.draw(returnToHomeText);
     // TODO: Add settings.
+
+    soundButton.setPosition(530, 350);
+    window.draw(soundButton);
+
+    if (!soundOn) {
+        redLine.setPosition(soundButton.getPosition().x / 1.0 + soundButton.getGlobalBounds().width / 4,
+                            soundButton.getPosition().y / 1.0 + soundButton.getGlobalBounds().height / 4);
+        window.draw(redLine);
+    }
 }
 
 

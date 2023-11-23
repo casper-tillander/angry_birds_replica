@@ -39,6 +39,7 @@ private:
     sf::Font font; ///< The font used for text.
     sf::Texture mainScreenTexture; ///< The background texture.
     sf::Texture backgroundTexture;
+    sf::Texture soundTexture;
     sf::Texture levelBackgroundTexture; ///< The background texture for the levels-screen.
     sf::Texture settingsBackgroundTexture; ///< The background texture for the settings-screen.
 
@@ -56,6 +57,10 @@ private:
 
     sf::Vector2u textureSize; ///< Variable to hold the size of the texture..
     sf::Vector2u windowSize; ///< Variable to hold the size of the window.
+
+    sf::Sprite soundButton;
+    sf::RectangleShape redLine;
+    bool soundOn;
 
     /**
      * @brief Initializes the GUI components.
