@@ -35,13 +35,13 @@ DONE: Lägg till en settings - screen (Casper)
 
 Done: Fix bug: Om man spelar en nivå -> To levels -> Home så ser bakgrunden konstig ut. (Julius)
 
+DONE: Ge användaren möjligheten att stäga av och lägga på ljud (Casper)
+
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
 TODO: Implementera ett poängsystem, kanske med stjärnor?
 
 TODO: Implementera bättre damage-logik för grisarna (nu tar dom alltid 10/100 damage för varje kollision).
-
-TODO: Ge användaren möjligheten att stäga av och lägga på ljud + annat?
 
 TODO: Implementera en ny fågel med en specialattack. Idéer: Klicka en gång på screenen och skjut fågeln mot det stället, gör så att fågeln exploderar, gör så att man kan skjuta iväg fågeln två gånger.
       Implementera i GUI:en en möjlighet att välja fågel före leveln börjar.

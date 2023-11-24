@@ -25,7 +25,7 @@ void GUI::initialize() {
     soundButton.setTexture(soundTexture);
     soundButton.setScale(0.5f, 0.5f);
 
-    redLine.setSize(sf::Vector2f(100, 10));
+    redLine.setSize(sf::Vector2f(120, 15));
     redLine.setFillColor(sf::Color::Red);
     redLine.setRotation(45);
 
@@ -368,14 +368,13 @@ void GUI::drawSettingsScreen() {
     window.draw(ButtonShape);
     returnToHomeText.setPosition(ButtonShape.getPosition());
     window.draw(returnToHomeText);
-    // TODO: Add settings.
 
     soundButton.setPosition(530, 350);
     window.draw(soundButton);
 
     if (!soundOn) {
-        redLine.setPosition(soundButton.getPosition().x / 1.0 + soundButton.getGlobalBounds().width / 4,
-                            soundButton.getPosition().y / 1.0 + soundButton.getGlobalBounds().height / 4);
+        redLine.setPosition(soundButton.getPosition().x + soundButton.getGlobalBounds().width / 5,
+                            soundButton.getPosition().y + soundButton.getGlobalBounds().height / 8);
         window.draw(redLine);
     }
 }
