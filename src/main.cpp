@@ -44,7 +44,8 @@ TODO: Implementera ett poängsystem, kanske med stjärnor?
 TODO: Implementera bättre damage-logik för grisarna (nu tar dom alltid 10/100 damage för varje kollision).
 
 TODO: Implementera en ny fågel med en specialattack. Idéer: Klicka en gång på screenen och skjut fågeln mot det stället, gör så att fågeln exploderar, gör så att man kan skjuta iväg fågeln två gånger.
-      Implementera i GUI:en en möjlighet att välja fågel före leveln börjar.
+      
+TODO: Implementera i GUI:en en möjlighet att välja fågel före leveln börjar.
 
 TODO: "The view follows the bird as it moves sideways"? Gör världen större och gör så att användarens view följer. (Julius)
 

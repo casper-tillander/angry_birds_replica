@@ -205,7 +205,8 @@ void Level::loadObjects(const std::string& levelFile) {
  */
 void Level::initializeBirds(const sf::Texture& birdTex) {
     if (totalBirds > 0) {
-        Bird* newBird = new Bird(world, birdTex, b2Vec2(100.0f, 500.0f));
+        // Bird* newBird = new Bird(world, birdTex, b2Vec2(100.0f, 500.0f));
+        Bird* newBird = new SpecialBird(world, birdTex, b2Vec2(100.0f, 500.0f));
         birds.push_back(newBird);
     }
 }
@@ -219,7 +220,8 @@ void Level::nextBird(const sf::Texture& birdTex) {
     if (currentBirdIndex < totalBirds - 1) {
         currentBirdIndex++;
 
-        Bird* newBird = new Bird(world, birdTexture, b2Vec2(100.0f, 500.0f));
+        // Bird* newBird = new Bird(world, birdTexture, b2Vec2(100.0f, 500.0f));
+        Bird* newBird = new SpecialBird(world, birdTexture, b2Vec2(100.0f, 500.0f));
         birds.push_back(newBird);
     }
 }

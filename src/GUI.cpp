@@ -21,6 +21,8 @@ void GUI::initialize() {
     music.pause();
     soundOn = false;
 
+    isSpecialBird = false;
+
     soundTexture.loadFromFile("../Pictures/sound.png");
     soundButton.setTexture(soundTexture);
     soundButton.setScale(0.5f, 0.5f);
@@ -37,6 +39,13 @@ void GUI::initialize() {
     gameOverBackgroundTexture.loadFromFile("../Backgrounds/gameover.png");
     levelCompleteBackgroundTexture.loadFromFile("../Backgrounds/levelcomplete.png");
     settingsBackgroundTexture.loadFromFile("../Backgrounds/settings.png");
+    specialBirdTexture.loadFromFile("../Pictures/specialbird.png");
+
+    normalBirdButton.setTexture(birdTexture);
+    specialBirdButton.setTexture(specialBirdTexture);
+
+    normalBirdButton.setScale(0.05f, 0.05f);
+    specialBirdButton.setScale(0.35f, 0.35f);
 
     // Configure buttons
     setupButton(playText, "Play");
@@ -47,6 +56,7 @@ void GUI::initialize() {
     setupButton(level3Text, "Level 3");
     setupButton(tryAgainText, "Try again");
     setupButton(returnToLevelsText, "To levels");
+    setupButton(chooseBirdText, "Choose Bird");
 
     // Styling and placement for buttons
     returnToHomeText.setOrigin(returnToHomeText.getLocalBounds().width / 2, returnToHomeText.getLocalBounds().height / 1.3);
@@ -57,6 +67,7 @@ void GUI::initialize() {
     level3Text.setOrigin(level3Text.getLocalBounds().width / 2, level3Text.getLocalBounds().height / 1.3);
     tryAgainText.setOrigin(level3Text.getLocalBounds().width / 1.4, level3Text.getLocalBounds().height / 1.3);
     returnToLevelsText.setOrigin(level3Text.getLocalBounds().width / 1.4, level3Text.getLocalBounds().height / 1.3);
+    chooseBirdText.setOrigin(chooseBirdText.getLocalBounds().width / 2, chooseBirdText.getLocalBounds().height / 1.3);
 
     // Configure circular button shape
     ButtonShape.setRadius(30);
@@ -85,6 +96,7 @@ void GUI::updateBackground() {
         case Settings:
             currentTexture = &settingsBackgroundTexture;
             break;
+        
     }
 
     if (currentTexture) {
@@ -186,6 +198,8 @@ void GUI::processEvents() {
                         currentScreen = Levels;
                     } else if (settingsText.getGlobalBounds().contains(mousePos)) {
                         currentScreen = Settings;
+                    } else if (chooseBirdText.getGlobalBounds().contains(mousePos)) {
+                        currentScreen = BirdSelection;
                     }
                     break;
                 case Levels:
@@ -227,6 +241,13 @@ void GUI::processEvents() {
                         }
                     }
                     break;
+                case BirdSelection:
+                if (normalBirdButton.getGlobalBounds().contains(mousePos)) {
+                    isSpecialBird = false;
+                } else if (specialBirdButton.getGlobalBounds().contains(mousePos)) {
+                    isSpecialBird = true;
+                }
+                break;
             }
         }
 
@@ -284,6 +305,9 @@ void GUI::render() {
         case Settings:
             drawSettingsScreen();
             break;
+        case BirdSelection:
+            drawBirdSelectionScreen();
+            break;
     }
 
     window.display();
@@ -294,15 +318,20 @@ void GUI::render() {
  */
 void GUI::drawHomeScreen() {
     updateBackground();
-    ButtonShape.setPosition(480, 400);
+    ButtonShape.setPosition(400, 400);
     window.draw(ButtonShape);
     playText.setPosition(ButtonShape.getPosition());
     window.draw(playText);
 
-    ButtonShape.setPosition(680, 400);
+    ButtonShape.setPosition(600, 400);
     window.draw(ButtonShape);
     settingsText.setPosition(ButtonShape.getPosition());
     window.draw(settingsText);
+
+    ButtonShape.setPosition(800, 400); 
+    window.draw(ButtonShape);
+    chooseBirdText.setPosition(ButtonShape.getPosition());
+    window.draw(chooseBirdText);
 }
 
 /**
@@ -379,4 +408,12 @@ void GUI::drawSettingsScreen() {
     }
 }
 
+void GUI::drawBirdSelectionScreen() {
+    updateBackground();
 
+    normalBirdButton.setPosition(400, 400);
+    window.draw(normalBirdButton);
+
+    specialBirdButton.setPosition(600, 350);
+    window.draw(specialBirdButton);
+}

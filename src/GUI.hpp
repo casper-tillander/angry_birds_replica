@@ -49,9 +49,10 @@ private:
     sf::Sprite backgroundSprite; ///< The background sprite.
     sf::FloatRect buttonBounds; ///< The bounding rectangle for the button.
     sf::Texture birdTexture; ///< The texture for the bird.
+    sf::Texture specialBirdTexture; ///< The texture for the special bird.
 
     Level* currentLevel;  ///< Pointer to the current level.
-    enum Screen { Home, Levels, PlayingLevel, GameOver, LevelCompleted, Settings }; ///< Different game screens.
+    enum Screen { Home, BirdSelection, Levels, PlayingLevel, GameOver, LevelCompleted, Settings }; ///< Different game screens.
     Screen currentScreen; ///< Variable to hold the current screen state.
     int levelNumber; ///< Variable to hold the current level number.
 
@@ -61,6 +62,11 @@ private:
     sf::Sprite soundButton;
     sf::RectangleShape redLine;
     bool soundOn;
+
+    sf::Text chooseBirdText; ///< The text for the button to choose a bird.
+    sf::Sprite normalBirdButton; ///< Button for choosing the normal bird.
+    sf::Sprite specialBirdButton; ///< Button for choosing the special bird.
+    bool isSpecialBird;
 
     /**
      * @brief Initializes the GUI components.
@@ -136,6 +142,8 @@ private:
      * @brief Updates the background
      */
     void updateBackground();
+
+    void drawBirdSelectionScreen();
 
 };
 

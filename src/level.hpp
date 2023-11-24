@@ -5,6 +5,7 @@
 #include <box2d/box2d.h>
 #include <vector>
 #include "bird.hpp"
+#include "specialbird.hpp"
 #include "pig.hpp"
 #include "box.hpp"
 #include "wall.hpp"
