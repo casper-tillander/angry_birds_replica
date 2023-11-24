@@ -38,7 +38,7 @@ void GUI::initialize() {
     levelBackgroundTexture.loadFromFile("../Backgrounds/levels.png");
     gameOverBackgroundTexture.loadFromFile("../Backgrounds/gameover.png");
     levelCompleteBackgroundTexture.loadFromFile("../Backgrounds/levelcomplete.png");
-    chooseABirdBackgroundTexture.loadFromFile("../Backgrounds/chooseabird.png");
+    chooseABirdBackgroundTexture.loadFromFile("../Backgrounds/birdselection.png");
     settingsBackgroundTexture.loadFromFile("../Backgrounds/settings.png");
     specialBirdTexture.loadFromFile("../Pictures/specialbird.png");
 
