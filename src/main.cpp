@@ -43,7 +43,9 @@ DONE: Implementera i GUI:en en möjlighet att välja fågel före leveln börjar
 
 DONE: Implementera ett poängsystem med stjärnor? (Casper)
 
-------------------------------------------------------------------------------------------------------------------------------------------------
+TODO: Lägg till punkter som visar flygbanan för fågeln (Casper)
+
+---------------------------------------------------------------------------------------------------------------
 
 TODO: Implementera bättre damage-logik för grisarna (nu tar dom alltid 10/100 damage för varje kollision). (Julius)
 
@@ -51,9 +53,7 @@ TODO: "The view follows the bird as it moves sideways"? Gör världen större oc
 
 TODO: GUI visar antalet fåglar kvar, mängden poäng, grisar kvar...? Antagligen implementrat i level.cpp/.hpp
 
-TODO: Lägg till punkter som visar flygbanan för fågeln
-
-
+---------------------------------------------------------------------------------------------------------------
 
 EXTRA FEATURES:
 

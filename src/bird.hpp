@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <box2d/box2d.h>
+#include <vector>
 
 /**
  * @class Bird
@@ -71,6 +72,9 @@ public:
      * @return A pointer to the Box2D body of the bird.
      */
     b2Body* getBody() const;
+
+    std::vector<sf::CircleShape> calculateTrajectory(const sf::Vector2f& launchVector, int numDots);
+    std::vector<sf::CircleShape> trajectoryDots; ///< Stores the trajectory dots.
 };
 
 #endif // BIRD_HPP
