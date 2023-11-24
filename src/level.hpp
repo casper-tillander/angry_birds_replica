@@ -48,8 +48,10 @@ public:
      * @param backTex The texture for the background.
      * @param levelFile The path to the level file.
      */
-    Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, const std::string& levelFile);
+    Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, const std::string& levelFile, bool isSpecialBird);
 
+
+    bool isSpecialBird;
     /**
      * @brief Destroys the Level object.
      */
@@ -97,14 +99,14 @@ public:
      *
      * @param birdTex The texture for birds.
      */
-    void initializeBirds(const sf::Texture& birdTex);
+    void initializeBirds(const sf::Texture& birdTex, bool isSpecialBird);
 
     /**
      * @brief Moves to the next bird in the sequence.
      *
      * @param birdTex The texture for birds.
      */
-    void nextBird(const sf::Texture& birdTex);
+    void nextBird(const sf::Texture& birdTex, bool isSpecialBird);
 
     /**
      * @brief Checks if the current bird has stopped moving.

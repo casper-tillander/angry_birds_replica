@@ -22,7 +22,10 @@ public:
      */
     void run();
 
+    bool isSpecialBird;
+
 private:
+
     sf::RenderWindow window; ///< The game's window.
     sf::Music music;
     sf::Text titleText; ///< The title text on the screen.
@@ -45,11 +48,13 @@ private:
 
     sf::Texture gameOverBackgroundTexture; ///< The background texture for the game over screen.
     sf::Texture levelCompleteBackgroundTexture; ///< The background texture for the level complete screen.
+    sf::Texture chooseABirdBackgroundTexture;
 
     sf::Sprite backgroundSprite; ///< The background sprite.
     sf::FloatRect buttonBounds; ///< The bounding rectangle for the button.
     sf::Texture birdTexture; ///< The texture for the bird.
     sf::Texture specialBirdTexture; ///< The texture for the special bird.
+    sf::CircleShape highlightCircle; ///< The circle to highlight the selected bird.
 
     Level* currentLevel;  ///< Pointer to the current level.
     enum Screen { Home, BirdSelection, Levels, PlayingLevel, GameOver, LevelCompleted, Settings }; ///< Different game screens.
@@ -66,7 +71,6 @@ private:
     sf::Text chooseBirdText; ///< The text for the button to choose a bird.
     sf::Sprite normalBirdButton; ///< Button for choosing the normal bird.
     sf::Sprite specialBirdButton; ///< Button for choosing the special bird.
-    bool isSpecialBird;
 
     /**
      * @brief Initializes the GUI components.

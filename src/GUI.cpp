@@ -38,6 +38,7 @@ void GUI::initialize() {
     levelBackgroundTexture.loadFromFile("../Backgrounds/levels.png");
     gameOverBackgroundTexture.loadFromFile("../Backgrounds/gameover.png");
     levelCompleteBackgroundTexture.loadFromFile("../Backgrounds/levelcomplete.png");
+    chooseABirdBackgroundTexture.loadFromFile("../Backgrounds/chooseabird.png");
     settingsBackgroundTexture.loadFromFile("../Backgrounds/settings.png");
     specialBirdTexture.loadFromFile("../Pictures/specialbird.png");
 
@@ -45,7 +46,7 @@ void GUI::initialize() {
     specialBirdButton.setTexture(specialBirdTexture);
 
     normalBirdButton.setScale(0.05f, 0.05f);
-    specialBirdButton.setScale(0.35f, 0.35f);
+    specialBirdButton.setScale(0.2f, 0.2f);
 
     // Configure buttons
     setupButton(playText, "Play");
@@ -76,6 +77,14 @@ void GUI::initialize() {
     ButtonShape.setOutlineThickness(1);
     ButtonShape.setOutlineColor(sf::Color::White);
     ButtonShape.setOrigin(ButtonShape.getLocalBounds().width / 2, ButtonShape.getLocalBounds().height / 2);
+
+    // Selection circle for birds.
+    highlightCircle.setRadius(60);
+    highlightCircle.setFillColor(sf::Color::Transparent);
+    highlightCircle.setOutlineColor(sf::Color::White);
+    highlightCircle.setOutlineThickness(5);
+    
+    
 }
 
 void GUI::updateBackground() {
@@ -95,6 +104,9 @@ void GUI::updateBackground() {
             break;
         case Settings:
             currentTexture = &settingsBackgroundTexture;
+            break;
+        case BirdSelection:
+            currentTexture = &chooseABirdBackgroundTexture;
             break;
         
     }
@@ -174,7 +186,7 @@ void GUI::launchLevel(int levelNumber) {
     if (currentLevel != nullptr) {
         delete currentLevel;
     }
-    currentLevel = new Level(window, levelNumber, backgroundTexture, levelFile);
+    currentLevel = new Level(window, levelNumber, backgroundTexture, levelFile, isSpecialBird);
     currentScreen = PlayingLevel;
 
 }
@@ -246,6 +258,8 @@ void GUI::processEvents() {
                     isSpecialBird = false;
                 } else if (specialBirdButton.getGlobalBounds().contains(mousePos)) {
                     isSpecialBird = true;
+                } else if (returnToHomeText.getGlobalBounds().contains(mousePos)) {
+                        currentScreen = Home;
                 }
                 break;
             }
@@ -257,6 +271,7 @@ void GUI::processEvents() {
                 case Home:
                     updateButtonHoverEffect(playText, mousePos);
                     updateButtonHoverEffect(settingsText, mousePos);
+                    updateButtonHoverEffect(chooseBirdText, mousePos);
                     break;
                 case Levels:
                     updateButtonHoverEffect(level1Text, mousePos);
@@ -271,6 +286,9 @@ void GUI::processEvents() {
                     updateButtonHoverEffect(returnToLevelsText, mousePos);
                     break;
                 case Settings:
+                    updateButtonHoverEffect(returnToHomeText, mousePos);
+                    break;
+                case BirdSelection:
                     updateButtonHoverEffect(returnToHomeText, mousePos);
                     break;
             }
@@ -411,9 +429,29 @@ void GUI::drawSettingsScreen() {
 void GUI::drawBirdSelectionScreen() {
     updateBackground();
 
-    normalBirdButton.setPosition(400, 400);
+    ButtonShape.setPosition(100, 50);
+    window.draw(ButtonShape);
+    returnToHomeText.setPosition(ButtonShape.getPosition());
+    window.draw(returnToHomeText);
+
+    normalBirdButton.setPosition(475, 450);
     window.draw(normalBirdButton);
 
-    specialBirdButton.setPosition(600, 350);
+    specialBirdButton.setPosition(585, 450);
     window.draw(specialBirdButton);
+
+    // Update highlightCircle position based on the selected bird
+    sf::Vector2f birdButtonCenter;
+    if (isSpecialBird) {
+        birdButtonCenter = sf::Vector2f(specialBirdButton.getPosition().x + specialBirdButton.getGlobalBounds().width / 2,
+                                        specialBirdButton.getPosition().y + specialBirdButton.getGlobalBounds().height / 2);
+    } else {
+        birdButtonCenter = sf::Vector2f(normalBirdButton.getPosition().x + normalBirdButton.getGlobalBounds().width / 2,
+                                        normalBirdButton.getPosition().y + normalBirdButton.getGlobalBounds().height / 2);
+    }
+    highlightCircle.setPosition(birdButtonCenter.x - highlightCircle.getRadius(), 
+                                birdButtonCenter.y - highlightCircle.getRadius());
+
+    window.draw(highlightCircle);
 }
+

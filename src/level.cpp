@@ -9,8 +9,8 @@
  * @param backTex The texture for the background.
  * @param levelFile The path to the level file.
  */
-Level::Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, const std::string& levelFile) 
-    : levelNumber(number), window(win), world(new b2World(b2Vec2(0.0f, 9.8f))) {
+Level::Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, const std::string& levelFile, bool isSpecialBirdParam)
+    : levelNumber(number), window(win), world(new b2World(b2Vec2(0.0f, 9.8f))), isSpecialBird(isSpecialBirdParam) {
     setupWorld();
 
     backgroundTexture = backTex;
@@ -21,9 +21,14 @@ Level::Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, cons
     float scaleY = static_cast<float>(windowSize.y) / textureSize.y;
     backgroundSprite.setScale(scaleX, scaleY);
 
-
-    birdTexture.loadFromFile("../Pictures/bird.png");
-    initializeBirds(birdTexture);
+    if (isSpecialBird) {
+        birdTexture.loadFromFile("../Pictures/specialbird.png");
+    } else {
+        birdTexture.loadFromFile("../Pictures/bird.png");
+    }
+    
+    
+    initializeBirds(birdTexture, isSpecialBird);
 
     pigTexture.loadFromFile("../Pictures/pig.png");
     boxTexture.loadFromFile("../Pictures/box.jpg");
@@ -69,7 +74,7 @@ void Level::run() {
                     currentBird->handleInput(event, window);
 
                 if (hasBirdStopped()) {
-                    nextBird(birdTexture);
+                    nextBird(birdTexture, isSpecialBird);
             }
         }
         }
@@ -203,25 +208,38 @@ void Level::loadObjects(const std::string& levelFile) {
  *
  * @param birdTex The texture for the birds.
  */
-void Level::initializeBirds(const sf::Texture& birdTex) {
+void Level::initializeBirds(const sf::Texture& birdTex, bool isSpecialBird) {
+    Bird* newBird = nullptr;
+
     if (totalBirds > 0) {
-        // Bird* newBird = new Bird(world, birdTex, b2Vec2(100.0f, 500.0f));
-        Bird* newBird = new SpecialBird(world, birdTex, b2Vec2(100.0f, 500.0f));
+        if (isSpecialBird) {
+            newBird = new SpecialBird(world, birdTex, b2Vec2(100.0f, 500.0f));
+        } else {
+            newBird = new Bird(world, birdTex, b2Vec2(100.0f, 500.0f));
+        }
+        
         birds.push_back(newBird);
     }
 }
+
 
 /**
  * @brief Moves to the next bird in the level.
  *
  * @param birdTex The texture for the birds.
  */
-void Level::nextBird(const sf::Texture& birdTex) {
+void Level::nextBird(const sf::Texture& birdTex, bool isSpecialBird) {
+    Bird* newBird = nullptr;
+
     if (currentBirdIndex < totalBirds - 1) {
         currentBirdIndex++;
 
-        // Bird* newBird = new Bird(world, birdTexture, b2Vec2(100.0f, 500.0f));
-        Bird* newBird = new SpecialBird(world, birdTexture, b2Vec2(100.0f, 500.0f));
+        if (isSpecialBird) {
+            newBird = new SpecialBird(world, birdTex, b2Vec2(100.0f, 500.0f));
+        } else {
+            newBird = new Bird(world, birdTex, b2Vec2(100.0f, 500.0f));
+        }
+
         birds.push_back(newBird);
     }
 }
