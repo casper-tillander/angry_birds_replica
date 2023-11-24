@@ -142,6 +142,9 @@ public:
      * @return True if all birds are used, otherwise false.
      */
     bool areAllBirdsUsed() const;
+
+    int getBirdsUsedForCompletion();
+
 };
 
 #endif // LEVEL_HPP

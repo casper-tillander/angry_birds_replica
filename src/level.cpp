@@ -304,3 +304,16 @@ bool Level::areAllPigsDestroyed() const {
 bool Level::areAllBirdsUsed() const {
     return currentBirdIndex >= totalBirds - 1 && hasBirdStopped();
 }
+
+/**
+ * @brief Gets the number of birds used to complete the level.
+ * @return The number of birds used if the level is completed, otherwise -1.
+ */
+int Level::getBirdsUsedForCompletion() {
+    if (isLevelComplete()) {
+        // Add 1 because currentBirdIndex starts from 0
+        return currentBirdIndex + 1; 
+    } else {
+        return -1; // Indicates the level is not completed yet
+    }
+}

@@ -72,6 +72,9 @@ private:
     sf::Sprite normalBirdButton; ///< Button for choosing the normal bird.
     sf::Sprite specialBirdButton; ///< Button for choosing the special bird.
 
+    sf::Texture starTexture;
+    sf::Sprite starSprite;
+
     /**
      * @brief Initializes the GUI components.
      */

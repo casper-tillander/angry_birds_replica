@@ -1,4 +1,5 @@
 #include "GUI.hpp"
+#include <iostream>
 
 /**
  * @brief Constructs a GUI object and initializes the game window.
@@ -83,7 +84,12 @@ void GUI::initialize() {
     highlightCircle.setFillColor(sf::Color::Transparent);
     highlightCircle.setOutlineColor(sf::Color::White);
     highlightCircle.setOutlineThickness(5);
-    
+
+    // Stars for point system
+    starTexture.loadFromFile("../Pictures/star.png");
+    starSprite.setTexture(starTexture);
+    starSprite.setScale(0.9f, 0.9f);
+
     
 }
 
@@ -399,10 +405,23 @@ void GUI::drawGameOverScreen() {
  */
 void GUI::drawLevelCompletedScreen() {
     updateBackground();
-    ButtonShape.setPosition(560, 400);
+    ButtonShape.setPosition(575, 550);
     window.draw(ButtonShape);
     returnToLevelsText.setPosition(ButtonShape.getPosition());
     window.draw(returnToLevelsText);
+
+    // Draw stars based on birds used
+    if (currentLevel != nullptr) {
+    int birdsUsed = currentLevel->getBirdsUsedForCompletion();
+    int totalBirds = 3;
+    int starsToDisplay = totalBirds - birdsUsed + 1;
+
+    for (int i = 0; i < starsToDisplay; i++) {
+        starSprite.setPosition(265 + i * 200, 280);
+        window.draw(starSprite);
+    }
+}
+
 }
 
 /**

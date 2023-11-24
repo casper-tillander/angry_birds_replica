@@ -41,9 +41,9 @@ DONE: Implementera en ny fågel med en specialattack. Klicka en gång på screen
 
 DONE: Implementera i GUI:en en möjlighet att välja fågel före leveln börjar. (Casper)
 
-------------------------------------------------------------------------------------------------------------------------------------------------
+DONE: Implementera ett poängsystem med stjärnor? (Casper)
 
-TODO: Implementera ett poängsystem, kanske med stjärnor?
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 TODO: Implementera bättre damage-logik för grisarna (nu tar dom alltid 10/100 damage för varje kollision). (Julius)
 
