@@ -51,7 +51,7 @@ TODO: Implementera bättre damage-logik för grisarna (nu tar dom alltid 10/100 
 
 TODO: "The view follows the bird as it moves sideways"? Gör världen större och gör så att användarens view följer. (Julius)
 
-TODO: GUI visar antalet fåglar kvar, mängden poäng, grisar kvar...? Antagligen implementrat i level.cpp/.hpp
+TODO: GUI visar antalet fåglar kvar, mängden poäng, grisar kvar...?
 
 ---------------------------------------------------------------------------------------------------------------
 
@@ -60,6 +60,8 @@ EXTRA FEATURES:
 TODO: High score list, saved per level, player can enter a nickname (1 point)
 
 TODO: Different game modes: reach goal in time, collect all items, other kind of challenges (2 points) Egna idéer: No gravity mode = lätt.
+
+TODO: Level editor to create levels and to save them in a file (4 points)
 
 .
 .

@@ -1,5 +1,4 @@
 #include "GUI.hpp"
-#include <iostream>
 
 /**
  * @brief Constructs a GUI object and initializes the game window.
@@ -41,6 +40,7 @@ void GUI::initialize() {
     levelCompleteBackgroundTexture.loadFromFile("../Backgrounds/levelcomplete.png");
     chooseABirdBackgroundTexture.loadFromFile("../Backgrounds/birdselection.png");
     settingsBackgroundTexture.loadFromFile("../Backgrounds/settings.png");
+    editorBackgroundTexture.loadFromFile("../Backgrounds/background3.jpg");
     specialBirdTexture.loadFromFile("../Pictures/specialbird.png");
 
     normalBirdButton.setTexture(birdTexture);
@@ -59,6 +59,7 @@ void GUI::initialize() {
     setupButton(tryAgainText, "Try again");
     setupButton(returnToLevelsText, "To levels");
     setupButton(chooseBirdText, "Choose Bird");
+    setupButton(levelEditorText, "Level Editor");
 
     // Styling and placement for buttons
     returnToHomeText.setOrigin(returnToHomeText.getLocalBounds().width / 2, returnToHomeText.getLocalBounds().height / 1.3);
@@ -70,6 +71,7 @@ void GUI::initialize() {
     tryAgainText.setOrigin(level3Text.getLocalBounds().width / 1.4, level3Text.getLocalBounds().height / 1.3);
     returnToLevelsText.setOrigin(level3Text.getLocalBounds().width / 1.4, level3Text.getLocalBounds().height / 1.3);
     chooseBirdText.setOrigin(chooseBirdText.getLocalBounds().width / 2, chooseBirdText.getLocalBounds().height / 1.3);
+    levelEditorText.setOrigin(levelEditorText.getLocalBounds().width / 2, levelEditorText.getLocalBounds().height / 1.3);
 
     // Configure circular button shape
     ButtonShape.setRadius(30);
@@ -114,6 +116,8 @@ void GUI::updateBackground() {
         case BirdSelection:
             currentTexture = &chooseABirdBackgroundTexture;
             break;
+        case LevelEditor:
+            currentTexture = &editorBackgroundTexture;
         
     }
 
@@ -218,6 +222,8 @@ void GUI::processEvents() {
                         currentScreen = Settings;
                     } else if (chooseBirdText.getGlobalBounds().contains(mousePos)) {
                         currentScreen = BirdSelection;
+                    } else if (levelEditorText.getGlobalBounds().contains(mousePos)) {
+                        currentScreen = LevelEditor;
                     }
                     break;
                 case Levels:
@@ -278,6 +284,7 @@ void GUI::processEvents() {
                     updateButtonHoverEffect(playText, mousePos);
                     updateButtonHoverEffect(settingsText, mousePos);
                     updateButtonHoverEffect(chooseBirdText, mousePos);
+                    updateButtonHoverEffect(levelEditorText, mousePos);
                     break;
                 case Levels:
                     updateButtonHoverEffect(level1Text, mousePos);
@@ -332,6 +339,9 @@ void GUI::render() {
         case BirdSelection:
             drawBirdSelectionScreen();
             break;
+        case LevelEditor:
+            drawLevelEditorScreen();
+            break;
     }
 
     window.display();
@@ -342,20 +352,25 @@ void GUI::render() {
  */
 void GUI::drawHomeScreen() {
     updateBackground();
-    ButtonShape.setPosition(400, 400);
+    ButtonShape.setPosition(300, 400);
     window.draw(ButtonShape);
     playText.setPosition(ButtonShape.getPosition());
     window.draw(playText);
 
-    ButtonShape.setPosition(600, 400);
+    ButtonShape.setPosition(500, 400);
     window.draw(ButtonShape);
     settingsText.setPosition(ButtonShape.getPosition());
     window.draw(settingsText);
 
-    ButtonShape.setPosition(800, 400); 
+    ButtonShape.setPosition(700, 400); 
     window.draw(ButtonShape);
     chooseBirdText.setPosition(ButtonShape.getPosition());
     window.draw(chooseBirdText);
+
+    ButtonShape.setPosition(900, 400);
+    window.draw(ButtonShape);
+    levelEditorText.setPosition(ButtonShape.getPosition());
+    window.draw(levelEditorText);
 }
 
 /**
@@ -474,3 +489,8 @@ void GUI::drawBirdSelectionScreen() {
     window.draw(highlightCircle);
 }
 
+void GUI::drawLevelEditorScreen() {
+    updateBackground();
+
+    // Add level editor components here
+}

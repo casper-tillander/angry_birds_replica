@@ -45,6 +45,7 @@ private:
     sf::Texture soundTexture;
     sf::Texture levelBackgroundTexture; ///< The background texture for the levels-screen.
     sf::Texture settingsBackgroundTexture; ///< The background texture for the settings-screen.
+    sf::Texture editorBackgroundTexture;
 
     sf::Texture gameOverBackgroundTexture; ///< The background texture for the game over screen.
     sf::Texture levelCompleteBackgroundTexture; ///< The background texture for the level complete screen.
@@ -57,7 +58,7 @@ private:
     sf::CircleShape highlightCircle; ///< The circle to highlight the selected bird.
 
     Level* currentLevel;  ///< Pointer to the current level.
-    enum Screen { Home, BirdSelection, Levels, PlayingLevel, GameOver, LevelCompleted, Settings }; ///< Different game screens.
+    enum Screen { Home, BirdSelection, Levels, PlayingLevel, GameOver, LevelCompleted, Settings, LevelEditor }; ///< Different game screens.
     Screen currentScreen; ///< Variable to hold the current screen state.
     int levelNumber; ///< Variable to hold the current level number.
 
@@ -74,6 +75,8 @@ private:
 
     sf::Texture starTexture;
     sf::Sprite starSprite;
+
+    sf::Text levelEditorText;
 
     /**
      * @brief Initializes the GUI components.
@@ -151,6 +154,8 @@ private:
     void updateBackground();
 
     void drawBirdSelectionScreen();
+
+    void drawLevelEditorScreen();
 
 };
 
