@@ -2,6 +2,7 @@
 #define GUI_HPP
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "level.hpp"
 #include "bird.hpp"
 
@@ -21,8 +22,12 @@ public:
      */
     void run();
 
+    bool isSpecialBird;
+
 private:
+
     sf::RenderWindow window; ///< The game's window.
+    sf::Music music;
     sf::Text titleText; ///< The title text on the screen.
     sf::Text playText; ///< The play button text.
     sf::Text settingsText; ///< The settings button text.
@@ -35,24 +40,43 @@ private:
     sf::Text tryAgainText; ///< The button for trying again.
     sf::Text returnToLevelsText; ///< The button for returning to levels.
     sf::Font font; ///< The font used for text.
-    sf::Texture backgroundTexture; ///< The background texture.
+    sf::Texture mainScreenTexture; ///< The background texture.
+    sf::Texture backgroundTexture;
+    sf::Texture soundTexture;
     sf::Texture levelBackgroundTexture; ///< The background texture for the levels-screen.
     sf::Texture settingsBackgroundTexture; ///< The background texture for the settings-screen.
+    sf::Texture editorBackgroundTexture;
 
     sf::Texture gameOverBackgroundTexture; ///< The background texture for the game over screen.
     sf::Texture levelCompleteBackgroundTexture; ///< The background texture for the level complete screen.
+    sf::Texture chooseABirdBackgroundTexture;
 
     sf::Sprite backgroundSprite; ///< The background sprite.
     sf::FloatRect buttonBounds; ///< The bounding rectangle for the button.
     sf::Texture birdTexture; ///< The texture for the bird.
+    sf::Texture specialBirdTexture; ///< The texture for the special bird.
+    sf::CircleShape highlightCircle; ///< The circle to highlight the selected bird.
 
     Level* currentLevel;  ///< Pointer to the current level.
-    enum Screen { Home, Levels, PlayingLevel, GameOver, LevelCompleted, Settings }; ///< Different game screens.
+    enum Screen { Home, BirdSelection, Levels, PlayingLevel, GameOver, LevelCompleted, Settings, LevelEditor }; ///< Different game screens.
     Screen currentScreen; ///< Variable to hold the current screen state.
     int levelNumber; ///< Variable to hold the current level number.
 
     sf::Vector2u textureSize; ///< Variable to hold the size of the texture..
     sf::Vector2u windowSize; ///< Variable to hold the size of the window.
+
+    sf::Sprite soundButton;
+    sf::RectangleShape redLine;
+    bool soundOn;
+
+    sf::Text chooseBirdText; ///< The text for the button to choose a bird.
+    sf::Sprite normalBirdButton; ///< Button for choosing the normal bird.
+    sf::Sprite specialBirdButton; ///< Button for choosing the special bird.
+
+    sf::Texture starTexture;
+    sf::Sprite starSprite;
+
+    sf::Text levelEditorText;
 
     /**
      * @brief Initializes the GUI components.
@@ -128,6 +152,10 @@ private:
      * @brief Updates the background
      */
     void updateBackground();
+
+    void drawBirdSelectionScreen();
+
+    void drawLevelEditorScreen();
 
 };
 

@@ -33,32 +33,35 @@ DONE:  Gör så att nivån slutar då alla grisar är döda eller då antalet f�
 
 DONE: Lägg till en settings - screen (Casper)
 
-------------------------------------------------------------------------------------------------------------------------------------------------
+Done: Fix bug: Om man spelar en nivå -> To levels -> Home så ser bakgrunden konstig ut. (Julius)
 
-TODO: Fix bug: Om man spelar en nivå -> To levels -> Home så ser bakgrunden konstig ut.
+DONE: Ge användaren möjligheten att stäga av och lägga på ljud (Casper)
 
-TODO: Implementera ett poängsystem, kanske med stjärnor?
+DONE: Implementera en ny fågel med en specialattack. Klicka en gång på screenen och skjut fågeln mot det stället. (Casper)
 
-TODO: Implementera bättre damage-logik för grisarna (nu tar dom alltid 10/100 damage för varje kollision).
+DONE: Implementera i GUI:en en möjlighet att välja fågel före leveln börjar. (Casper)
 
-TODO: Ge användaren möjligheten att stäga av och lägga på ljud + annat?
+DONE: Implementera ett poängsystem med stjärnor? (Casper)
 
-TODO: Implementera en ny fågel med en specialattack. Idéer: Klicka en gång på screenen och skjut fågeln mot det stället, gör så att fågeln exploderar, gör så att man kan skjuta iväg fågeln två gånger.
-      Implementera i GUI:en en möjlighet att välja fågel före leveln börjar.
+DONE: Lägg till punkter som visar flygbanan för fågeln (Casper)
 
-TODO: "The view follows the bird as it moves sideways"? Gör världen större och gör så att användarens view följer. (Julius)
+DONE: Implementera bättre damage-logik för grisarna (nu tar dom alltid 10/100 damage för varje kollision). (Julius)
 
-TODO: GUI visar antalet fåglar kvar, mängden poäng, grisar kvar...? Antagligen implementrat i level.cpp/.hpp
+---------------------------------------------------------------------------------------------------------------
 
-TODO: Lägg till punkter som visar flygbanan för fågeln
+TODO: "The view follows the bird as it moves sideways"? Gör världen större och gör så att användarens view följer.
 
+TODO: GUI visar antalet fåglar kvar, mängden poäng, grisar kvar...?
 
+---------------------------------------------------------------------------------------------------------------
 
 EXTRA FEATURES:
 
 TODO: High score list, saved per level, player can enter a nickname (1 point)
 
 TODO: Different game modes: reach goal in time, collect all items, other kind of challenges (2 points) Egna idéer: No gravity mode = lätt.
+
+TODO: Level editor to create levels and to save them in a file (4 points)
 
 .
 .

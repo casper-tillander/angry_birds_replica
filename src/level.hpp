@@ -5,6 +5,7 @@
 #include <box2d/box2d.h>
 #include <vector>
 #include "bird.hpp"
+#include "specialbird.hpp"
 #include "pig.hpp"
 #include "box.hpp"
 #include "wall.hpp"
@@ -21,6 +22,10 @@ private:
     int currentBirdIndex = 0; // Index of the current bird.
     int totalBirds = 3; // Total birds per level.
     sf::RenderWindow& window; ///< Reference to the game's window.
+    /* Lagar views
+    sf::View gameView; ///< The view used during levels.
+    sf::View defaultView; ///< The view used otherwise.
+    */
     sf::Texture backgroundTexture; ///< The background texture.
     sf::Sprite backgroundSprite; ///< The background sprite.
     b2World* world; ///< Pointer to the Box2D world.
@@ -43,8 +48,10 @@ public:
      * @param backTex The texture for the background.
      * @param levelFile The path to the level file.
      */
-    Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, const std::string& levelFile);
+    Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, const std::string& levelFile, bool isSpecialBird);
 
+
+    bool isSpecialBird;
     /**
      * @brief Destroys the Level object.
      */
@@ -92,14 +99,14 @@ public:
      *
      * @param birdTex The texture for birds.
      */
-    void initializeBirds(const sf::Texture& birdTex);
+    void initializeBirds(const sf::Texture& birdTex, bool isSpecialBird);
 
     /**
      * @brief Moves to the next bird in the sequence.
      *
      * @param birdTex The texture for birds.
      */
-    void nextBird(const sf::Texture& birdTex);
+    void nextBird(const sf::Texture& birdTex, bool isSpecialBird);
 
     /**
      * @brief Checks if the current bird has stopped moving.
@@ -135,6 +142,9 @@ public:
      * @return True if all birds are used, otherwise false.
      */
     bool areAllBirdsUsed() const;
+
+    int getBirdsUsedForCompletion();
+
 };
 
 #endif // LEVEL_HPP

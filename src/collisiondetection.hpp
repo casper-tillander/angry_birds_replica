@@ -3,6 +3,7 @@
 
 #include <box2d/box2d.h>
 #include "pig.hpp"
+#include "bird.hpp"
 
 /**
  * @class CollisionDetection

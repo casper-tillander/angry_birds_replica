@@ -1,4 +1,5 @@
 #include "bird.hpp"
+#include <iostream>
 
 /**
  * @brief Constructs a Bird object.
@@ -51,6 +52,12 @@ void Bird::update() {
  */
 void Bird::render(sf::RenderWindow& window) {
     window.draw(birdShape);
+    // Render trajectory dots
+    if (!isLaunched) {
+        for (const auto& dot : trajectoryDots) {
+            window.draw(dot);
+        }
+    }
 }
 
 /**
@@ -73,6 +80,13 @@ void Bird::handleInput(const sf::Event& event, const sf::RenderWindow& window) {
         launch(b2Vec2(launchVector.x, launchVector.y));
         isDragging = false;
     }
+    if (isDragging) {
+        sf::Vector2f currentDragPosition = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+        sf::Vector2f launchVector = initialClickPosition - currentDragPosition;
+
+        // Calculate trajectory points
+        trajectoryDots = calculateTrajectory(launchVector, 10); // Update the member variable
+    }
 }
 
 /**
@@ -91,6 +105,9 @@ void Bird::launch(const b2Vec2& force) {
 
         body->ApplyLinearImpulseToCenter(scaledForce, true);
         isLaunched = true;
+
+        // Clear the trajectory dots
+        trajectoryDots.clear();
     }
 }
 
@@ -117,3 +134,25 @@ bool Bird::isBirdLaunched() const {
 b2Body* Bird::getBody() const {
     return body;
 }
+
+// Calculate the trajectory points
+std::vector<sf::CircleShape> Bird::calculateTrajectory(const sf::Vector2f& launchVector, int numDots) {
+    std::vector<sf::CircleShape> dots;
+    float timeStep = 0.1f; // Time interval between points
+    b2Vec2 startVelocity(launchVector.x, launchVector.y);
+
+    for (int i = 0; i < numDots; ++i) {
+        float time = i * timeStep;
+        float x = startVelocity.x * time + birdShape.getPosition().x;
+        float y = 0.5f * 9.8f * time * time + startVelocity.y * time + birdShape.getPosition().y;
+
+        sf::CircleShape dot(3); // Create a small dot with radius 3
+
+        dot.setPosition(x, y); // Negative y because SFML's y-axis is inverted
+        dot.setFillColor(sf::Color::White); // Set dot color
+        dots.push_back(dot); // Add the dot to the vector
+    }
+
+    return dots;
+}
+

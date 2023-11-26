@@ -14,14 +14,40 @@ GUI::GUI() : window(sf::VideoMode(1200, 700), "Angry Birds"), currentScreen(Home
  */
 void GUI::initialize() {
 
+    music.openFromFile("../Sound/Fluffing-a-Duck_chosic.com_.ogg");
+    music.setLoop(true);
+    music.play();
+    music.setVolume(10);
+    music.pause();
+    soundOn = false;
+
+    isSpecialBird = false;
+
+    soundTexture.loadFromFile("../Pictures/sound.png");
+    soundButton.setTexture(soundTexture);
+    soundButton.setScale(0.5f, 0.5f);
+
+    redLine.setSize(sf::Vector2f(120, 15));
+    redLine.setFillColor(sf::Color::Red);
+    redLine.setRotation(45);
+
     // Load necessary resources
     font.loadFromFile("../Fonts/angrybirds-regular.ttf");
     birdTexture.loadFromFile("../Pictures/bird.png");
-    backgroundTexture.loadFromFile("../Backgrounds/homescreen.png");
+    mainScreenTexture.loadFromFile("../Backgrounds/homescreen.png");
     levelBackgroundTexture.loadFromFile("../Backgrounds/levels.png");
     gameOverBackgroundTexture.loadFromFile("../Backgrounds/gameover.png");
     levelCompleteBackgroundTexture.loadFromFile("../Backgrounds/levelcomplete.png");
+    chooseABirdBackgroundTexture.loadFromFile("../Backgrounds/birdselection.png");
     settingsBackgroundTexture.loadFromFile("../Backgrounds/settings.png");
+    editorBackgroundTexture.loadFromFile("../Backgrounds/background3.jpg");
+    specialBirdTexture.loadFromFile("../Pictures/specialbird.png");
+
+    normalBirdButton.setTexture(birdTexture);
+    specialBirdButton.setTexture(specialBirdTexture);
+
+    normalBirdButton.setScale(0.05f, 0.05f);
+    specialBirdButton.setScale(0.2f, 0.2f);
 
     // Configure buttons
     setupButton(playText, "Play");
@@ -32,6 +58,8 @@ void GUI::initialize() {
     setupButton(level3Text, "Level 3");
     setupButton(tryAgainText, "Try again");
     setupButton(returnToLevelsText, "To levels");
+    setupButton(chooseBirdText, "Choose Bird");
+    setupButton(levelEditorText, "Level Editor");
 
     // Styling and placement for buttons
     returnToHomeText.setOrigin(returnToHomeText.getLocalBounds().width / 2, returnToHomeText.getLocalBounds().height / 1.3);
@@ -42,6 +70,8 @@ void GUI::initialize() {
     level3Text.setOrigin(level3Text.getLocalBounds().width / 2, level3Text.getLocalBounds().height / 1.3);
     tryAgainText.setOrigin(level3Text.getLocalBounds().width / 1.4, level3Text.getLocalBounds().height / 1.3);
     returnToLevelsText.setOrigin(level3Text.getLocalBounds().width / 1.4, level3Text.getLocalBounds().height / 1.3);
+    chooseBirdText.setOrigin(chooseBirdText.getLocalBounds().width / 2, chooseBirdText.getLocalBounds().height / 1.3);
+    levelEditorText.setOrigin(levelEditorText.getLocalBounds().width / 2, levelEditorText.getLocalBounds().height / 1.3);
 
     // Configure circular button shape
     ButtonShape.setRadius(30);
@@ -50,13 +80,26 @@ void GUI::initialize() {
     ButtonShape.setOutlineThickness(1);
     ButtonShape.setOutlineColor(sf::Color::White);
     ButtonShape.setOrigin(ButtonShape.getLocalBounds().width / 2, ButtonShape.getLocalBounds().height / 2);
+
+    // Selection circle for birds.
+    highlightCircle.setRadius(60);
+    highlightCircle.setFillColor(sf::Color::Transparent);
+    highlightCircle.setOutlineColor(sf::Color::White);
+    highlightCircle.setOutlineThickness(5);
+
+    // Stars for point system
+    starTexture.loadFromFile("../Pictures/star.png");
+    starSprite.setTexture(starTexture);
+    starSprite.setScale(0.9f, 0.9f);
+
+    
 }
 
 void GUI::updateBackground() {
     sf::Texture* currentTexture = nullptr;
     switch (currentScreen) {
         case Home:
-            currentTexture = &backgroundTexture;
+            currentTexture = &mainScreenTexture;
             break;
         case Levels:
             currentTexture = &levelBackgroundTexture;
@@ -70,6 +113,12 @@ void GUI::updateBackground() {
         case Settings:
             currentTexture = &settingsBackgroundTexture;
             break;
+        case BirdSelection:
+            currentTexture = &chooseABirdBackgroundTexture;
+            break;
+        case LevelEditor:
+            currentTexture = &editorBackgroundTexture;
+        
     }
 
     if (currentTexture) {
@@ -147,7 +196,7 @@ void GUI::launchLevel(int levelNumber) {
     if (currentLevel != nullptr) {
         delete currentLevel;
     }
-    currentLevel = new Level(window, levelNumber, backgroundTexture, levelFile);
+    currentLevel = new Level(window, levelNumber, backgroundTexture, levelFile, isSpecialBird);
     currentScreen = PlayingLevel;
 
 }
@@ -171,6 +220,10 @@ void GUI::processEvents() {
                         currentScreen = Levels;
                     } else if (settingsText.getGlobalBounds().contains(mousePos)) {
                         currentScreen = Settings;
+                    } else if (chooseBirdText.getGlobalBounds().contains(mousePos)) {
+                        currentScreen = BirdSelection;
+                    } else if (levelEditorText.getGlobalBounds().contains(mousePos)) {
+                        currentScreen = LevelEditor;
                     }
                     break;
                 case Levels:
@@ -199,6 +252,28 @@ void GUI::processEvents() {
                         currentScreen = Levels;
                     }
                     break;
+                case Settings:
+                    if (returnToHomeText.getGlobalBounds().contains(mousePos)) {
+                        currentScreen = Home;
+                    } else if (soundButton.getGlobalBounds().contains(mousePos)) {
+                        if (soundOn) {
+                            music.pause();
+                            soundOn = false;
+                        } else {
+                            music.play();
+                            soundOn = true;
+                        }
+                    }
+                    break;
+                case BirdSelection:
+                if (normalBirdButton.getGlobalBounds().contains(mousePos)) {
+                    isSpecialBird = false;
+                } else if (specialBirdButton.getGlobalBounds().contains(mousePos)) {
+                    isSpecialBird = true;
+                } else if (returnToHomeText.getGlobalBounds().contains(mousePos)) {
+                        currentScreen = Home;
+                }
+                break;
             }
         }
 
@@ -208,6 +283,8 @@ void GUI::processEvents() {
                 case Home:
                     updateButtonHoverEffect(playText, mousePos);
                     updateButtonHoverEffect(settingsText, mousePos);
+                    updateButtonHoverEffect(chooseBirdText, mousePos);
+                    updateButtonHoverEffect(levelEditorText, mousePos);
                     break;
                 case Levels:
                     updateButtonHoverEffect(level1Text, mousePos);
@@ -220,6 +297,12 @@ void GUI::processEvents() {
                     updateButtonHoverEffect(returnToLevelsText, mousePos);
                 case LevelCompleted:
                     updateButtonHoverEffect(returnToLevelsText, mousePos);
+                    break;
+                case Settings:
+                    updateButtonHoverEffect(returnToHomeText, mousePos);
+                    break;
+                case BirdSelection:
+                    updateButtonHoverEffect(returnToHomeText, mousePos);
                     break;
             }
         }
@@ -253,6 +336,12 @@ void GUI::render() {
         case Settings:
             drawSettingsScreen();
             break;
+        case BirdSelection:
+            drawBirdSelectionScreen();
+            break;
+        case LevelEditor:
+            drawLevelEditorScreen();
+            break;
     }
 
     window.display();
@@ -263,15 +352,25 @@ void GUI::render() {
  */
 void GUI::drawHomeScreen() {
     updateBackground();
-    ButtonShape.setPosition(480, 400);
+    ButtonShape.setPosition(300, 400);
     window.draw(ButtonShape);
     playText.setPosition(ButtonShape.getPosition());
     window.draw(playText);
 
-    ButtonShape.setPosition(680, 400);
+    ButtonShape.setPosition(500, 400);
     window.draw(ButtonShape);
     settingsText.setPosition(ButtonShape.getPosition());
     window.draw(settingsText);
+
+    ButtonShape.setPosition(700, 400); 
+    window.draw(ButtonShape);
+    chooseBirdText.setPosition(ButtonShape.getPosition());
+    window.draw(chooseBirdText);
+
+    ButtonShape.setPosition(900, 400);
+    window.draw(ButtonShape);
+    levelEditorText.setPosition(ButtonShape.getPosition());
+    window.draw(levelEditorText);
 }
 
 /**
@@ -321,10 +420,23 @@ void GUI::drawGameOverScreen() {
  */
 void GUI::drawLevelCompletedScreen() {
     updateBackground();
-    ButtonShape.setPosition(560, 400);
+    ButtonShape.setPosition(575, 550);
     window.draw(ButtonShape);
     returnToLevelsText.setPosition(ButtonShape.getPosition());
     window.draw(returnToLevelsText);
+
+    // Draw stars based on birds used
+    if (currentLevel != nullptr) {
+    int birdsUsed = currentLevel->getBirdsUsedForCompletion();
+    int totalBirds = 3;
+    int starsToDisplay = totalBirds - birdsUsed + 1;
+
+    for (int i = 0; i < starsToDisplay; i++) {
+        starSprite.setPosition(265 + i * 200, 280);
+        window.draw(starSprite);
+    }
+}
+
 }
 
 /**
@@ -332,7 +444,53 @@ void GUI::drawLevelCompletedScreen() {
  */
 void GUI::drawSettingsScreen() {
     updateBackground();
-    // TODO: Add settings and a homebutton.
+    
+    ButtonShape.setPosition(100, 50);
+    window.draw(ButtonShape);
+    returnToHomeText.setPosition(ButtonShape.getPosition());
+    window.draw(returnToHomeText);
+
+    soundButton.setPosition(530, 350);
+    window.draw(soundButton);
+
+    if (!soundOn) {
+        redLine.setPosition(soundButton.getPosition().x + soundButton.getGlobalBounds().width / 5,
+                            soundButton.getPosition().y + soundButton.getGlobalBounds().height / 8);
+        window.draw(redLine);
+    }
 }
 
+void GUI::drawBirdSelectionScreen() {
+    updateBackground();
 
+    ButtonShape.setPosition(100, 50);
+    window.draw(ButtonShape);
+    returnToHomeText.setPosition(ButtonShape.getPosition());
+    window.draw(returnToHomeText);
+
+    normalBirdButton.setPosition(475, 450);
+    window.draw(normalBirdButton);
+
+    specialBirdButton.setPosition(585, 450);
+    window.draw(specialBirdButton);
+
+    // Update highlightCircle position based on the selected bird
+    sf::Vector2f birdButtonCenter;
+    if (isSpecialBird) {
+        birdButtonCenter = sf::Vector2f(specialBirdButton.getPosition().x + specialBirdButton.getGlobalBounds().width / 2,
+                                        specialBirdButton.getPosition().y + specialBirdButton.getGlobalBounds().height / 2);
+    } else {
+        birdButtonCenter = sf::Vector2f(normalBirdButton.getPosition().x + normalBirdButton.getGlobalBounds().width / 2,
+                                        normalBirdButton.getPosition().y + normalBirdButton.getGlobalBounds().height / 2);
+    }
+    highlightCircle.setPosition(birdButtonCenter.x - highlightCircle.getRadius(), 
+                                birdButtonCenter.y - highlightCircle.getRadius());
+
+    window.draw(highlightCircle);
+}
+
+void GUI::drawLevelEditorScreen() {
+    updateBackground();
+
+    // Add level editor components here
+}

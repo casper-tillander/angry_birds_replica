@@ -9,21 +9,26 @@
  * @param backTex The texture for the background.
  * @param levelFile The path to the level file.
  */
-Level::Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, const std::string& levelFile) 
-    : levelNumber(number), window(win), world(new b2World(b2Vec2(0.0f, 9.8f))) {
+Level::Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, const std::string& levelFile, bool isSpecialBirdParam)
+    : levelNumber(number), window(win), world(new b2World(b2Vec2(0.0f, 9.8f))), isSpecialBird(isSpecialBirdParam) {
     setupWorld();
 
     backgroundTexture = backTex;
     backgroundSprite.setTexture(backgroundTexture);
     sf::Vector2u textureSize = backgroundTexture.getSize();
     sf::Vector2u windowSize = window.getSize();
-    float scaleX = static_cast<float>(windowSize.x) / textureSize.x;
+    float scaleX = static_cast<float>(windowSize.x) / textureSize.x; //* 2.0f; Sätt till för att "töja ut" på bilden
     float scaleY = static_cast<float>(windowSize.y) / textureSize.y;
     backgroundSprite.setScale(scaleX, scaleY);
 
-
-    birdTexture.loadFromFile("../Pictures/bird.png");
-    initializeBirds(birdTexture);
+    if (isSpecialBird) {
+        birdTexture.loadFromFile("../Pictures/specialbird.png");
+    } else {
+        birdTexture.loadFromFile("../Pictures/bird.png");
+    }
+    
+    
+    initializeBirds(birdTexture, isSpecialBird);
 
     pigTexture.loadFromFile("../Pictures/pig.png");
     boxTexture.loadFromFile("../Pictures/box.jpg");
@@ -51,6 +56,13 @@ Level::~Level() {
  */
 void Level::run() {
     bool shouldExit = false;
+    /*
+    // Lite mods på viewn
+    defaultView = window.getDefaultView(); 
+    gameView = window.getDefaultView();
+
+    sf::Vector2f defaultViewCenter = defaultView.getCenter();
+    */
     while (window.isOpen() && !shouldExit) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -62,13 +74,20 @@ void Level::run() {
                     currentBird->handleInput(event, window);
 
                 if (hasBirdStopped()) {
-                    nextBird(birdTexture);
+                    nextBird(birdTexture, isSpecialBird);
             }
         }
         }
 
         world->Step(1.0f/60.0f, 6, 2);
 
+        /*
+        Mera view 
+        b2Vec2 birdWorldPosition = birds[currentBirdIndex]->getBody()->GetPosition(); // The position of the bird
+        sf::Vector2f birdPosition(birdWorldPosition.x, defaultViewCenter.y);
+        gameView.setCenter(birdPosition); // Set the center of the view to follow the bird
+        window.setView(gameView);
+        */
 
         birds[currentBirdIndex]->update();
         for (auto pig : pigs) pig->update();
@@ -76,6 +95,7 @@ void Level::run() {
         for (auto wall : walls) wall->update();
 
         window.clear();
+        // backgroundSprite.setPosition(-600.0f,0.0f); Sätter bakgrunden o börja "tidigare"
         window.draw(backgroundSprite);
         window.setFramerateLimit(250); // Sets the framerate limit 
         // window.setVerticalSyncEnabled(true); // Not supported??
@@ -99,11 +119,13 @@ void Level::run() {
 
         if (isLevelComplete()) {
             shouldExit = true;
+            // window.setView(defaultView); Ändrar viewn tibaks till normala
             break;
         }
 
         if (isGameOver()) {
             shouldExit = true;
+            // window.setView(defaultView); Ändrar viewn tibaks till normala
             break;
         }
         }
@@ -186,23 +208,38 @@ void Level::loadObjects(const std::string& levelFile) {
  *
  * @param birdTex The texture for the birds.
  */
-void Level::initializeBirds(const sf::Texture& birdTex) {
+void Level::initializeBirds(const sf::Texture& birdTex, bool isSpecialBird) {
+    Bird* newBird = nullptr;
+
     if (totalBirds > 0) {
-        Bird* newBird = new Bird(world, birdTex, b2Vec2(100.0f, 500.0f));
+        if (isSpecialBird) {
+            newBird = new SpecialBird(world, birdTex, b2Vec2(100.0f, 500.0f));
+        } else {
+            newBird = new Bird(world, birdTex, b2Vec2(100.0f, 500.0f));
+        }
+        
         birds.push_back(newBird);
     }
 }
+
 
 /**
  * @brief Moves to the next bird in the level.
  *
  * @param birdTex The texture for the birds.
  */
-void Level::nextBird(const sf::Texture& birdTex) {
+void Level::nextBird(const sf::Texture& birdTex, bool isSpecialBird) {
+    Bird* newBird = nullptr;
+
     if (currentBirdIndex < totalBirds - 1) {
         currentBirdIndex++;
 
-        Bird* newBird = new Bird(world, birdTexture, b2Vec2(100.0f, 500.0f));
+        if (isSpecialBird) {
+            newBird = new SpecialBird(world, birdTex, b2Vec2(100.0f, 500.0f));
+        } else {
+            newBird = new Bird(world, birdTex, b2Vec2(100.0f, 500.0f));
+        }
+
         birds.push_back(newBird);
     }
 }
@@ -266,4 +303,17 @@ bool Level::areAllPigsDestroyed() const {
  */
 bool Level::areAllBirdsUsed() const {
     return currentBirdIndex >= totalBirds - 1 && hasBirdStopped();
+}
+
+/**
+ * @brief Gets the number of birds used to complete the level.
+ * @return The number of birds used if the level is completed, otherwise -1.
+ */
+int Level::getBirdsUsedForCompletion() {
+    if (isLevelComplete()) {
+        // Add 1 because currentBirdIndex starts from 0
+        return currentBirdIndex + 1; 
+    } else {
+        return -1; // Indicates the level is not completed yet
+    }
 }

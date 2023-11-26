@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <box2d/box2d.h>
+#include <vector>
 
 /**
  * @class Bird
@@ -11,7 +12,6 @@
 class Bird {
 private:
     sf::CircleShape birdShape; ///< The bird's shape for both rendering and physics.
-    b2Body* body; ///< The bird's Box2D body.
     bool isLaunched; ///< Indicates whether the bird has been launched.
     bool isDragging; ///< Indicates whether the bird is being dragged.
     sf::Vector2f initialClickPosition; ///< The initial click position when dragging.
@@ -21,6 +21,8 @@ private:
     int totalBirds = 3; // Total birds per level.
 
 public:
+    b2Body* body; ///< The bird's Box2D body.
+    
     /**
      * @brief Constructor for the Bird class.
      * @param world Pointer to the Box2D world.
@@ -45,7 +47,7 @@ public:
      * @param event The SFML event to handle.
      * @param window The SFML window associated with the event.
      */
-    void handleInput(const sf::Event& event, const sf::RenderWindow& window);
+    virtual void handleInput(const sf::Event& event, const sf::RenderWindow& window);
 
     /**
      * @brief Launches the bird with a specified force.
@@ -70,6 +72,9 @@ public:
      * @return A pointer to the Box2D body of the bird.
      */
     b2Body* getBody() const;
+
+    std::vector<sf::CircleShape> calculateTrajectory(const sf::Vector2f& launchVector, int numDots);
+    std::vector<sf::CircleShape> trajectoryDots; ///< Stores the trajectory dots.
 };
 
 #endif // BIRD_HPP
