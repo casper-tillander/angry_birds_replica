@@ -17,7 +17,7 @@ Level::Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, cons
     backgroundSprite.setTexture(backgroundTexture);
     sf::Vector2u textureSize = backgroundTexture.getSize();
     sf::Vector2u windowSize = window.getSize();
-    float scaleX = static_cast<float>(windowSize.x) / textureSize.x; //* 2.0f; Sätt till för att "töja ut" på bilden
+    float scaleX = static_cast<float>(windowSize.x) / textureSize.x;
     float scaleY = static_cast<float>(windowSize.y) / textureSize.y;
     backgroundSprite.setScale(scaleX, scaleY);
 
@@ -38,6 +38,7 @@ Level::Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, cons
 
     auto collisionDetection = new CollisionDetection();
     world->SetContactListener(collisionDetection);
+    
 }
 
 /**
@@ -56,13 +57,6 @@ Level::~Level() {
  */
 void Level::run() {
     bool shouldExit = false;
-    /*
-    // Lite mods på viewn
-    defaultView = window.getDefaultView(); 
-    gameView = window.getDefaultView();
-
-    sf::Vector2f defaultViewCenter = defaultView.getCenter();
-    */
     while (window.isOpen() && !shouldExit) {
         sf::Event event;
         while (window.pollEvent(event)) {
@@ -81,21 +75,12 @@ void Level::run() {
 
         world->Step(1.0f/60.0f, 6, 2);
 
-        /*
-        Mera view 
-        b2Vec2 birdWorldPosition = birds[currentBirdIndex]->getBody()->GetPosition(); // The position of the bird
-        sf::Vector2f birdPosition(birdWorldPosition.x, defaultViewCenter.y);
-        gameView.setCenter(birdPosition); // Set the center of the view to follow the bird
-        window.setView(gameView);
-        */
-
         birds[currentBirdIndex]->update();
         for (auto pig : pigs) pig->update();
         for (auto box : boxes) box->update();
         for (auto wall : walls) wall->update();
 
         window.clear();
-        // backgroundSprite.setPosition(-600.0f,0.0f); Sätter bakgrunden o börja "tidigare"
         window.draw(backgroundSprite);
         window.setFramerateLimit(250); // Sets the framerate limit 
         // window.setVerticalSyncEnabled(true); // Not supported??
@@ -119,13 +104,11 @@ void Level::run() {
 
         if (isLevelComplete()) {
             shouldExit = true;
-            // window.setView(defaultView); Ändrar viewn tibaks till normala
             break;
         }
 
         if (isGameOver()) {
             shouldExit = true;
-            // window.setView(defaultView); Ändrar viewn tibaks till normala
             break;
         }
         }
