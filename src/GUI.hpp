@@ -23,6 +23,7 @@ public:
     void run();
 
     bool isSpecialBird;
+    int selectedBackground;
 
 private:
 
@@ -45,7 +46,7 @@ private:
     sf::Texture soundTexture;
     sf::Texture levelBackgroundTexture; ///< The background texture for the levels-screen.
     sf::Texture settingsBackgroundTexture; ///< The background texture for the settings-screen.
-    sf::Texture editorBackgroundTexture;
+    sf::Texture editorBackgroundTexture; ///< The background texture for choosing level for level editor.
 
     sf::Texture gameOverBackgroundTexture; ///< The background texture for the game over screen.
     sf::Texture levelCompleteBackgroundTexture; ///< The background texture for the level complete screen.
@@ -57,8 +58,13 @@ private:
     sf::Texture specialBirdTexture; ///< The texture for the special bird.
     sf::CircleShape highlightCircle; ///< The circle to highlight the selected bird.
 
+    sf::Texture levelEditor1; ///< The texture for level 1.
+    sf::Texture levelEditor2; ///< The texture for level 2.
+    sf::Texture levelEditor3; ///< The texture for level 3.
+    sf::RectangleShape highlightRectangle; ///< The rectangle to highlight the selected background.
+
     Level* currentLevel;  ///< Pointer to the current level.
-    enum Screen { Home, BirdSelection, Levels, PlayingLevel, GameOver, LevelCompleted, Settings, LevelEditor }; ///< Different game screens.
+    enum Screen { Home, BirdSelection, Levels, PlayingLevel, GameOver, LevelCompleted, Settings, LevelEditorSelection, LevelEditor }; ///< Different game screens.
     Screen currentScreen; ///< Variable to hold the current screen state.
     int levelNumber; ///< Variable to hold the current level number.
 
@@ -77,6 +83,9 @@ private:
     sf::Sprite starSprite;
 
     sf::Text levelEditorText;
+    sf::Sprite level1Button; ///< Button for choosing level 1 for level editor.
+    sf::Sprite level2Button; ///< Button for choosing level 2 for level editor.
+    sf::Sprite level3Button; ///< Button for choosing level 3 for level editor.
 
     /**
      * @brief Initializes the GUI components.
@@ -155,7 +164,9 @@ private:
 
     void drawBirdSelectionScreen();
 
-    void drawLevelEditorScreen();
+    void drawLevelEditorSelectionScreen();
+
+    void launchLevelEditor();
 
 };
 

@@ -22,6 +22,7 @@ void GUI::initialize() {
     soundOn = false;
 
     isSpecialBird = false;
+    selectedBackground = 1;
 
     soundTexture.loadFromFile("../Pictures/sound.png");
     soundButton.setTexture(soundTexture);
@@ -40,8 +41,20 @@ void GUI::initialize() {
     levelCompleteBackgroundTexture.loadFromFile("../Backgrounds/levelcomplete.png");
     chooseABirdBackgroundTexture.loadFromFile("../Backgrounds/birdselection.png");
     settingsBackgroundTexture.loadFromFile("../Backgrounds/settings.png");
-    editorBackgroundTexture.loadFromFile("../Backgrounds/background3.jpg");
     specialBirdTexture.loadFromFile("../Pictures/specialbird.png");
+
+    editorBackgroundTexture.loadFromFile("../Backgrounds/levels.png");
+    levelEditor1.loadFromFile("../Backgrounds/background1.jpg");
+    levelEditor2.loadFromFile("../Backgrounds/background2.jpg");
+    levelEditor3.loadFromFile("../Backgrounds/background3.jpg");
+
+    level1Button.setTexture(levelEditor1);
+    level2Button.setTexture(levelEditor2);
+    level3Button.setTexture(levelEditor3);
+
+    level1Button.setScale(0.05f, 0.05f);
+    level2Button.setScale(0.05f, 0.05f);
+    level3Button.setScale(0.05f, 0.05f);
 
     normalBirdButton.setTexture(birdTexture);
     specialBirdButton.setTexture(specialBirdTexture);
@@ -92,6 +105,10 @@ void GUI::initialize() {
     starSprite.setTexture(starTexture);
     starSprite.setScale(0.9f, 0.9f);
 
+    // Selection rectangle for backgrounds
+    highlightRectangle.setFillColor(sf::Color::Transparent);
+    highlightRectangle.setOutlineColor(sf::Color::White);
+    highlightRectangle.setOutlineThickness(5);
     
 }
 
@@ -116,7 +133,7 @@ void GUI::updateBackground() {
         case BirdSelection:
             currentTexture = &chooseABirdBackgroundTexture;
             break;
-        case LevelEditor:
+        case LevelEditorSelection:
             currentTexture = &editorBackgroundTexture;
         
     }
@@ -223,7 +240,7 @@ void GUI::processEvents() {
                     } else if (chooseBirdText.getGlobalBounds().contains(mousePos)) {
                         currentScreen = BirdSelection;
                     } else if (levelEditorText.getGlobalBounds().contains(mousePos)) {
-                        currentScreen = LevelEditor;
+                        currentScreen = LevelEditorSelection;
                     }
                     break;
                 case Levels:
@@ -246,7 +263,6 @@ void GUI::processEvents() {
                         currentScreen = Levels;
                     }
                     break;
-
                 case LevelCompleted:
                     if (returnToLevelsText.getGlobalBounds().contains(mousePos)) {
                         currentScreen = Levels;
@@ -266,14 +282,25 @@ void GUI::processEvents() {
                     }
                     break;
                 case BirdSelection:
-                if (normalBirdButton.getGlobalBounds().contains(mousePos)) {
-                    isSpecialBird = false;
-                } else if (specialBirdButton.getGlobalBounds().contains(mousePos)) {
-                    isSpecialBird = true;
-                } else if (returnToHomeText.getGlobalBounds().contains(mousePos)) {
+                    if (normalBirdButton.getGlobalBounds().contains(mousePos)) {
+                        isSpecialBird = false;
+                    } else if (specialBirdButton.getGlobalBounds().contains(mousePos)) {
+                        isSpecialBird = true;
+                    } else if (returnToHomeText.getGlobalBounds().contains(mousePos)) {
                         currentScreen = Home;
-                }
-                break;
+                    }
+                    break;
+                case LevelEditorSelection:
+                    if (level1Button.getGlobalBounds().contains(mousePos)) {
+                        selectedBackground = 1;
+                    } else if (level2Button.getGlobalBounds().contains(mousePos)) {
+                        selectedBackground = 2;
+                    } else if (level3Button.getGlobalBounds().contains(mousePos)) {
+                        selectedBackground = 3;
+                    } else if (returnToHomeText.getGlobalBounds().contains(mousePos)) {
+                        currentScreen = Home;
+                    }
+                    break;
             }
         }
 
@@ -302,6 +329,9 @@ void GUI::processEvents() {
                     updateButtonHoverEffect(returnToHomeText, mousePos);
                     break;
                 case BirdSelection:
+                    updateButtonHoverEffect(returnToHomeText, mousePos);
+                    break;
+                case LevelEditorSelection:
                     updateButtonHoverEffect(returnToHomeText, mousePos);
                     break;
             }
@@ -339,8 +369,8 @@ void GUI::render() {
         case BirdSelection:
             drawBirdSelectionScreen();
             break;
-        case LevelEditor:
-            drawLevelEditorScreen();
+        case LevelEditorSelection:
+            drawLevelEditorSelectionScreen();
             break;
     }
 
@@ -489,8 +519,49 @@ void GUI::drawBirdSelectionScreen() {
     window.draw(highlightCircle);
 }
 
-void GUI::drawLevelEditorScreen() {
+void GUI::drawLevelEditorSelectionScreen() {
     updateBackground();
 
-    // Add level editor components here
+    ButtonShape.setPosition(100, 50);
+    window.draw(ButtonShape);
+    returnToHomeText.setPosition(ButtonShape.getPosition());
+    window.draw(returnToHomeText);
+
+    level1Button.setPosition(145, 450);
+    window.draw(level1Button);
+
+    level2Button.setPosition(470, 450);
+    window.draw(level2Button);
+
+    level3Button.setPosition(795, 450);
+    window.draw(level3Button);
+
+    // Update highlightRectangle position based on the selected background
+    highlightRectangle.setSize(sf::Vector2f(level1Button.getGlobalBounds().width + 2 * 5.0f, level1Button.getGlobalBounds().height + 2 * 5.0f));
+
+    if (selectedBackground == 1) {
+        highlightRectangle.setPosition(level1Button.getPosition() - sf::Vector2f(5.0f, 5.0f));
+    } else if (selectedBackground == 2) {
+        highlightRectangle.setPosition(level2Button.getPosition() - sf::Vector2f(5.0f, 5.0f));
+    } else if (selectedBackground == 3) {
+        highlightRectangle.setPosition(level3Button.getPosition() - sf::Vector2f(5.0f, 5.0f));
+    }
+    window.draw(highlightRectangle);
+}
+
+void GUI::launchLevelEditor() {
+
+
+    //std::string backgroundFile = "../Backgrounds/background" + std::to_string(levelNumber) + ".jpg";
+
+    //backgroundTexture.loadFromFile(backgroundFile);
+
+    //backgroundSprite.setTexture(backgroundTexture);
+
+    //std::string levelFile = "../Levels/level" + std::to_string(levelNumber) + ".csv";
+    //if (currentLevel != nullptr) {
+        //delete currentLevel;
+    //}
+    //currentLevel = new Level(window, levelNumber, backgroundTexture, levelFile, isSpecialBird);
+    //currentScreen = PlayingLevel;
 }
