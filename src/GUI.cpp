@@ -43,7 +43,7 @@ void GUI::initialize() {
     settingsBackgroundTexture.loadFromFile("../Backgrounds/settings.png");
     specialBirdTexture.loadFromFile("../Pictures/specialbird.png");
 
-    editorBackgroundTexture.loadFromFile("../Backgrounds/levels.png");
+    editorBackgroundTexture.loadFromFile("../Backgrounds/choosebackground.png");
     levelEditor1.loadFromFile("../Backgrounds/background1.jpg");
     levelEditor2.loadFromFile("../Backgrounds/background2.jpg");
     levelEditor3.loadFromFile("../Backgrounds/background3.jpg");
