@@ -40,7 +40,7 @@ private:
     sf::Font font;
     sf::Text birdsRemainingText;
     sf::Text pigsRemainingText;
-
+    bool noGravity;
 public:
     /**
      * @brief Constructs a Level object.
@@ -51,7 +51,7 @@ public:
      * @param backTex The texture for the background.
      * @param levelFile The path to the level file.
      */
-    Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, const std::string& levelFile, bool isSpecialBird);
+    Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, const std::string& levelFile, bool isSpecialBird, bool noGravity);
 
 
     bool isSpecialBird;

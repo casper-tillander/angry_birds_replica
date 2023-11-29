@@ -33,7 +33,7 @@ DONE:  Gör så att nivån slutar då alla grisar är döda eller då antalet f�
 
 DONE: Lägg till en settings - screen (Casper)
 
-Done: Fix bug: Om man spelar en nivå -> To levels -> Home så ser bakgrunden konstig ut. (Julius)
+DONE: Fix bug: Om man spelar en nivå -> To levels -> Home så ser bakgrunden konstig ut. (Julius)
 
 DONE: Ge användaren möjligheten att stäga av och lägga på ljud (Casper)
 
@@ -47,17 +47,14 @@ DONE: Lägg till punkter som visar flygbanan för fågeln (Casper)
 
 DONE: Implementera bättre damage-logik för grisarna (nu tar dom alltid 10/100 damage för varje kollision). (Julius)
 
----------------------------------------------------------------------------------------------------------------
+DONE: GUI visar antalet fåglar kvar, grisar kvar? (Julius)
 
-TODO: GUI visar antalet fåglar kvar, mängden poäng, grisar kvar...?
-
+DONE: Different game modes: reach goal in time, collect all items, other kind of challenges (2 points) Egna idéer: No gravity mode = lätt. (Julius)
 ---------------------------------------------------------------------------------------------------------------
 
 EXTRA FEATURES:
 
 TODO: High score list, saved per level, player can enter a nickname (1 point)
-
-TODO: Different game modes: reach goal in time, collect all items, other kind of challenges (2 points) Egna idéer: No gravity mode = lätt.
 
 TODO: Level editor to create levels and to save them in a file (4 points) (Liinu)
 

@@ -9,8 +9,8 @@
  * @param backTex The texture for the background.
  * @param levelFile The path to the level file.
  */
-Level::Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, const std::string& levelFile, bool isSpecialBirdParam)
-    : levelNumber(number), window(win), world(new b2World(b2Vec2(0.0f, 9.8f))), isSpecialBird(isSpecialBirdParam) {
+Level::Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, const std::string& levelFile, bool isSpecialBirdParam, bool noGravity)
+    : levelNumber(number), window(win), world(new b2World(b2Vec2(0.0f, noGravity ? 0.0f : 9.8f))), isSpecialBird(isSpecialBirdParam), noGravity(noGravity) {
     setupWorld();
 
     backgroundTexture = backTex;
@@ -262,8 +262,10 @@ bool Level::hasBirdStopped() const {
     if (!currentBird->isBirdLaunched()) {
         return false;
     }
-
-    const float velocityThreshold = 10.0f;
+    float velocityThreshold = 10.0f;
+    if (noGravity) {
+        velocityThreshold = 20.0f;
+    }
     b2Vec2 velocity = currentBird->getVelocity();
     return std::abs(velocity.x) < velocityThreshold && std::abs(velocity.y) < velocityThreshold;
 }

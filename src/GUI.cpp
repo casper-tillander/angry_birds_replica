@@ -23,6 +23,7 @@ void GUI::initialize() {
 
     isSpecialBird = false;
     selectedBackground = 1;
+    noGravity = false;
 
     soundTexture.loadFromFile("../Pictures/sound.png");
     soundButton.setTexture(soundTexture);
@@ -31,6 +32,20 @@ void GUI::initialize() {
     redLine.setSize(sf::Vector2f(120, 15));
     redLine.setFillColor(sf::Color::Red);
     redLine.setRotation(45);
+
+    redLine2.setSize(sf::Vector2f(120, 15));
+    redLine2.setFillColor(sf::Color::Red);
+    redLine2.setRotation(45);
+
+    circleButton.setRadius(56);
+    circleButton.setFillColor(sf::Color(0, 0, 138));
+    circleButton.setOutlineThickness(5);
+    circleButton.setOutlineColor(sf::Color::White);
+    gravityText.setFont(font);
+    gravityText.setString("\n Gravity");
+    gravityText.setCharacterSize(33);
+    gravityText.setFillColor(sf::Color::White);
+    gravityText.setOrigin(gravityText.getLocalBounds().width / 2, gravityText.getLocalBounds().height / 2);
 
     // Load necessary resources
     font.loadFromFile("../Fonts/angrybirds-regular.ttf");
@@ -109,7 +124,7 @@ void GUI::initialize() {
     highlightRectangle.setFillColor(sf::Color::Transparent);
     highlightRectangle.setOutlineColor(sf::Color::White);
     highlightRectangle.setOutlineThickness(5);
-    
+
 }
 
 void GUI::updateBackground() {
@@ -213,7 +228,7 @@ void GUI::launchLevel(int levelNumber) {
     if (currentLevel != nullptr) {
         delete currentLevel;
     }
-    currentLevel = new Level(window, levelNumber, backgroundTexture, levelFile, isSpecialBird);
+    currentLevel = new Level(window, levelNumber, backgroundTexture, levelFile, isSpecialBird, noGravity);
     currentScreen = PlayingLevel;
 
 }
@@ -278,6 +293,12 @@ void GUI::processEvents() {
                         } else {
                             music.play();
                             soundOn = true;
+                        }
+                    } else if (circleButton.getGlobalBounds().contains(mousePos)) {
+                        if (noGravity) {
+                            noGravity = false;
+                        } else {
+                            noGravity = true;
                         }
                     }
                     break;
@@ -480,7 +501,7 @@ void GUI::drawSettingsScreen() {
     returnToHomeText.setPosition(ButtonShape.getPosition());
     window.draw(returnToHomeText);
 
-    soundButton.setPosition(530, 350);
+    soundButton.setPosition(450, 350);
     window.draw(soundButton);
 
     if (!soundOn) {
@@ -488,6 +509,18 @@ void GUI::drawSettingsScreen() {
                             soundButton.getPosition().y + soundButton.getGlobalBounds().height / 8);
         window.draw(redLine);
     }
+    
+    circleButton.setPosition(610, 350);
+    window.draw(circleButton);
+    gravityText.setPosition(circleButton.getPosition());
+    window.draw(gravityText);
+
+    if (noGravity) {
+        redLine2.setPosition(circleButton.getPosition().x + 14,
+                            circleButton.getPosition().y + 12);
+        window.draw(redLine2);
+    }
+
 }
 
 void GUI::drawBirdSelectionScreen() {
