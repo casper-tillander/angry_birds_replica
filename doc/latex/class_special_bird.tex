@@ -1,0 +1,97 @@
+\doxysection{Special\+Bird Class Reference}
+\hypertarget{class_special_bird}{}\label{class_special_bird}\index{SpecialBird@{SpecialBird}}
+
+
+Inheritance diagram for Special\+Bird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_special_bird__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Special\+Bird\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_special_bird__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_special_bird_a1cbc12445c1c7daa917fc740431530ac}\label{class_special_bird_a1cbc12445c1c7daa917fc740431530ac} 
+{\bfseries Special\+Bird} (b2\+World \texorpdfstring{$\ast$}{*}world, const sf\+::\+Texture \&texture, const b2\+Vec2 \&position)
+\item 
+void \mbox{\hyperlink{class_special_bird_a17676702e235d7bdce6dff23ac668214}{handle\+Input}} (const sf\+::\+Event \&event, const sf\+::\+Render\+Window \&window) override
+\begin{DoxyCompactList}\small\item\em Handles input events for the bird. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_bird}{Bird}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_bird_a87ec57ddd9952ed0467bd70e86e52067}{Bird}} (b2\+World \texorpdfstring{$\ast$}{*}world, const sf\+::\+Texture \&texture, const b2\+Vec2 \&position)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_bird}{Bird} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bird_ae2718aad2ef1de73e399482ab6068324}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the bird\textquotesingle{}s state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bird_ada5a2f0b945cf85bea7798db4725a3aa}{render}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders the bird on the provided SFML window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_bird_a73496d28dde48f328c2cfc275ebcad6f}{launch}} (const b2\+Vec2 \&force)
+\begin{DoxyCompactList}\small\item\em Launches the bird with a specified force. \end{DoxyCompactList}\item 
+b2\+Vec2 \mbox{\hyperlink{class_bird_a2c4a8a764c19bc962306f61611513d19}{get\+Velocity}} () const
+\begin{DoxyCompactList}\small\item\em Get the current velocity of the bird. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_bird_a35ca30d85dea30e06663d909635d841d}{is\+Bird\+Launched}} () const
+\begin{DoxyCompactList}\small\item\em Check if the bird has been launched. \end{DoxyCompactList}\item 
+b2\+Body \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_bird_ab2dff9736049c8147ebfa13f5f91e0cc}{get\+Body}} () const
+\begin{DoxyCompactList}\small\item\em Get the Box2D body of the bird. \end{DoxyCompactList}\item 
+std\+::vector$<$ sf\+::\+Circle\+Shape $>$ {\bfseries calculate\+Trajectory} (const sf\+::\+Vector2f \&launch\+Vector, int num\+Dots)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_bird}{Bird}}}
+\begin{DoxyCompactItemize}
+\item 
+b2\+Body \texorpdfstring{$\ast$}{*} {\bfseries body}
+\begin{DoxyCompactList}\small\item\em The bird\textquotesingle{}s Box2D body. \end{DoxyCompactList}\item 
+std\+::vector$<$ sf\+::\+Circle\+Shape $>$ {\bfseries trajectory\+Dots}
+\begin{DoxyCompactList}\small\item\em Stores the trajectory dots. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_special_bird_a17676702e235d7bdce6dff23ac668214}\label{class_special_bird_a17676702e235d7bdce6dff23ac668214} 
+\index{SpecialBird@{SpecialBird}!handleInput@{handleInput}}
+\index{handleInput@{handleInput}!SpecialBird@{SpecialBird}}
+\doxysubsubsection{\texorpdfstring{handleInput()}{handleInput()}}
+{\footnotesize\ttfamily void Special\+Bird\+::handle\+Input (\begin{DoxyParamCaption}\item[{const sf\+::\+Event \&}]{event,  }\item[{const sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Handles input events for the bird. 
+
+Handles input events for the bird, including dragging and launching.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The SFML event to handle. \\
+\hline
+{\em window} & The SFML window associated with the event. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_bird_ad378b78b7803914962c49cf7d0208fe4}{Bird}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_special_bird_a17676702e235d7bdce6dff23ac668214_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/specialbird.\+hpp\item 
+src/specialbird.\+cpp\end{DoxyCompactItemize}
