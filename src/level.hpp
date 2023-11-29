@@ -37,6 +37,9 @@ private:
     sf::Texture wallTexture; ///< The texture for walls.
     std::vector<Bird*> birds; // Vector of bird objects.
     sf::Texture birdTexture; ///< The texture for the bird.
+    sf::Font font;
+    sf::Text birdsRemainingText;
+    sf::Text pigsRemainingText;
 
 public:
     /**

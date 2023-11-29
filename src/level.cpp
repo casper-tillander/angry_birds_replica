@@ -39,6 +39,16 @@ Level::Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, cons
     auto collisionDetection = new CollisionDetection();
     world->SetContactListener(collisionDetection);
     
+    font.loadFromFile("../Fonts/angrybirds-regular.ttf");
+    birdsRemainingText.setFont(font);
+    birdsRemainingText.setCharacterSize(12);
+    birdsRemainingText.setFillColor(sf::Color::Magenta);
+    birdsRemainingText.setPosition(10, 10);
+
+    pigsRemainingText.setFont(font);
+    pigsRemainingText.setCharacterSize(12);
+    pigsRemainingText.setFillColor(sf::Color::Magenta);
+    pigsRemainingText.setPosition(10, 30);
 }
 
 /**
@@ -84,7 +94,18 @@ void Level::run() {
         window.draw(backgroundSprite);
         window.setFramerateLimit(250); // Sets the framerate limit 
         // window.setVerticalSyncEnabled(true); // Not supported??
+        
+        Bird* currentB = birds[currentBirdIndex];
+        if (!currentB->isBirdLaunched()) {
+            birdsRemainingText.setString("Birds Remaining: " + std::to_string(totalBirds - currentBirdIndex));
+        } else {
+            birdsRemainingText.setString("Birds Remaining: " + std::to_string(totalBirds - currentBirdIndex - 1));
+        };
+        pigsRemainingText.setString("Pigs Remaining: " + std::to_string(pigs.size()));
 
+        window.draw(birdsRemainingText);
+        window.draw(pigsRemainingText);
+        
         for (int i = 0; i <= currentBirdIndex; ++i) {
             birds[i]->render(window);
         }
