@@ -210,6 +210,9 @@ The game is completed, but we still want to add some additional features. The do
 1. Casper 
    
    - Translated meeting notes to markdown syntax.
+   - Fixed potential valgrind error.
+   - Made small updates to the level graphics (ground position and trajectory dots).
+   - Made the final readme-file.
 
 2. Linnea
 
@@ -219,6 +222,9 @@ The game is completed, but we still want to add some additional features. The do
    
 
 ## Challenges
+
+- Potential valgrind errors.
+   - To be discussed at meeting.
 
 
 ## Actions
