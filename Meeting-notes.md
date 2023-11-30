@@ -32,6 +32,12 @@ Currently, we have created the repository and started on the project plan. The p
 - Matilda is going to work on the structure of the project and explain it in the project plan.
 - Casper and Julius is going to finish the other parts of the project plan.
 
+# Meeting 1.11.2023 10:00
+Short meeting where we decided that we try to complete our other coursework before starting on the project.
+
+# Meeting 8.11.2023 11:00
+Short meeting where we decided that we try to complete our other coursework before starting on the project.
+
 # Meeting 18.11.2023 10:00
 
 **Participants**: 
