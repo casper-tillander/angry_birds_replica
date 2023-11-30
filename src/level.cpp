@@ -41,13 +41,13 @@ Level::Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, cons
     
     font.loadFromFile("../Fonts/angrybirds-regular.ttf");
     birdsRemainingText.setFont(font);
-    birdsRemainingText.setCharacterSize(12);
-    birdsRemainingText.setFillColor(sf::Color::Magenta);
+    birdsRemainingText.setCharacterSize(16);
+    birdsRemainingText.setFillColor(sf::Color::White);
     birdsRemainingText.setPosition(10, 10);
 
     pigsRemainingText.setFont(font);
-    pigsRemainingText.setCharacterSize(12);
-    pigsRemainingText.setFillColor(sf::Color::Magenta);
+    pigsRemainingText.setCharacterSize(16);
+    pigsRemainingText.setFillColor(sf::Color::White);
     pigsRemainingText.setPosition(10, 30);
 }
 
@@ -70,18 +70,17 @@ void Level::run() {
     while (window.isOpen() && !shouldExit) {
         sf::Event event;
         while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed)
-                window.close();
+        if (event.type == sf::Event::Closed)
+            window.close();
+        else if (currentBirdIndex < birds.size()) {
+            Bird* currentBird = birds[currentBirdIndex];
+            currentBird->handleInput(event, window);
 
-                if (currentBirdIndex < birds.size()) {
-                    Bird* currentBird = birds[currentBirdIndex];
-                    currentBird->handleInput(event, window);
-
-                if (hasBirdStopped()) {
-                    nextBird(birdTexture, isSpecialBird);
+            if (hasBirdStopped()) {
+                nextBird(birdTexture, isSpecialBird);
             }
         }
-        }
+    }
 
         world->Step(1.0f/60.0f, 6, 2);
 
@@ -179,7 +178,7 @@ void Level::createBoundary(float x, float y, float width, float height) {
  */
 void Level::createFloor() {
     b2BodyDef groundBodyDef;
-    groundBodyDef.position.Set(400.0f, 600.0f);
+    groundBodyDef.position.Set(400.0f, 650.0f);
     b2Body* groundBody = world->CreateBody(&groundBodyDef);
 
     b2PolygonShape groundBox;
@@ -317,9 +316,8 @@ bool Level::areAllBirdsUsed() const {
  */
 int Level::getBirdsUsedForCompletion() {
     if (isLevelComplete()) {
-        // Add 1 because currentBirdIndex starts from 0
         return currentBirdIndex + 1; 
     } else {
-        return -1; // Indicates the level is not completed yet
+        return -1;
     }
 }
