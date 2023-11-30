@@ -85,4 +85,4 @@ The group maintains a structured workflow with weekly meetings, documented in th
 Doxygen is employed for the thorough documentation of the source code.
 
 ## Acknowledgements
-This project is developed as a group project in Aalto University in the course ELEC-A7151 Object-oriented Programming with C++ in 2023. The responsible teacher for the course was Yusein Ali, and the project advisor was Huseyin Yigitler.
+This project is developed as a group project in Aalto University in the course ELEC-A7151 Object-oriented Programming with C++ in 2023. The responsible teacher for the course was Yusein Ali, and the project advisor was Tuan Anh Nguyen.
