@@ -1,56 +1,88 @@
 # Angry Birds Replica - Happy Birds!
 
-Welcome to the Angry Birds Replica project! This project is an attempt to recreate the classic Angry Birds game with some unique twists and features.
+## Overview
 
-# Group
-- Casper Tillander
-- Julius Halmela
-- Linnea Haapio
-- Matilda Stendahl
+Welcome to the Angry Birds Replica project! This is a collaborative effort to create an exciting and challenging game inspired by the Angry Birds franchise. In this game, players will launch birds with a slingshot to knock down structures and defeat pesky pigs.
 
-# Repository organization
-Your project implementation should follow the skelaton organization in this repository.
-See readme.md files in each folder.
+## Contributors
 
-# Project Implementation 
-You must use git repository for the work on the project, making frequent enough commits so 
-that the project group (and course staff) can follow the progress.
+- **Casper**
+- **Linnea**
+- **Julius**
+- **Matilda**
 
-The completed project work will be demonstrated to the group's advisor at a demo session. 
-The final demonstrations are arranged on week 50. After the final demonstrations project group 
-evaluates another project, and self-evaluates own project. In addition, project members will 
-give a confidential individual assessment of each group member
+## Features
 
-The course staff should be able to easily compile the project work using makefile and related 
-instructions provided in the git repository. The final output should be in the **master branch** of the git repository.
+- **Physics-based Gameplay:** Experience realistic game physics powered by the Box2D library.
 
-# Working practices
-Each project group is assigned an advisor from the project teaching personnel. 
-There will be a dedicated Teams channel for each project topic to facilitate discussion between 
-the groups in the same topic and the advisor. 
+- **Diverse Bird Characters:** Choose two distinct birds, each with its unique special feature.
 
-**The group should meet weekly.** The weekly meeting does not need to be long if there are no special issues 
-to discuss, and can be taken remotely as voice/video chat on the group Teams channel (or Zoom or other similar tool), 
-preferably at a regular weekly time. In the meeting the group updates:
+- **Level Editor:** Unleash your creativity with the built-in level editor.
 
-- What each member has done during the week
-- Are there challenges or problems? Discuss the possible solutions
-- Plan for the next week for everyone
-- Deviations and changes to the project plan, if any
-- After the meetings, the meeting notes will be committed to the project repository in the `Meeting-notes.md` file. 
-    * The commits within the week should have some commit messages referring to the meeting notes so 
-      that the project advisor can follow the progress.  
-    * **The meeting notes should be in English.**
+- **User-Friendly GUI:** The intuitive GUI enhances the gaming experience, and the interface is easy to navigate.
 
-> Everyone may not be able to participate to all meetings, but at least a couple of members should be present in each meeting. 
-> Regular absence from meetings will affect in individual evaluation.
+- **Level Creation from CSV Files:** Levels are loaded from CSV files, making the game highly expandable.
 
-# Source code documentation
-It is strongly recommended to use Doxygen to document your source code.
-Please go over the *Project Guidelines* for details.
+- **Soundtrack and Settings:** Create a true gaming atmosphere by turning on the background music.
 
-# TODOs (Date)
-You can create a list of TODOs in this file.
-The recommended format is:
-- Complete class implementation **foo**. Assigned to \<Member 1\>
-- Test ...
+- **Trajectory Dots:** The trajectory dots makes anyone a precise thrower of birds.
+
+- **No Gravity Gamemode:** Spice up your gameplay by exploring the no gravity gamemode.
+
+## Getting Started
+
+### Prerequisites
+
+Before running the project, ensure you have the following dependencies installed:
+
+- [SFML](https://www.sfml-dev.org/) for graphics.
+
+[Box2D](https://box2d.org/) is added to the project as a subdirectory and does not have to be downloaded.
+
+### Installation
+
+```bash
+# Clone the Repository
+git clone https://version.aalto.fi/gitlab/tillanc1/cpp-course-project-angry-birds.git
+
+# Navigate to the Project Directory
+
+# Navigate to the Projects build folder
+cd build
+
+# Install Dependencies (see ´Prerequisites´)
+
+# Build the project
+make
+
+# Run the project
+./AngryBirds
+```
+
+## Repository Organization
+
+The repository is thoughtfully organized:
+
+- **Source Code:** Find the source code in the `src` folder.
+- **Libraries:** The essential libraries are stored in the `libs` folder.
+- **Project Plan:** The project plan is in the `plan` folder.
+- **Tests:** All tests are organized within the `test` folder.
+- **Documentation:** Explore the project documentation in the `doc` folder.
+- **Levels:** The csv files that create the levels are in the `Levels` folder.
+
+Additionally, folders with descriptive names have been created to house external files, including sound, backgrounds, pictures and fonts.
+
+## Libraries
+
+The project leverages SFML for graphics and Box2D for physics.
+
+## Working Practices
+
+The group maintains a structured workflow with weekly meetings, documented in the `Meeting-notes.md` file.
+
+## Source Code Documentation
+
+Doxygen is employed for the thorough documentation of the source code.
+
+## Acknowledgements
+This project is developed as a group project in Aalto University in the course ELEC-A7151 Object-oriented Programming with C++ in 2023. The responsible teacher for the course was Yusein Ali, and the project advisor was Huseyin Yigitler.
