@@ -73,6 +73,7 @@ void GUI::initialize() {
     setupButton(returnToLevelsText, "To levels");
     setupButton(chooseBirdText, "Choose Bird");
     setupButton(levelEditorText, "Level Editor");
+    setupButton(createLevelText, "Create level");
 
     // Styling and placement for buttons
     returnToHomeText.setOrigin(returnToHomeText.getLocalBounds().width / 2, returnToHomeText.getLocalBounds().height / 1.3);
@@ -85,6 +86,7 @@ void GUI::initialize() {
     returnToLevelsText.setOrigin(level3Text.getLocalBounds().width / 1.4, level3Text.getLocalBounds().height / 1.3);
     chooseBirdText.setOrigin(chooseBirdText.getLocalBounds().width / 2, chooseBirdText.getLocalBounds().height / 1.3);
     levelEditorText.setOrigin(levelEditorText.getLocalBounds().width / 2, levelEditorText.getLocalBounds().height / 1.3);
+    createLevelText.setOrigin(createLevelText.getLocalBounds().width / 2, createLevelText.getLocalBounds().height / 1.3);
 
     // Configure circular button shape
     ButtonShape.setRadius(30);
@@ -192,7 +194,10 @@ void GUI::update() {
         currentScreen = GameOver;
     } else if (currentLevel->isLevelComplete()) {
         currentScreen = LevelCompleted;
+    } 
     }
+    else if (currentScreen == PlayingLevelEditor) {
+        currentLevelEditor->run();
     }
 }
 
@@ -216,6 +221,19 @@ void GUI::launchLevel(int levelNumber) {
     currentLevel = new Level(window, levelNumber, backgroundTexture, levelFile, isSpecialBird);
     currentScreen = PlayingLevel;
 
+}
+
+
+void GUI::launchLevelEditor(int levelNumberEditor) {
+    this->levelNumberEditor = levelNumberEditor;
+    std::string backgroundFile = "../Backgrounds/background" + std::to_string(levelNumberEditor) + ".jpg";
+
+    backgroundTexture.loadFromFile(backgroundFile);
+
+    backgroundSprite.setTexture(backgroundTexture);
+
+    currentLevelEditor = new LevelEditor(window, levelNumberEditor, backgroundTexture);
+    currentScreen = PlayingLevelEditor;
 }
 
 
@@ -299,6 +317,9 @@ void GUI::processEvents() {
                         selectedBackground = 3;
                     } else if (returnToHomeText.getGlobalBounds().contains(mousePos)) {
                         currentScreen = Home;
+                    } else if (createLevelText.getGlobalBounds().contains(mousePos)) {
+                        levelNumberEditor = selectedBackground;
+                        launchLevelEditor(levelNumberEditor);
                     }
                     break;
             }
@@ -333,6 +354,7 @@ void GUI::processEvents() {
                     break;
                 case LevelEditorSelection:
                     updateButtonHoverEffect(returnToHomeText, mousePos);
+                    updateButtonHoverEffect(createLevelText, mousePos);
                     break;
             }
         }
@@ -527,6 +549,11 @@ void GUI::drawLevelEditorSelectionScreen() {
     returnToHomeText.setPosition(ButtonShape.getPosition());
     window.draw(returnToHomeText);
 
+    ButtonShape.setPosition(1105, 50);
+    window.draw(ButtonShape);
+    createLevelText.setPosition(ButtonShape.getPosition());
+    window.draw(createLevelText);
+
     level1Button.setPosition(145, 450);
     window.draw(level1Button);
 
@@ -549,19 +576,4 @@ void GUI::drawLevelEditorSelectionScreen() {
     window.draw(highlightRectangle);
 }
 
-void GUI::launchLevelEditor() {
 
-
-    //std::string backgroundFile = "../Backgrounds/background" + std::to_string(levelNumber) + ".jpg";
-
-    //backgroundTexture.loadFromFile(backgroundFile);
-
-    //backgroundSprite.setTexture(backgroundTexture);
-
-    //std::string levelFile = "../Levels/level" + std::to_string(levelNumber) + ".csv";
-    //if (currentLevel != nullptr) {
-        //delete currentLevel;
-    //}
-    //currentLevel = new Level(window, levelNumber, backgroundTexture, levelFile, isSpecialBird);
-    //currentScreen = PlayingLevel;
-}

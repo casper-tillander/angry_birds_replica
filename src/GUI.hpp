@@ -5,6 +5,7 @@
 #include <SFML/Audio.hpp>
 #include "level.hpp"
 #include "bird.hpp"
+#include "leveleditor.hpp"
 
 /**
  * @class GUI
@@ -58,13 +59,14 @@ private:
     sf::Texture specialBirdTexture; ///< The texture for the special bird.
     sf::CircleShape highlightCircle; ///< The circle to highlight the selected bird.
 
+    sf::Text createLevelText; ///< The text for the button to launch the level editor.
     sf::Texture levelEditor1; ///< The texture for level 1.
     sf::Texture levelEditor2; ///< The texture for level 2.
     sf::Texture levelEditor3; ///< The texture for level 3.
     sf::RectangleShape highlightRectangle; ///< The rectangle to highlight the selected background.
 
     Level* currentLevel;  ///< Pointer to the current level.
-    enum Screen { Home, BirdSelection, Levels, PlayingLevel, GameOver, LevelCompleted, Settings, LevelEditorSelection, LevelEditor }; ///< Different game screens.
+    enum Screen { Home, BirdSelection, Levels, PlayingLevel, GameOver, LevelCompleted, Settings, LevelEditorSelection, PlayingLevelEditor }; ///< Different game screens.
     Screen currentScreen; ///< Variable to hold the current screen state.
     int levelNumber; ///< Variable to hold the current level number.
 
@@ -86,7 +88,9 @@ private:
     sf::Sprite level1Button; ///< Button for choosing level 1 for level editor.
     sf::Sprite level2Button; ///< Button for choosing level 2 for level editor.
     sf::Sprite level3Button; ///< Button for choosing level 3 for level editor.
-
+    int levelNumberEditor;
+    LevelEditor* currentLevelEditor;
+    
     /**
      * @brief Initializes the GUI components.
      */
@@ -166,7 +170,7 @@ private:
 
     void drawLevelEditorSelectionScreen();
 
-    void launchLevelEditor();
+    void launchLevelEditor(int levelNumberEditor);
 
 };
 
