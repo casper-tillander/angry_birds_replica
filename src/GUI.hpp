@@ -5,6 +5,7 @@
 #include <SFML/Audio.hpp>
 #include "level.hpp"
 #include "bird.hpp"
+#include "player.hpp"
 
 /**
  * @class GUI
@@ -80,6 +81,7 @@ private:
     sf::RectangleShape redLine2;
     sf::Text gravityText;
 
+    sf::Text playerMessage;
 
     sf::Text chooseBirdText; ///< The text for the button to choose a bird.
     sf::Sprite normalBirdButton; ///< Button for choosing the normal bird.
@@ -87,11 +89,21 @@ private:
 
     sf::Texture starTexture;
     sf::Sprite starSprite;
+    sf::Sprite levelStarSprite;
 
     sf::Text levelEditorText;
     sf::Sprite level1Button; ///< Button for choosing level 1 for level editor.
     sf::Sprite level2Button; ///< Button for choosing level 2 for level editor.
     sf::Sprite level3Button; ///< Button for choosing level 3 for level editor.
+
+    Player* currentPlayer;
+    sf::Text playerNameLabel;
+    sf::RectangleShape playerNameInputBox;
+    std::string playerNameInput;
+    sf::Text submitButtonText;
+    sf::RectangleShape submitButton;
+
+    sf::Text inputText;
 
     /**
      * @brief Initializes the GUI components.
