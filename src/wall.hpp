@@ -36,6 +36,9 @@ public:
      * @param window The rendering window to draw the wall on.
      */
     void render(sf::RenderWindow& window);
+
+    b2Body* getBody() const;
+    b2Vec2 getPosition() const;
 };
 
 #endif // WALL_HPP

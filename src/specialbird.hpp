@@ -9,6 +9,8 @@ public:
 
     void handleInput(const sf::Event& event, const sf::RenderWindow& window) override;
 
+    bool getShot();
+
 private:
     void shootTowardsClick(const sf::Vector2f& targetPosition);
     bool isShot;

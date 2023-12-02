@@ -32,6 +32,9 @@ public:
      * @param window The SFML window to render on.
      */
     void render(sf::RenderWindow& window);
+
+    b2Body* getBody() const;
+    b2Vec2 getPosition() const;
 };
 
 #endif // BOX_HPP

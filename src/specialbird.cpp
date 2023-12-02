@@ -30,3 +30,7 @@ void SpecialBird::shootTowardsClick(const sf::Vector2f& targetPosition) {
         isShot = true;
     }
 }
+
+bool SpecialBird::getShot() {
+    return isShot;
+}

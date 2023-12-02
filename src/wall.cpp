@@ -45,3 +45,10 @@ void Wall::render(sf::RenderWindow& window) {
     window.draw(wallShape);
 }
 
+b2Body* Wall::getBody() const {
+    return body;
+}
+
+b2Vec2 Wall::getPosition() const {
+    return body->GetPosition();
+}
