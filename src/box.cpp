@@ -46,3 +46,11 @@ void Box::update() {
 void Box::render(sf::RenderWindow& window) {
     window.draw(boxShape);
 }
+
+b2Body* Box::getBody() const {
+    return body;
+}
+
+b2Vec2 Box::getPosition() const {
+    return body->GetPosition();
+}

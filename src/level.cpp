@@ -10,7 +10,7 @@
  * @param levelFile The path to the level file.
  */
 Level::Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, const std::string& levelFile, bool isSpecialBirdParam, bool noGravity)
-    : levelNumber(number), window(win), world(new b2World(b2Vec2(0.0f, noGravity ? 0.0f : 9.8f))), isSpecialBird(isSpecialBirdParam), noGravity(noGravity) {
+    : levelNumber(number), window(win), world(new b2World(b2Vec2(0.0f, noGravity ? 1.0f : 9.8f))), isSpecialBird(isSpecialBirdParam), noGravity(noGravity) {
     setupWorld();
 
     backgroundTexture = backTex;

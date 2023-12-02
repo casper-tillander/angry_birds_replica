@@ -1,36 +1,37 @@
-cmake_minimum_required(VERSION 3.0)  # Minimum CMake version recommended
+cmake_minimum_required(VERSION 3.0)
 
 project(AngryBirds)
 
-# Specify the C++ standard
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 include_directories("src")
 
-# Set the name of the executable to be produced
-set(EXECUTABLE_NAME AngryBirds)
+# Create a library containing the source code
+set(LIBRARY_NAME AngryBirdsLib)
+file(GLOB LIBRARY_SOURCES src/*.cpp)
+add_library(${LIBRARY_NAME} ${LIBRARY_SOURCES})
 
-# Add all .cpp files under src/ directory
-file(GLOB SOURCES src/*.cpp)
-add_executable(${EXECUTABLE_NAME} ${SOURCES})
-set(CMAKE_BUILD_TYPE Debug)
+# Set the name of the main executable
+set(EXECUTABLE_NAME AngryBirds)
+add_executable(${EXECUTABLE_NAME} src/main.cpp)
+
+# Link the main executable with the library
+target_link_libraries(${EXECUTABLE_NAME} PRIVATE ${LIBRARY_NAME})
 
 # Add the Box2D library
 add_subdirectory(libs/box2d)
 include_directories(${CMAKE_SOURCE_DIR}/libs/box2d/include)
-target_link_libraries(${EXECUTABLE_NAME} PRIVATE box2d)
+target_link_libraries(${LIBRARY_NAME} PRIVATE box2d)
 
 # Detect and add SFML
-#add_subdirectory(libs/SFML)
-#target_link_libraries(${EXECUTABLE_NAME} PRIVATE sfml-network sfml-audio sfml-graphics sfml-window sfml-system)
 find_package(SFML 2 COMPONENTS network audio graphics window system REQUIRED)
 if(SFML_FOUND)
-  target_link_libraries(${EXECUTABLE_NAME} PRIVATE sfml-network sfml-audio sfml-graphics sfml-window sfml-system)
+  target_link_libraries(${LIBRARY_NAME} PRIVATE sfml-network sfml-audio sfml-graphics sfml-window sfml-system)
 endif()
 
 # For installing targets (not mandatory)
 install(TARGETS ${EXECUTABLE_NAME} DESTINATION bin)
 
-
-
+# Add tests
+add_subdirectory(tests)

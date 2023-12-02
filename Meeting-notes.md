@@ -213,6 +213,9 @@ The game is completed, but we still want to add some additional features. The do
    - Fixed potential valgrind error.
    - Made small updates to the level graphics (ground position and trajectory dots).
    - Made the final readme-file.
+   - Implemented a system that saves the stars of each player to an external files, and reloads them when the player enters
+   their nickname. The stars are then printed next to the levels.
+   - Made or updated individual readme files for all folders in the project, except for src and tests.
 
 2. Linnea
 
@@ -224,7 +227,7 @@ The game is completed, but we still want to add some additional features. The do
 ## Challenges
 
 - Potential valgrind errors.
-   - To be discussed at meeting.
+   - Turned out to be related to an old version of wsl.
 
 
 ## Actions

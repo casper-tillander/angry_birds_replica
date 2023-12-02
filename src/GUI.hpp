@@ -99,6 +99,7 @@ private:
     sf::Sprite level3Button; ///< Button for choosing level 3 for level editor.
     int levelNumberEditor;
     LevelEditor* currentLevelEditor;
+    std::string pathToCreatedFile;
     
     Player* currentPlayer;
     sf::Text playerNameLabel;
@@ -189,6 +190,8 @@ private:
     void drawLevelEditorSelectionScreen();
 
     void launchLevelEditor(int levelNumberEditor);
+
+    void launchLevelEditorLevel(int levelNumberEditor, std::string filePath);
 
 };
 
