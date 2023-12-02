@@ -67,6 +67,7 @@ void LevelEditor::run() {
                         playCreatedLevelText.setCharacterSize(30);
                     }
                 }
+            }
 
             window.draw(backgroundSprite);
 
@@ -100,7 +101,19 @@ void LevelEditor::run() {
             window.draw(ButtonShape);
             playCreatedLevelText.setPosition(ButtonShape.getPosition());
             window.draw(playCreatedLevelText);
+    
+            playCreatedLevelText.setOrigin(playCreatedLevelText.getLocalBounds().width / 2, playCreatedLevelText.getLocalBounds().height / 1.3);
+            ButtonShape.setRadius(30);
+            ButtonShape.setScale(3, 1);
+            ButtonShape.setFillColor(sf::Color(173, 216, 230));
+            ButtonShape.setOutlineThickness(1);
+            ButtonShape.setOutlineColor(sf::Color::White);
+            ButtonShape.setOrigin(ButtonShape.getLocalBounds().width / 2, ButtonShape.getLocalBounds().height / 2);
 
-        }
+            ButtonShape.setPosition(1105, 50);
+            window.draw(ButtonShape);
+            playCreatedLevelText.setPosition(ButtonShape.getPosition());
+            window.draw(playCreatedLevelText);
+        
     }
 }
