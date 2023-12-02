@@ -1,5 +1,4 @@
 #include "collisiondetection.hpp"
-#include <iostream>
 
 bool CollisionDetection::isBirdFixture(b2Fixture* fixture) {
     if (fixture == nullptr) {

@@ -79,6 +79,7 @@ private:
     bool soundOn;
 
     bool noGravity;
+    bool isLevelEditorLevel;
     sf::CircleShape circleButton;
     sf::RectangleShape redLine2;
     sf::Text gravityText;

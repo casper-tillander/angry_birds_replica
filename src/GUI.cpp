@@ -13,6 +13,7 @@ GUI::GUI() : window(sf::VideoMode(1200, 700), "Angry Birds"), currentScreen(Home
  */
 void GUI::initialize() {
     currentPlayer = nullptr;
+    isLevelEditorLevel = false;
 
     playerNameLabel.setFont(font);
     playerNameLabel.setString("Player Name:");
@@ -244,16 +245,14 @@ void GUI::update() {
         if (currentLevel->isGameOver()) {
             currentScreen = GameOver;
         } else if (currentLevel->isLevelComplete()) {
-            if (currentLevel != nullptr) {
-                if (currentPlayer != nullptr) {
-                    int birdsUsed = currentLevel->getBirdsUsedForCompletion();
-                    int totalBirds = 3;
-                    int stars = totalBirds - birdsUsed + 1;
-                    currentPlayer->updateScore(levelNumber, stars);
-                    currentPlayer->saveToFile();
-                }
-                currentScreen = LevelCompleted;
+            if (currentLevel != nullptr && !isLevelEditorLevel) {
+                int birdsUsed = currentLevel->getBirdsUsedForCompletion();
+                int totalBirds = 3;
+                int stars = totalBirds - birdsUsed + 1;
+                currentPlayer->updateScore(levelNumber, stars);
+                currentPlayer->saveToFile();
             }
+            currentScreen = LevelCompleted;
         }
     }
     else if (currentScreen == PlayingLevelEditor) {
@@ -286,6 +285,7 @@ void GUI::launchLevel(int levelNumber) {
 
 
 void GUI::launchLevelEditor(int levelNumberEditor) {
+    isLevelEditorLevel = false;
     this->levelNumberEditor = levelNumberEditor;
     std::string backgroundFile = "../Backgrounds/background" + std::to_string(levelNumberEditor) + ".jpg";
 
@@ -298,6 +298,7 @@ void GUI::launchLevelEditor(int levelNumberEditor) {
 }
 
 void GUI::launchLevelEditorLevel(int levelNumberEditor, std::string filePath) {
+    isLevelEditorLevel = true;
     this->levelNumber = levelNumberEditor;
 
     std::string backgroundFile = "../Backgrounds/background" + std::to_string(levelNumber) + ".jpg";
@@ -579,10 +580,13 @@ void GUI::drawLevelsScreen() {
  */
 void GUI::drawGameOverScreen() {
     updateBackground();
-    ButtonShape.setPosition(580, 500);
-    window.draw(ButtonShape);
-    tryAgainText.setPosition(ButtonShape.getPosition());
-    window.draw(tryAgainText);
+
+    if (!isLevelEditorLevel) {
+        ButtonShape.setPosition(580, 500);
+        window.draw(ButtonShape);
+        tryAgainText.setPosition(ButtonShape.getPosition());
+        window.draw(tryAgainText);
+    }
 
     ButtonShape.setPosition(580, 400);
     window.draw(ButtonShape);
