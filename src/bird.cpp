@@ -28,7 +28,7 @@ Bird::Bird(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
 
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &circleShape;
-    fixtureDef.density = 1.0f; ///< Adjust density of bird
+    fixtureDef.density = 0.99f; ///< Adjust density of bird
     fixtureDef.restitution = 0.4f; ///< Adjust this value for bounciness
 
     body->CreateFixture(&fixtureDef);

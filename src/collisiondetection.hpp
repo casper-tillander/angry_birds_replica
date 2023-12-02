@@ -17,15 +17,8 @@ public:
      * @param contact A pointer to the contact object.
      */
     void BeginContact(b2Contact* contact) override;
-
-private:
-    /**
-     * @brief Calculate the impact damage of a collision.
-     *
-     * @param contact A pointer to the contact object.
-     * @return The calculated impact damage.
-     */
-    float CalculateImpactDamage(b2Contact* contact); // Declare this method
+    
+    bool isBirdFixture(b2Fixture* fixture);
 };
 
 #endif // COLLISIONDETECTION_HPP
