@@ -14,19 +14,17 @@ GUI::GUI() : window(sf::VideoMode(1200, 700), "Angry Birds"), currentScreen(Home
 void GUI::initialize() {
     currentPlayer = nullptr;
 
-    // Player Name Label
     playerNameLabel.setFont(font);
     playerNameLabel.setString("Player Name:");
     playerNameLabel.setCharacterSize(24);
-    playerNameLabel.setFillColor(sf::Color::White);
+    playerNameLabel.setFillColor(sf::Color::Black);
     playerNameLabel.setPosition(900, 20);
 
     playerMessage.setFont(font);
     playerMessage.setCharacterSize(24);
-    playerMessage.setFillColor(sf::Color::White);
+    playerMessage.setFillColor(sf::Color::Black);
     playerMessage.setPosition(900, 100); 
 
-    // Player Name Input Box
     playerNameInputBox.setSize(sf::Vector2f(200, 30));
     playerNameInputBox.setFillColor(sf::Color(50, 50, 50));
     playerNameInputBox.setPosition(900, 50);
@@ -72,14 +70,14 @@ void GUI::initialize() {
     redLine2.setRotation(45);
 
     circleButton.setRadius(56);
-    circleButton.setFillColor(sf::Color(0, 0, 138));
-    circleButton.setOutlineThickness(5);
-    circleButton.setOutlineColor(sf::Color::White);
+    circleButton.setFillColor(sf::Color::Transparent);
+    circleButton.setOutlineThickness(10);
+    circleButton.setOutlineColor(sf::Color::Black);
     gravityText.setFont(font);
     gravityText.setString("\n Gravity");
     gravityText.setCharacterSize(33);
-    gravityText.setFillColor(sf::Color::White);
-    gravityText.setOrigin(gravityText.getLocalBounds().width / 2, gravityText.getLocalBounds().height / 2);
+    gravityText.setFillColor(sf::Color::Black);
+    gravityText.setOrigin(gravityText.getLocalBounds().width + 5, gravityText.getLocalBounds().height / 2);
 
     // Load necessary resources
     font.loadFromFile("../Fonts/angrybirds-regular.ttf");
@@ -543,23 +541,20 @@ void GUI::drawLevelsScreen() {
     returnToHomeText.setPosition(ButtonShape.getPosition());
     window.draw(returnToHomeText);
 
-    // Display stars for each level
-    float starSpacing = 40.0f; // Adjust as needed
-    sf::Vector2f levelButtonPosition; // Position of the level button
+    float starSpacing = 40.0f;
+    sf::Vector2f levelButtonPosition;
 
-    for (int level = 1; level <= 3; ++level) { // Assuming 3 levels
+    for (int level = 1; level <= 3; ++level) {
         int stars = currentPlayer ? currentPlayer->getScoreForLevel(level) : 0;
 
-        // Update this based on your actual level button positions
         switch (level) {
             case 1: levelButtonPosition = level1Text.getPosition(); break;
             case 2: levelButtonPosition = level2Text.getPosition(); break;
             case 3: levelButtonPosition = level3Text.getPosition(); break;
         }
 
-        // Position and draw stars
         for (int i = 0; i < stars; ++i) {
-            levelStarSprite.setPosition(levelButtonPosition.x - 65 + i * starSpacing, levelButtonPosition.y + 30);
+            levelStarSprite.setPosition(levelButtonPosition.x - 63 + i * starSpacing, levelButtonPosition.y + 30);
             window.draw(levelStarSprite);
         }
     }
@@ -591,7 +586,6 @@ void GUI::drawLevelCompletedScreen() {
     returnToLevelsText.setPosition(ButtonShape.getPosition());
     window.draw(returnToLevelsText);
 
-    // Draw stars based on birds used
     if (currentLevel != nullptr) {
     int birdsUsed = currentLevel->getBirdsUsedForCompletion();
     int totalBirds = 3;
@@ -652,7 +646,6 @@ void GUI::drawBirdSelectionScreen() {
     specialBirdButton.setPosition(585, 450);
     window.draw(specialBirdButton);
 
-    // Update highlightCircle position based on the selected bird
     sf::Vector2f birdButtonCenter;
     if (isSpecialBird) {
         birdButtonCenter = sf::Vector2f(specialBirdButton.getPosition().x + specialBirdButton.getGlobalBounds().width / 2,
@@ -689,7 +682,6 @@ void GUI::drawLevelEditorSelectionScreen() {
     level3Button.setPosition(795, 450);
     window.draw(level3Button);
 
-    // Update highlightRectangle position based on the selected background
     highlightRectangle.setSize(sf::Vector2f(level1Button.getGlobalBounds().width + 2 * 5.0f, level1Button.getGlobalBounds().height + 2 * 5.0f));
 
     if (selectedBackground == 1) {
