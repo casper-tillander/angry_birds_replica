@@ -5,7 +5,6 @@
  */
 GUI::GUI() : window(sf::VideoMode(1200, 700), "Angry Birds"), currentScreen(Home), currentLevel(nullptr) {
     initialize();
-    // Set the initial background
     updateBackground();
 }
 
@@ -13,6 +12,41 @@ GUI::GUI() : window(sf::VideoMode(1200, 700), "Angry Birds"), currentScreen(Home
  * @brief Initializes GUI components, including fonts, textures, and UI elements.
  */
 void GUI::initialize() {
+    currentPlayer = nullptr;
+
+    // Player Name Label
+    playerNameLabel.setFont(font);
+    playerNameLabel.setString("Player Name:");
+    playerNameLabel.setCharacterSize(24);
+    playerNameLabel.setFillColor(sf::Color::White);
+    playerNameLabel.setPosition(900, 20);
+
+    playerMessage.setFont(font);
+    playerMessage.setCharacterSize(24);
+    playerMessage.setFillColor(sf::Color::White);
+    playerMessage.setPosition(900, 100); 
+
+    // Player Name Input Box
+    playerNameInputBox.setSize(sf::Vector2f(200, 30));
+    playerNameInputBox.setFillColor(sf::Color(50, 50, 50));
+    playerNameInputBox.setPosition(900, 50);
+
+    // Submit Button
+    submitButton.setSize(sf::Vector2f(100, 30));
+    submitButton.setFillColor(sf::Color(100, 100, 100));
+    submitButton.setPosition(1100, 50);
+
+    submitButtonText.setFont(font);
+    submitButtonText.setString("Submit");
+    submitButtonText.setCharacterSize(24);
+    submitButtonText.setFillColor(sf::Color::White);
+    submitButtonText.setPosition(1110, 50);
+
+    //Submit text
+    inputText.setFont(font);
+    inputText.setCharacterSize(24);
+    inputText.setFillColor(sf::Color::White);
+    inputText.setPosition(905, 55);
 
     music.openFromFile("../Sound/Fluffing-a-Duck_chosic.com_.ogg");
     music.setLoop(true);
@@ -122,6 +156,10 @@ void GUI::initialize() {
     starSprite.setTexture(starTexture);
     starSprite.setScale(0.9f, 0.9f);
 
+    // Stars under levles
+    levelStarSprite.setTexture(starTexture);
+    levelStarSprite.setScale(0.15f, 0.15f);
+
     // Selection rectangle for backgrounds
     highlightRectangle.setFillColor(sf::Color::Transparent);
     highlightRectangle.setOutlineColor(sf::Color::White);
@@ -205,11 +243,20 @@ void GUI::run() {
 void GUI::update() {
     if (currentScreen == PlayingLevel) {
         currentLevel->run();
-    if (currentLevel->isGameOver()) {
-        currentScreen = GameOver;
-    } else if (currentLevel->isLevelComplete()) {
-        currentScreen = LevelCompleted;
-    } 
+        if (currentLevel->isGameOver()) {
+            currentScreen = GameOver;
+        } else if (currentLevel->isLevelComplete()) {
+            if (currentLevel != nullptr) {
+                if (currentPlayer != nullptr) {
+                    int birdsUsed = currentLevel->getBirdsUsedForCompletion();
+                    int totalBirds = 3;
+                    int stars = totalBirds - birdsUsed + 1;
+                    currentPlayer->updateScore(levelNumber, stars);
+                    currentPlayer->saveToFile();
+                }
+                currentScreen = LevelCompleted;
+            }
+        }
     }
     else if (currentScreen == PlayingLevelEditor) {
         pathToCreatedFile = currentLevelEditor->run();
@@ -276,6 +323,15 @@ void GUI::processEvents() {
             window.close();
         }
 
+        if (event.type == sf::Event::TextEntered) {
+            if (event.text.unicode < 128 && event.text.unicode != 8) {
+                playerNameInput += static_cast<char>(event.text.unicode);
+            } else if (event.text.unicode == 8 && !playerNameInput.empty()) {
+                playerNameInput.pop_back();
+            }
+            inputText.setString(playerNameInput);
+        }
+
         if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
             sf::Vector2f mousePos = window.mapPixelToCoords(sf::Mouse::getPosition(window));
             switch (currentScreen) {
@@ -288,6 +344,15 @@ void GUI::processEvents() {
                         currentScreen = BirdSelection;
                     } else if (levelEditorText.getGlobalBounds().contains(mousePos)) {
                         currentScreen = LevelEditorSelection;
+                    } else if (submitButton.getGlobalBounds().contains(mousePos)) {
+                        if (currentPlayer != nullptr) {
+                            delete currentPlayer;
+                        }
+                        currentPlayer = new Player(playerNameInput);
+                        std::string message = currentPlayer->loadFromFile();
+                        playerMessage.setString(message);
+                        playerNameInput.clear();
+                        inputText.setString(playerNameInput);
                     }
                     break;
                 case Levels:
@@ -407,6 +472,8 @@ void GUI::render() {
     switch (currentScreen) {
         case Home:
             drawHomeScreen();
+            window.draw(inputText);
+            window.draw(playerMessage);
             break;
         case Levels:
             drawLevelsScreen();
@@ -458,6 +525,11 @@ void GUI::drawHomeScreen() {
     window.draw(ButtonShape);
     levelEditorText.setPosition(ButtonShape.getPosition());
     window.draw(levelEditorText);
+
+    window.draw(playerNameLabel);
+    window.draw(playerNameInputBox);
+    window.draw(submitButton);
+    window.draw(submitButtonText);
 }
 
 /**
@@ -484,6 +556,27 @@ void GUI::drawLevelsScreen() {
     window.draw(ButtonShape);
     returnToHomeText.setPosition(ButtonShape.getPosition());
     window.draw(returnToHomeText);
+
+    // Display stars for each level
+    float starSpacing = 40.0f; // Adjust as needed
+    sf::Vector2f levelButtonPosition; // Position of the level button
+
+    for (int level = 1; level <= 3; ++level) { // Assuming 3 levels
+        int stars = currentPlayer ? currentPlayer->getScoreForLevel(level) : 0;
+
+        // Update this based on your actual level button positions
+        switch (level) {
+            case 1: levelButtonPosition = level1Text.getPosition(); break;
+            case 2: levelButtonPosition = level2Text.getPosition(); break;
+            case 3: levelButtonPosition = level3Text.getPosition(); break;
+        }
+
+        // Position and draw stars
+        for (int i = 0; i < stars; ++i) {
+            levelStarSprite.setPosition(levelButtonPosition.x - 65 + i * starSpacing, levelButtonPosition.y + 30);
+            window.draw(levelStarSprite);
+        }
+    }
 }
 
 /**

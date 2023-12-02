@@ -29,6 +29,8 @@ Welcome to the Angry Birds Replica project! This is a collaborative effort to cr
 
 - **No Gravity Gamemode:** Spice up your gameplay by exploring the no gravity gamemode.
 
+- **Different players:** Save a player to save your highest score for every level!
+
 ## Getting Started
 
 ### Prerequisites

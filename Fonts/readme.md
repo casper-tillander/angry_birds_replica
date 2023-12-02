@@ -1,0 +1,3 @@
+## Fonts
+
+This folder contains the fonts used in the project.

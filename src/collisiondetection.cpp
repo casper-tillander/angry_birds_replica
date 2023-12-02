@@ -1,5 +1,4 @@
 #include "collisiondetection.hpp"
-#include <iostream>
 
 bool isBirdFixture(b2Fixture* fixture) {
     return (fixture->GetUserData().pointer % 2) == 1;
@@ -55,7 +54,7 @@ float CollisionDetection::CalculateImpactDamage(b2Contact* contact) {
         // Take the absolute value of the impulse
         impulse = std::abs(impulse);
 
-        float damage = impulse * 0.8f; // Adjust the multiplier as needed
+        float damage = impulse * 1.9f; // Adjust the multiplier as needed
 
         // Ensure damage is non-negative
         damage = std::max(0.0f, damage);

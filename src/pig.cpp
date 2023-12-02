@@ -105,3 +105,11 @@ void Pig::destroyBody() {
         body = nullptr;
     }
 }
+
+float Pig::getHealth() const {
+    return health;
+}
+
+b2Body* Pig::getBody() const {
+    return body;
+}
