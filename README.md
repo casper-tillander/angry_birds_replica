@@ -49,12 +49,19 @@ git clone https://version.aalto.fi/gitlab/tillanc1/cpp-course-project-angry-bird
 
 # Navigate to the Project Directory
 
+# Make a build folder for the project
+
+mkdir build
+
 # Navigate to the Projects build folder
+
 cd build
 
 # Install Dependencies (see ´Prerequisites´)
 
-# Build the project
+# Build the project using cmake
+
+cmake ..
 make
 
 # Run the project
