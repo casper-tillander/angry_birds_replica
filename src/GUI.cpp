@@ -212,7 +212,8 @@ void GUI::update() {
     } 
     }
     else if (currentScreen == PlayingLevelEditor) {
-        currentLevelEditor->run();
+        pathToCreatedFile = currentLevelEditor->run();
+        launchLevelEditorLevel(levelNumberEditor, pathToCreatedFile);
     }
 }
 
@@ -249,6 +250,19 @@ void GUI::launchLevelEditor(int levelNumberEditor) {
 
     currentLevelEditor = new LevelEditor(window, levelNumberEditor, backgroundTexture);
     currentScreen = PlayingLevelEditor;
+}
+
+void GUI::launchLevelEditorLevel(int levelNumberEditor, std::string filePath) {
+    this->levelNumber = levelNumberEditor;
+
+    std::string backgroundFile = "../Backgrounds/background" + std::to_string(levelNumber) + ".jpg";
+
+    backgroundTexture.loadFromFile(backgroundFile);
+
+    backgroundSprite.setTexture(backgroundTexture);
+
+    currentLevel = new Level(window, levelNumber, backgroundTexture, filePath, isSpecialBird, noGravity);
+    currentScreen = PlayingLevel;
 }
 
 
