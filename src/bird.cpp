@@ -138,19 +138,20 @@ b2Body* Bird::getBody() const {
 // Calculate the trajectory points
 std::vector<sf::CircleShape> Bird::calculateTrajectory(const sf::Vector2f& launchVector, int numDots) {
     std::vector<sf::CircleShape> dots;
-    float timeStep = 0.1f; // Time interval between points
+    float timeStep = 0.1f;
+    float gravityEffect = 10.0f; // Increases the gravity effect (the bend) of the dots.
     b2Vec2 startVelocity(launchVector.x, launchVector.y);
 
     for (int i = 0; i < numDots; ++i) {
         float time = i * timeStep;
         float x = startVelocity.x * time + birdShape.getPosition().x;
-        float y = 0.5f * 9.8f * time * time + startVelocity.y * time + birdShape.getPosition().y;
+        float y = gravityEffect * 0.5f * 9.8f * time * time + startVelocity.y * time + birdShape.getPosition().y;
 
-        sf::CircleShape dot(3); // Create a small dot with radius 3
+        sf::CircleShape dot(3);
 
-        dot.setPosition(x, y); // Negative y because SFML's y-axis is inverted
-        dot.setFillColor(sf::Color::White); // Set dot color
-        dots.push_back(dot); // Add the dot to the vector
+        dot.setPosition(x, y);
+        dot.setFillColor(sf::Color::White);
+        dots.push_back(dot);
     }
 
     return dots;

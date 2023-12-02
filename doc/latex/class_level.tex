@@ -1,0 +1,381 @@
+\doxysection{Level Class Reference}
+\hypertarget{class_level}{}\label{class_level}\index{Level@{Level}}
+
+
+Represents a game level with physics simulation.  
+
+
+
+
+{\ttfamily \#include $<$level.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_level_a7fc77850d6d06fdcfb48f0ca5109bcf4}{Level}} (sf\+::\+Render\+Window \&win, int number, const sf\+::\+Texture \&back\+Tex, const std\+::string \&level\+File, bool is\+Special\+Bird)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_level}{Level} object. \end{DoxyCompactList}\item 
+\Hypertarget{class_level_a249eac1e8f19ff44134efa5e986feaca}\label{class_level_a249eac1e8f19ff44134efa5e986feaca} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Level} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{class_level}{Level} object. \end{DoxyCompactList}\item 
+\Hypertarget{class_level_aed3e8287c07f61f37c295d4150835273}\label{class_level_aed3e8287c07f61f37c295d4150835273} 
+void {\bfseries run} ()
+\begin{DoxyCompactList}\small\item\em Runs the game level. \end{DoxyCompactList}\item 
+\Hypertarget{class_level_ace416df22342faf57be1cbb2161fda7e}\label{class_level_ace416df22342faf57be1cbb2161fda7e} 
+void {\bfseries setup\+World} ()
+\begin{DoxyCompactList}\small\item\em Sets up the Box2D world and initializes objects. \end{DoxyCompactList}\item 
+\Hypertarget{class_level_a3ee3e555710d2910a98105ba0740d1d5}\label{class_level_a3ee3e555710d2910a98105ba0740d1d5} 
+void {\bfseries create\+Floor} ()
+\begin{DoxyCompactList}\small\item\em Creates the floor of the level. \end{DoxyCompactList}\item 
+\Hypertarget{class_level_adf33de6adfa15bd8481880ca0af84936}\label{class_level_adf33de6adfa15bd8481880ca0af84936} 
+void {\bfseries create\+Boundaries} ()
+\begin{DoxyCompactList}\small\item\em Creates boundaries around the level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_a59b2e05d9d7e8dd6b2ffd7503c489211}{create\+Boundary}} (float x, float y, float width, float height)
+\begin{DoxyCompactList}\small\item\em Creates a boundary in the world. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_ae86e2ae4d2f098005c83e9d0488a67df}{load\+Objects}} (const std\+::string \&level\+File)
+\begin{DoxyCompactList}\small\item\em Loads game objects from a level file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_ab7333938374f7f5cb17512fd157d4412}{initialize\+Birds}} (const sf\+::\+Texture \&bird\+Tex, bool is\+Special\+Bird)
+\begin{DoxyCompactList}\small\item\em Initializes bird objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_a3b4726c7b22fa9c99282f6ecfd2c75c1}{next\+Bird}} (const sf\+::\+Texture \&bird\+Tex, bool is\+Special\+Bird)
+\begin{DoxyCompactList}\small\item\em Moves to the next bird in the sequence. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_level_a9f26634e6369e5fb4c253f65fb89f29e}{has\+Bird\+Stopped}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the current bird has stopped moving. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_level_abeaffb0f25f488d82e1d69c6f4922933}{is\+Level\+Complete}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the level is complete. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_level_a9ce212b5d8f6dbc61842fc994dc78c65}{is\+Game\+Over}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the game is over. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_level_a451b02d940fd2251fae4587ca1e058aa}{are\+All\+Pigs\+Destroyed}} () const
+\begin{DoxyCompactList}\small\item\em Checks if all pigs have been destroyed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_level_a87185b3c0c57616bc419272967787479}{are\+All\+Birds\+Used}} () const
+\begin{DoxyCompactList}\small\item\em Checks if all birds have been used. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_level_a1753d270b6882300f34da46b9c6244ac}{get\+Birds\+Used\+For\+Completion}} ()
+\begin{DoxyCompactList}\small\item\em Gets the number of birds used to complete the level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_level_ac23f82161650ffb5e9e21919bc0630e8}\label{class_level_ac23f82161650ffb5e9e21919bc0630e8} 
+bool {\bfseries is\+Special\+Bird}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a game level with physics simulation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_level_a7fc77850d6d06fdcfb48f0ca5109bcf4}\label{class_level_a7fc77850d6d06fdcfb48f0ca5109bcf4} 
+\index{Level@{Level}!Level@{Level}}
+\index{Level@{Level}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{Level()}{Level()}}
+{\footnotesize\ttfamily Level\+::\+Level (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{win,  }\item[{int}]{number,  }\item[{const sf\+::\+Texture \&}]{back\+Tex,  }\item[{const std\+::string \&}]{level\+File,  }\item[{bool}]{is\+Special\+Bird\+Param }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_level}{Level} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & Reference to the game\textquotesingle{}s window. \\
+\hline
+{\em number} & The level number. \\
+\hline
+{\em bird\+Tex} & The texture for the bird. \\
+\hline
+{\em back\+Tex} & The texture for the background. \\
+\hline
+{\em level\+File} & The path to the level file. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_a7fc77850d6d06fdcfb48f0ca5109bcf4_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_level_a87185b3c0c57616bc419272967787479}\label{class_level_a87185b3c0c57616bc419272967787479} 
+\index{Level@{Level}!areAllBirdsUsed@{areAllBirdsUsed}}
+\index{areAllBirdsUsed@{areAllBirdsUsed}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{areAllBirdsUsed()}{areAllBirdsUsed()}}
+{\footnotesize\ttfamily bool Level\+::are\+All\+Birds\+Used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if all birds have been used. 
+
+Checks if all birds in the level have been used and stopped.
+
+\begin{DoxyReturn}{Returns}
+True if all birds are used, otherwise false.
+
+True if all birds are used and stopped, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_a87185b3c0c57616bc419272967787479_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_a87185b3c0c57616bc419272967787479_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_a451b02d940fd2251fae4587ca1e058aa}\label{class_level_a451b02d940fd2251fae4587ca1e058aa} 
+\index{Level@{Level}!areAllPigsDestroyed@{areAllPigsDestroyed}}
+\index{areAllPigsDestroyed@{areAllPigsDestroyed}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{areAllPigsDestroyed()}{areAllPigsDestroyed()}}
+{\footnotesize\ttfamily bool Level\+::are\+All\+Pigs\+Destroyed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if all pigs have been destroyed. 
+
+Checks if all pigs in the level have been destroyed.
+
+\begin{DoxyReturn}{Returns}
+True if all pigs are destroyed, otherwise false.
+
+True if all pigs are destroyed, false otherwise. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_a451b02d940fd2251fae4587ca1e058aa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_a59b2e05d9d7e8dd6b2ffd7503c489211}\label{class_level_a59b2e05d9d7e8dd6b2ffd7503c489211} 
+\index{Level@{Level}!createBoundary@{createBoundary}}
+\index{createBoundary@{createBoundary}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{createBoundary()}{createBoundary()}}
+{\footnotesize\ttfamily void Level\+::create\+Boundary (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})}
+
+
+
+Creates a boundary in the world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the boundary. \\
+\hline
+{\em y} & The y-\/coordinate of the boundary. \\
+\hline
+{\em width} & The width of the boundary. \\
+\hline
+{\em height} & The height of the boundary. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_a59b2e05d9d7e8dd6b2ffd7503c489211_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_a1753d270b6882300f34da46b9c6244ac}\label{class_level_a1753d270b6882300f34da46b9c6244ac} 
+\index{Level@{Level}!getBirdsUsedForCompletion@{getBirdsUsedForCompletion}}
+\index{getBirdsUsedForCompletion@{getBirdsUsedForCompletion}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{getBirdsUsedForCompletion()}{getBirdsUsedForCompletion()}}
+{\footnotesize\ttfamily int Level\+::get\+Birds\+Used\+For\+Completion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the number of birds used to complete the level. 
+
+\begin{DoxyReturn}{Returns}
+The number of birds used if the level is completed, otherwise -\/1. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_a1753d270b6882300f34da46b9c6244ac_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_a9f26634e6369e5fb4c253f65fb89f29e}\label{class_level_a9f26634e6369e5fb4c253f65fb89f29e} 
+\index{Level@{Level}!hasBirdStopped@{hasBirdStopped}}
+\index{hasBirdStopped@{hasBirdStopped}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{hasBirdStopped()}{hasBirdStopped()}}
+{\footnotesize\ttfamily bool Level\+::has\+Bird\+Stopped (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the current bird has stopped moving. 
+
+\begin{DoxyReturn}{Returns}
+True if the bird has stopped, otherwise false.
+
+True if the bird has stopped, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_level_a9f26634e6369e5fb4c253f65fb89f29e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_a9f26634e6369e5fb4c253f65fb89f29e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_ab7333938374f7f5cb17512fd157d4412}\label{class_level_ab7333938374f7f5cb17512fd157d4412} 
+\index{Level@{Level}!initializeBirds@{initializeBirds}}
+\index{initializeBirds@{initializeBirds}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{initializeBirds()}{initializeBirds()}}
+{\footnotesize\ttfamily void Level\+::initialize\+Birds (\begin{DoxyParamCaption}\item[{const sf\+::\+Texture \&}]{bird\+Tex,  }\item[{bool}]{is\+Special\+Bird }\end{DoxyParamCaption})}
+
+
+
+Initializes bird objects. 
+
+Initializes the bird objects for the level.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bird\+Tex} & The texture for birds.\\
+\hline
+{\em bird\+Tex} & The texture for the birds. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{class_level_ab7333938374f7f5cb17512fd157d4412_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_a9ce212b5d8f6dbc61842fc994dc78c65}\label{class_level_a9ce212b5d8f6dbc61842fc994dc78c65} 
+\index{Level@{Level}!isGameOver@{isGameOver}}
+\index{isGameOver@{isGameOver}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{isGameOver()}{isGameOver()}}
+{\footnotesize\ttfamily bool Level\+::is\+Game\+Over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the game is over. 
+
+\begin{DoxyReturn}{Returns}
+True if the game is over, otherwise false.
+
+True if the game is over, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_a9ce212b5d8f6dbc61842fc994dc78c65_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=270pt]{class_level_a9ce212b5d8f6dbc61842fc994dc78c65_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_abeaffb0f25f488d82e1d69c6f4922933}\label{class_level_abeaffb0f25f488d82e1d69c6f4922933} 
+\index{Level@{Level}!isLevelComplete@{isLevelComplete}}
+\index{isLevelComplete@{isLevelComplete}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{isLevelComplete()}{isLevelComplete()}}
+{\footnotesize\ttfamily bool Level\+::is\+Level\+Complete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the level is complete. 
+
+\begin{DoxyReturn}{Returns}
+True if the level is complete, otherwise false.
+
+True if the level is complete, false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_abeaffb0f25f488d82e1d69c6f4922933_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_level_abeaffb0f25f488d82e1d69c6f4922933_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_ae86e2ae4d2f098005c83e9d0488a67df}\label{class_level_ae86e2ae4d2f098005c83e9d0488a67df} 
+\index{Level@{Level}!loadObjects@{loadObjects}}
+\index{loadObjects@{loadObjects}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{loadObjects()}{loadObjects()}}
+{\footnotesize\ttfamily void Level\+::load\+Objects (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{level\+File }\end{DoxyParamCaption})}
+
+
+
+Loads game objects from a level file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level\+File} & The path to the level file. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{class_level_ae86e2ae4d2f098005c83e9d0488a67df_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_level_a3b4726c7b22fa9c99282f6ecfd2c75c1}\label{class_level_a3b4726c7b22fa9c99282f6ecfd2c75c1} 
+\index{Level@{Level}!nextBird@{nextBird}}
+\index{nextBird@{nextBird}!Level@{Level}}
+\doxysubsubsection{\texorpdfstring{nextBird()}{nextBird()}}
+{\footnotesize\ttfamily void Level\+::next\+Bird (\begin{DoxyParamCaption}\item[{const sf\+::\+Texture \&}]{bird\+Tex,  }\item[{bool}]{is\+Special\+Bird }\end{DoxyParamCaption})}
+
+
+
+Moves to the next bird in the sequence. 
+
+Moves to the next bird in the level.
+
+
+\begin{DoxyParams}{Parameters}
+{\em bird\+Tex} & The texture for birds.\\
+\hline
+{\em bird\+Tex} & The texture for the birds. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{class_level_a3b4726c7b22fa9c99282f6ecfd2c75c1_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/level.\+hpp\item 
+src/level.\+cpp\end{DoxyCompactItemize}

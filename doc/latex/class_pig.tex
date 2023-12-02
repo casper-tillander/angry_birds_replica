@@ -1,0 +1,177 @@
+\doxysection{Pig Class Reference}
+\hypertarget{class_pig}{}\label{class_pig}\index{Pig@{Pig}}
+
+
+Represents a pig object in the game.  
+
+
+
+
+{\ttfamily \#include $<$pig.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pig_ae94a48f9996f844e73c8e076f78f425e}{Pig}} (b2\+World \texorpdfstring{$\ast$}{*}world, const sf\+::\+Texture \&texture, const b2\+Vec2 \&position)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_pig}{Pig} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pig_ad71b9412dad435db5f6941f0f6d53c2b}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the pig\textquotesingle{}s state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pig_ae453d21b244ced5d643f5e5fe135f191}{render}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Renders the pig on the given window. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pig_a0087f2c8044abac66945ba625392c036}{take\+Damage}} (float damage)
+\begin{DoxyCompactList}\small\item\em Applies damage to the pig\textquotesingle{}s health. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_pig_a3c307d5774f41fbd59736a0a05e57887}{alive}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the pig is alive. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pig_a76c51883f0cdadf9f191c086d1a7bec6}{destroy\+Body}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the Box2D body associated with the pig. \end{DoxyCompactList}\item 
+\Hypertarget{class_pig_afc12e3073c7ca026c95fcd5161a609e1}\label{class_pig_afc12e3073c7ca026c95fcd5161a609e1} 
+void {\bfseries mark\+For\+Deletion} ()
+\begin{DoxyCompactList}\small\item\em Marks the pig for deletion. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_pig_a78a9fab285dda8429c4cae9e2686b63c}{is\+Marked\+For\+Deletion}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the pig is marked for deletion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a pig object in the game. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_pig_ae94a48f9996f844e73c8e076f78f425e}\label{class_pig_ae94a48f9996f844e73c8e076f78f425e} 
+\index{Pig@{Pig}!Pig@{Pig}}
+\index{Pig@{Pig}!Pig@{Pig}}
+\doxysubsubsection{\texorpdfstring{Pig()}{Pig()}}
+{\footnotesize\ttfamily Pig\+::\+Pig (\begin{DoxyParamCaption}\item[{b2\+World \texorpdfstring{$\ast$}{*}}]{world,  }\item[{const sf\+::\+Texture \&}]{texture,  }\item[{const b2\+Vec2 \&}]{position }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_pig}{Pig} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & Pointer to the Box2D world. \\
+\hline
+{\em texture} & Texture for the pig. \\
+\hline
+{\em position} & Initial position of the pig.\\
+\hline
+{\em world} & Pointer to the Box2D world. \\
+\hline
+{\em texture} & The texture for the pig. \\
+\hline
+{\em position} & The initial position of the pig. \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Adjust the size of the pig
+
+\texorpdfstring{$<$}{<} Makes the pig stop spinning after some time
+
+\texorpdfstring{$<$}{<} Set to \textquotesingle{}true\textquotesingle{} if the pig shouldn\textquotesingle{}t spin
+
+\texorpdfstring{$<$}{<} About 5 times smaller than the radius of pig\+Shape
+
+\texorpdfstring{$<$}{<} Adjust density of pig
+
+\texorpdfstring{$<$}{<} Adjust this value for bounciness
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_pig_a3c307d5774f41fbd59736a0a05e57887}\label{class_pig_a3c307d5774f41fbd59736a0a05e57887} 
+\index{Pig@{Pig}!alive@{alive}}
+\index{alive@{alive}!Pig@{Pig}}
+\doxysubsubsection{\texorpdfstring{alive()}{alive()}}
+{\footnotesize\ttfamily bool Pig\+::alive (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the pig is alive. 
+
+\begin{DoxyReturn}{Returns}
+true if the pig is alive, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_pig_a76c51883f0cdadf9f191c086d1a7bec6}\label{class_pig_a76c51883f0cdadf9f191c086d1a7bec6} 
+\index{Pig@{Pig}!destroyBody@{destroyBody}}
+\index{destroyBody@{destroyBody}!Pig@{Pig}}
+\doxysubsubsection{\texorpdfstring{destroyBody()}{destroyBody()}}
+{\footnotesize\ttfamily void Pig\+::destroy\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroys the Box2D body associated with the pig. 
+
+Destroys the Box2D body associated with the pig if it exists and the world is not locked. \Hypertarget{class_pig_a78a9fab285dda8429c4cae9e2686b63c}\label{class_pig_a78a9fab285dda8429c4cae9e2686b63c} 
+\index{Pig@{Pig}!isMarkedForDeletion@{isMarkedForDeletion}}
+\index{isMarkedForDeletion@{isMarkedForDeletion}!Pig@{Pig}}
+\doxysubsubsection{\texorpdfstring{isMarkedForDeletion()}{isMarkedForDeletion()}}
+{\footnotesize\ttfamily bool Pig\+::is\+Marked\+For\+Deletion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Checks if the pig is marked for deletion. 
+
+\begin{DoxyReturn}{Returns}
+true if marked for deletion, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{class_pig_ae453d21b244ced5d643f5e5fe135f191}\label{class_pig_ae453d21b244ced5d643f5e5fe135f191} 
+\index{Pig@{Pig}!render@{render}}
+\index{render@{render}!Pig@{Pig}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Pig\+::render (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Renders the pig on the given window. 
+
+Renders the pig on the given window if it is alive.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML render window. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_pig_a0087f2c8044abac66945ba625392c036}\label{class_pig_a0087f2c8044abac66945ba625392c036} 
+\index{Pig@{Pig}!takeDamage@{takeDamage}}
+\index{takeDamage@{takeDamage}!Pig@{Pig}}
+\doxysubsubsection{\texorpdfstring{takeDamage()}{takeDamage()}}
+{\footnotesize\ttfamily void Pig\+::take\+Damage (\begin{DoxyParamCaption}\item[{float}]{damage }\end{DoxyParamCaption})}
+
+
+
+Applies damage to the pig\textquotesingle{}s health. 
+
+Applies damage to the pig\textquotesingle{}s health and marks it for deletion if health reaches zero or below.
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage} & Amount of damage to apply. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_pig_a0087f2c8044abac66945ba625392c036_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{class_pig_a0087f2c8044abac66945ba625392c036_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_pig_ad71b9412dad435db5f6941f0f6d53c2b}\label{class_pig_ad71b9412dad435db5f6941f0f6d53c2b} 
+\index{Pig@{Pig}!update@{update}}
+\index{update@{update}!Pig@{Pig}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Pig\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Updates the pig\textquotesingle{}s state. 
+
+Updates the pig\textquotesingle{}s position and rotation if it is alive. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/pig.\+hpp\item 
+src/pig.\+cpp\end{DoxyCompactItemize}

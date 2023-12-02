@@ -77,6 +77,12 @@ private:
     sf::RectangleShape redLine;
     bool soundOn;
 
+    bool noGravity;
+    sf::CircleShape circleButton;
+    sf::RectangleShape redLine2;
+    sf::Text gravityText;
+
+
     sf::Text chooseBirdText; ///< The text for the button to choose a bird.
     sf::Sprite normalBirdButton; ///< Button for choosing the normal bird.
     sf::Sprite specialBirdButton; ///< Button for choosing the special bird.
