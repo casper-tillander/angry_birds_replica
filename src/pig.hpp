@@ -70,6 +70,10 @@ public:
      * @return true if marked for deletion, false otherwise.
      */
     bool isMarkedForDeletion() const;
+
+    float getHealth() const;
+
+    b2Body* getBody() const;
 };
 
 #endif // PIG_HPP
