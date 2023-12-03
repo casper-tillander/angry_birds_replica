@@ -66,6 +66,11 @@ make
 
 # Run the project
 ./AngryBirds
+
+# To run the tests navigate to the tests folder inside the build folder
+
+# Run the tests
+./AngryBirdsTests
 ```
 
 ## Repository Organization
