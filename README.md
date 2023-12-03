@@ -66,8 +66,15 @@ make
 
 # Run the project
 ./AngryBirds
+```
 
-# To run the tests navigate to the tests folder inside the build folder
+## Testing
+
+```bash
+# Create a testing folder
+mkdir tests
+
+# Navigate to the tests folder inside the build folder
 cd tests
 
 # Run the tests
