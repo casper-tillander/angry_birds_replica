@@ -68,6 +68,7 @@ make
 ./AngryBirds
 
 # To run the tests navigate to the tests folder inside the build folder
+cd tests
 
 # Run the tests
 ./AngryBirdsTests
