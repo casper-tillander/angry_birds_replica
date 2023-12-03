@@ -321,3 +321,7 @@ int Level::getBirdsUsedForCompletion() {
         return -1;
     }
 }
+
+Bird* Level::getCurrentBird() {
+    return birds[currentBirdIndex];
+}

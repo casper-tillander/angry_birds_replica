@@ -4,6 +4,7 @@
 #include "boxTest.hpp"
 #include "wallTest.hpp"
 #include "readfileTest.hpp"
+#include "levelTest.hpp"
 
 int main() {
     // Bird tests
@@ -29,10 +30,11 @@ int main() {
     testWallUpdate();
 
     // Readfile tests
-    testReadValidFile(); // Fails
-    testReadInvalidData(); // Fails
+    testReadFile();
     testReadEmptyFile();
    
+    // Level test
+    testAreAllBirdsUsed();
 
     printResults();
     return 0;
