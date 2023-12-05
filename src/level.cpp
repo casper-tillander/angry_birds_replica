@@ -39,7 +39,7 @@ Level::Level(sf::RenderWindow& win, int number, const sf::Texture& backTex, cons
     auto collisionDetection = new CollisionDetection();
     world->SetContactListener(collisionDetection);
     
-    font.loadFromFile("../Fonts/angrybirds-regular.ttf");
+    font.loadFromFile("../Fonts/FEASFBRG.TTF");
     birdsRemainingText.setFont(font);
     birdsRemainingText.setCharacterSize(16);
     birdsRemainingText.setFillColor(sf::Color::White);
@@ -91,9 +91,8 @@ void Level::run() {
 
         window.clear();
         window.draw(backgroundSprite);
-        window.setFramerateLimit(250); // Sets the framerate limit 
-        // window.setVerticalSyncEnabled(true); // Not supported??
-        
+        window.setFramerateLimit(250);
+
         Bird* currentB = birds[currentBirdIndex];
         if (!currentB->isBirdLaunched()) {
             birdsRemainingText.setString("Birds Remaining: " + std::to_string(totalBirds - currentBirdIndex));

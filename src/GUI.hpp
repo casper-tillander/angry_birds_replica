@@ -14,186 +14,119 @@
  */
 class GUI {
 public:
-    /**
-     * @brief Constructs a GUI object.
-     */
-    GUI();
+    GUI(); // Constructor
+    void run(); // Runs the game's GUI
 
-    /**
-     * @brief Runs the game's GUI.
-     */
-    void run();
-
+    // Public members
     bool isSpecialBird;
     int selectedBackground;
 
 private:
-
-    sf::RenderWindow window; ///< The game's window.
-    sf::Music music;
-    sf::Text titleText; ///< The title text on the screen.
-    sf::Text playText; ///< The play button text.
-    sf::Text settingsText; ///< The settings button text.
-    sf::Text returnToHomeText; ///< The home button text.
-    sf::CircleShape ButtonShape; ///< The circular button shape.
-    sf::Text levelsText; ///< The title for the levels screen.
-    sf::Text level1Text; ///< The button for Level 1.
-    sf::Text level2Text; ///< The button for Level 2.
-    sf::Text level3Text; ///< The button for Level 3.
-    sf::Text tryAgainText; ///< The button for trying again.
-    sf::Text returnToLevelsText; ///< The button for returning to levels.
-    sf::Font font; ///< The font used for text.
+    // Private members
+    // Textures
     sf::Texture mainScreenTexture; ///< The background texture.
     sf::Texture backgroundTexture;
     sf::Texture soundTexture;
     sf::Texture levelBackgroundTexture; ///< The background texture for the levels-screen.
     sf::Texture settingsBackgroundTexture; ///< The background texture for the settings-screen.
     sf::Texture editorBackgroundTexture; ///< The background texture for choosing level for level editor.
-
     sf::Texture gameOverBackgroundTexture; ///< The background texture for the game over screen.
     sf::Texture levelCompleteBackgroundTexture; ///< The background texture for the level complete screen.
     sf::Texture chooseABirdBackgroundTexture;
-
-    sf::Sprite backgroundSprite; ///< The background sprite.
-    sf::FloatRect buttonBounds; ///< The bounding rectangle for the button.
     sf::Texture birdTexture; ///< The texture for the bird.
     sf::Texture specialBirdTexture; ///< The texture for the special bird.
-    sf::CircleShape highlightCircle; ///< The circle to highlight the selected bird.
-
-    sf::Text createLevelText; ///< The text for the button to launch the level editor.
     sf::Texture levelEditor1; ///< The texture for level 1.
     sf::Texture levelEditor2; ///< The texture for level 2.
     sf::Texture levelEditor3; ///< The texture for level 3.
-    sf::RectangleShape highlightRectangle; ///< The rectangle to highlight the selected background.
+    sf::Texture starTexture;
 
-    Level* currentLevel;  ///< Pointer to the current level.
-    enum Screen { Home, BirdSelection, Levels, PlayingLevel, GameOver, LevelCompleted, Settings, LevelEditorSelection, PlayingLevelEditor }; ///< Different game screens.
-    Screen currentScreen; ///< Variable to hold the current screen state.
-    int levelNumber; ///< Variable to hold the current level number.
+    // Fonts
+    sf::Font font; ///< The font used for text.
 
-    sf::Vector2u textureSize; ///< Variable to hold the size of the texture..
-    sf::Vector2u windowSize; ///< Variable to hold the size of the window.
+    // RenderWindow
+    sf::RenderWindow window; ///< The game's window.
 
-    sf::Sprite soundButton;
-    sf::RectangleShape redLine;
-    bool soundOn;
+    // Music
+    sf::Music music;
 
-    bool noGravity;
-    bool isLevelEditorLevel;
-    sf::CircleShape circleButton;
-    sf::RectangleShape redLine2;
+    // Texts
+    sf::Text titleText; ///< The title text on the screen.
+    sf::Text playText; ///< The play button text.
+    sf::Text settingsText; ///< The settings button text.
+    sf::Text returnToHomeText; ///< The home button text.
+    sf::Text levelsText; ///< The title for the levels screen.
+    sf::Text level1Text; ///< The button for Level 1.
+    sf::Text level2Text; ///< The button for Level 2.
+    sf::Text level3Text; ///< The button for Level 3.
+    sf::Text tryAgainText; ///< The button for trying again.
+    sf::Text returnToLevelsText; ///< The button for returning to levels.
+    sf::Text createLevelText; ///< The text for the button to launch the level editor.
     sf::Text gravityText;
-
     sf::Text playerMessage;
-
     sf::Text chooseBirdText; ///< The text for the button to choose a bird.
+    sf::Text levelEditorText;
+    sf::Text playerNameLabel;
+    sf::Text submitButtonText;
+    sf::Text inputText;
+
+    // Shapes and Buttons
+    sf::CircleShape ButtonShape; ///< The circular button shape.
+    sf::CircleShape highlightCircle; ///< The circle to highlight the selected bird.
+    sf::CircleShape circleButton;
+    sf::RectangleShape highlightRectangle; ///< The rectangle to highlight the selected background.
+    sf::RectangleShape redLine;
+    sf::RectangleShape redLine2;
+    sf::RectangleShape playerNameInputBox;
+    sf::RectangleShape submitButton;
+
+    // Sprites
+    sf::Sprite backgroundSprite; ///< The background sprite.
+    sf::Sprite soundButton;
     sf::Sprite normalBirdButton; ///< Button for choosing the normal bird.
     sf::Sprite specialBirdButton; ///< Button for choosing the special bird.
-
-    sf::Texture starTexture;
     sf::Sprite starSprite;
     sf::Sprite levelStarSprite;
-
-    sf::Text levelEditorText;
     sf::Sprite level1Button; ///< Button for choosing level 1 for level editor.
     sf::Sprite level2Button; ///< Button for choosing level 2 for level editor.
     sf::Sprite level3Button; ///< Button for choosing level 3 for level editor.
+
+    // Game State Variables
+    Level* currentLevel; ///< Pointer to the current level.
+    enum Screen { Home, BirdSelection, Levels, PlayingLevel, GameOver, LevelCompleted, Settings, LevelEditorSelection, PlayingLevelEditor }; ///< Different game screens.
+    Screen currentScreen; ///< Variable to hold the current screen state.
     int levelNumberEditor;
     LevelEditor* currentLevelEditor;
     std::string pathToCreatedFile;
-    
     Player* currentPlayer;
-    sf::Text playerNameLabel;
-    sf::RectangleShape playerNameInputBox;
     std::string playerNameInput;
-    sf::Text submitButtonText;
-    sf::RectangleShape submitButton;
 
-    sf::Text inputText;
+    // Additional int and bool members
+    int levelNumber; ///< Variable to hold the current level number.
+    sf::Vector2u textureSize; ///< Variable to hold the size of the texture.
+    sf::Vector2u windowSize; ///< Variable to hold the size of the window.
+    bool soundOn;
+    bool noGravity;
+    bool isLevelEditorLevel;
 
-    /**
-     * @brief Initializes the GUI components.
-     */
-    void initialize();
-
-    /**
-     * @brief Processes user input events.
-     */
-    void processEvents();
-
-    /**
-     * @brief Updates the GUI state.
-     */
-    void update();
-
-    /**
-     * @brief Renders the GUI components.
-     */
-    void render();
-
-    /**
-     * @brief Starts the game.
-     */
-    void startGame();
-
-    /**
-     * @brief Draws the home screen.
-     */
-    void drawHomeScreen();
-
-    /**
-     * @brief Draws the levels screen.
-     */
-    void drawLevelsScreen();
-
-    /**
-     * @brief Launches a specific game level.
-     *
-     * @param levelNumber The number of the level to launch.
-     */
-    void launchLevel(int levelNumber);
-
-    /**
-     * @brief Draws the game over screen.
-     */
-    void drawGameOverScreen();
-
-    /**
-     * @brief Draws the level completed screen.
-     */
-    void drawLevelCompletedScreen();
-
-    /**
-     * @brief Updates the button hover effect.
-     *
-     * @param buttonText The text of the button.
-     * @param mousePos The current mouse position.
-     */
-    void updateButtonHoverEffect(sf::Text& buttonText, sf::Vector2f mousePos);
-
-    /**
-     * @brief Draws the settings screen.
-     */
-    void drawSettingsScreen();
-
-    /**
-     * @brief Sets up the buttons.
-     */
-    void setupButton(sf::Text& buttonText, const std::string& text);
-
-    /**
-     * @brief Updates the background
-     */
-    void updateBackground();
-
+    // Private member functions
+    void initialize(); // Initializes the GUI components.
+    void processEvents(); // Processes user input events.
+    void update(); // Updates the GUI state.
+    void render(); // Renders the GUI components.
+    void startGame(); // Starts the game.
+    void drawHomeScreen(); // Draws the home screen.
+    void drawLevelsScreen(); // Draws the levels screen.
+    void launchLevel(int levelNumber); // Launches a specific game level.
+    void drawGameOverScreen(); // Draws the game over screen.
+    void drawLevelCompletedScreen(); // Draws the level completed screen.
+    void updateButtonHoverEffect(sf::Text& buttonText, sf::Vector2f mousePos); // Updates the button hover effect.
+    void drawSettingsScreen(); // Draws the settings screen.
+    void setupButton(sf::Text& buttonText, const std::string& text); // Sets up the buttons.
+    void updateBackground(); // Updates the background
     void drawBirdSelectionScreen();
-
     void drawLevelEditorSelectionScreen();
-
     void launchLevelEditor(int levelNumberEditor);
-
     void launchLevelEditorLevel(int levelNumberEditor, std::string filePath);
-
 };
 
 #endif // GUI_HPP

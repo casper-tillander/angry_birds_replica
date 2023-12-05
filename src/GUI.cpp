@@ -3,7 +3,7 @@
 /**
  * @brief Constructs a GUI object and initializes the game window.
  */
-GUI::GUI() : window(sf::VideoMode(1200, 700), "Angry Birds"), currentScreen(Home), currentLevel(nullptr) {
+GUI::GUI() : currentScreen(Home), currentLevel(nullptr), window(sf::VideoMode(1200, 700), "Happy Birds") {
     initialize();
     updateBackground();
 }
@@ -12,9 +12,6 @@ GUI::GUI() : window(sf::VideoMode(1200, 700), "Angry Birds"), currentScreen(Home
  * @brief Initializes GUI components, including fonts, textures, and UI elements.
  */
 void GUI::initialize() {
-    currentPlayer = nullptr;
-    isLevelEditorLevel = false;
-
     playerNameLabel.setFont(font);
     playerNameLabel.setString("Player Name:");
     playerNameLabel.setCharacterSize(24);
@@ -81,7 +78,7 @@ void GUI::initialize() {
     gravityText.setOrigin(gravityText.getLocalBounds().width + 5, gravityText.getLocalBounds().height / 2);
 
     // Load necessary resources
-    font.loadFromFile("../Fonts/angrybirds-regular.ttf");
+    font.loadFromFile("../Fonts/FEASFBRG.TTF");
     birdTexture.loadFromFile("../Pictures/bird.png");
     mainScreenTexture.loadFromFile("../Backgrounds/homescreen.png");
     levelBackgroundTexture.loadFromFile("../Backgrounds/levels.png");
@@ -164,6 +161,9 @@ void GUI::initialize() {
     highlightRectangle.setOutlineColor(sf::Color::White);
     highlightRectangle.setOutlineThickness(5);
 
+    currentPlayer = nullptr;
+    isLevelEditorLevel = false;
+
 }
 
 void GUI::updateBackground() {
@@ -189,7 +189,7 @@ void GUI::updateBackground() {
             break;
         case LevelEditorSelection:
             currentTexture = &editorBackgroundTexture;
-        
+            break;
     }
 
     if (currentTexture) {
@@ -246,11 +246,13 @@ void GUI::update() {
             currentScreen = GameOver;
         } else if (currentLevel->isLevelComplete()) {
             if (currentLevel != nullptr && !isLevelEditorLevel) {
-                int birdsUsed = currentLevel->getBirdsUsedForCompletion();
-                int totalBirds = 3;
-                int stars = totalBirds - birdsUsed + 1;
-                currentPlayer->updateScore(levelNumber, stars);
-                currentPlayer->saveToFile();
+                if (currentPlayer != nullptr) {
+                    int birdsUsed = currentLevel->getBirdsUsedForCompletion();
+                    int totalBirds = 3;
+                    int stars = totalBirds - birdsUsed + 1;
+                    currentPlayer->updateScore(levelNumber, stars);
+                    currentPlayer->saveToFile();
+                }
             }
             currentScreen = LevelCompleted;
         }
@@ -260,6 +262,8 @@ void GUI::update() {
         launchLevelEditorLevel(levelNumberEditor, pathToCreatedFile);
     }
 }
+
+
 
 /**
  * @brief Launches a specific game level.
@@ -560,7 +564,8 @@ void GUI::drawLevelsScreen() {
     sf::Vector2f levelButtonPosition;
 
     for (int level = 1; level <= 3; ++level) {
-        int stars = currentPlayer ? currentPlayer->getScoreForLevel(level) : 0;
+        if (currentPlayer != nullptr) {
+            int stars = currentPlayer ? currentPlayer->getScoreForLevel(level) : 0;
 
         switch (level) {
             case 1: levelButtonPosition = level1Text.getPosition(); break;
@@ -571,6 +576,7 @@ void GUI::drawLevelsScreen() {
         for (int i = 0; i < stars; ++i) {
             levelStarSprite.setPosition(levelButtonPosition.x - 63 + i * starSpacing, levelButtonPosition.y + 30);
             window.draw(levelStarSprite);
+        }
         }
     }
 }

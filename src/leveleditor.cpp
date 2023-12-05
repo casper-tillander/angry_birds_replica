@@ -50,7 +50,7 @@ LevelEditor::LevelEditor(sf::RenderWindow& win, int number, const sf::Texture& b
     highlightRectangle.setOutlineThickness(4);
     highlightRectangle.setSize(sf::Vector2f(boxSprite.getGlobalBounds().width + 2 * 5.0f, boxSprite.getGlobalBounds().height + 2 * 5.0f));
 
-    font.loadFromFile("../Fonts/angrybirds-regular.ttf");
+    font.loadFromFile("../Fonts/FEASFBRG.TTF");;
     playCreatedLevelText.setFont(font);
     playCreatedLevelText.setString("Play level");
     playCreatedLevelText.setCharacterSize(30);
