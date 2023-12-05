@@ -119,6 +119,6 @@ This project was developed as part of the ELEC-A7151 Object-oriented Programming
 ### Image Licenses
 - **bird.png:** Licensed under Creative Commons (CC BY-NC 4.0). Available at [freepngimg.com](https://www.freepngimg.com/).
 - **specialbird.png:** Licensed under the Creative Commons Attribution-Share Alike License 3.0 (Unported) (CC BY-SA). Featured on [angrybirds.fandom.com](https://angrybirds.fandom.com/).
-- **wall.png** and **bog.png:** Sourced from [filterforge.com](https://www.filterforge.com/), permitted for unmodified personal non-commercial use.
+- **wall.png** and **box.png:** Sourced from [filterforge.com](https://www.filterforge.com/), permitted for unmodified personal non-commercial use.
 - **star.png:** Licensed under the Creative Commons Attribution-NonCommercial 4.0 International Public License. Available at [pngimg.com](https://www.pngimg.com/).
 - **sound.png:** Licensed under the CC0 License. Available at [svgrepo.com](https://www.svgrepo.com/).
