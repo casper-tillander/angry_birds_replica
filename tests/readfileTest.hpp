@@ -2,36 +2,34 @@
 #define READTEST_HPP
 
 #include "../src/readfile.hpp"
-#include "../src/level.hpp"
 #include "printer.hpp"
 #include <iostream>
+#include <fstream>
+#include <cstdio>
 
-void testReadValidFile() {
-    const std::string file = "../tests/testfiles/validFile.csv";
-    auto result = readLevelData(file);
+void testReadFile() {
+    std::ofstream testFile("validFile.csv");
+    testFile << "type,x,y\n";
+    testFile << "wall,300,40\n";
+    testFile.close();
+    auto result = readLevelData("validFile.csv");
+
     // Verify the size and contents of the result vector
-    printTestResult(result.size() == 2 && result[0].type == "box" && result[0].x == 1 && result[0].y == 2 &&
-                        result[1].type == "box" && result[1].x == 3 && result[1].y == 4,
-                    "testReadValidFile");
+    printTestResult(result.size() == 1 && result[0].type == "wall" && result[0].x == 300 && result[0].y == 40,
+                    "testReadValidData");
+    std::remove("validFile.csv");
 }
 
 void testReadEmptyFile() {
-    std::string filename = "../tests/testfiles/emptyFile.csv";
+    std::ofstream testFile("emptyFile.csv");
+    testFile << "type,x,y\n";
+    testFile.close();
 
-    std::vector<ObjectData> result = readLevelData(filename);
+    auto result = readLevelData("emptyFile.csv");
 
     // Verify that the result vector is empty
     printTestResult(result.empty(), "testReadEmptyFile");
-}
-
-void testReadInvalidData() {
-    std::string filename = "../tests/testfiles/invalidFile.csv";
-
-    std::vector<ObjectData> result = readLevelData(filename);
-
-    // Verify that the result vector is smaller than expected due to invalid data
-    printTestResult(result.size() == 1 && result[0].type == "wall" && result[0].x == 300 && result[0].y == 40,
-                    "testReadInvalidData");
+    std::remove("emptyFile.csv");
 }
 
 

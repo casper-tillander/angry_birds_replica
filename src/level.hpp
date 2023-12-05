@@ -148,6 +148,8 @@ public:
 
     int getBirdsUsedForCompletion();
 
+    Bird* getCurrentBird();
+
 };
 
 #endif // LEVEL_HPP

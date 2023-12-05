@@ -68,6 +68,19 @@ make
 ./AngryBirds
 ```
 
+## Testing
+
+```bash
+# Create a testing folder
+mkdir tests
+
+# Navigate to the tests folder inside the build folder
+cd tests
+
+# Run the tests
+./AngryBirdsTests
+```
+
 ## Repository Organization
 
 The repository is thoughtfully organized:
