@@ -139,7 +139,7 @@ b2Body* Bird::getBody() const {
 std::vector<sf::CircleShape> Bird::calculateTrajectory(const sf::Vector2f& launchVector, int numDots) {
     std::vector<sf::CircleShape> dots;
     float timeStep = 0.1f;
-    float gravityEffect = 10.0f; // Increases the gravity effect (the bend) of the dots.
+    float gravityEffect = 15.0f; // Increases the gravity effect (the bend) of the dots.
     b2Vec2 startVelocity(launchVector.x, launchVector.y);
 
     for (int i = 0; i < numDots; ++i) {

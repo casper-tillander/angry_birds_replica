@@ -15,7 +15,7 @@ private:
     bool isLaunched; ///< Indicates whether the bird has been launched.
     bool isDragging; ///< Indicates whether the bird is being dragged.
     sf::Vector2f initialClickPosition; ///< The initial click position when dragging.
-    const float FORCE_MULTIPLIER = 150.0f; ///< Multiplier for launch force. Adjust as needed.
+    const float FORCE_MULTIPLIER = 200.0f; ///< Multiplier for launch force. Adjust as needed.
 
     int currentBirdIndex = 0; // Index of the current bird.
     int totalBirds = 3; // Total birds per level.
