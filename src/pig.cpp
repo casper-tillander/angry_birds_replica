@@ -10,24 +10,24 @@
 
 Pig::Pig(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
     
-    pigShape.setRadius(20.0f); ///< Adjust the size of the pig
+    pigShape.setRadius(20.0f); 
     pigShape.setTexture(&texture);
     pigShape.setOrigin(pigShape.getRadius(), pigShape.getRadius());
 
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
     bodyDef.position = position;
-    bodyDef.angularDamping = 1.0f; ///< Makes the pig stop spinning after some time
-    bodyDef.fixedRotation = false; ///< Set to 'true' if the pig shouldn't spin
+    bodyDef.angularDamping = 1.0f; 
+    bodyDef.fixedRotation = false; 
     body = world->CreateBody(&bodyDef);
 
     b2CircleShape circleShape;
-    circleShape.m_radius = 10.0f; ///< About 5 times smaller than the radius of pigShape
+    circleShape.m_radius = 10.0f; 
 
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &circleShape;
-    fixtureDef.density = 1.0f; ///< Adjust density of pig
-    fixtureDef.restitution = 0.3f; ///< Adjust this value for bounciness
+    fixtureDef.density = 1.0f; 
+    fixtureDef.restitution = 0.3f; 
     body->CreateFixture(&fixtureDef);
 
     body->GetUserData().pointer = reinterpret_cast<uintptr_t>(this);
@@ -106,10 +106,20 @@ void Pig::destroyBody() {
     }
 }
 
+/**
+ * @brief Retrieves the pig's health.
+ *
+ * @return The current health of the pig.
+ */
 float Pig::getHealth() const {
     return health;
 }
 
+/**
+ * @brief Retrieves the Box2D body associated with the pig.
+ *
+ * @return Pointer to the pig's Box2D body.
+ */
 b2Body* Pig::getBody() const {
     return body;
 }

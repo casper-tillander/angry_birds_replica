@@ -8,17 +8,35 @@
 /**
  * @class Bird
  * @brief Represents a bird object in the game.
+ *
+ * The Bird class encapsulates the properties and behaviors of a bird in the game environment. 
+ * It integrates both the rendering and physics aspects of the bird.
+ * 
+ * This class manages the bird's shape, Box2D body, launch mechanism, input handling for dragging,
+ * rendering on an SFML window, updating its position and rotation, as well as calculating and storing
+ * trajectory dots used for aiming before launch.
+ *
+ * The bird can be launched with a specified force and its behavior is governed by Box2D physics,
+ * including velocity, collision, and movement in the game world.
+ *
+ * It maintains states such as whether the bird has been launched or is currently being dragged.
+ * The number of birds per level and the index of the current bird are also managed within this class.
  */
+
 class Bird {
 private:
-    sf::CircleShape birdShape; ///< The bird's shape for both rendering and physics.
-    bool isLaunched; ///< Indicates whether the bird has been launched.
-    bool isDragging; ///< Indicates whether the bird is being dragged.
-    sf::Vector2f initialClickPosition; ///< The initial click position when dragging.
-    const float FORCE_MULTIPLIER = 200.0f; ///< Multiplier for launch force. Adjust as needed.
+    // Textures used in class
+    sf::CircleShape birdShape; 
 
-    int currentBirdIndex = 0; // Index of the current bird.
-    int totalBirds = 3; // Total birds per level.
+    // State variables
+    bool isLaunched; 
+    bool isDragging; 
+    sf::Vector2f initialClickPosition;
+    
+    // Constants
+    const float FORCE_MULTIPLIER = 200.0f; 
+    int currentBirdIndex = 0; 
+    int totalBirds = 3; 
 
 public:
     b2Body* body; ///< The bird's Box2D body.

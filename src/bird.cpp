@@ -11,7 +11,7 @@
 Bird::Bird(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
     isLaunched = false;
 
-    birdShape.setRadius(25.0f); ///< Adjust the size of the bird
+    birdShape.setRadius(25.0f); 
     birdShape.setTexture(&texture);
     birdShape.setOrigin(birdShape.getRadius(), birdShape.getRadius());
 
@@ -19,17 +19,17 @@ Bird::Bird(b2World* world, const sf::Texture& texture, const b2Vec2& position) {
     bodyDef.type = b2_dynamicBody;
     bodyDef.position = position;
     bodyDef.gravityScale = 0.0f;
-    bodyDef.angularDamping = 1.0f; ///< Makes the bird stop spinning after some time
-    bodyDef.fixedRotation = false; ///< Set to 'true' if the bird shouldn't spin
+    bodyDef.angularDamping = 1.0f; 
+    bodyDef.fixedRotation = false; 
     body = world->CreateBody(&bodyDef);
 
     b2CircleShape circleShape;
-    circleShape.m_radius = 10.0f; ///< About 2 times smaller than the radius of birdShape
+    circleShape.m_radius = 10.0f; 
 
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &circleShape;
-    fixtureDef.density = 0.99f; ///< Adjust density of bird
-    fixtureDef.restitution = 0.4f; ///< Adjust this value for bounciness
+    fixtureDef.density = 0.99f; 
+    fixtureDef.restitution = 0.4f; 
 
     body->CreateFixture(&fixtureDef);
 
@@ -52,7 +52,7 @@ void Bird::update() {
  */
 void Bird::render(sf::RenderWindow& window) {
     window.draw(birdShape);
-    // Render trajectory dots
+
     if (!isLaunched) {
         for (const auto& dot : trajectoryDots) {
             window.draw(dot);
@@ -84,8 +84,7 @@ void Bird::handleInput(const sf::Event& event, const sf::RenderWindow& window) {
         sf::Vector2f currentDragPosition = window.mapPixelToCoords(sf::Mouse::getPosition(window));
         sf::Vector2f launchVector = initialClickPosition - currentDragPosition;
 
-        // Calculate trajectory points
-        trajectoryDots = calculateTrajectory(launchVector, 10); // Update the member variable
+        trajectoryDots = calculateTrajectory(launchVector, 10); 
     }
 }
 
@@ -106,7 +105,6 @@ void Bird::launch(const b2Vec2& force) {
         body->ApplyLinearImpulseToCenter(scaledForce, true);
         isLaunched = true;
 
-        // Clear the trajectory dots
         trajectoryDots.clear();
     }
 }
@@ -135,11 +133,17 @@ b2Body* Bird::getBody() const {
     return body;
 }
 
-// Calculate the trajectory points
+/**
+ * @brief Calculate the trajectory points.
+ *
+ * @param launchVector The vector representing the launch direction.
+ * @param numDots The number of trajectory dots to calculate.
+ * @return A vector containing the calculated trajectory dots.
+ */
 std::vector<sf::CircleShape> Bird::calculateTrajectory(const sf::Vector2f& launchVector, int numDots) {
     std::vector<sf::CircleShape> dots;
     float timeStep = 0.1f;
-    float gravityEffect = 15.0f; // Increases the gravity effect (the bend) of the dots.
+    float gravityEffect = 15.0f;
     b2Vec2 startVelocity(launchVector.x, launchVector.y);
 
     for (int i = 0; i < numDots; ++i) {

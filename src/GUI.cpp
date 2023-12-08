@@ -26,8 +26,7 @@ void GUI::initialize() {
     playerNameInputBox.setSize(sf::Vector2f(200, 30));
     playerNameInputBox.setFillColor(sf::Color(50, 50, 50));
     playerNameInputBox.setPosition(900, 50);
-
-    // Submit Button
+  
     submitButton.setSize(sf::Vector2f(100, 30));
     submitButton.setFillColor(sf::Color(100, 100, 100));
     submitButton.setPosition(1100, 50);
@@ -38,7 +37,8 @@ void GUI::initialize() {
     submitButtonText.setFillColor(sf::Color::White);
     submitButtonText.setPosition(1110, 50);
 
-    //Submit text
+
+
     inputText.setFont(font);
     inputText.setCharacterSize(24);
     inputText.setFillColor(sf::Color::White);
@@ -77,7 +77,6 @@ void GUI::initialize() {
     gravityText.setFillColor(sf::Color::Black);
     gravityText.setOrigin(gravityText.getLocalBounds().width + 5, gravityText.getLocalBounds().height / 2);
 
-    // Load necessary resources
     font.loadFromFile("../Fonts/FEASFBRG.TTF");
     birdTexture.loadFromFile("../Pictures/bird.png");
     mainScreenTexture.loadFromFile("../Backgrounds/homescreen.png");
@@ -107,7 +106,6 @@ void GUI::initialize() {
     normalBirdButton.setScale(0.05f, 0.05f);
     specialBirdButton.setScale(0.2f, 0.2f);
 
-    // Configure buttons
     setupButton(playText, "Play");
     setupButton(settingsText, "Settings");
     setupButton(returnToHomeText, "Home");
@@ -120,7 +118,6 @@ void GUI::initialize() {
     setupButton(levelEditorText, "Level Editor");
     setupButton(createLevelText, "Create level");
 
-    // Styling and placement for buttons
     returnToHomeText.setOrigin(returnToHomeText.getLocalBounds().width / 2, returnToHomeText.getLocalBounds().height / 1.3);
     settingsText.setOrigin(settingsText.getLocalBounds().width / 2, settingsText.getLocalBounds().height / 1.3);
     playText.setOrigin(playText.getLocalBounds().width / 2, playText.getLocalBounds().height / 1.3);
@@ -133,7 +130,6 @@ void GUI::initialize() {
     levelEditorText.setOrigin(levelEditorText.getLocalBounds().width / 2, levelEditorText.getLocalBounds().height / 1.3);
     createLevelText.setOrigin(createLevelText.getLocalBounds().width / 2, createLevelText.getLocalBounds().height / 1.3);
 
-    // Configure circular button shape
     ButtonShape.setRadius(30);
     ButtonShape.setScale(3, 1);
     ButtonShape.setFillColor(sf::Color(173, 216, 230));
@@ -141,22 +137,18 @@ void GUI::initialize() {
     ButtonShape.setOutlineColor(sf::Color::White);
     ButtonShape.setOrigin(ButtonShape.getLocalBounds().width / 2, ButtonShape.getLocalBounds().height / 2);
 
-    // Selection circle for birds.
     highlightCircle.setRadius(60);
     highlightCircle.setFillColor(sf::Color::Transparent);
     highlightCircle.setOutlineColor(sf::Color::White);
     highlightCircle.setOutlineThickness(5);
 
-    // Stars for point system
     starTexture.loadFromFile("../Pictures/star.png");
     starSprite.setTexture(starTexture);
     starSprite.setScale(0.9f, 0.9f);
 
-    // Stars under levles
     levelStarSprite.setTexture(starTexture);
     levelStarSprite.setScale(0.15f, 0.15f);
 
-    // Selection rectangle for backgrounds
     highlightRectangle.setFillColor(sf::Color::Transparent);
     highlightRectangle.setOutlineColor(sf::Color::White);
     highlightRectangle.setOutlineThickness(5);
@@ -166,6 +158,9 @@ void GUI::initialize() {
 
 }
 
+/**
+ * @brief Updates the background based on the current screen.
+ */
 void GUI::updateBackground() {
     sf::Texture* currentTexture = nullptr;
     switch (currentScreen) {
@@ -202,7 +197,12 @@ void GUI::updateBackground() {
     }
 }
 
-
+/**
+ * @brief Sets up the appearance and attributes of buttons.
+ *
+ * @param buttonText The text of the button.
+ * @param text The text to display on the button.
+ */
 void GUI::setupButton(sf::Text& buttonText, const std::string& text) {
     buttonText.setFont(font);
     buttonText.setString(text);
@@ -287,7 +287,11 @@ void GUI::launchLevel(int levelNumber) {
 
 }
 
-
+/**
+ * @brief Launches the level editor for a specific level number.
+ *
+ * @param levelNumberEditor The number of the level for the editor.
+ */
 void GUI::launchLevelEditor(int levelNumberEditor) {
     isLevelEditorLevel = false;
     this->levelNumberEditor = levelNumberEditor;
@@ -301,6 +305,12 @@ void GUI::launchLevelEditor(int levelNumberEditor) {
     currentScreen = PlayingLevelEditor;
 }
 
+/**
+ * @brief Launches the level editor level with the specified level number and file path.
+ *
+ * @param levelNumberEditor The number of the level for the editor.
+ * @param filePath The file path for the level.
+ */
 void GUI::launchLevelEditorLevel(int levelNumberEditor, std::string filePath) {
     isLevelEditorLevel = true;
     this->levelNumber = levelNumberEditor;
@@ -482,7 +492,6 @@ void GUI::render() {
             drawLevelsScreen();
             break;
         case PlayingLevel:
-            // Render level gameplay
             break;
         case GameOver:
             drawGameOverScreen();
@@ -656,6 +665,9 @@ void GUI::drawSettingsScreen() {
 
 }
 
+/**
+ * @brief Draws the components of the bird selection screen.
+ */
 void GUI::drawBirdSelectionScreen() {
     updateBackground();
 
@@ -684,6 +696,9 @@ void GUI::drawBirdSelectionScreen() {
     window.draw(highlightCircle);
 }
 
+/**
+ * @brief Draws the components of the level editor selection screen.
+ */
 void GUI::drawLevelEditorSelectionScreen() {
     updateBackground();
 

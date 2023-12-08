@@ -4,8 +4,14 @@
 #include <SFML/Graphics.hpp>
 #include <box2d/box2d.h>
 
+/**
+ * @class LevelEditor
+ * @brief Represents a tool to create game levels and edit them visually.
+ */
+
 class LevelEditor {
 private:
+// Member variables
     int levelNumber;
     int chosenObject = 1;
 

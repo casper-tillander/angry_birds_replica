@@ -11,9 +11,11 @@
 
 class Pig {
 private:
-    sf::CircleShape pigShape; ///< The pig's shape for rendering.
+    // Rendering and physics variables
+    sf::CircleShape pigShape; 
     b2Body* body;
 
+    // State variables
     float health;
     bool isAlive;
     bool markedForDeletion;
@@ -71,8 +73,18 @@ public:
      */
     bool isMarkedForDeletion() const;
 
+    /**
+     * @brief Retrieves the pig's health.
+     *
+     * @return The current health of the pig.
+     */
     float getHealth() const;
 
+    /**
+     * @brief Retrieves the Box2D body associated with the pig.
+     *
+     * @return Pointer to the pig's Box2D body.
+     */
     b2Body* getBody() const;
 };
 

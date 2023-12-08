@@ -11,7 +11,11 @@ Player::Player(std::string name) {
     this->name = name;
 }
 
-
+/**
+ * @brief Loads player data from a file.
+ *
+ * @return A message indicating whether the player is new or existing.
+ */
 std::string Player::loadFromFile() {
     std::string filePath = "../Players/" + name + ".csv";
     std::string message;
@@ -33,6 +37,9 @@ std::string Player::loadFromFile() {
     return message;
 }
 
+/**
+ * @brief Saves player data to a file.
+ */
 void Player::saveToFile() {
     std::string filePath = "../Players/" + name + ".csv";
     std::ofstream file(filePath);
@@ -46,6 +53,12 @@ void Player::saveToFile() {
     }
 }
 
+/**
+ * @brief Retrieves the score for a specific level.
+ *
+ * @param levelNumber The number of the level.
+ * @return The score earned by the player for that level.
+ */
 int Player::getScoreForLevel(int levelNumber) {
     if (levelScores.find(levelNumber) != levelScores.end()) {
         return levelScores[levelNumber];
@@ -54,6 +67,12 @@ int Player::getScoreForLevel(int levelNumber) {
     }
 }
 
+/**
+ * @brief Updates the score for a specific level if it's higher than the previous score.
+ *
+ * @param levelNumber The number of the level.
+ * @param stars The number of stars earned.
+ */
 void Player::updateScore(int levelNumber, int stars) {
     if (levelScores.find(levelNumber) == levelScores.end() || levelScores[levelNumber] < stars) {
         levelScores[levelNumber] = stars;

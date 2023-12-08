@@ -15,32 +15,41 @@
 /**
  * @class Level
  * @brief Represents a game level with physics simulation.
+ * 
+ * This class manages the elements and behavior of a game level,
+ * including Box2D physics simulation, game objects like birds, pigs, boxes, and walls,
+ * as well as handling the game's progression and state.
  */
+
 class Level {
 private:
-    int levelNumber; ///< The level number.
-    int currentBirdIndex = 0; // Index of the current bird.
-    int totalBirds = 3; // Total birds per level.
-    sf::RenderWindow& window; ///< Reference to the game's window.
-    /* Lagar views
-    sf::View gameView; ///< The view used during levels.
-    sf::View defaultView; ///< The view used otherwise.
-    */
-    sf::Texture backgroundTexture; ///< The background texture.
-    sf::Sprite backgroundSprite; ///< The background sprite.
-    b2World* world; ///< Pointer to the Box2D world.
-    std::vector<Pig*> pigs; ///< Vector of pig objects.
-    std::vector<Box*> boxes; ///< Vector of box objects.
-    std::vector<Wall*> walls; ///< Vector of wall objects.
-    sf::Texture pigTexture; ///< The texture for pigs.
-    sf::Texture boxTexture; ///< The texture for boxes.
-    sf::Texture wallTexture; ///< The texture for walls.
-    std::vector<Bird*> birds; // Vector of bird objects.
-    sf::Texture birdTexture; ///< The texture for the bird.
-    sf::Font font;
-    sf::Text birdsRemainingText;
-    sf::Text pigsRemainingText;
+    // Level properties
+    int levelNumber;
+    int currentBirdIndex = 0; 
+    int totalBirds = 3; 
+    sf::RenderWindow& window;
+    sf::Texture backgroundTexture;
+    sf::Sprite backgroundSprite; 
+    b2World* world;
     bool noGravity;
+
+    // Level objects
+    std::vector<Pig*> pigs; 
+    std::vector<Box*> boxes;
+    std::vector<Wall*> walls;
+    std::vector<Bird*> birds;
+
+    //Textures used in class
+    sf::Texture pigTexture; 
+    sf::Texture boxTexture;
+    sf::Texture wallTexture; 
+    sf::Texture birdTexture; 
+    sf::Font font;
+
+    // UI elements
+    sf::Text birdsRemainingText;
+    sf::Text pigsRemainingText; 
+
 public:
     /**
      * @brief Constructs a Level object.

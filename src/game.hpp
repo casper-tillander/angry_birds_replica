@@ -6,7 +6,12 @@
 /**
  * @class Game
  * @brief Represents the main game control.
+ *
+ * The Game class manages the overall control flow and execution of the game.
+ * It initializes the game components, such as the graphical user interface (GUI),
+ * and runs the main game loop.
  */
+
 class Game {
 
 public:
@@ -21,7 +26,7 @@ public:
     void run();
 
 private:
-    GUI gui; ///< The graphical user interface for the game.
+    GUI gui;
 };
 
 #endif // GAME_HPP

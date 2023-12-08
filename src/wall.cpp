@@ -45,10 +45,20 @@ void Wall::render(sf::RenderWindow& window) {
     window.draw(wallShape);
 }
 
+/**
+ * @brief Gets the Box2D body associated with the wall.
+ *
+ * @return A pointer to the Box2D body.
+ */
 b2Body* Wall::getBody() const {
     return body;
 }
 
+/**
+ * @brief Gets the position of the wall.
+ *
+ * @return The position of the wall in the Box2D world.
+ */
 b2Vec2 Wall::getPosition() const {
     return body->GetPosition();
 }

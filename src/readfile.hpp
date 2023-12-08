@@ -10,8 +10,11 @@
  */
 
 struct ObjectData {
-    std::string type; ///< The type of the object (e.g., "pig", "box").
-    float x, y; ///< The x and y coordinates of the object.
+    ///< Object type
+    std::string type; 
+    
+    // Coordinates
+    float x, y;
 };
 
 /**

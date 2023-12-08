@@ -37,7 +37,19 @@ public:
      */
     void render(sf::RenderWindow& window);
 
+    /**
+     * @brief Gets the Box2D body associated with the wall.
+    *
+    * @return A pointer to the Box2D body.
+    */
     b2Body* getBody() const;
+
+
+    /**
+    * @brief Gets the position of the wall.
+    *
+    * @return The position of the wall in the Box2D world.
+    */
     b2Vec2 getPosition() const;
 };
 

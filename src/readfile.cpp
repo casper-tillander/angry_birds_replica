@@ -18,7 +18,7 @@ std::vector<ObjectData> readLevelData(const std::string& filename) {
     std::string line, type;
     float x, y;
 
-    std::getline(file, line); // Read and discard the header line
+    std::getline(file, line); 
 
     while (std::getline(file, line)) {
         std::istringstream s(line);

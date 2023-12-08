@@ -7,11 +7,15 @@
 /**
  * @class Box
  * @brief Represents a box object in the game.
+ * 
+ * This class manages the rendering and physics of a box.
  */
+
 class Box {
 private:
-    sf::RectangleShape boxShape; ///< The box's shape for rendering.
-    b2Body* body; ///< The box's Box2D body.
+    // Rendering and physics variables
+    sf::RectangleShape boxShape; 
+    b2Body* body;
 
 public:
     /**
