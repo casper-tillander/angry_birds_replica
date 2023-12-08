@@ -125,7 +125,7 @@ systems might be a good idea, but for now, this was solved by manual scaling.
 - Julius is going to make the GUI include statistics.
 - Julius is going to implement better damage-logic for the pigs.
 - Matilda is going to edit the backgrounds so that they include a slingshot. 
-- Matilda is going to try and find better background pictures.
+- Matilda is going to try and find and edit better background pictures.
 - Casper is going to implement a spacial bird and the ability to switch between birds.
 - Casper is going to implement a point system using stars.
 - Casper is going to implement trajectory dots to the birds.
@@ -139,7 +139,7 @@ Most of basic game is completed, but some features are still missing, and some a
 - Julius is going to make the GUI include statistics.
 - Julius is going to implement better damage-logic for the pigs.
 - Matilda is going to edit the backgrounds so that they include a slingshot. 
-- Matilda is going to try and find better background pictures.
+- Matilda is going to try and find and edit better background pictures.
 - Casper is going to implement a special bird and the ability to switch between birds.
 - Casper is going to implement a point system using stars.
 - Casper is going to implement trajectory dots to the birds.
@@ -222,6 +222,7 @@ The game is completed, but we still want to add some additional features. The do
 3. Julius
 
 4. Matilda
+   - Continued on level csv files.
    
 
 ## Challenges
@@ -231,9 +232,10 @@ The game is completed, but we still want to add some additional features. The do
 
 
 ## Actions
-
+- Matilda is going to make final doxygen-compatible comments for all files.
 
 ## Project status
 
 
 ### TODOs
+- Matilda is going to make final doxygen-compatible comments for all files.
