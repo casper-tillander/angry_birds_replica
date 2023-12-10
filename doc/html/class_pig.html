@@ -108,6 +108,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>markForDeletion</b> (
 <tr class="memitem:a78a9fab285dda8429c4cae9e2686b63c" id="r_a78a9fab285dda8429c4cae9e2686b63c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pig.html#a78a9fab285dda8429c4cae9e2686b63c">isMarkedForDeletion</a> () const</td></tr>
 <tr class="memdesc:a78a9fab285dda8429c4cae9e2686b63c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the pig is marked for deletion.  <br /></td></tr>
 <tr class="separator:a78a9fab285dda8429c4cae9e2686b63c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab27379c60fa9a44baa6d08227a0fd8c5" id="r_ab27379c60fa9a44baa6d08227a0fd8c5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pig.html#ab27379c60fa9a44baa6d08227a0fd8c5">getHealth</a> () const</td></tr>
+<tr class="memdesc:ab27379c60fa9a44baa6d08227a0fd8c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the pig's health.  <br /></td></tr>
+<tr class="separator:ab27379c60fa9a44baa6d08227a0fd8c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04bdebbf5da7d8507f13ab3a6f5c875d" id="r_a04bdebbf5da7d8507f13ab3a6f5c875d"><td class="memItemLeft" align="right" valign="top">b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pig.html#a04bdebbf5da7d8507f13ab3a6f5c875d">getBody</a> () const</td></tr>
+<tr class="memdesc:a04bdebbf5da7d8507f13ab3a6f5c875d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the Box2D body associated with the pig.  <br /></td></tr>
+<tr class="separator:a04bdebbf5da7d8507f13ab3a6f5c875d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a pig object in the game. </p>
@@ -156,12 +162,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>markForDeletion</b> (
   </table>
   </dd>
 </dl>
-<p>&lt; Adjust the size of the pig</p>
-<p>&lt; Makes the pig stop spinning after some time</p>
-<p>&lt; Set to 'true' if the pig shouldn't spin</p>
-<p>&lt; About 5 times smaller than the radius of pigShape</p>
-<p>&lt; Adjust density of pig</p>
-<p>&lt; Adjust this value for bounciness</p>
 
 </div>
 </div>
@@ -203,6 +203,46 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>markForDeletion</b> (
 
 <p>Destroys the Box2D body associated with the pig. </p>
 <p>Destroys the Box2D body associated with the pig if it exists and the world is not locked. </p>
+
+</div>
+</div>
+<a id="a04bdebbf5da7d8507f13ab3a6f5c875d" name="a04bdebbf5da7d8507f13ab3a6f5c875d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04bdebbf5da7d8507f13ab3a6f5c875d">&#9670;&#160;</a></span>getBody()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">b2Body * Pig::getBody </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the Box2D body associated with the pig. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the pig's Box2D body. </dd></dl>
+
+</div>
+</div>
+<a id="ab27379c60fa9a44baa6d08227a0fd8c5" name="ab27379c60fa9a44baa6d08227a0fd8c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab27379c60fa9a44baa6d08227a0fd8c5">&#9670;&#160;</a></span>getHealth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float Pig::getHealth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the pig's health. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current health of the pig. </dd></dl>
 
 </div>
 </div>
@@ -321,8 +361,8 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/<a class="el" href="pig_8hpp_source.html">pig.hpp</a></li>
-<li>src/<b>pig.cpp</b></li>
+<li>//wsl.localhost/Ubuntu/home/caspertillander/cpp-course-autumn-2023/Project/src/<a class="el" href="pig_8hpp_source.html">pig.hpp</a></li>
+<li>//wsl.localhost/Ubuntu/home/caspertillander/cpp-course-autumn-2023/Project/src/<b>pig.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

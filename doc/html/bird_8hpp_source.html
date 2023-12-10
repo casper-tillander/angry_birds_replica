@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Happy Birds: src/bird.hpp Source File</title>
+<title>Happy Birds: //wsl.localhost/Ubuntu/home/caspertillander/cpp-course-autumn-2023/Project/src/bird.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -88,53 +88,58 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;box2d/box2d.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_bird.html">   12</a></span><span class="keyword">class </span><a class="code hl_class" href="class_bird.html">Bird</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    sf::CircleShape birdShape; </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">bool</span> isLaunched; </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">bool</span> isDragging; </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    sf::Vector2f initialClickPosition; </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">const</span> <span class="keywordtype">float</span> FORCE_MULTIPLIER = 10000.0f; </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">int</span> currentBirdIndex = 0; <span class="comment">// Index of the current bird.</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">int</span> totalBirds = 3; <span class="comment">// Total birds per level.</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_bird.html#aee116a75823e756e3f76b522e0c3d1bd">   24</a></span>    b2Body* <a class="code hl_variable" href="class_bird.html#aee116a75823e756e3f76b522e0c3d1bd">body</a>; </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_class" href="class_bird.html">Bird</a>(b2World* world, <span class="keyword">const</span> sf::Texture&amp; texture, <span class="keyword">const</span> b2Vec2&amp; position);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bird.html#ae2718aad2ef1de73e399482ab6068324">update</a>();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bird.html#ada5a2f0b945cf85bea7798db4725a3aa">render</a>(sf::RenderWindow&amp; window);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_bird.html#ad378b78b7803914962c49cf7d0208fe4">handleInput</a>(<span class="keyword">const</span> sf::Event&amp; event, <span class="keyword">const</span> sf::RenderWindow&amp; window);</div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_bird.html">   26</a></span><span class="keyword">class </span><a class="code hl_class" href="class_bird.html">Bird</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// Textures used in class</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    sf::CircleShape birdShape; </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// State variables</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">bool</span> isLaunched; </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">bool</span> isDragging; </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    sf::Vector2f initialClickPosition;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">// Constants</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">const</span> <span class="keywordtype">float</span> FORCE_MULTIPLIER = 200.0f; </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">int</span> currentBirdIndex = 0; </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">int</span> totalBirds = 3; </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_bird.html#aee116a75823e756e3f76b522e0c3d1bd">   42</a></span>    b2Body* <a class="code hl_variable" href="class_bird.html#aee116a75823e756e3f76b522e0c3d1bd">body</a>; </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_class" href="class_bird.html">Bird</a>(b2World* world, <span class="keyword">const</span> sf::Texture&amp; texture, <span class="keyword">const</span> b2Vec2&amp; position);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bird.html#a73496d28dde48f328c2cfc275ebcad6f">launch</a>(<span class="keyword">const</span> b2Vec2&amp; force);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    b2Vec2 <a class="code hl_function" href="class_bird.html#a2c4a8a764c19bc962306f61611513d19">getVelocity</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_bird.html#a35ca30d85dea30e06663d909635d841d">isBirdLaunched</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bird.html#ae2718aad2ef1de73e399482ab6068324">update</a>();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bird.html#ada5a2f0b945cf85bea7798db4725a3aa">render</a>(sf::RenderWindow&amp; window);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_bird.html#ad378b78b7803914962c49cf7d0208fe4">handleInput</a>(<span class="keyword">const</span> sf::Event&amp; event, <span class="keyword">const</span> sf::RenderWindow&amp; window);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    b2Body* <a class="code hl_function" href="class_bird.html#ab2dff9736049c8147ebfa13f5f91e0cc">getBody</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bird.html#a73496d28dde48f328c2cfc275ebcad6f">launch</a>(<span class="keyword">const</span> b2Vec2&amp; force);</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    std::vector&lt;sf::CircleShape&gt; calculateTrajectory(<span class="keyword">const</span> sf::Vector2f&amp; launchVector, <span class="keywordtype">int</span> numDots);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="class_bird.html#a5c3fedd0f5435a709e3cc25310ca6d20">   77</a></span>    std::vector&lt;sf::CircleShape&gt; <a class="code hl_variable" href="class_bird.html#a5c3fedd0f5435a709e3cc25310ca6d20">trajectoryDots</a>; </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>};</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    b2Vec2 <a class="code hl_function" href="class_bird.html#a2c4a8a764c19bc962306f61611513d19">getVelocity</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_bird.html#a35ca30d85dea30e06663d909635d841d">isBirdLaunched</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    b2Body* <a class="code hl_function" href="class_bird.html#ab2dff9736049c8147ebfa13f5f91e0cc">getBody</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    std::vector&lt;sf::CircleShape&gt; <a class="code hl_function" href="class_bird.html#a5034da10c48bc73203b98fad523ed1a1">calculateTrajectory</a>(<span class="keyword">const</span> sf::Vector2f&amp; launchVector, <span class="keywordtype">int</span> numDots);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="class_bird.html#a5c3fedd0f5435a709e3cc25310ca6d20">   95</a></span>    std::vector&lt;sf::CircleShape&gt; <a class="code hl_variable" href="class_bird.html#a5c3fedd0f5435a709e3cc25310ca6d20">trajectoryDots</a>; </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>};</div>
 </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#endif </span><span class="comment">// BIRD_HPP</span></div>
-<div class="ttc" id="aclass_bird_html"><div class="ttname"><a href="class_bird.html">Bird</a></div><div class="ttdoc">Represents a bird object in the game.</div><div class="ttdef"><b>Definition</b> bird.hpp:12</div></div>
-<div class="ttc" id="aclass_bird_html_a2c4a8a764c19bc962306f61611513d19"><div class="ttname"><a href="class_bird.html#a2c4a8a764c19bc962306f61611513d19">Bird::getVelocity</a></div><div class="ttdeci">b2Vec2 getVelocity() const</div><div class="ttdoc">Get the current velocity of the bird.</div><div class="ttdef"><b>Definition</b> bird.cpp:118</div></div>
-<div class="ttc" id="aclass_bird_html_a35ca30d85dea30e06663d909635d841d"><div class="ttname"><a href="class_bird.html#a35ca30d85dea30e06663d909635d841d">Bird::isBirdLaunched</a></div><div class="ttdeci">bool isBirdLaunched() const</div><div class="ttdoc">Check if the bird has been launched.</div><div class="ttdef"><b>Definition</b> bird.cpp:126</div></div>
-<div class="ttc" id="aclass_bird_html_a5c3fedd0f5435a709e3cc25310ca6d20"><div class="ttname"><a href="class_bird.html#a5c3fedd0f5435a709e3cc25310ca6d20">Bird::trajectoryDots</a></div><div class="ttdeci">std::vector&lt; sf::CircleShape &gt; trajectoryDots</div><div class="ttdoc">Stores the trajectory dots.</div><div class="ttdef"><b>Definition</b> bird.hpp:77</div></div>
-<div class="ttc" id="aclass_bird_html_a73496d28dde48f328c2cfc275ebcad6f"><div class="ttname"><a href="class_bird.html#a73496d28dde48f328c2cfc275ebcad6f">Bird::launch</a></div><div class="ttdeci">void launch(const b2Vec2 &amp;force)</div><div class="ttdoc">Launches the bird with a specified force.</div><div class="ttdef"><b>Definition</b> bird.cpp:97</div></div>
-<div class="ttc" id="aclass_bird_html_ab2dff9736049c8147ebfa13f5f91e0cc"><div class="ttname"><a href="class_bird.html#ab2dff9736049c8147ebfa13f5f91e0cc">Bird::getBody</a></div><div class="ttdeci">b2Body * getBody() const</div><div class="ttdoc">Get the Box2D body of the bird.</div><div class="ttdef"><b>Definition</b> bird.cpp:134</div></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#endif </span><span class="comment">// BIRD_HPP</span></div>
+<div class="ttc" id="aclass_bird_html"><div class="ttname"><a href="class_bird.html">Bird</a></div><div class="ttdoc">Represents a bird object in the game.</div><div class="ttdef"><b>Definition</b> bird.hpp:26</div></div>
+<div class="ttc" id="aclass_bird_html_a2c4a8a764c19bc962306f61611513d19"><div class="ttname"><a href="class_bird.html#a2c4a8a764c19bc962306f61611513d19">Bird::getVelocity</a></div><div class="ttdeci">b2Vec2 getVelocity() const</div><div class="ttdoc">Get the current velocity of the bird.</div><div class="ttdef"><b>Definition</b> bird.cpp:116</div></div>
+<div class="ttc" id="aclass_bird_html_a35ca30d85dea30e06663d909635d841d"><div class="ttname"><a href="class_bird.html#a35ca30d85dea30e06663d909635d841d">Bird::isBirdLaunched</a></div><div class="ttdeci">bool isBirdLaunched() const</div><div class="ttdoc">Check if the bird has been launched.</div><div class="ttdef"><b>Definition</b> bird.cpp:124</div></div>
+<div class="ttc" id="aclass_bird_html_a5034da10c48bc73203b98fad523ed1a1"><div class="ttname"><a href="class_bird.html#a5034da10c48bc73203b98fad523ed1a1">Bird::calculateTrajectory</a></div><div class="ttdeci">std::vector&lt; sf::CircleShape &gt; calculateTrajectory(const sf::Vector2f &amp;launchVector, int numDots)</div><div class="ttdoc">Calculate the trajectory points.</div><div class="ttdef"><b>Definition</b> bird.cpp:143</div></div>
+<div class="ttc" id="aclass_bird_html_a5c3fedd0f5435a709e3cc25310ca6d20"><div class="ttname"><a href="class_bird.html#a5c3fedd0f5435a709e3cc25310ca6d20">Bird::trajectoryDots</a></div><div class="ttdeci">std::vector&lt; sf::CircleShape &gt; trajectoryDots</div><div class="ttdoc">Stores the trajectory dots.</div><div class="ttdef"><b>Definition</b> bird.hpp:95</div></div>
+<div class="ttc" id="aclass_bird_html_a73496d28dde48f328c2cfc275ebcad6f"><div class="ttname"><a href="class_bird.html#a73496d28dde48f328c2cfc275ebcad6f">Bird::launch</a></div><div class="ttdeci">void launch(const b2Vec2 &amp;force)</div><div class="ttdoc">Launches the bird with a specified force.</div><div class="ttdef"><b>Definition</b> bird.cpp:96</div></div>
+<div class="ttc" id="aclass_bird_html_ab2dff9736049c8147ebfa13f5f91e0cc"><div class="ttname"><a href="class_bird.html#ab2dff9736049c8147ebfa13f5f91e0cc">Bird::getBody</a></div><div class="ttdeci">b2Body * getBody() const</div><div class="ttdoc">Get the Box2D body of the bird.</div><div class="ttdef"><b>Definition</b> bird.cpp:132</div></div>
 <div class="ttc" id="aclass_bird_html_ad378b78b7803914962c49cf7d0208fe4"><div class="ttname"><a href="class_bird.html#ad378b78b7803914962c49cf7d0208fe4">Bird::handleInput</a></div><div class="ttdeci">virtual void handleInput(const sf::Event &amp;event, const sf::RenderWindow &amp;window)</div><div class="ttdoc">Handles input events for the bird.</div><div class="ttdef"><b>Definition</b> bird.cpp:69</div></div>
 <div class="ttc" id="aclass_bird_html_ada5a2f0b945cf85bea7798db4725a3aa"><div class="ttname"><a href="class_bird.html#ada5a2f0b945cf85bea7798db4725a3aa">Bird::render</a></div><div class="ttdeci">void render(sf::RenderWindow &amp;window)</div><div class="ttdoc">Renders the bird on the provided SFML window.</div><div class="ttdef"><b>Definition</b> bird.cpp:53</div></div>
 <div class="ttc" id="aclass_bird_html_ae2718aad2ef1de73e399482ab6068324"><div class="ttname"><a href="class_bird.html#ae2718aad2ef1de73e399482ab6068324">Bird::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Updates the bird's state.</div><div class="ttdef"><b>Definition</b> bird.cpp:42</div></div>
-<div class="ttc" id="aclass_bird_html_aee116a75823e756e3f76b522e0c3d1bd"><div class="ttname"><a href="class_bird.html#aee116a75823e756e3f76b522e0c3d1bd">Bird::body</a></div><div class="ttdeci">b2Body * body</div><div class="ttdoc">The bird's Box2D body.</div><div class="ttdef"><b>Definition</b> bird.hpp:24</div></div>
+<div class="ttc" id="aclass_bird_html_aee116a75823e756e3f76b522e0c3d1bd"><div class="ttname"><a href="class_bird.html#aee116a75823e756e3f76b522e0c3d1bd">Bird::body</a></div><div class="ttdeci">b2Body * body</div><div class="ttdoc">The bird's Box2D body.</div><div class="ttdef"><b>Definition</b> bird.hpp:42</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

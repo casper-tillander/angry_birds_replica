@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Happy Birds: src/wall.hpp Source File</title>
+<title>Happy Birds: //wsl.localhost/Ubuntu/home/caspertillander/cpp-course-autumn-2023/Project/src/wall.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,14 +99,21 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_wall.html#a0b3d01b870002231711036a0a3bed06d">update</a>();</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_wall.html#a39a14e128bddc9247321b2a7a1df5685">render</a>(sf::RenderWindow&amp; window);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    b2Body* <a class="code hl_function" href="class_wall.html#a8c1231940dc36f713e1034793da3a51f">getBody</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    b2Vec2 <a class="code hl_function" href="class_wall.html#ac2d001b787c9358eb54f763e5200135f">getPosition</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
 </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif </span><span class="comment">// WALL_HPP</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif </span><span class="comment">// WALL_HPP</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
 <div class="ttc" id="aclass_wall_html"><div class="ttname"><a href="class_wall.html">Wall</a></div><div class="ttdoc">Represents a wall object in the game.</div><div class="ttdef"><b>Definition</b> wall.hpp:13</div></div>
 <div class="ttc" id="aclass_wall_html_a0b3d01b870002231711036a0a3bed06d"><div class="ttname"><a href="class_wall.html#a0b3d01b870002231711036a0a3bed06d">Wall::update</a></div><div class="ttdeci">void update()</div><div class="ttdoc">Updates the wall's position and state.</div><div class="ttdef"><b>Definition</b> wall.cpp:33</div></div>
 <div class="ttc" id="aclass_wall_html_a39a14e128bddc9247321b2a7a1df5685"><div class="ttname"><a href="class_wall.html#a39a14e128bddc9247321b2a7a1df5685">Wall::render</a></div><div class="ttdeci">void render(sf::RenderWindow &amp;window)</div><div class="ttdoc">Renders the wall on the specified window.</div><div class="ttdef"><b>Definition</b> wall.cpp:44</div></div>
+<div class="ttc" id="aclass_wall_html_a8c1231940dc36f713e1034793da3a51f"><div class="ttname"><a href="class_wall.html#a8c1231940dc36f713e1034793da3a51f">Wall::getBody</a></div><div class="ttdeci">b2Body * getBody() const</div><div class="ttdoc">Gets the Box2D body associated with the wall.</div><div class="ttdef"><b>Definition</b> wall.cpp:53</div></div>
+<div class="ttc" id="aclass_wall_html_ac2d001b787c9358eb54f763e5200135f"><div class="ttname"><a href="class_wall.html#ac2d001b787c9358eb54f763e5200135f">Wall::getPosition</a></div><div class="ttdeci">b2Vec2 getPosition() const</div><div class="ttdoc">Gets the position of the wall.</div><div class="ttdef"><b>Definition</b> wall.cpp:62</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

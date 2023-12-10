@@ -92,9 +92,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abb00c50cc10ac77c570b61d55d969a85" id="r_abb00c50cc10ac77c570b61d55d969a85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_box.html#abb00c50cc10ac77c570b61d55d969a85">render</a> (sf::RenderWindow &amp;window)</td></tr>
 <tr class="memdesc:abb00c50cc10ac77c570b61d55d969a85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the box on the provided SFML window.  <br /></td></tr>
 <tr class="separator:abb00c50cc10ac77c570b61d55d969a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1642b6a29c4d125fdf9805f0419a7447" id="r_a1642b6a29c4d125fdf9805f0419a7447"><td class="memItemLeft" align="right" valign="top">b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_box.html#a1642b6a29c4d125fdf9805f0419a7447">getBody</a> () const</td></tr>
+<tr class="memdesc:a1642b6a29c4d125fdf9805f0419a7447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Box2D body of the box.  <br /></td></tr>
+<tr class="separator:a1642b6a29c4d125fdf9805f0419a7447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34f083e5d2277d4e079aaaa46a2d65a5" id="r_a34f083e5d2277d4e079aaaa46a2d65a5"><td class="memItemLeft" align="right" valign="top">b2Vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_box.html#a34f083e5d2277d4e079aaaa46a2d65a5">getPosition</a> () const</td></tr>
+<tr class="memdesc:a34f083e5d2277d4e079aaaa46a2d65a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the position of the box's Box2D body.  <br /></td></tr>
+<tr class="separator:a34f083e5d2277d4e079aaaa46a2d65a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a box object in the game. </p>
+<p>This class manages the rendering and physics of a box. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abe84c07e4cbd6f2ce006ce4e4859024d" name="abe84c07e4cbd6f2ce006ce4e4859024d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe84c07e4cbd6f2ce006ce4e4859024d">&#9670;&#160;</a></span>Box()</h2>
@@ -138,14 +145,50 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>&lt; Adjust the size of the box</p>
-<p>&lt; About 2 times smaller than boxShape</p>
-<p>&lt; Adjust density of box</p>
-<p>&lt; Adjust this value for bounciness</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1642b6a29c4d125fdf9805f0419a7447" name="a1642b6a29c4d125fdf9805f0419a7447"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1642b6a29c4d125fdf9805f0419a7447">&#9670;&#160;</a></span>getBody()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">b2Body * Box::getBody </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the Box2D body of the box. </p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the Box2D body of the box. </dd></dl>
+
+</div>
+</div>
+<a id="a34f083e5d2277d4e079aaaa46a2d65a5" name="a34f083e5d2277d4e079aaaa46a2d65a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34f083e5d2277d4e079aaaa46a2d65a5">&#9670;&#160;</a></span>getPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">b2Vec2 Box::getPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the position of the box's Box2D body. </p>
+<dl class="section return"><dt>Returns</dt><dd>The position vector of the box's body. </dd></dl>
+
+</div>
+</div>
 <a id="abb00c50cc10ac77c570b61d55d969a85" name="abb00c50cc10ac77c570b61d55d969a85"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb00c50cc10ac77c570b61d55d969a85">&#9670;&#160;</a></span>render()</h2>
 
@@ -193,8 +236,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/<a class="el" href="box_8hpp_source.html">box.hpp</a></li>
-<li>src/<b>box.cpp</b></li>
+<li>//wsl.localhost/Ubuntu/home/caspertillander/cpp-course-autumn-2023/Project/src/<a class="el" href="box_8hpp_source.html">box.hpp</a></li>
+<li>//wsl.localhost/Ubuntu/home/caspertillander/cpp-course-autumn-2023/Project/src/<b>box.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

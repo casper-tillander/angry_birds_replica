@@ -18,7 +18,11 @@ Represents a wall object in the game.
 void {\bfseries update} ()
 \begin{DoxyCompactList}\small\item\em Updates the wall\textquotesingle{}s position and state. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_wall_a39a14e128bddc9247321b2a7a1df5685}{render}} (sf\+::\+Render\+Window \&window)
-\begin{DoxyCompactList}\small\item\em Renders the wall on the specified window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Renders the wall on the specified window. \end{DoxyCompactList}\item 
+b2\+Body \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_wall_a8c1231940dc36f713e1034793da3a51f}{get\+Body}} () const
+\begin{DoxyCompactList}\small\item\em Gets the Box2D body associated with the wall. \end{DoxyCompactList}\item 
+b2\+Vec2 \mbox{\hyperlink{class_wall_ac2d001b787c9358eb54f763e5200135f}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Gets the position of the wall. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -51,6 +55,32 @@ Constructs a wall object.
 \texorpdfstring{$<$}{<} About 2 times smaller than wall\+Shape
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_wall_a8c1231940dc36f713e1034793da3a51f}\label{class_wall_a8c1231940dc36f713e1034793da3a51f} 
+\index{Wall@{Wall}!getBody@{getBody}}
+\index{getBody@{getBody}!Wall@{Wall}}
+\doxysubsubsection{\texorpdfstring{getBody()}{getBody()}}
+{\footnotesize\ttfamily b2\+Body \texorpdfstring{$\ast$}{*} Wall\+::get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the Box2D body associated with the wall. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the Box2D body. 
+\end{DoxyReturn}
+\Hypertarget{class_wall_ac2d001b787c9358eb54f763e5200135f}\label{class_wall_ac2d001b787c9358eb54f763e5200135f} 
+\index{Wall@{Wall}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Wall@{Wall}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily b2\+Vec2 Wall\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the position of the wall. 
+
+\begin{DoxyReturn}{Returns}
+The position of the wall in the Box2D world. 
+\end{DoxyReturn}
 \Hypertarget{class_wall_a39a14e128bddc9247321b2a7a1df5685}\label{class_wall_a39a14e128bddc9247321b2a7a1df5685} 
 \index{Wall@{Wall}!render@{render}}
 \index{render@{render}!Wall@{Wall}}
@@ -70,5 +100,5 @@ Renders the wall on the specified window.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/wall.\+hpp\item 
-src/wall.\+cpp\end{DoxyCompactItemize}
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/wall.\+hpp\item 
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/wall.\+cpp\end{DoxyCompactItemize}

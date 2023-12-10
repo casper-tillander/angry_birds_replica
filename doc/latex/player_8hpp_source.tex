@@ -1,0 +1,31 @@
+\doxysection{player.\+hpp}
+\hypertarget{player_8hpp_source}{}\label{player_8hpp_source}\index{//wsl.localhost/Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/Project/src/player.hpp@{//wsl.localhost/Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/Project/src/player.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PLAYER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PLAYER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{//\ Player\ name}}
+\DoxyCodeLine{00015\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \ \ \ \ std::map<int,\ int>\ levelScores;\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}(std::string\ name);}
+\DoxyCodeLine{00029\ \ \ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ std::string\ \mbox{\hyperlink{group___level_properties_gaaaecd6fd5f7c54a19446c3298163bc80}{loadFromFile}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___level_properties_gaaf456c9e86188f0976da49271579cd8b}{saveToFile}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group___level_properties_ga1f83e34583dfd945887b1b6b19aa4e4b}{getScoreForLevel}}(\textcolor{keywordtype}{int}\ levelNumber);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___level_properties_gaa1e15cb2c02af2d36122a9608b98d23d}{updateScore}}(\textcolor{keywordtype}{int}\ levelNumber,\ \textcolor{keywordtype}{int}\ stars);}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PLAYER\_HPP}}
+
+\end{DoxyCode}

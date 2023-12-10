@@ -1,0 +1,41 @@
+\doxysection{Player Class Reference}
+\hypertarget{class_player}{}\label{class_player}\index{Player@{Player}}
+
+
+Represents a player in the game, storing their name and level scores.  
+
+
+
+
+{\ttfamily \#include $<$player.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___level_properties_gaf5aaea393030f959d568c806ca9100ca}{Player}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_player}{Player} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{group___level_properties_gaaaecd6fd5f7c54a19446c3298163bc80}{load\+From\+File}} ()
+\begin{DoxyCompactList}\small\item\em Loads player data from a file. \end{DoxyCompactList}\item 
+void {\bfseries save\+To\+File} ()
+\begin{DoxyCompactList}\small\item\em Saves player data to a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___level_properties_ga1f83e34583dfd945887b1b6b19aa4e4b}{get\+Score\+For\+Level}} (int level\+Number)
+\begin{DoxyCompactList}\small\item\em Gets the score earned by the player for a specific level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___level_properties_gaa1e15cb2c02af2d36122a9608b98d23d}{update\+Score}} (int level\+Number, int stars)
+\begin{DoxyCompactList}\small\item\em Updates the score for a specific level if it\textquotesingle{}s higher than the previous score. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_player_af9c920fabaafdeb7961a645315b521ff}\label{class_player_af9c920fabaafdeb7961a645315b521ff} 
+std\+::string {\bfseries name}
+\item 
+std\+::map$<$ int, int $>$ {\bfseries level\+Scores}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a player in the game, storing their name and level scores. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/player.\+hpp\item 
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/player.\+cpp\end{DoxyCompactItemize}

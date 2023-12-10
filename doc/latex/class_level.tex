@@ -12,7 +12,7 @@ Represents a game level with physics simulation.
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_level_a7fc77850d6d06fdcfb48f0ca5109bcf4}{Level}} (sf\+::\+Render\+Window \&win, int number, const sf\+::\+Texture \&back\+Tex, const std\+::string \&level\+File, bool is\+Special\+Bird)
+\mbox{\hyperlink{class_level_a5f7ce82ad3a8330a7cb7f5c03f2edb7d}{Level}} (sf\+::\+Render\+Window \&win, int number, const sf\+::\+Texture \&back\+Tex, const std\+::string \&level\+File, bool is\+Special\+Bird, bool no\+Gravity)
 \begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_level}{Level} object. \end{DoxyCompactList}\item 
 \Hypertarget{class_level_a249eac1e8f19ff44134efa5e986feaca}\label{class_level_a249eac1e8f19ff44134efa5e986feaca} 
 {\bfseries \texorpdfstring{$\sim$}{\string~}\+Level} ()
@@ -48,7 +48,10 @@ bool \mbox{\hyperlink{class_level_a451b02d940fd2251fae4587ca1e058aa}{are\+All\+P
 bool \mbox{\hyperlink{class_level_a87185b3c0c57616bc419272967787479}{are\+All\+Birds\+Used}} () const
 \begin{DoxyCompactList}\small\item\em Checks if all birds have been used. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_level_a1753d270b6882300f34da46b9c6244ac}{get\+Birds\+Used\+For\+Completion}} ()
-\begin{DoxyCompactList}\small\item\em Gets the number of birds used to complete the level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the number of birds used to complete the level. \end{DoxyCompactList}\item 
+\Hypertarget{class_level_a03725d9b2bde698f0f8b7ec61ff48cc1}\label{class_level_a03725d9b2bde698f0f8b7ec61ff48cc1} 
+\mbox{\hyperlink{class_bird}{Bird}} \texorpdfstring{$\ast$}{*} {\bfseries get\+Current\+Bird} ()
+\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -60,12 +63,14 @@ bool {\bfseries is\+Special\+Bird}
 \doxysubsection{Detailed Description}
 Represents a game level with physics simulation. 
 
+This class manages the elements and behavior of a game level, including Box2D physics simulation, game objects like birds, pigs, boxes, and walls, as well as handling the game\textquotesingle{}s progression and state. 
+
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{class_level_a7fc77850d6d06fdcfb48f0ca5109bcf4}\label{class_level_a7fc77850d6d06fdcfb48f0ca5109bcf4} 
+\Hypertarget{class_level_a5f7ce82ad3a8330a7cb7f5c03f2edb7d}\label{class_level_a5f7ce82ad3a8330a7cb7f5c03f2edb7d} 
 \index{Level@{Level}!Level@{Level}}
 \index{Level@{Level}!Level@{Level}}
 \doxysubsubsection{\texorpdfstring{Level()}{Level()}}
-{\footnotesize\ttfamily Level\+::\+Level (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{win,  }\item[{int}]{number,  }\item[{const sf\+::\+Texture \&}]{back\+Tex,  }\item[{const std\+::string \&}]{level\+File,  }\item[{bool}]{is\+Special\+Bird\+Param }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Level\+::\+Level (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{win,  }\item[{int}]{number,  }\item[{const sf\+::\+Texture \&}]{back\+Tex,  }\item[{const std\+::string \&}]{level\+File,  }\item[{bool}]{is\+Special\+Bird\+Param,  }\item[{bool}]{no\+Gravity }\end{DoxyParamCaption})}
 
 
 
@@ -89,7 +94,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_level_a7fc77850d6d06fdcfb48f0ca5109bcf4_cgraph}
+\includegraphics[width=350pt]{class_level_a5f7ce82ad3a8330a7cb7f5c03f2edb7d_cgraph}
 \end{center}
 \end{figure}
 
@@ -377,5 +382,5 @@ Here is the caller graph for this function\+:
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/level.\+hpp\item 
-src/level.\+cpp\end{DoxyCompactItemize}
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/level.\+hpp\item 
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/level.\+cpp\end{DoxyCompactItemize}

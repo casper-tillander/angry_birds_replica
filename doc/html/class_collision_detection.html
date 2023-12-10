@@ -106,9 +106,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af49a49d278ff3fbe3b2e6285ae879d8d" id="r_af49a49d278ff3fbe3b2e6285ae879d8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detection.html#af49a49d278ff3fbe3b2e6285ae879d8d">BeginContact</a> (b2Contact *contact) override</td></tr>
 <tr class="memdesc:af49a49d278ff3fbe3b2e6285ae879d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when two Box2D fixtures begin contact.  <br /></td></tr>
 <tr class="separator:af49a49d278ff3fbe3b2e6285ae879d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd9c663aa934374a32fbab401b9feb3a" id="r_acd9c663aa934374a32fbab401b9feb3a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_collision_detection.html#acd9c663aa934374a32fbab401b9feb3a">isBirdFixture</a> (b2Fixture *fixture)</td></tr>
+<tr class="memdesc:acd9c663aa934374a32fbab401b9feb3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the fixture belongs to a bird.  <br /></td></tr>
+<tr class="separator:acd9c663aa934374a32fbab401b9feb3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles collision detection and contact events. </p>
+<p>This class extends b2ContactListener to manage collision detection and contact events between Box2D fixtures, specifically handling interactions between pigs and birds. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="af49a49d278ff3fbe3b2e6285ae879d8d" name="af49a49d278ff3fbe3b2e6285ae879d8d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af49a49d278ff3fbe3b2e6285ae879d8d">&#9670;&#160;</a></span>BeginContact()</h2>
@@ -135,6 +139,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Called when two Box2D fixtures begin contact. </p>
+<p>Handles the beginning of contact between two Box2D fixtures.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">contact</td><td>A pointer to the contact object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function identifies the fixtures involved in the contact and determines the type of entities (pig or bird) interacting, adjusting their health accordingly.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">contact</td><td>A pointer to the contact object. </td></tr>
@@ -146,19 +158,66 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_collision_detection_af49a49d278ff3fbe3b2e6285ae879d8d_cgraph.png" border="0" usemap="#aclass_collision_detection_af49a49d278ff3fbe3b2e6285ae879d8d_cgraph" alt=""/></div>
 <map name="aclass_collision_detection_af49a49d278ff3fbe3b2e6285ae879d8d_cgraph" id="aclass_collision_detection_af49a49d278ff3fbe3b2e6285ae879d8d_cgraph">
-<area shape="rect" title="Called when two Box2D fixtures begin contact." alt="" coords="5,5,131,48"/>
-<area shape="rect" href="class_pig.html#a0087f2c8044abac66945ba625392c036" title="Applies damage to the pig&#39;s health." alt="" coords="179,13,300,40"/>
-<area shape="poly" title=" " alt="" coords="131,24,163,24,163,29,131,29"/>
-<area shape="rect" href="class_pig.html#afc12e3073c7ca026c95fcd5161a609e1" title="Marks the pig for deletion." alt="" coords="348,13,491,40"/>
-<area shape="poly" title=" " alt="" coords="300,24,332,24,332,29,300,29"/>
+<area shape="rect" title="Called when two Box2D fixtures begin contact." alt="" coords="5,35,131,77"/>
+<area shape="rect" href="class_collision_detection.html#acd9c663aa934374a32fbab401b9feb3a" title="Checks if the fixture belongs to a bird." alt="" coords="179,5,304,48"/>
+<area shape="poly" title=" " alt="" coords="130,43,163,37,164,42,131,48"/>
+<area shape="rect" href="class_pig.html#a0087f2c8044abac66945ba625392c036" title="Applies damage to the pig&#39;s health." alt="" coords="181,72,302,99"/>
+<area shape="poly" title=" " alt="" coords="131,64,166,70,165,75,130,69"/>
+<area shape="rect" href="class_pig.html#afc12e3073c7ca026c95fcd5161a609e1" title="Marks the pig for deletion." alt="" coords="352,72,495,99"/>
+<area shape="poly" title=" " alt="" coords="302,83,337,83,337,88,302,88"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acd9c663aa934374a32fbab401b9feb3a" name="acd9c663aa934374a32fbab401b9feb3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd9c663aa934374a32fbab401b9feb3a">&#9670;&#160;</a></span>isBirdFixture()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CollisionDetection::isBirdFixture </td>
+          <td>(</td>
+          <td class="paramtype">b2Fixture *&#160;</td>
+          <td class="paramname"><em>fixture</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if the fixture belongs to a bird. </p>
+<p>Checks if the given fixture belongs to a bird.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fixture</td><td>A pointer to the Box2D fixture to check. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the fixture belongs to a bird, otherwise false.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fixture</td><td>A pointer to the Box2D fixture. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the fixture belongs to a bird, otherwise false. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_collision_detection_acd9c663aa934374a32fbab401b9feb3a_icgraph.png" border="0" usemap="#aclass_collision_detection_acd9c663aa934374a32fbab401b9feb3a_icgraph" alt=""/></div>
+<map name="aclass_collision_detection_acd9c663aa934374a32fbab401b9feb3a_icgraph" id="aclass_collision_detection_acd9c663aa934374a32fbab401b9feb3a_icgraph">
+<area shape="rect" title="Checks if the fixture belongs to a bird." alt="" coords="179,5,304,48"/>
+<area shape="rect" href="class_collision_detection.html#af49a49d278ff3fbe3b2e6285ae879d8d" title="Called when two Box2D fixtures begin contact." alt="" coords="5,5,131,48"/>
+<area shape="poly" title=" " alt="" coords="163,29,131,29,131,24,163,24"/>
 </map>
 </div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/<a class="el" href="collisiondetection_8hpp_source.html">collisiondetection.hpp</a></li>
-<li>src/<b>collisiondetection.cpp</b></li>
+<li>//wsl.localhost/Ubuntu/home/caspertillander/cpp-course-autumn-2023/Project/src/<a class="el" href="collisiondetection_8hpp_source.html">collisiondetection.hpp</a></li>
+<li>//wsl.localhost/Ubuntu/home/caspertillander/cpp-course-autumn-2023/Project/src/<b>collisiondetection.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

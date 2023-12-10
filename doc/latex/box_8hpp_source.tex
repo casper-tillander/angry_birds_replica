@@ -1,5 +1,5 @@
 \doxysection{box.\+hpp}
-\hypertarget{box_8hpp_source}{}\label{box_8hpp_source}\index{src/box.hpp@{src/box.hpp}}
+\hypertarget{box_8hpp_source}{}\label{box_8hpp_source}\index{//wsl.localhost/Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/Project/src/box.hpp@{//wsl.localhost/Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/Project/src/box.hpp}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BOX\_HPP}}
@@ -8,19 +8,23 @@
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <box2d/box2d.h>}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_box}{Box}}\ \{}
-\DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00013\ \ \ \ \ sf::RectangleShape\ boxShape;\ }
-\DoxyCodeLine{00014\ \ \ \ \ b2Body*\ body;\ }
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_box}{Box}}(b2World*\ world,\ \textcolor{keyword}{const}\ sf::Texture\&\ texture,\ \textcolor{keyword}{const}\ b2Vec2\&\ position);}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_box_a779104150a6f06da2bf1500489a58530}{update}}();}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_box_abb00c50cc10ac77c570b61d55d969a85}{render}}(sf::RenderWindow\&\ window);}
-\DoxyCodeLine{00035\ \};}
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BOX\_HPP}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_box}{Box}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Rendering\ and\ physics\ variables}}
+\DoxyCodeLine{00017\ \ \ \ \ sf::RectangleShape\ boxShape;\ }
+\DoxyCodeLine{00018\ \ \ \ \ b2Body*\ body;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{class_box}{Box}}(b2World*\ world,\ \textcolor{keyword}{const}\ sf::Texture\&\ texture,\ \textcolor{keyword}{const}\ b2Vec2\&\ position);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_box_a779104150a6f06da2bf1500489a58530}{update}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_box_abb00c50cc10ac77c570b61d55d969a85}{render}}(sf::RenderWindow\&\ window);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ b2Body*\ \mbox{\hyperlink{class_box_a1642b6a29c4d125fdf9805f0419a7447}{getBody}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ \ \ \ \ b2Vec2\ \mbox{\hyperlink{class_box_a34f083e5d2277d4e079aaaa46a2d65a5}{getPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BOX\_HPP}}
 
 \end{DoxyCode}

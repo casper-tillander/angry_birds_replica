@@ -2,6 +2,15 @@
 \hypertarget{class_special_bird}{}\label{class_special_bird}\index{SpecialBird@{SpecialBird}}
 
 
+Represents a special type of bird with specific shooting behavior.  
+
+
+
+
+{\ttfamily \#include $<$specialbird.\+hpp$>$}
+
+
+
 Inheritance diagram for Special\+Bird\+:
 \nopagebreak
 \begin{figure}[H]
@@ -23,11 +32,12 @@ Collaboration diagram for Special\+Bird\+:
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_special_bird_a1cbc12445c1c7daa917fc740431530ac}\label{class_special_bird_a1cbc12445c1c7daa917fc740431530ac} 
-{\bfseries Special\+Bird} (b2\+World \texorpdfstring{$\ast$}{*}world, const sf\+::\+Texture \&texture, const b2\+Vec2 \&position)
-\item 
+\mbox{\hyperlink{class_special_bird_a1cbc12445c1c7daa917fc740431530ac}{Special\+Bird}} (b2\+World \texorpdfstring{$\ast$}{*}world, const sf\+::\+Texture \&texture, const b2\+Vec2 \&position)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_special_bird}{Special\+Bird} object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_special_bird_a17676702e235d7bdce6dff23ac668214}{handle\+Input}} (const sf\+::\+Event \&event, const sf\+::\+Render\+Window \&window) override
-\begin{DoxyCompactList}\small\item\em Handles input events for the bird. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Handles input events specific to the \doxylink{class_special_bird}{Special\+Bird}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_special_bird_a2c5b3b62211bdd779f72ec2c4d075d03}{get\+Shot}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the \doxylink{class_special_bird}{Special\+Bird} has been shot. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_bird}{Bird}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -45,8 +55,8 @@ bool \mbox{\hyperlink{class_bird_a35ca30d85dea30e06663d909635d841d}{is\+Bird\+La
 \begin{DoxyCompactList}\small\item\em Check if the bird has been launched. \end{DoxyCompactList}\item 
 b2\+Body \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_bird_ab2dff9736049c8147ebfa13f5f91e0cc}{get\+Body}} () const
 \begin{DoxyCompactList}\small\item\em Get the Box2D body of the bird. \end{DoxyCompactList}\item 
-std\+::vector$<$ sf\+::\+Circle\+Shape $>$ {\bfseries calculate\+Trajectory} (const sf\+::\+Vector2f \&launch\+Vector, int num\+Dots)
-\end{DoxyCompactItemize}
+std\+::vector$<$ sf\+::\+Circle\+Shape $>$ \mbox{\hyperlink{class_bird_a5034da10c48bc73203b98fad523ed1a1}{calculate\+Trajectory}} (const sf\+::\+Vector2f \&launch\+Vector, int num\+Dots)
+\begin{DoxyCompactList}\small\item\em Calculate the trajectory points. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_bird}{Bird}}}
 \begin{DoxyCompactItemize}
@@ -57,7 +67,45 @@ std\+::vector$<$ sf\+::\+Circle\+Shape $>$ {\bfseries trajectory\+Dots}
 \begin{DoxyCompactList}\small\item\em Stores the trajectory dots. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Represents a special type of bird with specific shooting behavior. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_special_bird_a1cbc12445c1c7daa917fc740431530ac}\label{class_special_bird_a1cbc12445c1c7daa917fc740431530ac} 
+\index{SpecialBird@{SpecialBird}!SpecialBird@{SpecialBird}}
+\index{SpecialBird@{SpecialBird}!SpecialBird@{SpecialBird}}
+\doxysubsubsection{\texorpdfstring{SpecialBird()}{SpecialBird()}}
+{\footnotesize\ttfamily Special\+Bird\+::\+Special\+Bird (\begin{DoxyParamCaption}\item[{b2\+World \texorpdfstring{$\ast$}{*}}]{world,  }\item[{const sf\+::\+Texture \&}]{texture,  }\item[{const b2\+Vec2 \&}]{position }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_special_bird}{Special\+Bird} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & Pointer to the Box2D world. \\
+\hline
+{\em texture} & The texture for the special bird. \\
+\hline
+{\em position} & The initial position of the special bird. \\
+\hline
+\end{DoxyParams}
+
+
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_special_bird_a2c5b3b62211bdd779f72ec2c4d075d03}\label{class_special_bird_a2c5b3b62211bdd779f72ec2c4d075d03} 
+\index{SpecialBird@{SpecialBird}!getShot@{getShot}}
+\index{getShot@{getShot}!SpecialBird@{SpecialBird}}
+\doxysubsubsection{\texorpdfstring{getShot()}{getShot()}}
+{\footnotesize\ttfamily bool Special\+Bird\+::get\+Shot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the \doxylink{class_special_bird}{Special\+Bird} has been shot. 
+
+\begin{DoxyReturn}{Returns}
+true if the \doxylink{class_special_bird}{Special\+Bird} has been shot, false otherwise. 
+\end{DoxyReturn}
 \Hypertarget{class_special_bird_a17676702e235d7bdce6dff23ac668214}\label{class_special_bird_a17676702e235d7bdce6dff23ac668214} 
 \index{SpecialBird@{SpecialBird}!handleInput@{handleInput}}
 \index{handleInput@{handleInput}!SpecialBird@{SpecialBird}}
@@ -66,15 +114,24 @@ std\+::vector$<$ sf\+::\+Circle\+Shape $>$ {\bfseries trajectory\+Dots}
 
 
 
-Handles input events for the bird. 
+Handles input events specific to the \doxylink{class_special_bird}{Special\+Bird}. 
 
-Handles input events for the bird, including dragging and launching.
+Handles input events for the \doxylink{class_special_bird}{Special\+Bird}.
 
 
 \begin{DoxyParams}{Parameters}
 {\em event} & The SFML event to handle. \\
 \hline
-{\em window} & The SFML window associated with the event. \\
+{\em window} & The SFML render window.\\
+\hline
+\end{DoxyParams}
+Overrides the base class function to handle specific input for the \doxylink{class_special_bird}{Special\+Bird}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & The SFML event to handle. \\
+\hline
+{\em window} & The SFML render window. \\
 \hline
 \end{DoxyParams}
 
@@ -93,5 +150,5 @@ Here is the call graph for this function\+:
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/specialbird.\+hpp\item 
-src/specialbird.\+cpp\end{DoxyCompactItemize}
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/specialbird.\+hpp\item 
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/specialbird.\+cpp\end{DoxyCompactItemize}

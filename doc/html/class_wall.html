@@ -93,6 +93,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></t
 <tr class="memitem:a39a14e128bddc9247321b2a7a1df5685" id="r_a39a14e128bddc9247321b2a7a1df5685"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wall.html#a39a14e128bddc9247321b2a7a1df5685">render</a> (sf::RenderWindow &amp;window)</td></tr>
 <tr class="memdesc:a39a14e128bddc9247321b2a7a1df5685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the wall on the specified window.  <br /></td></tr>
 <tr class="separator:a39a14e128bddc9247321b2a7a1df5685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c1231940dc36f713e1034793da3a51f" id="r_a8c1231940dc36f713e1034793da3a51f"><td class="memItemLeft" align="right" valign="top">b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wall.html#a8c1231940dc36f713e1034793da3a51f">getBody</a> () const</td></tr>
+<tr class="memdesc:a8c1231940dc36f713e1034793da3a51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Box2D body associated with the wall.  <br /></td></tr>
+<tr class="separator:a8c1231940dc36f713e1034793da3a51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2d001b787c9358eb54f763e5200135f" id="r_ac2d001b787c9358eb54f763e5200135f"><td class="memItemLeft" align="right" valign="top">b2Vec2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wall.html#ac2d001b787c9358eb54f763e5200135f">getPosition</a> () const</td></tr>
+<tr class="memdesc:ac2d001b787c9358eb54f763e5200135f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the position of the wall.  <br /></td></tr>
+<tr class="separator:ac2d001b787c9358eb54f763e5200135f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a wall object in the game. </p>
@@ -145,6 +151,46 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></t
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8c1231940dc36f713e1034793da3a51f" name="a8c1231940dc36f713e1034793da3a51f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c1231940dc36f713e1034793da3a51f">&#9670;&#160;</a></span>getBody()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">b2Body * Wall::getBody </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the Box2D body associated with the wall. </p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the Box2D body. </dd></dl>
+
+</div>
+</div>
+<a id="ac2d001b787c9358eb54f763e5200135f" name="ac2d001b787c9358eb54f763e5200135f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2d001b787c9358eb54f763e5200135f">&#9670;&#160;</a></span>getPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">b2Vec2 Wall::getPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the position of the wall. </p>
+<dl class="section return"><dt>Returns</dt><dd>The position of the wall in the Box2D world. </dd></dl>
+
+</div>
+</div>
 <a id="a39a14e128bddc9247321b2a7a1df5685" name="a39a14e128bddc9247321b2a7a1df5685"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a39a14e128bddc9247321b2a7a1df5685">&#9670;&#160;</a></span>render()</h2>
 
@@ -172,8 +218,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> ()</td></t
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/<a class="el" href="wall_8hpp_source.html">wall.hpp</a></li>
-<li>src/<b>wall.cpp</b></li>
+<li>//wsl.localhost/Ubuntu/home/caspertillander/cpp-course-autumn-2023/Project/src/<a class="el" href="wall_8hpp_source.html">wall.hpp</a></li>
+<li>//wsl.localhost/Ubuntu/home/caspertillander/cpp-course-autumn-2023/Project/src/<b>wall.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

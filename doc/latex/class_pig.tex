@@ -28,7 +28,11 @@ void \mbox{\hyperlink{class_pig_a76c51883f0cdadf9f191c086d1a7bec6}{destroy\+Body
 void {\bfseries mark\+For\+Deletion} ()
 \begin{DoxyCompactList}\small\item\em Marks the pig for deletion. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_pig_a78a9fab285dda8429c4cae9e2686b63c}{is\+Marked\+For\+Deletion}} () const
-\begin{DoxyCompactList}\small\item\em Checks if the pig is marked for deletion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Checks if the pig is marked for deletion. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_pig_ab27379c60fa9a44baa6d08227a0fd8c5}{get\+Health}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the pig\textquotesingle{}s health. \end{DoxyCompactList}\item 
+b2\+Body \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_pig_a04bdebbf5da7d8507f13ab3a6f5c875d}{get\+Body}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the Box2D body associated with the pig. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -60,17 +64,7 @@ Constructs a \doxylink{class_pig}{Pig} object.
 {\em position} & The initial position of the pig. \\
 \hline
 \end{DoxyParams}
-\texorpdfstring{$<$}{<} Adjust the size of the pig
 
-\texorpdfstring{$<$}{<} Makes the pig stop spinning after some time
-
-\texorpdfstring{$<$}{<} Set to \textquotesingle{}true\textquotesingle{} if the pig shouldn\textquotesingle{}t spin
-
-\texorpdfstring{$<$}{<} About 5 times smaller than the radius of pig\+Shape
-
-\texorpdfstring{$<$}{<} Adjust density of pig
-
-\texorpdfstring{$<$}{<} Adjust this value for bounciness
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_pig_a3c307d5774f41fbd59736a0a05e57887}\label{class_pig_a3c307d5774f41fbd59736a0a05e57887} 
@@ -96,7 +90,33 @@ true if the pig is alive, false otherwise.
 
 Destroys the Box2D body associated with the pig. 
 
-Destroys the Box2D body associated with the pig if it exists and the world is not locked. \Hypertarget{class_pig_a78a9fab285dda8429c4cae9e2686b63c}\label{class_pig_a78a9fab285dda8429c4cae9e2686b63c} 
+Destroys the Box2D body associated with the pig if it exists and the world is not locked. \Hypertarget{class_pig_a04bdebbf5da7d8507f13ab3a6f5c875d}\label{class_pig_a04bdebbf5da7d8507f13ab3a6f5c875d} 
+\index{Pig@{Pig}!getBody@{getBody}}
+\index{getBody@{getBody}!Pig@{Pig}}
+\doxysubsubsection{\texorpdfstring{getBody()}{getBody()}}
+{\footnotesize\ttfamily b2\+Body \texorpdfstring{$\ast$}{*} Pig\+::get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the Box2D body associated with the pig. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the pig\textquotesingle{}s Box2D body. 
+\end{DoxyReturn}
+\Hypertarget{class_pig_ab27379c60fa9a44baa6d08227a0fd8c5}\label{class_pig_ab27379c60fa9a44baa6d08227a0fd8c5} 
+\index{Pig@{Pig}!getHealth@{getHealth}}
+\index{getHealth@{getHealth}!Pig@{Pig}}
+\doxysubsubsection{\texorpdfstring{getHealth()}{getHealth()}}
+{\footnotesize\ttfamily float Pig\+::get\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the pig\textquotesingle{}s health. 
+
+\begin{DoxyReturn}{Returns}
+The current health of the pig. 
+\end{DoxyReturn}
+\Hypertarget{class_pig_a78a9fab285dda8429c4cae9e2686b63c}\label{class_pig_a78a9fab285dda8429c4cae9e2686b63c} 
 \index{Pig@{Pig}!isMarkedForDeletion@{isMarkedForDeletion}}
 \index{isMarkedForDeletion@{isMarkedForDeletion}!Pig@{Pig}}
 \doxysubsubsection{\texorpdfstring{isMarkedForDeletion()}{isMarkedForDeletion()}}
@@ -173,5 +193,5 @@ Updates the pig\textquotesingle{}s position and rotation if it is alive.
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/pig.\+hpp\item 
-src/pig.\+cpp\end{DoxyCompactItemize}
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/pig.\+hpp\item 
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/pig.\+cpp\end{DoxyCompactItemize}

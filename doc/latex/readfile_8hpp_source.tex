@@ -1,5 +1,5 @@
 \doxysection{readfile.\+hpp}
-\hypertarget{readfile_8hpp_source}{}\label{readfile_8hpp_source}\index{src/readfile.hpp@{src/readfile.hpp}}
+\hypertarget{readfile_8hpp_source}{}\label{readfile_8hpp_source}\index{//wsl.localhost/Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/Project/src/readfile.hpp@{//wsl.localhost/Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/Project/src/readfile.hpp}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ READFILE\_HPP}}
@@ -9,13 +9,15 @@
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00006\ }
 \DoxyCodeLine{00012\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_object_data}{ObjectData}}\ \{}
-\DoxyCodeLine{00013\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_object_data_a4b17fe9d79e9e8f2720287e3e0cb3add}{type}};\ }
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{float}\ x,\ \mbox{\hyperlink{struct_object_data_a234e75d9702fa1840880d26d3cf88687}{y}};\ }
-\DoxyCodeLine{00015\ \};}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00023\ std::vector<ObjectData>\ readLevelData(\textcolor{keyword}{const}\ std::string\&\ filename);}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ READFILE\_HPP}}
-\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00014\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_object_data_a4b17fe9d79e9e8f2720287e3e0cb3add}{type}};\ }
+\DoxyCodeLine{00015\ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{//\ Coordinates}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{float}\ x,\ y;}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00026\ std::vector<ObjectData>\ readLevelData(\textcolor{keyword}{const}\ std::string\&\ filename);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ READFILE\_HPP}}
+\DoxyCodeLine{00029\ }
 
 \end{DoxyCode}

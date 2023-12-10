@@ -33,11 +33,15 @@ Collaboration diagram for Collision\+Detection\+:
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{class_collision_detection_af49a49d278ff3fbe3b2e6285ae879d8d}{Begin\+Contact}} (b2\+Contact \texorpdfstring{$\ast$}{*}contact) override
-\begin{DoxyCompactList}\small\item\em Called when two Box2D fixtures begin contact. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Called when two Box2D fixtures begin contact. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_collision_detection_acd9c663aa934374a32fbab401b9feb3a}{is\+Bird\+Fixture}} (b2\+Fixture \texorpdfstring{$\ast$}{*}fixture)
+\begin{DoxyCompactList}\small\item\em Checks if the fixture belongs to a bird. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Handles collision detection and contact events. 
+
+This class extends b2\+Contact\+Listener to manage collision detection and contact events between Box2D fixtures, specifically handling interactions between pigs and birds. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{class_collision_detection_af49a49d278ff3fbe3b2e6285ae879d8d}\label{class_collision_detection_af49a49d278ff3fbe3b2e6285ae879d8d} 
@@ -49,6 +53,15 @@ Handles collision detection and contact events.
 
 
 Called when two Box2D fixtures begin contact. 
+
+Handles the beginning of contact between two Box2D fixtures.
+
+
+\begin{DoxyParams}{Parameters}
+{\em contact} & A pointer to the contact object.\\
+\hline
+\end{DoxyParams}
+This function identifies the fixtures involved in the contact and determines the type of entities (pig or bird) interacting, adjusting their health accordingly.
 
 
 \begin{DoxyParams}{Parameters}
@@ -63,9 +76,45 @@ Here is the call graph for this function\+:
 \includegraphics[width=350pt]{class_collision_detection_af49a49d278ff3fbe3b2e6285ae879d8d_cgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_collision_detection_acd9c663aa934374a32fbab401b9feb3a}\label{class_collision_detection_acd9c663aa934374a32fbab401b9feb3a} 
+\index{CollisionDetection@{CollisionDetection}!isBirdFixture@{isBirdFixture}}
+\index{isBirdFixture@{isBirdFixture}!CollisionDetection@{CollisionDetection}}
+\doxysubsubsection{\texorpdfstring{isBirdFixture()}{isBirdFixture()}}
+{\footnotesize\ttfamily bool Collision\+Detection\+::is\+Bird\+Fixture (\begin{DoxyParamCaption}\item[{b2\+Fixture \texorpdfstring{$\ast$}{*}}]{fixture }\end{DoxyParamCaption})}
+
+
+
+Checks if the fixture belongs to a bird. 
+
+Checks if the given fixture belongs to a bird.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fixture} & A pointer to the Box2D fixture to check. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the fixture belongs to a bird, otherwise false.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em fixture} & A pointer to the Box2D fixture. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the fixture belongs to a bird, otherwise false. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{class_collision_detection_acd9c663aa934374a32fbab401b9feb3a_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/collisiondetection.\+hpp\item 
-src/collisiondetection.\+cpp\end{DoxyCompactItemize}
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/collisiondetection.\+hpp\item 
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/collisiondetection.\+cpp\end{DoxyCompactItemize}

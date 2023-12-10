@@ -1,0 +1,61 @@
+\doxysection{leveleditor.\+hpp}
+\hypertarget{leveleditor_8hpp_source}{}\label{leveleditor_8hpp_source}\index{//wsl.localhost/Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/Project/src/leveleditor.hpp@{//wsl.localhost/Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/Project/src/leveleditor.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LEVEL\_EDITOR\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ LEVEL\_EDITOR\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <box2d/box2d.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_level_editor}{LevelEditor}}\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ Member\ variables}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ levelNumber;}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ chosenObject\ =\ 1;}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ sf::Text\ playCreatedLevelText;}
+\DoxyCodeLine{00019\ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00020\ \ \ \ \ sf::CircleShape\ ButtonShape;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ sf::RenderWindow\&\ window;}
+\DoxyCodeLine{00023\ \ \ \ \ sf::Texture\ backgroundTexture;}
+\DoxyCodeLine{00024\ \ \ \ \ sf::Sprite\ backgroundSprite;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ sf::Texture\ pigTexture;}
+\DoxyCodeLine{00027\ \ \ \ \ sf::Texture\ wallTexture;}
+\DoxyCodeLine{00028\ \ \ \ \ sf::Texture\ boxTexture;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ sf::Sprite\ pigSprite;}
+\DoxyCodeLine{00031\ \ \ \ \ sf::Sprite\ wallSprite;}
+\DoxyCodeLine{00032\ \ \ \ \ sf::Sprite\ boxSprite;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ sf::CircleShape\ pigShape;}
+\DoxyCodeLine{00035\ \ \ \ \ sf::RectangleShape\ boxShape;}
+\DoxyCodeLine{00036\ \ \ \ \ sf::RectangleShape\ wallShape;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ std::vector<sf::Vector2f>\ pigPositions;}
+\DoxyCodeLine{00039\ \ \ \ \ std::vector<sf::Vector2f>\ boxPositions;}
+\DoxyCodeLine{00040\ \ \ \ \ std::vector<sf::Vector2f>\ wallPositions;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ sf::RectangleShape\ highlightRectangle;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ std::string\ filePath\ =\ \textcolor{stringliteral}{"{}../Createdlevels/createdlevel.csv"{}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_level_editor}{LevelEditor}}(sf::RenderWindow\&\ win,\ \textcolor{keywordtype}{int}\ number,\ \textcolor{keyword}{const}\ sf::Texture\&\ backTex);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ std::string\ \mbox{\hyperlink{class_level_editor_a981c98780eb71076dc27ff2851bf3737}{run}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_editor_ab52af8410838360ffed3d420a478b2ec}{setUpLevel}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_editor_a3b75894c3414cda3c3e99a2103265aa3}{addObject}}(\textcolor{keywordtype}{int}\ chosenObject,\ sf::Vector2f\ mousePos,\ std::string\&\ filePath);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_editor_a4f5dbd6f8d77cd4c931de07c2e41df8d}{drawObject}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LEVEL\_EDITOR\_HPP}}
+
+\end{DoxyCode}

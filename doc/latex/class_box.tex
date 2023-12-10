@@ -17,11 +17,17 @@ Represents a box object in the game.
 void \mbox{\hyperlink{class_box_a779104150a6f06da2bf1500489a58530}{update}} ()
 \begin{DoxyCompactList}\small\item\em Updates the box\textquotesingle{}s state. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_box_abb00c50cc10ac77c570b61d55d969a85}{render}} (sf\+::\+Render\+Window \&window)
-\begin{DoxyCompactList}\small\item\em Renders the box on the provided SFML window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Renders the box on the provided SFML window. \end{DoxyCompactList}\item 
+b2\+Body \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_box_a1642b6a29c4d125fdf9805f0419a7447}{get\+Body}} () const
+\begin{DoxyCompactList}\small\item\em Get the Box2D body of the box. \end{DoxyCompactList}\item 
+b2\+Vec2 \mbox{\hyperlink{class_box_a34f083e5d2277d4e079aaaa46a2d65a5}{get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Get the position of the box\textquotesingle{}s Box2D body. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Represents a box object in the game. 
+
+This class manages the rendering and physics of a box. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_box_abe84c07e4cbd6f2ce006ce4e4859024d}\label{class_box_abe84c07e4cbd6f2ce006ce4e4859024d} 
@@ -45,15 +51,35 @@ Constructs a \doxylink{class_box}{Box} object.
 {\em position} & The initial position of the box. \\
 \hline
 \end{DoxyParams}
-\texorpdfstring{$<$}{<} Adjust the size of the box
 
-\texorpdfstring{$<$}{<} About 2 times smaller than box\+Shape
-
-\texorpdfstring{$<$}{<} Adjust density of box
-
-\texorpdfstring{$<$}{<} Adjust this value for bounciness
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_box_a1642b6a29c4d125fdf9805f0419a7447}\label{class_box_a1642b6a29c4d125fdf9805f0419a7447} 
+\index{Box@{Box}!getBody@{getBody}}
+\index{getBody@{getBody}!Box@{Box}}
+\doxysubsubsection{\texorpdfstring{getBody()}{getBody()}}
+{\footnotesize\ttfamily b2\+Body \texorpdfstring{$\ast$}{*} Box\+::get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the Box2D body of the box. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the Box2D body of the box. 
+\end{DoxyReturn}
+\Hypertarget{class_box_a34f083e5d2277d4e079aaaa46a2d65a5}\label{class_box_a34f083e5d2277d4e079aaaa46a2d65a5} 
+\index{Box@{Box}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Box@{Box}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily b2\+Vec2 Box\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the position of the box\textquotesingle{}s Box2D body. 
+
+\begin{DoxyReturn}{Returns}
+The position vector of the box\textquotesingle{}s body. 
+\end{DoxyReturn}
 \Hypertarget{class_box_abb00c50cc10ac77c570b61d55d969a85}\label{class_box_abb00c50cc10ac77c570b61d55d969a85} 
 \index{Box@{Box}!render@{render}}
 \index{render@{render}!Box@{Box}}
@@ -83,5 +109,5 @@ Updates the box\textquotesingle{}s position and rotation based on its Box2D body
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/box.\+hpp\item 
-src/box.\+cpp\end{DoxyCompactItemize}
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/box.\+hpp\item 
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/box.\+cpp\end{DoxyCompactItemize}

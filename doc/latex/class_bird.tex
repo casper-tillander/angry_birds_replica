@@ -38,9 +38,8 @@ bool \mbox{\hyperlink{class_bird_a35ca30d85dea30e06663d909635d841d}{is\+Bird\+La
 \begin{DoxyCompactList}\small\item\em Check if the bird has been launched. \end{DoxyCompactList}\item 
 b2\+Body \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_bird_ab2dff9736049c8147ebfa13f5f91e0cc}{get\+Body}} () const
 \begin{DoxyCompactList}\small\item\em Get the Box2D body of the bird. \end{DoxyCompactList}\item 
-\Hypertarget{class_bird_a5034da10c48bc73203b98fad523ed1a1}\label{class_bird_a5034da10c48bc73203b98fad523ed1a1} 
-std\+::vector$<$ sf\+::\+Circle\+Shape $>$ {\bfseries calculate\+Trajectory} (const sf\+::\+Vector2f \&launch\+Vector, int num\+Dots)
-\end{DoxyCompactItemize}
+std\+::vector$<$ sf\+::\+Circle\+Shape $>$ \mbox{\hyperlink{class_bird_a5034da10c48bc73203b98fad523ed1a1}{calculate\+Trajectory}} (const sf\+::\+Vector2f \&launch\+Vector, int num\+Dots)
+\begin{DoxyCompactList}\small\item\em Calculate the trajectory points. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -54,6 +53,14 @@ std\+::vector$<$ sf\+::\+Circle\+Shape $>$ {\bfseries trajectory\+Dots}
 
 \doxysubsection{Detailed Description}
 Represents a bird object in the game. 
+
+The \doxylink{class_bird}{Bird} class encapsulates the properties and behaviors of a bird in the game environment. It integrates both the rendering and physics aspects of the bird.
+
+This class manages the bird\textquotesingle{}s shape, Box2D body, launch mechanism, input handling for dragging, rendering on an SFML window, updating its position and rotation, as well as calculating and storing trajectory dots used for aiming before launch.
+
+The bird can be launched with a specified force and its behavior is governed by Box2D physics, including velocity, collision, and movement in the game world.
+
+It maintains states such as whether the bird has been launched or is currently being dragged. The number of birds per level and the index of the current bird are also managed within this class. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \Hypertarget{class_bird_a87ec57ddd9952ed0467bd70e86e52067}\label{class_bird_a87ec57ddd9952ed0467bd70e86e52067} 
@@ -77,19 +84,37 @@ Constructs a \doxylink{class_bird}{Bird} object.
 {\em position} & The initial position of the bird. \\
 \hline
 \end{DoxyParams}
-\texorpdfstring{$<$}{<} Adjust the size of the bird
 
-\texorpdfstring{$<$}{<} Makes the bird stop spinning after some time
-
-\texorpdfstring{$<$}{<} Set to \textquotesingle{}true\textquotesingle{} if the bird shouldn\textquotesingle{}t spin
-
-\texorpdfstring{$<$}{<} About 2 times smaller than the radius of bird\+Shape
-
-\texorpdfstring{$<$}{<} Adjust density of bird
-
-\texorpdfstring{$<$}{<} Adjust this value for bounciness
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_bird_a5034da10c48bc73203b98fad523ed1a1}\label{class_bird_a5034da10c48bc73203b98fad523ed1a1} 
+\index{Bird@{Bird}!calculateTrajectory@{calculateTrajectory}}
+\index{calculateTrajectory@{calculateTrajectory}!Bird@{Bird}}
+\doxysubsubsection{\texorpdfstring{calculateTrajectory()}{calculateTrajectory()}}
+{\footnotesize\ttfamily std\+::vector$<$ sf\+::\+Circle\+Shape $>$ Bird\+::calculate\+Trajectory (\begin{DoxyParamCaption}\item[{const sf\+::\+Vector2f \&}]{launch\+Vector,  }\item[{int}]{num\+Dots }\end{DoxyParamCaption})}
+
+
+
+Calculate the trajectory points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em launch\+Vector} & The vector representing the launch direction. \\
+\hline
+{\em num\+Dots} & The number of trajectory dots to calculate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector containing the calculated trajectory dots. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_bird_a5034da10c48bc73203b98fad523ed1a1_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_bird_ab2dff9736049c8147ebfa13f5f91e0cc}\label{class_bird_ab2dff9736049c8147ebfa13f5f91e0cc} 
 \index{Bird@{Bird}!getBody@{getBody}}
 \index{getBody@{getBody}!Bird@{Bird}}
@@ -152,7 +177,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=273pt]{class_bird_ad378b78b7803914962c49cf7d0208fe4_cgraph}
+\includegraphics[width=326pt]{class_bird_ad378b78b7803914962c49cf7d0208fe4_cgraph}
 \end{center}
 \end{figure}
 Here is the caller graph for this function\+:
@@ -236,5 +261,5 @@ Updates the bird\textquotesingle{}s position and rotation based on its Box2D bod
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/bird.\+hpp\item 
-src/bird.\+cpp\end{DoxyCompactItemize}
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/bird.\+hpp\item 
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/bird.\+cpp\end{DoxyCompactItemize}

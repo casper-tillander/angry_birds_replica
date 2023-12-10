@@ -1,0 +1,103 @@
+\doxysection{Level Properties}
+\hypertarget{group___level_properties}{}\label{group___level_properties}\index{Level Properties@{Level Properties}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___level_properties_gaf5aaea393030f959d568c806ca9100ca}{Player\+::\+Player}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_player}{Player} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{group___level_properties_gaaaecd6fd5f7c54a19446c3298163bc80}{Player\+::load\+From\+File}} ()
+\begin{DoxyCompactList}\small\item\em Loads player data from a file. \end{DoxyCompactList}\item 
+\Hypertarget{group___level_properties_gaaf456c9e86188f0976da49271579cd8b}\label{group___level_properties_gaaf456c9e86188f0976da49271579cd8b} 
+void {\bfseries Player\+::save\+To\+File} ()
+\begin{DoxyCompactList}\small\item\em Saves player data to a file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group___level_properties_ga1f83e34583dfd945887b1b6b19aa4e4b}{Player\+::get\+Score\+For\+Level}} (int level\+Number)
+\begin{DoxyCompactList}\small\item\em Gets the score earned by the player for a specific level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___level_properties_gaa1e15cb2c02af2d36122a9608b98d23d}{Player\+::update\+Score}} (int level\+Number, int stars)
+\begin{DoxyCompactList}\small\item\em Updates the score for a specific level if it\textquotesingle{}s higher than the previous score. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___level_properties_ga80ef6c6bad7e3c053c645d985e635a20}\label{group___level_properties_ga80ef6c6bad7e3c053c645d985e635a20} 
+std\+::map$<$ int, int $>$ {\bfseries Player\+::level\+Scores}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group___level_properties_ga1f83e34583dfd945887b1b6b19aa4e4b}\label{group___level_properties_ga1f83e34583dfd945887b1b6b19aa4e4b} 
+\index{Level Properties@{Level Properties}!getScoreForLevel@{getScoreForLevel}}
+\index{getScoreForLevel@{getScoreForLevel}!Level Properties@{Level Properties}}
+\doxysubsubsection{\texorpdfstring{getScoreForLevel()}{getScoreForLevel()}}
+{\footnotesize\ttfamily int Player\+::get\+Score\+For\+Level (\begin{DoxyParamCaption}\item[{int}]{level\+Number }\end{DoxyParamCaption})}
+
+
+
+Gets the score earned by the player for a specific level. 
+
+Retrieves the score for a specific level.
+
+
+\begin{DoxyParams}{Parameters}
+{\em level\+Number} & The level number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The score earned by the player for the specified level.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em level\+Number} & The number of the level. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The score earned by the player for that level. 
+\end{DoxyReturn}
+\Hypertarget{group___level_properties_gaaaecd6fd5f7c54a19446c3298163bc80}\label{group___level_properties_gaaaecd6fd5f7c54a19446c3298163bc80} 
+\index{Level Properties@{Level Properties}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!Level Properties@{Level Properties}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily std\+::string Player\+::load\+From\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads player data from a file. 
+
+\begin{DoxyReturn}{Returns}
+Message indicating the player status.
+
+A message indicating whether the player is new or existing. 
+\end{DoxyReturn}
+\Hypertarget{group___level_properties_gaf5aaea393030f959d568c806ca9100ca}\label{group___level_properties_gaf5aaea393030f959d568c806ca9100ca} 
+\index{Level Properties@{Level Properties}!Player@{Player}}
+\index{Player@{Player}!Level Properties@{Level Properties}}
+\doxysubsubsection{\texorpdfstring{Player()}{Player()}}
+{\footnotesize\ttfamily Player\+::\+Player (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_player}{Player} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the player. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___level_properties_gaa1e15cb2c02af2d36122a9608b98d23d}\label{group___level_properties_gaa1e15cb2c02af2d36122a9608b98d23d} 
+\index{Level Properties@{Level Properties}!updateScore@{updateScore}}
+\index{updateScore@{updateScore}!Level Properties@{Level Properties}}
+\doxysubsubsection{\texorpdfstring{updateScore()}{updateScore()}}
+{\footnotesize\ttfamily void Player\+::update\+Score (\begin{DoxyParamCaption}\item[{int}]{level\+Number,  }\item[{int}]{stars }\end{DoxyParamCaption})}
+
+
+
+Updates the score for a specific level if it\textquotesingle{}s higher than the previous score. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level\+Number} & The number of the level. \\
+\hline
+{\em stars} & The number of stars earned. \\
+\hline
+\end{DoxyParams}

@@ -1,5 +1,5 @@
 \doxysection{level.\+hpp}
-\hypertarget{level_8hpp_source}{}\label{level_8hpp_source}\index{src/level.hpp@{src/level.hpp}}
+\hypertarget{level_8hpp_source}{}\label{level_8hpp_source}\index{//wsl.localhost/Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/Project/src/level.hpp@{//wsl.localhost/Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/Project/src/level.hpp}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ LEVEL\_HPP}}
@@ -16,70 +16,79 @@
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}readfile.hpp"{}}}
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}collisiondetection.hpp"{}}}
 \DoxyCodeLine{00014\ }
-\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_level}{Level}}\ \{}
-\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ levelNumber;\ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ currentBirdIndex\ =\ 0;\ \textcolor{comment}{//\ Index\ of\ the\ current\ bird.}}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ totalBirds\ =\ 3;\ \textcolor{comment}{//\ Total\ birds\ per\ level.}}
-\DoxyCodeLine{00024\ \ \ \ \ sf::RenderWindow\&\ window;\ }
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{comment}{/*\ Lagar\ views}}
-\DoxyCodeLine{00026\ \textcolor{comment}{\ \ \ \ sf::View\ gameView;\ ///<\ The\ view\ used\ during\ levels.}}
-\DoxyCodeLine{00027\ \textcolor{comment}{\ \ \ \ sf::View\ defaultView;\ ///<\ The\ view\ used\ otherwise.}}
-\DoxyCodeLine{00028\ \textcolor{comment}{\ \ \ \ */}}
-\DoxyCodeLine{00029\ \ \ \ \ sf::Texture\ backgroundTexture;\ }
-\DoxyCodeLine{00030\ \ \ \ \ sf::Sprite\ backgroundSprite;\ }
-\DoxyCodeLine{00031\ \ \ \ \ b2World*\ world;\ }
-\DoxyCodeLine{00032\ \ \ \ \ std::vector<Pig*>\ pigs;\ }
-\DoxyCodeLine{00033\ \ \ \ \ std::vector<Box*>\ boxes;\ }
-\DoxyCodeLine{00034\ \ \ \ \ std::vector<Wall*>\ walls;\ }
-\DoxyCodeLine{00035\ \ \ \ \ sf::Texture\ pigTexture;\ }
-\DoxyCodeLine{00036\ \ \ \ \ sf::Texture\ boxTexture;\ }
-\DoxyCodeLine{00037\ \ \ \ \ sf::Texture\ wallTexture;\ }
-\DoxyCodeLine{00038\ \ \ \ \ std::vector<Bird*>\ birds;\ \textcolor{comment}{//\ Vector\ of\ bird\ objects.}}
-\DoxyCodeLine{00039\ \ \ \ \ sf::Texture\ birdTexture;\ }
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_level}{Level}}(sf::RenderWindow\&\ win,\ \textcolor{keywordtype}{int}\ number,\ \textcolor{keyword}{const}\ sf::Texture\&\ backTex,\ \textcolor{keyword}{const}\ std::string\&\ levelFile,\ \textcolor{keywordtype}{bool}\ isSpecialBird);}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_level}{Level}}\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Level\ properties}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{int}\ levelNumber;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ currentBirdIndex\ =\ 0;\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ totalBirds\ =\ 3;\ }
+\DoxyCodeLine{00030\ \ \ \ \ sf::RenderWindow\&\ window;}
+\DoxyCodeLine{00031\ \ \ \ \ sf::Texture\ backgroundTexture;}
+\DoxyCodeLine{00032\ \ \ \ \ sf::Sprite\ backgroundSprite;\ }
+\DoxyCodeLine{00033\ \ \ \ \ b2World*\ world;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ noGravity;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{comment}{//\ Level\ objects}}
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<Pig*>\ pigs;\ }
+\DoxyCodeLine{00038\ \ \ \ \ std::vector<Box*>\ boxes;}
+\DoxyCodeLine{00039\ \ \ \ \ std::vector<Wall*>\ walls;}
+\DoxyCodeLine{00040\ \ \ \ \ std::vector<Bird*>\ birds;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//Textures\ used\ in\ class}}
+\DoxyCodeLine{00043\ \ \ \ \ sf::Texture\ pigTexture;\ }
+\DoxyCodeLine{00044\ \ \ \ \ sf::Texture\ boxTexture;}
+\DoxyCodeLine{00045\ \ \ \ \ sf::Texture\ wallTexture;\ }
+\DoxyCodeLine{00046\ \ \ \ \ sf::Texture\ birdTexture;\ }
+\DoxyCodeLine{00047\ \ \ \ \ sf::Font\ font;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ UI\ elements}}
+\DoxyCodeLine{00050\ \ \ \ \ sf::Text\ birdsRemainingText;}
+\DoxyCodeLine{00051\ \ \ \ \ sf::Text\ pigsRemainingText;\ }
 \DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ isSpecialBird;}
-\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_level_a249eac1e8f19ff44134efa5e986feaca}{\string~Level}}();}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_aed3e8287c07f61f37c295d4150835273}{run}}();}
+\DoxyCodeLine{00053\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{class_level}{Level}}(sf::RenderWindow\&\ win,\ \textcolor{keywordtype}{int}\ number,\ \textcolor{keyword}{const}\ sf::Texture\&\ backTex,\ \textcolor{keyword}{const}\ std::string\&\ levelFile,\ \textcolor{keywordtype}{bool}\ isSpecialBird,\ \textcolor{keywordtype}{bool}\ noGravity);}
 \DoxyCodeLine{00064\ }
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_ace416df22342faf57be1cbb2161fda7e}{setupWorld}}();}
-\DoxyCodeLine{00069\ }
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_a3ee3e555710d2910a98105ba0740d1d5}{createFloor}}();}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_adf33de6adfa15bd8481880ca0af84936}{createBoundaries}}();}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_a59b2e05d9d7e8dd6b2ffd7503c489211}{createBoundary}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ height);}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_ae86e2ae4d2f098005c83e9d0488a67df}{loadObjects}}(\textcolor{keyword}{const}\ std::string\&\ levelFile);}
-\DoxyCodeLine{00096\ }
-\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_ab7333938374f7f5cb17512fd157d4412}{initializeBirds}}(\textcolor{keyword}{const}\ sf::Texture\&\ birdTex,\ \textcolor{keywordtype}{bool}\ isSpecialBird);}
-\DoxyCodeLine{00103\ }
-\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_a3b4726c7b22fa9c99282f6ecfd2c75c1}{nextBird}}(\textcolor{keyword}{const}\ sf::Texture\&\ birdTex,\ \textcolor{keywordtype}{bool}\ isSpecialBird);}
-\DoxyCodeLine{00110\ }
-\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_level_a9f26634e6369e5fb4c253f65fb89f29e}{hasBirdStopped}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00117\ }
-\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_level_abeaffb0f25f488d82e1d69c6f4922933}{isLevelComplete}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00124\ }
-\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_level_a9ce212b5d8f6dbc61842fc994dc78c65}{isGameOver}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00131\ }
-\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_level_a451b02d940fd2251fae4587ca1e058aa}{areAllPigsDestroyed}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00138\ }
-\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_level_a87185b3c0c57616bc419272967787479}{areAllBirdsUsed}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00145\ }
-\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_level_a1753d270b6882300f34da46b9c6244ac}{getBirdsUsedForCompletion}}();}
-\DoxyCodeLine{00147\ }
-\DoxyCodeLine{00148\ \};}
-\DoxyCodeLine{00149\ }
-\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LEVEL\_HPP}}
-\DoxyCodeLine{00151\ }
-\DoxyCodeLine{00152\ }
-\DoxyCodeLine{00153\ }
-\DoxyCodeLine{00154\ }
-\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ isSpecialBird;}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_level_a249eac1e8f19ff44134efa5e986feaca}{\string~Level}}();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_aed3e8287c07f61f37c295d4150835273}{run}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_ace416df22342faf57be1cbb2161fda7e}{setupWorld}}();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_a3ee3e555710d2910a98105ba0740d1d5}{createFloor}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_adf33de6adfa15bd8481880ca0af84936}{createBoundaries}}();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_a59b2e05d9d7e8dd6b2ffd7503c489211}{createBoundary}}(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ width,\ \textcolor{keywordtype}{float}\ height);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_ae86e2ae4d2f098005c83e9d0488a67df}{loadObjects}}(\textcolor{keyword}{const}\ std::string\&\ levelFile);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_ab7333938374f7f5cb17512fd157d4412}{initializeBirds}}(\textcolor{keyword}{const}\ sf::Texture\&\ birdTex,\ \textcolor{keywordtype}{bool}\ isSpecialBird);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_level_a3b4726c7b22fa9c99282f6ecfd2c75c1}{nextBird}}(\textcolor{keyword}{const}\ sf::Texture\&\ birdTex,\ \textcolor{keywordtype}{bool}\ isSpecialBird);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_level_a9f26634e6369e5fb4c253f65fb89f29e}{hasBirdStopped}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_level_abeaffb0f25f488d82e1d69c6f4922933}{isLevelComplete}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_level_a9ce212b5d8f6dbc61842fc994dc78c65}{isGameOver}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_level_a451b02d940fd2251fae4587ca1e058aa}{areAllPigsDestroyed}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_level_a87185b3c0c57616bc419272967787479}{areAllBirdsUsed}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_level_a1753d270b6882300f34da46b9c6244ac}{getBirdsUsedForCompletion}}();}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{class_bird}{Bird}}*\ getCurrentBird();}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LEVEL\_HPP}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ }
 
 \end{DoxyCode}

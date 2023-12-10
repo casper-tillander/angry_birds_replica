@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Happy Birds: src/readfile.hpp Source File</title>
+<title>Happy Birds: //wsl.localhost/Ubuntu/home/caspertillander/cpp-course-autumn-2023/Project/src/readfile.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,18 +89,19 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="struct_object_data.html">   12</a></span><span class="keyword">struct </span><a class="code hl_class" href="struct_object_data.html">ObjectData</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="struct_object_data.html#a4b17fe9d79e9e8f2720287e3e0cb3add">   13</a></span>    std::string <a class="code hl_variable" href="struct_object_data.html#a4b17fe9d79e9e8f2720287e3e0cb3add">type</a>; </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_object_data.html#a234e75d9702fa1840880d26d3cf88687">   14</a></span>    <span class="keywordtype">float</span> x, <a class="code hl_variable" href="struct_object_data.html#a234e75d9702fa1840880d26d3cf88687">y</a>; </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>};</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="struct_object_data.html#a4b17fe9d79e9e8f2720287e3e0cb3add">   14</a></span>    std::string <a class="code hl_variable" href="struct_object_data.html#a4b17fe9d79e9e8f2720287e3e0cb3add">type</a>; </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">// Coordinates</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">float</span> x, y;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>};</div>
 </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>std::vector&lt;ObjectData&gt; readLevelData(<span class="keyword">const</span> std::string&amp; filename);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#endif </span><span class="comment">// READFILE_HPP</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>std::vector&lt;ObjectData&gt; readLevelData(<span class="keyword">const</span> std::string&amp; filename);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif </span><span class="comment">// READFILE_HPP</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="ttc" id="astruct_object_data_html"><div class="ttname"><a href="struct_object_data.html">ObjectData</a></div><div class="ttdoc">Reads a CSV file that makes up the game levels.</div><div class="ttdef"><b>Definition</b> readfile.hpp:12</div></div>
-<div class="ttc" id="astruct_object_data_html_a234e75d9702fa1840880d26d3cf88687"><div class="ttname"><a href="struct_object_data.html#a234e75d9702fa1840880d26d3cf88687">ObjectData::y</a></div><div class="ttdeci">float y</div><div class="ttdoc">The x and y coordinates of the object.</div><div class="ttdef"><b>Definition</b> readfile.hpp:14</div></div>
-<div class="ttc" id="astruct_object_data_html_a4b17fe9d79e9e8f2720287e3e0cb3add"><div class="ttname"><a href="struct_object_data.html#a4b17fe9d79e9e8f2720287e3e0cb3add">ObjectData::type</a></div><div class="ttdeci">std::string type</div><div class="ttdoc">The type of the object (e.g., &quot;pig&quot;, &quot;box&quot;).</div><div class="ttdef"><b>Definition</b> readfile.hpp:13</div></div>
+<div class="ttc" id="astruct_object_data_html_a4b17fe9d79e9e8f2720287e3e0cb3add"><div class="ttname"><a href="struct_object_data.html#a4b17fe9d79e9e8f2720287e3e0cb3add">ObjectData::type</a></div><div class="ttdeci">std::string type</div><div class="ttdoc">&lt; Object type</div><div class="ttdef"><b>Definition</b> readfile.hpp:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

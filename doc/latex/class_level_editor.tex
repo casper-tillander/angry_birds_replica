@@ -1,0 +1,88 @@
+\doxysection{Level\+Editor Class Reference}
+\hypertarget{class_level_editor}{}\label{class_level_editor}\index{LevelEditor@{LevelEditor}}
+
+
+Represents a tool to create game levels and edit them visually.  
+
+
+
+
+{\ttfamily \#include $<$leveleditor.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_level_editor_a1f75759cb0b5d4b4fdb053eadcec4e8f}{Level\+Editor}} (sf\+::\+Render\+Window \&win, int number, const sf\+::\+Texture \&back\+Tex)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_level}{Level} Editor object. \end{DoxyCompactList}\item 
+\Hypertarget{class_level_editor_a981c98780eb71076dc27ff2851bf3737}\label{class_level_editor_a981c98780eb71076dc27ff2851bf3737} 
+std\+::string {\bfseries run} ()
+\begin{DoxyCompactList}\small\item\em Runs the events of the \doxylink{class_level}{Level} Editor. \end{DoxyCompactList}\item 
+\Hypertarget{class_level_editor_ab52af8410838360ffed3d420a478b2ec}\label{class_level_editor_ab52af8410838360ffed3d420a478b2ec} 
+void {\bfseries set\+Up\+Level} ()
+\begin{DoxyCompactList}\small\item\em Sets up the \doxylink{class_level}{Level} Editor with objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_level_editor_a3b75894c3414cda3c3e99a2103265aa3}{add\+Object}} (int chosen\+Object, sf\+::\+Vector2f mouse\+Pos, std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em Adds objects to CSV file. \end{DoxyCompactList}\item 
+\Hypertarget{class_level_editor_a4f5dbd6f8d77cd4c931de07c2e41df8d}\label{class_level_editor_a4f5dbd6f8d77cd4c931de07c2e41df8d} 
+void {\bfseries draw\+Object} ()
+\begin{DoxyCompactList}\small\item\em Draws the objects on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a tool to create game levels and edit them visually. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_level_editor_a1f75759cb0b5d4b4fdb053eadcec4e8f}\label{class_level_editor_a1f75759cb0b5d4b4fdb053eadcec4e8f} 
+\index{LevelEditor@{LevelEditor}!LevelEditor@{LevelEditor}}
+\index{LevelEditor@{LevelEditor}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{LevelEditor()}{LevelEditor()}}
+{\footnotesize\ttfamily Level\+Editor\+::\+Level\+Editor (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{win,  }\item[{int}]{number,  }\item[{const sf\+::\+Texture \&}]{back\+Tex }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_level}{Level} Editor object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em win} & Reference to the game\textquotesingle{}s window. \\
+\hline
+{\em number} & The background number for the level. \\
+\hline
+{\em back\+Tex} & The texture for the background. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_level_editor_a3b75894c3414cda3c3e99a2103265aa3}\label{class_level_editor_a3b75894c3414cda3c3e99a2103265aa3} 
+\index{LevelEditor@{LevelEditor}!addObject@{addObject}}
+\index{addObject@{addObject}!LevelEditor@{LevelEditor}}
+\doxysubsubsection{\texorpdfstring{addObject()}{addObject()}}
+{\footnotesize\ttfamily void Level\+Editor\+::add\+Object (\begin{DoxyParamCaption}\item[{int}]{chosen\+Object,  }\item[{sf\+::\+Vector2f}]{mouse\+Pos,  }\item[{std\+::string \&}]{file\+Path }\end{DoxyParamCaption})}
+
+
+
+Adds objects to CSV file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chosen\+Object} & The object added to the game. \\
+\hline
+{\em mouse\+Pos} & The position of the added object. \\
+\hline
+{\em file\+Path} & The path to the CSV file to add to. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_level_editor_a3b75894c3414cda3c3e99a2103265aa3_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/leveleditor.\+hpp\item 
+//wsl.\+localhost/\+Ubuntu/home/caspertillander/cpp-\/course-\/autumn-\/2023/\+Project/src/leveleditor.\+cpp\end{DoxyCompactItemize}

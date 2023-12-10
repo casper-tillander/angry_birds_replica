@@ -84,9 +84,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7fc77850d6d06fdcfb48f0ca5109bcf4" id="r_a7fc77850d6d06fdcfb48f0ca5109bcf4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html#a7fc77850d6d06fdcfb48f0ca5109bcf4">Level</a> (sf::RenderWindow &amp;win, int number, const sf::Texture &amp;backTex, const std::string &amp;levelFile, bool isSpecialBird)</td></tr>
-<tr class="memdesc:a7fc77850d6d06fdcfb48f0ca5109bcf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_level.html" title="Represents a game level with physics simulation.">Level</a> object.  <br /></td></tr>
-<tr class="separator:a7fc77850d6d06fdcfb48f0ca5109bcf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f7ce82ad3a8330a7cb7f5c03f2edb7d" id="r_a5f7ce82ad3a8330a7cb7f5c03f2edb7d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html#a5f7ce82ad3a8330a7cb7f5c03f2edb7d">Level</a> (sf::RenderWindow &amp;win, int number, const sf::Texture &amp;backTex, const std::string &amp;levelFile, bool isSpecialBird, bool noGravity)</td></tr>
+<tr class="memdesc:a5f7ce82ad3a8330a7cb7f5c03f2edb7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_level.html" title="Represents a game level with physics simulation.">Level</a> object.  <br /></td></tr>
+<tr class="separator:a5f7ce82ad3a8330a7cb7f5c03f2edb7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a249eac1e8f19ff44134efa5e986feaca" id="r_a249eac1e8f19ff44134efa5e986feaca"><td class="memItemLeft" align="right" valign="top"><a id="a249eac1e8f19ff44134efa5e986feaca" name="a249eac1e8f19ff44134efa5e986feaca"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~Level</b> ()</td></tr>
 <tr class="memdesc:a249eac1e8f19ff44134efa5e986feaca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the <a class="el" href="class_level.html" title="Represents a game level with physics simulation.">Level</a> object. <br /></td></tr>
@@ -137,6 +137,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>createBoundaries</b> 
 <tr class="memitem:a1753d270b6882300f34da46b9c6244ac" id="r_a1753d270b6882300f34da46b9c6244ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_level.html#a1753d270b6882300f34da46b9c6244ac">getBirdsUsedForCompletion</a> ()</td></tr>
 <tr class="memdesc:a1753d270b6882300f34da46b9c6244ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of birds used to complete the level.  <br /></td></tr>
 <tr class="separator:a1753d270b6882300f34da46b9c6244ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03725d9b2bde698f0f8b7ec61ff48cc1" id="r_a03725d9b2bde698f0f8b7ec61ff48cc1"><td class="memItemLeft" align="right" valign="top"><a id="a03725d9b2bde698f0f8b7ec61ff48cc1" name="a03725d9b2bde698f0f8b7ec61ff48cc1"></a>
+<a class="el" href="class_bird.html">Bird</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getCurrentBird</b> ()</td></tr>
+<tr class="separator:a03725d9b2bde698f0f8b7ec61ff48cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -146,9 +149,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isSpecialBird</b></td
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a game level with physics simulation. </p>
+<p>This class manages the elements and behavior of a game level, including Box2D physics simulation, game objects like birds, pigs, boxes, and walls, as well as handling the game's progression and state. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a7fc77850d6d06fdcfb48f0ca5109bcf4" name="a7fc77850d6d06fdcfb48f0ca5109bcf4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fc77850d6d06fdcfb48f0ca5109bcf4">&#9670;&#160;</a></span>Level()</h2>
+<a id="a5f7ce82ad3a8330a7cb7f5c03f2edb7d" name="a5f7ce82ad3a8330a7cb7f5c03f2edb7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f7ce82ad3a8330a7cb7f5c03f2edb7d">&#9670;&#160;</a></span>Level()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -181,7 +185,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isSpecialBird</b></td
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>isSpecialBirdParam</em>&#160;</td>
+          <td class="paramname"><em>isSpecialBirdParam</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>noGravity</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -205,8 +215,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isSpecialBird</b></td
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_level_a7fc77850d6d06fdcfb48f0ca5109bcf4_cgraph.png" border="0" usemap="#aclass_level_a7fc77850d6d06fdcfb48f0ca5109bcf4_cgraph" alt=""/></div>
-<map name="aclass_level_a7fc77850d6d06fdcfb48f0ca5109bcf4_cgraph" id="aclass_level_a7fc77850d6d06fdcfb48f0ca5109bcf4_cgraph">
+<div class="center"><img src="class_level_a5f7ce82ad3a8330a7cb7f5c03f2edb7d_cgraph.png" border="0" usemap="#aclass_level_a5f7ce82ad3a8330a7cb7f5c03f2edb7d_cgraph" alt=""/></div>
+<map name="aclass_level_a5f7ce82ad3a8330a7cb7f5c03f2edb7d_cgraph" id="aclass_level_a5f7ce82ad3a8330a7cb7f5c03f2edb7d_cgraph">
 <area shape="rect" title="Constructs a Level object." alt="" coords="5,56,93,83"/>
 <area shape="rect" href="class_level.html#ab7333938374f7f5cb17512fd157d4412" title="Initializes bird objects." alt="" coords="141,5,276,32"/>
 <area shape="poly" title=" " alt="" coords="92,53,149,35,151,40,94,58"/>
@@ -368,7 +378,7 @@ Here is the caller graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="505,21,473,21,473,16,505,16"/>
 <area shape="rect" href="class_level.html#ace416df22342faf57be1cbb2161fda7e" title="Sets up the Box2D world and initializes objects." alt="" coords="141,5,265,32"/>
 <area shape="poly" title=" " alt="" coords="297,21,265,21,265,16,297,16"/>
-<area shape="rect" href="class_level.html#a7fc77850d6d06fdcfb48f0ca5109bcf4" title="Constructs a Level object." alt="" coords="5,5,93,32"/>
+<area shape="rect" href="class_level.html#a5f7ce82ad3a8330a7cb7f5c03f2edb7d" title="Constructs a Level object." alt="" coords="5,5,93,32"/>
 <area shape="poly" title=" " alt="" coords="125,21,93,21,93,16,125,16"/>
 </map>
 </div>
@@ -506,7 +516,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="class_level_ab7333938374f7f5cb17512fd157d4412_icgraph.png" border="0" usemap="#aclass_level_ab7333938374f7f5cb17512fd157d4412_icgraph" alt=""/></div>
 <map name="aclass_level_ab7333938374f7f5cb17512fd157d4412_icgraph" id="aclass_level_ab7333938374f7f5cb17512fd157d4412_icgraph">
 <area shape="rect" title="Initializes bird objects." alt="" coords="141,5,276,32"/>
-<area shape="rect" href="class_level.html#a7fc77850d6d06fdcfb48f0ca5109bcf4" title="Constructs a Level object." alt="" coords="5,5,93,32"/>
+<area shape="rect" href="class_level.html#a5f7ce82ad3a8330a7cb7f5c03f2edb7d" title="Constructs a Level object." alt="" coords="5,5,93,32"/>
 <area shape="poly" title=" " alt="" coords="125,21,93,21,93,16,125,16"/>
 </map>
 </div>
@@ -640,7 +650,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="class_level_ae86e2ae4d2f098005c83e9d0488a67df_icgraph.png" border="0" usemap="#aclass_level_ae86e2ae4d2f098005c83e9d0488a67df_icgraph" alt=""/></div>
 <map name="aclass_level_ae86e2ae4d2f098005c83e9d0488a67df_icgraph" id="aclass_level_ae86e2ae4d2f098005c83e9d0488a67df_icgraph">
 <area shape="rect" title="Loads game objects from a level file." alt="" coords="141,5,268,32"/>
-<area shape="rect" href="class_level.html#a7fc77850d6d06fdcfb48f0ca5109bcf4" title="Constructs a Level object." alt="" coords="5,5,93,32"/>
+<area shape="rect" href="class_level.html#a5f7ce82ad3a8330a7cb7f5c03f2edb7d" title="Constructs a Level object." alt="" coords="5,5,93,32"/>
 <area shape="poly" title=" " alt="" coords="125,21,93,21,93,16,125,16"/>
 </map>
 </div>
@@ -696,8 +706,8 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/<a class="el" href="level_8hpp_source.html">level.hpp</a></li>
-<li>src/<b>level.cpp</b></li>
+<li>//wsl.localhost/Ubuntu/home/caspertillander/cpp-course-autumn-2023/Project/src/<a class="el" href="level_8hpp_source.html">level.hpp</a></li>
+<li>//wsl.localhost/Ubuntu/home/caspertillander/cpp-course-autumn-2023/Project/src/<b>level.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

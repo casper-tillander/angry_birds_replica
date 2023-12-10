@@ -87,7 +87,7 @@ Inheritance diagram for Bird:</div>
 <div class="center"><img src="class_bird__inherit__graph.png" border="0" usemap="#a_bird_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_bird_inherit__map" id="a_bird_inherit__map">
 <area shape="rect" title="Represents a bird object in the game." alt="" coords="27,5,71,32"/>
-<area shape="rect" href="class_special_bird.html" title=" " alt="" coords="5,80,93,107"/>
+<area shape="rect" href="class_special_bird.html" title="Represents a special type of bird with specific shooting behavior." alt="" coords="5,80,93,107"/>
 <area shape="poly" title=" " alt="" coords="52,48,52,80,46,80,46,48"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -118,8 +118,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab2dff9736049c8147ebfa13f5f91e0cc" id="r_ab2dff9736049c8147ebfa13f5f91e0cc"><td class="memItemLeft" align="right" valign="top">b2Body *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bird.html#ab2dff9736049c8147ebfa13f5f91e0cc">getBody</a> () const</td></tr>
 <tr class="memdesc:ab2dff9736049c8147ebfa13f5f91e0cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Box2D body of the bird.  <br /></td></tr>
 <tr class="separator:ab2dff9736049c8147ebfa13f5f91e0cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5034da10c48bc73203b98fad523ed1a1" id="r_a5034da10c48bc73203b98fad523ed1a1"><td class="memItemLeft" align="right" valign="top"><a id="a5034da10c48bc73203b98fad523ed1a1" name="a5034da10c48bc73203b98fad523ed1a1"></a>
-std::vector&lt; sf::CircleShape &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>calculateTrajectory</b> (const sf::Vector2f &amp;launchVector, int numDots)</td></tr>
+<tr class="memitem:a5034da10c48bc73203b98fad523ed1a1" id="r_a5034da10c48bc73203b98fad523ed1a1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; sf::CircleShape &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bird.html#a5034da10c48bc73203b98fad523ed1a1">calculateTrajectory</a> (const sf::Vector2f &amp;launchVector, int numDots)</td></tr>
+<tr class="memdesc:a5034da10c48bc73203b98fad523ed1a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the trajectory points.  <br /></td></tr>
 <tr class="separator:a5034da10c48bc73203b98fad523ed1a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -135,6 +135,10 @@ std::vector&lt; sf::CircleShape &gt;&#160;</td><td class="memItemRight" valign="
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a bird object in the game. </p>
+<p>The <a class="el" href="class_bird.html" title="Represents a bird object in the game.">Bird</a> class encapsulates the properties and behaviors of a bird in the game environment. It integrates both the rendering and physics aspects of the bird.</p>
+<p>This class manages the bird's shape, Box2D body, launch mechanism, input handling for dragging, rendering on an SFML window, updating its position and rotation, as well as calculating and storing trajectory dots used for aiming before launch.</p>
+<p>The bird can be launched with a specified force and its behavior is governed by Box2D physics, including velocity, collision, and movement in the game world.</p>
+<p>It maintains states such as whether the bird has been launched or is currently being dragged. The number of birds per level and the index of the current bird are also managed within this class. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a87ec57ddd9952ed0467bd70e86e52067" name="a87ec57ddd9952ed0467bd70e86e52067"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a87ec57ddd9952ed0467bd70e86e52067">&#9670;&#160;</a></span>Bird()</h2>
@@ -178,16 +182,62 @@ std::vector&lt; sf::CircleShape &gt;&#160;</td><td class="memItemRight" valign="
   </table>
   </dd>
 </dl>
-<p>&lt; Adjust the size of the bird</p>
-<p>&lt; Makes the bird stop spinning after some time</p>
-<p>&lt; Set to 'true' if the bird shouldn't spin</p>
-<p>&lt; About 2 times smaller than the radius of birdShape</p>
-<p>&lt; Adjust density of bird</p>
-<p>&lt; Adjust this value for bounciness</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5034da10c48bc73203b98fad523ed1a1" name="a5034da10c48bc73203b98fad523ed1a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5034da10c48bc73203b98fad523ed1a1">&#9670;&#160;</a></span>calculateTrajectory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; sf::CircleShape &gt; Bird::calculateTrajectory </td>
+          <td>(</td>
+          <td class="paramtype">const sf::Vector2f &amp;&#160;</td>
+          <td class="paramname"><em>launchVector</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numDots</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate the trajectory points. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">launchVector</td><td>The vector representing the launch direction. </td></tr>
+    <tr><td class="paramname">numDots</td><td>The number of trajectory dots to calculate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector containing the calculated trajectory dots. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_bird_a5034da10c48bc73203b98fad523ed1a1_icgraph.png" border="0" usemap="#aclass_bird_a5034da10c48bc73203b98fad523ed1a1_icgraph" alt=""/></div>
+<map name="aclass_bird_a5034da10c48bc73203b98fad523ed1a1_icgraph" id="aclass_bird_a5034da10c48bc73203b98fad523ed1a1_icgraph">
+<area shape="rect" title="Calculate the trajectory points." alt="" coords="381,31,542,57"/>
+<area shape="rect" href="class_bird.html#ad378b78b7803914962c49cf7d0208fe4" title="Handles input events for the bird." alt="" coords="215,31,333,57"/>
+<area shape="poly" title=" " alt="" coords="366,47,333,47,333,41,366,41"/>
+<area shape="rect" href="class_special_bird.html#a17676702e235d7bdce6dff23ac668214" title="Handles input events specific to the SpecialBird." alt="" coords="5,5,167,32"/>
+<area shape="poly" title=" " alt="" coords="199,37,167,32,168,27,200,31"/>
+<area shape="rect" href="class_level.html#aed3e8287c07f61f37c295d4150835273" title="Runs the game level." alt="" coords="48,56,124,83"/>
+<area shape="poly" title=" " alt="" coords="200,57,125,67,124,62,199,51"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="ab2dff9736049c8147ebfa13f5f91e0cc" name="ab2dff9736049c8147ebfa13f5f91e0cc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab2dff9736049c8147ebfa13f5f91e0cc">&#9670;&#160;</a></span>getBody()</h2>
 
@@ -300,9 +350,11 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_bird_ad378b78b7803914962c49cf7d0208fe4_cgraph.png" border="0" usemap="#aclass_bird_ad378b78b7803914962c49cf7d0208fe4_cgraph" alt=""/></div>
 <map name="aclass_bird_ad378b78b7803914962c49cf7d0208fe4_cgraph" id="aclass_bird_ad378b78b7803914962c49cf7d0208fe4_cgraph">
-<area shape="rect" title="Handles input events for the bird." alt="" coords="5,5,124,32"/>
-<area shape="rect" href="class_bird.html#a73496d28dde48f328c2cfc275ebcad6f" title="Launches the bird with a specified force." alt="" coords="172,5,262,32"/>
-<area shape="poly" title=" " alt="" coords="124,16,156,16,156,21,124,21"/>
+<area shape="rect" title="Handles input events for the bird." alt="" coords="5,31,124,57"/>
+<area shape="rect" href="class_bird.html#a5034da10c48bc73203b98fad523ed1a1" title="Calculate the trajectory points." alt="" coords="172,5,333,32"/>
+<area shape="poly" title=" " alt="" coords="124,33,156,29,156,34,124,39"/>
+<area shape="rect" href="class_bird.html#a73496d28dde48f328c2cfc275ebcad6f" title="Launches the bird with a specified force." alt="" coords="207,56,298,83"/>
+<area shape="poly" title=" " alt="" coords="124,49,192,59,191,64,124,55"/>
 </map>
 </div>
 <div class="dynheader">
@@ -311,7 +363,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="class_bird_ad378b78b7803914962c49cf7d0208fe4_icgraph.png" border="0" usemap="#aclass_bird_ad378b78b7803914962c49cf7d0208fe4_icgraph" alt=""/></div>
 <map name="aclass_bird_ad378b78b7803914962c49cf7d0208fe4_icgraph" id="aclass_bird_ad378b78b7803914962c49cf7d0208fe4_icgraph">
 <area shape="rect" title="Handles input events for the bird." alt="" coords="215,31,333,57"/>
-<area shape="rect" href="class_special_bird.html#a17676702e235d7bdce6dff23ac668214" title="Handles input events for the bird." alt="" coords="5,5,167,32"/>
+<area shape="rect" href="class_special_bird.html#a17676702e235d7bdce6dff23ac668214" title="Handles input events specific to the SpecialBird." alt="" coords="5,5,167,32"/>
 <area shape="poly" title=" " alt="" coords="199,37,167,32,168,27,200,31"/>
 <area shape="rect" href="class_level.html#aed3e8287c07f61f37c295d4150835273" title="Runs the game level." alt="" coords="48,56,124,83"/>
 <area shape="poly" title=" " alt="" coords="200,57,125,67,124,62,199,51"/>
@@ -342,19 +394,20 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_bird_a35ca30d85dea30e06663d909635d841d_icgraph.png" border="0" usemap="#aclass_bird_a35ca30d85dea30e06663d909635d841d_icgraph" alt=""/></div>
 <map name="aclass_bird_a35ca30d85dea30e06663d909635d841d_icgraph" id="aclass_bird_a35ca30d85dea30e06663d909635d841d_icgraph">
-<area shape="rect" title="Check if the bird has been launched." alt="" coords="797,56,938,83"/>
-<area shape="rect" href="class_level.html#a9f26634e6369e5fb4c253f65fb89f29e" title="Checks if the current bird has stopped moving." alt="" coords="598,56,749,83"/>
-<area shape="poly" title=" " alt="" coords="781,72,749,72,749,67,781,67"/>
+<area shape="rect" title="Check if the bird has been launched." alt="" coords="797,157,938,184"/>
+<area shape="rect" href="class_level.html#a9f26634e6369e5fb4c253f65fb89f29e" title="Checks if the current bird has stopped moving." alt="" coords="598,81,749,108"/>
+<area shape="poly" title=" " alt="" coords="816,154,709,111,711,106,818,149"/>
+<area shape="rect" href="class_level.html#aed3e8287c07f61f37c295d4150835273" title="Runs the game level." alt="" coords="5,81,82,108"/>
+<area shape="poly" title=" " alt="" coords="810,192,683,224,600,239,509,250,413,254,316,249,220,231,173,217,128,198,101,180,78,156,49,110,54,107,82,152,104,176,131,194,175,212,221,226,316,243,413,249,509,245,599,234,681,219,809,187"/>
 <area shape="rect" href="class_level.html#a87185b3c0c57616bc419272967787479" title="Checks if all birds have been used." alt="" coords="399,5,550,32"/>
-<area shape="poly" title=" " alt="" coords="603,54,529,35,530,30,604,49"/>
-<area shape="rect" href="class_level.html#aed3e8287c07f61f37c295d4150835273" title="Runs the game level." alt="" coords="5,56,82,83"/>
-<area shape="poly" title=" " alt="" coords="583,72,82,72,82,67,583,67"/>
+<area shape="poly" title=" " alt="" coords="621,78,511,35,513,30,623,73"/>
+<area shape="poly" title=" " alt="" coords="583,93,376,88,130,91,82,94,82,88,130,85,376,83,583,88"/>
 <area shape="rect" href="class_level.html#abeaffb0f25f488d82e1d69c6f4922933" title="Checks if the level is complete." alt="" coords="398,107,550,133"/>
-<area shape="poly" title=" " alt="" coords="604,90,530,109,529,103,603,85"/>
+<area shape="poly" title=" " alt="" coords="583,109,551,113,550,108,582,104"/>
 <area shape="rect" href="class_level.html#a9ce212b5d8f6dbc61842fc994dc78c65" title="Checks if the game is over." alt="" coords="175,5,305,32"/>
 <area shape="poly" title=" " alt="" coords="383,21,305,21,305,16,383,16"/>
-<area shape="poly" title=" " alt="" coords="171,39,83,62,81,57,170,34"/>
-<area shape="poly" title=" " alt="" coords="382,117,262,107,129,91,82,81,83,76,130,85,262,102,383,112"/>
+<area shape="poly" title=" " alt="" coords="170,39,131,53,70,83,68,78,129,48,168,34"/>
+<area shape="poly" title=" " alt="" coords="383,117,82,100,82,94,383,112"/>
 <area shape="rect" href="class_level.html#a1753d270b6882300f34da46b9c6244ac" title="Gets the number of birds used to complete the level." alt="" coords="130,157,350,184"/>
 <area shape="poly" title=" " alt="" coords="395,140,305,159,304,154,394,135"/>
 </map>
@@ -393,7 +446,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" title="Launches the bird with a specified force." alt="" coords="381,31,471,57"/>
 <area shape="rect" href="class_bird.html#ad378b78b7803914962c49cf7d0208fe4" title="Handles input events for the bird." alt="" coords="215,31,333,57"/>
 <area shape="poly" title=" " alt="" coords="365,47,334,47,334,41,365,41"/>
-<area shape="rect" href="class_special_bird.html#a17676702e235d7bdce6dff23ac668214" title="Handles input events for the bird." alt="" coords="5,5,167,32"/>
+<area shape="rect" href="class_special_bird.html#a17676702e235d7bdce6dff23ac668214" title="Handles input events specific to the SpecialBird." alt="" coords="5,5,167,32"/>
 <area shape="poly" title=" " alt="" coords="199,37,167,32,168,27,200,31"/>
 <area shape="rect" href="class_level.html#aed3e8287c07f61f37c295d4150835273" title="Runs the game level." alt="" coords="48,56,124,83"/>
 <area shape="poly" title=" " alt="" coords="200,57,125,67,124,62,199,51"/>
@@ -449,8 +502,8 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/<a class="el" href="bird_8hpp_source.html">bird.hpp</a></li>
-<li>src/<b>bird.cpp</b></li>
+<li>//wsl.localhost/Ubuntu/home/caspertillander/cpp-course-autumn-2023/Project/src/<a class="el" href="bird_8hpp_source.html">bird.hpp</a></li>
+<li>//wsl.localhost/Ubuntu/home/caspertillander/cpp-course-autumn-2023/Project/src/<b>bird.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
