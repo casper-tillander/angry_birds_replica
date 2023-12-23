@@ -71,9 +71,6 @@ make
 ## Testing
 
 ```bash
-# Create a testing folder
-mkdir tests
-
 # Navigate to the tests folder inside the build folder
 cd tests
 
