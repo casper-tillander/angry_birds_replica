@@ -4,6 +4,18 @@
 
 Welcome to the Angry Birds Replica project! This is a collaborative effort to create an exciting and challenging game inspired by the Angry Birds franchise. In this game, players will launch birds with a slingshot to knock down structures and defeat pesky pigs.
 
+## Screenshots
+<img width="571" alt="image" src="https://github.com/casper-tillander/angry_birds_replica/assets/149688973/5342b1bb-7349-4e3e-8c0b-ae0ea882d6d9">
+<img width="574" alt="image" src="https://github.com/casper-tillander/angry_birds_replica/assets/149688973/f06ec2b2-caab-4580-bd51-39d8f6b43295">
+<img width="571" alt="image" src="https://github.com/casper-tillander/angry_birds_replica/assets/149688973/3ba1dfff-d2d8-43f6-ba17-8c9b3aa95ef7">
+<img width="574" alt="image" src="https://github.com/casper-tillander/angry_birds_replica/assets/149688973/8b68d01a-c720-481a-867d-a8f39d654865">
+<img width="575" alt="image" src="https://github.com/casper-tillander/angry_birds_replica/assets/149688973/20fbd6fd-62cf-4dd5-a0e5-3e1e077a3b28">
+<img width="573" alt="image" src="https://github.com/casper-tillander/angry_birds_replica/assets/149688973/1553cc7c-d563-418e-bd79-19d589e9f0bc">
+<img width="573" alt="image" src="https://github.com/casper-tillander/angry_birds_replica/assets/149688973/dbb192e8-0267-474b-8a91-6a29d1033e80">
+<img width="572" alt="image" src="https://github.com/casper-tillander/angry_birds_replica/assets/149688973/709705c3-ef70-4e26-90ef-79e43cdf5e78">
+
+
+
 ## Contributors
 
 - **Casper**
